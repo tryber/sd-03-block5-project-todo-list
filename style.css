@@ -1,0 +1,112 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+@font-face{
+    font-family: "aldo";
+    src: url(font/AldotheApache.ttf);
+}
+
+@font-face{
+    font-family: "limao";
+    src: url(font/LEMONMILK-Regular.otf);
+}
+
+@font-face{
+    font-family: "lista";
+    src: url(font/Letters\ for\ Learners.ttf);
+}
+
+header{
+    background-color: rgb(0, 165, 82);
+    height: 50px;
+    text-shadow: 5px 5px 5px rbga(0,0,0,0.5);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+}
+
+header nav{
+    text-align: right;
+    margin-right: 100px;
+}
+
+header nav a{
+    text-decoration: none;
+    text-align: center;
+    float: right;
+    margin-top: 5px;
+    font-size: 30px;
+    margin-left: 35px;
+    font-family: limao;
+    color: rgb(255, 255, 255);
+}
+
+header a:hover{
+    color: rgb(0, 165, 82);
+    background-color: rgb(255, 255, 255);
+    height: 50px;
+
+}
+
+header h1{
+    float: left;
+    margin-top: 10px;
+    margin-left: 100px;
+    font-family: aldo;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+}
+
+.tudo{
+    clear: both;
+    margin: auto;
+    width: 400px;
+    margin-top: 25px;
+    padding-right: 35px;
+    padding-left: 35px;
+    text-shadow: 5px 5px 5px rbga(0,0,0,0.5);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    background-color: rgb(255, 255, 255);
+    background-image: url(img/fundo.jpg);
+    border-radius: 15px;
+}
+
+.btnapagar{
+    background-image: url(img/delete.png);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.btntachado{
+    background-image: url(img/tachar.png);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    border: none;
+}
+
+.btnapagar:hover{
+    background-image: url(img/delete_hover.png);
+}
+
+.btntachado:hover{
+    background-image: url(img/tachar_hover.png);
+}
+
+body{
+    background-color: rgba(214, 255, 234, 0.473);
+}
+
+button{
+    float: right;
+    margin-right: 10px;
+    margin-top: 2px;
+}
+
+.lista{
+    clear: both;
+    font-size: x-large;
+    font-family: lista;
+}
