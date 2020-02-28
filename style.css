@@ -110,3 +110,8 @@ button{
     font-size: x-large;
     font-family: lista;
 }
+
+#funcionamento{
+    color: rgba(0, 0, 0, 0.493);
+    font-size: 15px;
+}

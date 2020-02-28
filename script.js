@@ -1,7 +1,7 @@
 var numb = 1;
 function adicionar(){
-    let txt_pre_definido = document.getElementById('input').value;
-    let t= document.getElementById("lista").innerHTML += `<div class='lista' id='${numb}'>${numb} - ${txt_pre_definido} <button class="btnapagar" onclick='apaga(${numb})'></button> <button type="submit" class="btntachado" id="btntachado" onclick="cor(${numb})"></button><hr></div>`;
+    let txt_pre_definido = document.getElementById('texto-tarefa').value;
+    let t= document.getElementById("lista-tarefas").innerHTML += `<li class='lista' id='${numb}' onclick="cor(${numb})">${txt_pre_definido} <button class="btnapagar" onclick='apaga(${numb})'></button><hr></li>`;
     numb++;
  }
                

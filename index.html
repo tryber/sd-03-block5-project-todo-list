@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
-    <title>Lista de Tarefas</title>
+    <title>Minha Lista de Tarefas</title>
   </head>
   <body>
     <header>
-      <h1>Lista de tarefas</h1>
+      <h1>Minha Lista de Tarefas</h1>
       <nav>
           <a href="#">PROJETOS</a>
           <a href="#">GITHUB</a>
@@ -19,13 +19,15 @@
     <div class="texto">
         <br>
         <h2>Adicionar item:</h2>
-        <input type="text" id="input">
-        <button id="add" onclick="adicionar()">Adicionar</button>
+          <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+        <br>
+        <input type="text" id="texto-tarefa">
+        <button id="criar-tarefa" onclick="adicionar()">Adicionar</button>
         <br>
     </div>
     <br>
-        <div id="lista">
-        </div>
+        <ol id="lista-tarefas">
+        </ol>
     </div>    
     <script src="script.js"></script>
   </body>
