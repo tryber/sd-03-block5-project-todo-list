@@ -9,8 +9,7 @@ header {
 
 #box-main {
   border: 1px solid red;
-  width: 700px;
-  height: 350px;
+  width: 660px;
   margin: 30px auto;
 }
 
@@ -33,7 +32,7 @@ button:hover {
 
 #botoes {
   width: 600px;
-  margin: 150px 0px 0px 30px;
+  margin: 50px 0px 30px 30px;
   display: flex;
   justify-content: space-between;
 }

@@ -39,10 +39,24 @@ const botaoApagarTudo = document.getElementById('apaga-tudo');
 
 function apagarLista() {
   botaoApagarTudo.addEventListener('click', () => {
-    while(listaTarefas.children.length > 0) {
+    while (listaTarefas.children.length > 0) {
       listaTarefas.removeChild(listaTarefas.children[0])
     }
   })
 }
 
 apagarLista();
+
+const botaoApagarFinalizados = document.getElementById('remover-finalizados');
+
+function apagarFinalizados() {
+  botaoApagarFinalizados.addEventListener('click', () => {
+    for (let i = listaTarefas.children.length - 1; i >= 0; i -= 1) {
+      if (listaTarefas.children[i].getAttribute('class') == 'completed') {
+        listaTarefas.removeChild(listaTarefas.children[i])
+      }
+    }
+  })
+}
+
+apagarFinalizados();
