@@ -4,12 +4,16 @@ const listaTarefas = document.getElementById('lista-tarefas');
 
 const textoTarefa = document.getElementById('texto-tarefa');
 
-botaoAdicionar.addEventListener('click', () => {
-  const itemLista = document.createElement('li');
-  itemLista.innerText = textoTarefa.value;
-  listaTarefas.appendChild(itemLista);
-  textoTarefa.value = null;
-});
+function adicionarItemALista() {
+  botaoAdicionar.addEventListener('click', () => {
+    const itemLista = document.createElement('li');
+    itemLista.innerText = textoTarefa.value;
+    listaTarefas.appendChild(itemLista);
+    textoTarefa.value = null;
+  });
+}
+
+adicionarItemALista();
 
 function itemListaBackground() {
   listaTarefas.addEventListener('click', (event) => {
@@ -31,6 +35,14 @@ function itemListaLineThrough() {
 
 itemListaLineThrough();
 
+const botaoApagarTudo = document.getElementById('apaga-tudo');
 
+function apagarLista() {
+  botaoApagarTudo.addEventListener('click', () => {
+    while(listaTarefas.children.length > 0) {
+      listaTarefas.removeChild(listaTarefas.children[0])
+    }
+  })
+}
 
-
+apagarLista();
