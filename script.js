@@ -124,3 +124,76 @@ function moverParaBaixo() {
 }
 
 moverParaBaixo();
+
+const botaoSalvarLista = document.getElementById('salvar-tarefas');
+
+function salvarLista() {
+  let itensLista = [];
+  botaoSalvarLista.addEventListener('click', () => {
+    for (let i = 0; i < listaTarefas.children.length; i += 1) {
+      itensLista.push(listaTarefas.children[i].innerText);
+    }
+    localStorage.setItem('listaTarefasSalva', itensLista);
+    itensLista = [];
+  });
+}
+
+salvarLista();
+
+
+
+const listaTarefasSalva = localStorage.getItem('listaTarefasSalva');
+
+function restagarListaSalva() {
+  if (listaTarefasSalva != null) {
+    let arrayListaTarefasSalva = listaTarefasSalva.split(',')
+    for (let i = 0; i < arrayListaTarefasSalva.length; i += 1) {
+      const itemLista = document.createElement('li');
+      itemLista.innerText = arrayListaTarefasSalva[i];
+      listaTarefas.appendChild(itemLista);
+      textoTarefa.value = null;
+    }
+  }
+}
+
+restagarListaSalva();
+
+function salvarClassDoItem() {
+  let arrayClassSelecionado = [];
+  let arrayClassCompleted = [];
+  botaoSalvarLista.addEventListener('click', () => {
+    for (let i = 0; i < listaTarefas.children.length; i += 1) {
+      if (listaTarefas.children[i].classList.item(0) == 'selecionado' || listaTarefas.children[i].classList.item(1) == 'selecionado'){
+        arrayClassSelecionado.push(i);
+      }
+      if (listaTarefas.children[i].classList.item(0) == 'completed' || listaTarefas.children[i].classList.item(1) == 'completed') {
+        arrayClassCompleted.push(i);
+      }
+    }
+    localStorage.setItem('classSelecionado', arrayClassSelecionado);
+    localStorage.setItem('classCompleted', arrayClassCompleted);
+    arrayClassSelecionado = [];
+    arrayClassCompleted = [];
+  });
+}
+
+salvarClassDoItem();
+
+function restagarClassDoItemSalva() {
+  const classSelecionadoSalva = localStorage.getItem('classSelecionado');
+  const classCompletedSalva = localStorage.getItem('classCompleted');
+  if (classSelecionadoSalva != 0) {
+    let arrayClassSelecionadoSalva = classSelecionadoSalva.split(',');
+    for (let i = 0; i < arrayClassSelecionadoSalva.length; i += 1) {
+      listaTarefas.children[arrayClassSelecionadoSalva[i]].classList.add('selecionado');
+    }
+  }
+  if (classCompletedSalva != 0) {
+    let arrayClassCompletedSalva = classCompletedSalva.split(',');
+    for (let i = 0; i < arrayClassCompletedSalva.length; i += 1) {
+      listaTarefas.children[arrayClassCompletedSalva[i]].classList.add('completed')
+    }
+  }
+}
+
+restagarClassDoItemSalva();
