@@ -16,15 +16,7 @@ function adicionarItemALista() {
 adicionarItemALista();
 
 function itemListaBackground() {
-  /* listaTarefas.addEventListener('click', (event) => {
-    if (event.target.style.backgroundColor == 'rgb(128,128,128)') {
-      event.target.style.backgroundColor = 'rgb(255,255,255)';
-    } else {
-      event.target.style.backgroundColor = 'rgb(128,128,128)';
-    }
-  }); */
   listaTarefas.addEventListener('click', (event) => {
-
     if (event.target.classList.item(0) == 'selecionado' || event.target.classList.item(1) == 'selecionado') {
       event.target.classList.remove('selecionado');
     } else {
@@ -97,9 +89,9 @@ function moverParaCima() {
         if (i == 0) {
           alert('Não é possível mover este item');
         } else {
-          itemListaTarefasCima = listaTarefas.children[i - 1].innerText;
-          listaTarefas.children[i - 1].innerText = listaTarefas.children[i].innerText;
-          listaTarefas.children[i].innerText = itemListaTarefasCima;
+          itemListaTarefasCima = listaTarefas.children[i - 1].innerHTML;
+          listaTarefas.children[i - 1].innerHTML = listaTarefas.children[i].innerHTML;
+          listaTarefas.children[i].innerHTML = itemListaTarefasCima;
           listaTarefas.children[i].classList.remove('selecionado');
           listaTarefas.children[i - 1].classList.add('selecionado');
         }
@@ -115,16 +107,14 @@ const botaoMoverBaixo = document.getElementById('mover-baixo');
 function moverParaBaixo() {
   let itemListaTarefasBaixo = '';
   botaoMoverBaixo.addEventListener('click', () => {
-    for(let i = listaTarefas.children.length - 1; i >=0 ; i -= 1) {
+    for (let i = listaTarefas.children.length - 1; i >= 0; i -= 1) {
       if (listaTarefas.children[i].classList.item(0) == 'selecionado' || listaTarefas.children[i].classList.item(1) == 'selecionado') {
         if (i == listaTarefas.children.length - 1) {
           alert('Não é possível mover este item')
-          console.log(listaTarefas.children.length - 1)
-          console.log(i)
         } else {
-          itemListaTarefasBaixo = listaTarefas.children[i + 1].innerText;
-          listaTarefas.children[i + 1].innerText = listaTarefas.children[i].innerText;
-          listaTarefas.children[i].innerText = itemListaTarefasBaixo;
+          itemListaTarefasBaixo = listaTarefas.children[i + 1].innerHTML;
+          listaTarefas.children[i + 1].innerHTML = listaTarefas.children[i].innerHTML;
+          listaTarefas.children[i].innerHTML = itemListaTarefasBaixo;
           listaTarefas.children[i].classList.remove('selecionado');
           listaTarefas.children[i + 1].classList.add('selecionado');
         }
