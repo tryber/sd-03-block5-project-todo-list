@@ -4,7 +4,7 @@ let texto = document.querySelector('#texto-tarefa');
 let btnApagaTudo = document.querySelector('#apaga-tudo');
 
 btnCriar.addEventListener("click", addLista);
-btnCriar.addEventListener("click", limparTexto);
+//btnCriar.addEventListener("click", limparTexto);
 
 
 function addLista(){
@@ -15,9 +15,11 @@ function addLista(){
     texto.style.borderColor = "initial";
 
     let novoItem = document.createElement('li')
-    novoItem.innerHTML = texto.value
+    novoItem.innerText = texto.value
 
     document.querySelector("#lista-tarefas").appendChild(novoItem)
+
+    texto.value = null;
 
     novoItem.addEventListener("click", function() {
       novoItem.style.backgroundColor = "rgb(128,128,128)"
@@ -38,6 +40,6 @@ function apagaTudo () {
   }
 };
 
-function limparTexto() {
+/*function limparTexto() {
   document.querySelector('#texto-tarefa').value=' '
-};
+};*/
