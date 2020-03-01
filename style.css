@@ -18,8 +18,10 @@ header {
 }
 
 li {
-  margin: 10px 45px;
+  margin: 0px 45px;
   cursor: pointer;
+  padding: 5px 0;
+  background-size: 570px 10px;
 }
 
 button:hover {
@@ -49,4 +51,10 @@ button:hover {
   height: 30px;
   padding: 0px 10px;
   border-radius: 5px;
+}
+
+#lista-tarefas {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 }
