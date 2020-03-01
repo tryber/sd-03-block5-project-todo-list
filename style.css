@@ -30,6 +30,10 @@ button:hover {
   text-decoration: line-through;
 }
 
+.selecionado {
+  background-color: rgb( 128 , 128 , 128 );
+}
+
 #botoes {
   width: 600px;
   margin: 50px 0px 30px 30px;
