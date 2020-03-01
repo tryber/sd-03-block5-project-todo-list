@@ -2,14 +2,24 @@ let lista = document.querySelector("#lista-tarefas");
 let btnCriar = document.querySelector('#criar-tarefa');
 let texto = document.querySelector('#texto-tarefa');
 
-btnCriar.addEventListener("click", addLista)
-btnCriar.addEventListener("click", function() {
-  document.querySelector('#texto-tarefa').value=' '
-})
+btnCriar.addEventListener("click", addLista);
+btnCriar.addEventListener("click", limparTexto);
+
 function addLista(){
-let novoItem = document.createElement('li')
-novoItem.innerHTML = texto.value
+  let texto = document.querySelector('#texto-tarefa');
+  if (texto.value == 0){
+    texto.style.borderColor = "#fb7f7f"
+  } else {
+    texto.style.borderColor = "initial";
 
-document.querySelector("#lista-tarefas").appendChild(novoItem)
+    let novoItem = document.createElement('li')
+    novoItem.innerHTML = texto.value
 
-}
+    document.querySelector("#lista-tarefas").appendChild(novoItem)
+
+  }
+};
+
+function limparTexto() {
+  document.querySelector('#texto-tarefa').value=' '
+};
