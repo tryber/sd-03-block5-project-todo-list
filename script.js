@@ -21,6 +21,18 @@ function addLista(){
           }
       apagarTudo();
 
+      function selecionarItem(){
+        novoItem.addEventListener("click", function() {
+          if (novoItem.className == 0){
+          novoItem.className = "selected"  
+        
+        } else { 
+          novoItem.className = null
+      }
+    })
+  }
+  selecionarItem();
+
     function riscar(){
           novoItem.addEventListener("dblclick", function() {
             if (novoItem.className == 0){
