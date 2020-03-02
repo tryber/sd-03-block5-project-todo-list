@@ -12,15 +12,21 @@ function addTODO() {
   item.addEventListener('click',function (e) {
     e.target.style.backgroundColor = 'rgb(128,128,128)';
     selected = e.target;
-  })
-  item.addEventListener("dblclick", completedMark)
+  });
+  item.addEventListener("dblclick", completedMark);
 
 
   lista.appendChild(item);
 }
 
 function completedMark(e) {
-  e.target.classList.add("completed")
+  if(e.target.classList.contains('completed')){
+    e.target.classList.remove('completed')
+  }
+  else{
+    e.target.classList.add("completed")
+  }
+
 }
 
 function clearAll() {
@@ -37,12 +43,12 @@ while(completedTasks[0]){
 }
 
 function moveUP(){
-  if (selected && selected != lista.firstChild){
+  if (selected && selected !== lista.firstChild){
     lista.insertBefore(selected,selected.previousElementSibling)
   }
 }
 function moveDown() {
-  if(selected && selected != lista.lastChild){
+  if(selected && selected !== lista.lastChild){
     lista.insertBefore(selected,selected.nextElementSibling.nextElementSibling)
   }
 }
