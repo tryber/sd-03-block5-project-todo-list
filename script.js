@@ -67,11 +67,11 @@ apagatudo.addEventListener('click', function(){
       }
 });
 
-const apagaselecionado = document.getElementById('remover-selecionado');
+const apagafinalizados = document.getElementById('remover-finalizados');
 
-apagaselecionado.addEventListener('click', function(){
-    let selecionados = document.querySelectorAll('.selected');
-    [].forEach.call(selecionados, selecionado => {
-        list.removeChild(selecionado);
+apagafinalizados.addEventListener('click', function(){
+    let finalizados = document.querySelectorAll('.completed');
+    [].forEach.call(finalizados, finalizado => {
+        list.removeChild(finalizado);
     })
 });
