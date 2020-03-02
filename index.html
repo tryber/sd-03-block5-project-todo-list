@@ -18,8 +18,12 @@
 
 <ol id="lista-tarefas"></ol>
 
-<button onclick="clearAll()">Apagar Tudo</button>
-<button onclick="clearCompleted()">Apagar Terminados</button>
+<button onclick="clearAll()" id="apaga-tudo">Apagar Tudo</button>
+<button onclick="clearCompleted()" id='remover-finalizados'>Apagar Terminados</button>
+
+<button id="up" onclick="moveUP()">Up</button>
+<button id="down" onclick="moveDown()">Down</button>
+<button id="remover-selecionado" onclick="removeSelected()">X</button>
 
 
 
