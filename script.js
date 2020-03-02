@@ -4,12 +4,14 @@
 const inputText = document.querySelector('#texto-tarefa');
 const listaOrd = document.querySelector('#lista-tarefas');
 const botaoCriarTarefa = document.querySelector('#criar-tarefa');
+const botaoApagarTudo = document.querySelector('#apaga-tudo');
 let itemDeLista = null;
 
 
 //eventListeners
 
-botaoCriarTarefa.addEventListener('click', adicionarTarefa)
+botaoCriarTarefa.addEventListener('click', adicionarTarefa);
+botaoApagarTudo.addEventListener('click', apagarLista);
 
 
 
@@ -23,6 +25,12 @@ function adicionarTarefa() {
     adicionaClasseAoLi(itemDeLista);
     limpaCaixaTexto();
     criarEventListenerLi(itemDeLista);
+}
+
+function apagarLista() {
+    while (listaOrd.hasChildNodes()) {
+        listaOrd.removeChild(listaOrd.firstChild);
+    }
 }
 
 
