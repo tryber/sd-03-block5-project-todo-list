@@ -9,17 +9,17 @@ function addTodo() {
   createLi.innerText = grabInput.value;
   grabList.appendChild(createLi);
   grabInput.value = '';
-  createLi.addEventListener('dblclick', function(e) {
-    if (createLi.classList.contains('line-through')) {
-      createLi.classList.remove('line-through');
+  createLi.addEventListener('dblclick', function(event) {
+    if (event.target.classList.contains('line-through')) {
+      event.target.classList.remove('line-through');
     } else {
-      createLi.classList.add('line-through');
+      event.target.classList.add('line-through');
     }
   });
-  createLi.addEventListener('click', function(e) {
-    if (createLi.classList.contains('selected')) {
+  createLi.addEventListener('click', function(event) {
+    if (event.target.classList.contains('selected')) {
     } else {
-      createLi.classList.add('selected');
+      event.target.classList.add('selected');
     }
   });
 }
