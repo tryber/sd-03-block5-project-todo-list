@@ -1,6 +1,7 @@
 // Grab objects
 const addButton = document.getElementById('criar-tarefa');
 const deleteButton = document.getElementById('apaga-tudo');
+const removeCompleted = document.getElementById('remover-finalizados');
 const grabInput = document.getElementById('texto-tarefa');
 const grabList = document.getElementById('lista-tarefas');
 
@@ -31,6 +32,15 @@ function deleteAll() {
   }
 }
 
+function removeComp() {
+  for (let i = document.querySelectorAll('li').length - 1; i >= 0; i--) {
+    if (document.querySelectorAll('li')[i].classList.contains('completed')) {
+      document.querySelectorAll('li')[i].remove();
+    }
+  }
+}
+
 // Event listener
 addButton.addEventListener('click', addTodo);
 deleteButton.addEventListener('click', deleteAll);
+removeCompleted.addEventListener('click', removeComp);
