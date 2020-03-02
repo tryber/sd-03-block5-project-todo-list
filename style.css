@@ -1,0 +1,21 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-stretch: extra-condensed;
+}
+
+ol {
+    background-color: lightblue;
+}
+
+.botoesMenu {
+    background-color: honeydew;
+    border: 2px solid green;
+    color: mediumblue;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.botoesMenu:hover {
+    background-color: limegreen;
+    color: linen;
+}
