@@ -43,7 +43,7 @@ function newElement() {
   } else {
     document.getElementById("lista-tarefas").appendChild(li);
   }
-  document.getElementById("myInput").value = "";
+  document.getElementById("texto-tarefa").value = "";
 
   let btnclose = document.createElement("button");
   let txt = document.createTextNode("\u00D7");
