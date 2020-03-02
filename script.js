@@ -12,7 +12,9 @@ function addTodo() {
   // If clicked, color grey
   for (let i = 0; i < grabList.children.length; i++) {
     grabList.children[i].addEventListener('click', function(e) {
-      grabList.children[i].className += ' selected';
+      if (grabList.children[i].className != 'selected') {
+        grabList.children[i].className += 'selected';
+      }
     });
   }
 }
