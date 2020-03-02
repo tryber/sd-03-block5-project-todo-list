@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo List by Rodrigo Militão</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <header id="myDIV" class="header">
     <header>Minha Lista de Tarefas</header>
-
     <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
-
-    <input type="text" id="texto-tarefa">
-    <button id="criar-tarefa">Adicionar</button>
+    <input type="text" id="texto-tarefa" required>
+    <button id="criar-tarefa" onclick="newElement()" class="addBtn">Adicionar</button>
+    </header>
 
     <ol id="lista-tarefas">
-        <li>minha primeira tarefa</li>
+        <li>Hit the gym</li>
+        <li class="completed">Pay bills</li>
+        <li>Meet George</li>
+        <li>Buy eggs</li>
+        <li>Read a book</li>
+        <li>Organize office</li>
     </ol>
 
-    
-    
-    
+
     <script src="script.js"></script>
+
 </body>
 </html>
