@@ -35,6 +35,8 @@ Em particular, atente-se para os nomes de classes e ids que alguns elementos de 
 **Não troque ids por classes ou vice-versa**.
 O não cumprimento de um requisito, total ou parcialmente, impactará em sua avaliação.
 
+Os requisitos do seu projeto são avaliados automaticamente, sendo utilizada a resolução `1366 x 768` (1366 pixels de largura por 768 pixels de altura). Logo, recomenda-se desenvolver seu projeto usando a mesma resolução, via instalação [deste plugin](https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh?hl=en) do `Chrome` para facilitar a configuração dessa resolução.
+
 Você tem liberdade para adicionar novos comportamentos ao seu projeto, seja na forma de aperfeiçoamentos em requisitos propostos ou novas funcionalidades, **desde que tais comportamentos adicionais não conflitem com os requisitos propostos**.
 Em outras palavras, você pode fazer mais do que foi pedido, mas nunca menos.
 Contudo, tenha em mente que **nada além do que foi pedido nos requisitos será avaliado**.
