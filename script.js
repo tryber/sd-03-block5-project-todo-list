@@ -20,6 +20,9 @@ function itemListaBackground() {
     if (event.target.classList.item(0) == 'selecionado' || event.target.classList.item(1) == 'selecionado') {
       event.target.classList.remove('selecionado');
     } else {
+      for (let i = 0; i < listaTarefas.children.length; i += 1) {
+        listaTarefas.children[i].classList.remove('selecionado')
+      }
       event.target.classList.add('selecionado');
     }
   });
@@ -200,5 +203,3 @@ function restagarClassDoItemSalva() {
 }
 
 restagarClassDoItemSalva();
-
-
