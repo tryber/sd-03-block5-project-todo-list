@@ -6,3 +6,10 @@ function armazenaLimpa () {
   lista.appendChild(elementos);
   tarefa.value = '';
 }
+
+function mudaIcone () {
+    const muda = document.getElementsByClassName('button');
+    for (let i=0; i<muda.length; i+=1) {
+      muda[i].style.cursor = 'pointer';
+    }
+}

@@ -17,14 +17,14 @@
           <form>
             <label for="texto-tarefa"></label>
             <input type="text" id="texto-tarefa" class="tarefa" name="texto-tarefa">
-            <button type="button" id="criar-tarefa" class="button" onclick="armazenaLimpa()">Adicionar</button>
+            <button type="button" id="criar-tarefa" class="button" onclick="armazenaLimpa()" onmouseover="mudaIcone()">Adicionar</button>
           </form>
           <div class="lista-tarefas">
             <ol id="lista-tarefas">
             </ol>
           </div>
-          <button type="button" id="apaga-tudo" class="button">Limpa tudo</button>
-          <button type="button" id="remover-finalizados" class="button">Remove Finalizados</button>
+          <button type="button" id="apaga-tudo" class="button" onmouseover="mudaIcone()">Limpa tudo</button>
+          <button type="button" id="remover-finalizados" class="button" onmouseover="mudaIcone()">Remove Finalizados</button>
       </section>
     </article>
     <footer>
