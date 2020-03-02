@@ -8,22 +8,20 @@ function criaTarefa() {
   listaTarefas.appendChild(item);
   tarefaInput.value = null;
 
-  item.addEventListener('dblclick', function(event) {
-    if (event.target.classList.contains('completed')) {
-      event.target.classList.remove('completed');
+  item.addEventListener("dblclick", function(event) {
+    if (event.target.classList.contains("completed")) {
+      event.target.classList.remove("completed");
     } else {
-      event.target.classList.add('completed');
+      event.target.classList.add("completed");
     }
   });
-  item.addEventListener('click', function(event) {
-    if (event.target.classList.contains('selected')) {
-    event.target.classList.remove('selected');
+  item.addEventListener("click", function(event) {
+    if (event.target.classList.contains("selected")) {
+      event.target.classList.remove("selected");
     } else {
-      event.target.classList.add('selected');
+      event.target.classList.add("selected");
     }
   });
 }
 
 botaoTarefa.addEventListener("click", criaTarefa);
-
-
