@@ -1,15 +1,15 @@
-button:hover {
-    cursor: grab;
+button {
+  cursor: pointer;
 }
 
 li:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .selected {
-    background-color: rgb(128, 128, 128);
+  background-color: rgb(128, 128, 128);
 }
 
 .completed {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
