@@ -1,6 +1,28 @@
+function testa() {
+    console.log('funciona');
+}
+
 function itemSelecionado() {
   const itemClicado = event.srcElement;
-  itemClicado.className = 'item-selecionado';
+  if (itemClicado.className === 'item-selecionado item-taxado') {
+    // do nothing
+  }
+  else {
+    itemClicado.className = 'item-selecionado';
+  }
+}
+
+function taxaItem() {
+  const itemClicado = event.srcElement;
+  if (itemClicado.className === 'item-selecionado item-taxado') {
+    itemClicado.className = 'item-selecionado';
+  }
+  else if (itemClicado.className === 'item-selecionado') {
+    itemClicado.className += ' item-taxado';
+  }
+  else if (itemClicado.className === '') {
+    itemClicado.className = 'item-taxado';
+  }
 }
 
 function armazenaLimpa() {
@@ -11,6 +33,7 @@ function armazenaLimpa() {
     // do nothing 
   }else {
     elementos.addEventListener('click',itemSelecionado);
+    elementos.addEventListener('dblclick',taxaItem);
     elementos.innerHTML = tarefa.value;
     lista.appendChild(elementos);
     tarefa.value = '';

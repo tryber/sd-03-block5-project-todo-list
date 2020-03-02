@@ -9,3 +9,7 @@ body {
 .item-selecionado {
   background-color: rgb(128,128,128);
 }
+
+.item-taxado {
+  text-decoration: line-through;
+}
