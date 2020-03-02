@@ -16,12 +16,13 @@
       <section>
           <form>
             <label for="texto-tarefa"></label>
-            <input type="text" id="texto-tarefa" name="texto-tarefa">
-            <button type="button" id="criar-tarefa">Adicionar</button>
+            <input type="text" id="texto-tarefa" class="tarefa" name="texto-tarefa">
+            <button type="button" id="criar-tarefa" onclick="armazenaLimpa()">Adicionar</button>
           </form>
-          <ol id="lista-tarefas">
-            <li></li>
-          </ol>
+          <div class="lista-tarefas">
+            <ol id="lista-tarefas">
+            </ol>
+          </div>
           <button type="button" id="apaga-tudo">Limpa tudo</button>
           <button type="button" id="remover-finalizados">Remove Finalizados</button>
       </section>
