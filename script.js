@@ -27,7 +27,8 @@ function adicionarTarefa() {
 
 
 function criarEventListenerLi(li) {
-    li.addEventListener('click', alterarClasse);
+    li.addEventListener('click', alterarClasseCheck);
+    li.addEventListener('dblclick', alterarClasseComplete);
     console.log('Event Listener criado');
 }
 
@@ -40,12 +41,20 @@ function adicionaClasseAoLi(li){
     li.classList.add('unchecked');
 }
 
-function alterarClasse(event) {
-    if(event.target.classList == 'unchecked') {
+function alterarClasseCheck(event) {
+    if(event.target.classList.contains('unchecked')) {
         event.target.classList.remove('unchecked');
         event.target.classList.add('checked');
     } else {
         event.target.classList.remove('checked');
         event.target.classList.add('unchecked');
+    }
+}
+
+function alterarClasseComplete(event) {
+    if(event.target.classList.contains('completed')) {
+        event.target.classList.remove('completed');
+    } else {
+        event.target.classList.add('completed');
     }
 }
