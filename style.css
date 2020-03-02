@@ -124,3 +124,7 @@ button{
     color: rgba(0, 0, 0, 0.493);
     font-size: 15px;
 }
+
+button:hover{
+    cursor: pointer;
+}
