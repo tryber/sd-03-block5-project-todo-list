@@ -2,6 +2,7 @@ let lista = document.querySelector("#lista-tarefas");
 let btnCriar = document.querySelector('#criar-tarefa');
 let texto = document.querySelector('#texto-tarefa');
 let btnApagaTudo = document.querySelector('#apaga-tudo');
+let btnRemoverFinalizados = document.querySelector('#remover-finalizados');
 
 btnCriar.addEventListener("click", addLista);
 
@@ -14,6 +15,21 @@ function addLista(){
 
     texto.value = null;
 
+    function riscar(){
+          novoItem.addEventListener("dblclick", function() {
+            novoItem.classList.toggle ("completed")  
+      })
+    }
+    riscar();
+
+    function apagarFinalizados() {
+      btnRemoverFinalizados.addEventListener("click", function() {
+        let completed = document.querySelector(".completed");
+        lista.removeChild(completed)
+      })
+    }
+    apagarFinalizados();
+
     function apagarTudo(){
       btnApagaTudo.addEventListener("click", function() {
               lista.removeChild(novoItem)
@@ -21,30 +37,5 @@ function addLista(){
           }
       apagarTudo();
 
-      function selecionarItem(){
-        novoItem.addEventListener("click", function() {
-          if (novoItem.className == 0){
-          novoItem.className = "selected"  
-        
-        } else { 
-          novoItem.className = null
-      }
-    })
-  }
-  selecionarItem();
-
-    function riscar(){
-          novoItem.addEventListener("dblclick", function() {
-            if (novoItem.className == 0){
-            novoItem.className = "completed"  
-          
-          } else { 
-            novoItem.className = null
-        }
-      })
-    }
-    riscar();
 };
-
-
 
