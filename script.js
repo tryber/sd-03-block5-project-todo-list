@@ -47,4 +47,13 @@ window.onload = function(){
 
     let clearCompleted = document.getElementById("remover-finalizados")
     clearCompleted.addEventListener('click', removeCompleted)
+
+    function removeSelected (){
+        let selected = document.getElementsByClassName("selected")
+
+        selected[0].parentNode.removeChild(selected[0])
+    }
+
+    let clearSelected = document.getElementById("remover-selecionado")
+    clearSelected.addEventListener('click', removeSelected)
 }
