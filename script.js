@@ -58,3 +58,20 @@ function newElement() {
     }
   }
 }
+
+const apagatudo = document.getElementById('apaga-tudo');
+
+apagatudo.addEventListener('click', function(){
+    while (list.firstChild) {
+        list.removeChild(list.lastChild);
+      }
+});
+
+const apagaselecionado = document.getElementById('remover-selecionado');
+
+apagaselecionado.addEventListener('click', function(){
+    let selecionados = document.querySelectorAll('.selected');
+    [].forEach.call(selecionados, selecionado => {
+        list.removeChild(selecionado);
+    })
+});
