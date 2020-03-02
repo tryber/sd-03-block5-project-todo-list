@@ -1,5 +1,10 @@
 let lista = document.getElementById('lista-tarefas');
 let selected;
+let save = localStorage.getItem("tarefas");
+if(save){
+  lista.innerHTML = save;
+}
+
 
 function addTODO() {
   let tarefa = document.getElementById('texto-tarefa').value;
@@ -56,6 +61,11 @@ function moveDown() {
 function removeSelected() {
   lista.removeChild(selected);
   selected = undefined;
+}
+
+function saveTODO(){
+  localStorage.clear()
+  localStorage.setItem("tarefas",lista.innerHTML)
 }
 
 
