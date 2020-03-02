@@ -26,9 +26,9 @@ function criaTarefa() {
 }
 
 function apagaTudo() {
-    for (let i = 0; i > document.getElementsByTagName('li').length; i += 1) {
-        document.getElementsByTagName('li').remove();
-    }
+  for (let i = 0; i > document.getElementsByTagName('li').length; i += 1) {
+    document.getElementsByTagName('li').remove();
+  }
 }
 
 botaoTarefa.addEventListener('click', criaTarefa);

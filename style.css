@@ -1,13 +1,13 @@
-button {
+button:hover{
   cursor: pointer;
 }
 
-li:hover {
+li {
   cursor: pointer;
 }
 
 .selected {
-  background-color: rgb(128, 128, 128);
+  background-color: rgb(128 , 128 , 128);
 }
 
 .completed {
