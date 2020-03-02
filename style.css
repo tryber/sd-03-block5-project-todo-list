@@ -1,3 +1,11 @@
 .botao {
     cursor: pointer;
 }
+
+.unchecked {
+    background-color: white;
+}
+
+.checked {
+    background-color: rgb(128, 128, 128);
+}
