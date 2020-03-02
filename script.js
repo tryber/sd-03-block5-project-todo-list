@@ -14,7 +14,7 @@ function addLista(){
     lista.appendChild(novoItem)
 
     texto.value = null;
-    //alterado
+    
     function riscar(){
           novoItem.addEventListener("dblclick", function() {
             novoItem.classList.toggle ("completed")  

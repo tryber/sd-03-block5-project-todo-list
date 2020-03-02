@@ -10,6 +10,6 @@ li{
 .completed{
   text-decoration: line-through;
 }
-li .selected{
+.selected{
   background-color: rgb(128,128,128);
 }
