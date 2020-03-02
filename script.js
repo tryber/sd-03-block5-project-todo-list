@@ -1,5 +1,6 @@
 // Grab objects
-const grabButton = document.getElementById('criar-tarefa');
+const addButton = document.getElementById('criar-tarefa');
+const deleteButton = document.getElementById('apaga-tudo');
 const grabInput = document.getElementById('texto-tarefa');
 const grabList = document.getElementById('lista-tarefas');
 
@@ -24,5 +25,12 @@ function addTodo() {
   });
 }
 
+function deleteAll() {
+  for (let i = document.querySelectorAll('li').length; i >= 1; i--) {
+    document.querySelector('li').remove();
+  }
+}
+
 // Event listener
-grabButton.addEventListener('click', addTodo);
+addButton.addEventListener('click', addTodo);
+deleteButton.addEventListener('click', deleteAll);

@@ -12,6 +12,10 @@ button:hover {
   cursor: pointer;
 }
 
+li:hover {
+  cursor: pointer;
+}
+
 .selected {
   background-color: rgb(128, 128, 128);
 }
