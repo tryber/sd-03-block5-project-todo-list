@@ -1,6 +1,6 @@
 function itemSelecionado() {
   const itemClicado = event.srcElement;
-  itemClicado.style.backgroundColor='rgb(128,128,128)';
+  itemClicado.className = 'item-selecionado';
 }
 
 function armazenaLimpa() {

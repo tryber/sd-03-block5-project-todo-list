@@ -5,3 +5,7 @@ body {
 .lista-tarefas {
   width: 300px;
 }
+
+.item-selecionado {
+  background-color: rgb(128,128,128);
+}
