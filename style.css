@@ -1,3 +1,3 @@
-button {
-    cursor: grab;
+button:hover {
+    cursor: pointer;
 }
