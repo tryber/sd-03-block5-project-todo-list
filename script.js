@@ -6,7 +6,8 @@ function criaTarefa() {
   let item = document.createElement('li');
   item.innerText = tarefaInput.value;
   listaTarefas.appendChild(item);
-  tarefaInput.value = "";
+  tarefaInput.value = null;
+}
 
 botaoTarefa.addEventListener('click', criaTarefa);
 
