@@ -2,7 +2,7 @@ var numb = 1;
 function adicionar(){
     let txt_pre_definido = document.getElementById('texto-tarefa').value;
     let t= document.getElementById("lista-tarefas").innerHTML += `<li class='lista' id='${numb}' ondblclick="cor(${numb})" onclick="corFundo(${numb})">${txt_pre_definido} <button class="btnapagar" onclick='apaga(${numb})'></button><hr></li>`;
-    document.getElementById('texto-tarefa').value = null;
+    document.getElementById('texto-tarefa').value = undefined;
     numb++;
  }
                
