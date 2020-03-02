@@ -1,4 +1,7 @@
-button:hover{
+button:hover {
+  cursor: pointer;
+}
+button {
   cursor: pointer;
 }
 .completed{
