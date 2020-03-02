@@ -1,17 +1,17 @@
 // Create a "close" button and append it to each list item
 let myNodelist = document.getElementsByTagName("LI");
-let i;
-for (i = 0; i < myNodelist.length; i++) {
-  let span = document.createElement("SPAN");
+
+for (let i = 0; i < myNodelist.length; i++) {
+  let btnclose = document.createElement("button");
   let txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
+  btnclose.className = "close";
+  btnclose.appendChild(txt);
+  myNodelist[i].appendChild(btnclose);
 }
 
 // Click on a close button to hide the current list item
 let close = document.getElementsByClassName("close");
-let i;
+
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
     let div = this.parentElement;
@@ -45,11 +45,11 @@ function newElement() {
   }
   document.getElementById("myInput").value = "";
 
-  let span = document.createElement("SPAN");
+  let btnclose = document.createElement("button");
   let txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
+  btnclose.className = "close";
+  btnclose.appendChild(txt);
+  li.appendChild(btnclose);
 
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function() {
