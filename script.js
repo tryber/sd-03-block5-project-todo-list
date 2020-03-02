@@ -3,7 +3,7 @@ const grabButton = document.getElementById("criar-tarefa");
 const grabInput = document.getElementById("texto-tarefa");
 const grabList = document.getElementById("lista-tarefas");
 
-// Event listeners
+// Event listener
 grabButton.addEventListener("click", addTodo);
 
 // Functions
