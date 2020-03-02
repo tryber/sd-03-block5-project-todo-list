@@ -22,6 +22,13 @@ function addLista(){
     }
     riscar();
 
+    function selecionado(){
+      novoItem.addEventListener("click", function() {
+        novoItem.classList.toggle ("selected")  
+      })
+    }
+    selecionado();
+
     function apagarFinalizados() {
       btnRemoverFinalizados.addEventListener("click", function() {
         let completed = document.querySelector(".completed");
