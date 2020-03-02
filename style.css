@@ -15,3 +15,7 @@ button:hover {
 .selected {
   background-color: rgb(128, 128, 128);
 }
+
+.line-through {
+  text-decoration: line-through;
+}
