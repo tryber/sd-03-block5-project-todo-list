@@ -16,6 +16,6 @@ button:hover {
   background-color: rgb(128, 128, 128);
 }
 
-.line-through {
+.completed {
   text-decoration: line-through;
 }

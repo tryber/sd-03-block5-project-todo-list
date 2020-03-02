@@ -10,10 +10,10 @@ function addTodo() {
   grabList.appendChild(createLi);
   grabInput.value = '';
   createLi.addEventListener('dblclick', function(event) {
-    if (event.target.classList.contains('line-through')) {
-      event.target.classList.remove('line-through');
+    if (event.target.classList.contains('completed')) {
+      event.target.classList.remove('completed');
     } else {
-      event.target.classList.add('line-through');
+      event.target.classList.add('completed');
     }
   });
   createLi.addEventListener('click', function(event) {
