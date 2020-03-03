@@ -27,7 +27,10 @@ document.getElementById("salvar-tarefas").addEventListener("click", () => {
   window.localStorage.setItem("Todo-array", todoList)
 })
 
-window.localStorage.getItem("Todo-array").split(',').forEach( e => {
-  createLine(e)
-})
+if(Todo-array != null){
+  window.localStorage.getItem("Todo-array").split(',').forEach( e => {
+    createLine(e)
+  })
+}
+
 
