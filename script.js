@@ -86,7 +86,7 @@ function moverCima() {
   if (itemS && itemS !== primeiro) {
     listaTarefas.insertBefore(itemS, itemS.previousElementSibling);
   } else {
-    alert('Não é possível mover esse item para cima!')
+    alert('Não é possível mover esse item para cima!');
   }
 }
 
@@ -95,7 +95,7 @@ function moverBaixo() {
   if (itemS && itemS !== ultimo) {
     listaTarefas.insertBefore(itemS, itemS.nextElementSibling.nextElementSibling);
   } else {
-    alert('Não é possível mover esse item para baixo!')
+    alert('Não é possível mover esse item para baixo!');
   }
 }
 
