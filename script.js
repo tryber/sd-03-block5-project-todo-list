@@ -26,10 +26,13 @@ function criaTarefa() {
 }
 
 function apagaTudo() {
-  for (let i = 0; i > document.getElementsByTagName('li').length; i += 1) {
-    document.getElementsByTagName('li').remove();
+  let elementos = document.getElementsByTagName('li').length - 1;
+  for (let i = elementos ; i >= 0 ; i += 1) {
+    document.getElementsByTagName('li')[i].remove();
   }
 }
+
+
 
 botaoTarefa.addEventListener('click', criaTarefa);
 botaoApagaTudo.addEventListener('click', apagaTudo);
