@@ -21,19 +21,19 @@ function addTask() {
 
 
 
-let listOfTasks = document.getElementsByClassName("tarefa")
+let listOfTasks = document.getElementById("tarefa")
 
-for (let i = 0; i < 25; i++) {
-    listOfTasks[i].addEventListener("click", changeColor)
+
+    listOfTasks.addEventListener("click", changeColor)
 
     function changeColor() {
-        listOfTasks[i].style.backgroundColor = 'rgb(' + 128 + ',' + 128 + ',' + 128 + ')'
+        document.getElementById("tarefa").style.backgroundColor = "red"
     }
-}
 
-  
+
+
+
         
-
     
 
 

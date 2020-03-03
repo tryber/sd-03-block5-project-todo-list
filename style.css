@@ -1,3 +1,13 @@
 button{
     cursor: pointer;
 }
+
+li {
+    cursor: pointer;
+    margin-top: 50px;
+
+}
+
+.tarefa {
+    background-color: lawngreen;
+}
