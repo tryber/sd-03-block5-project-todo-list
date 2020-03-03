@@ -8,5 +8,9 @@ botaoAddTarefa.addEventListener("click", function(){
     caixaDeTexto.value = '';
 })
 
+botaoAddTarefa.addEventListener("mouseover", function(){
+    botaoAddTarefa.style.cursor = "pointer";
+    
+})
 console.log(botaoAddTarefa);
 console.log(caixaDeTexto);
