@@ -7,6 +7,7 @@ window.onload = function() {
     let item1 = document.createElement("li");
     lista.appendChild(item1);
     item1.innerHTML = input1.value;
+    input1.value = "";
   }
   button.addEventListener("click", listed)
 
