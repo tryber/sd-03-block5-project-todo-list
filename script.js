@@ -1,15 +1,31 @@
-function addTarefa(){
-    let newTarefa = document.getElementById("texto-tarefa").value;
-    var bloco = document.getElementById("lista-tarefas");
-    var nota = document.createElement('li');
-    var texto = document.createTextNode(newTarefa);
-    nota.appendChild(texto);
-    bloco.appendChild(nota);
-    document.getElementById("texto-tarefa").value = "";
+function addTarefa() {
+  let newTarefa = document.getElementById('texto-tarefa').value;
+  const bloco = document.getElementById("lista-tarefas");
+  const nota = document.createElement('li');
+  const texto = document.createTextNode(newTarefa);
+  nota.appendChild(texto);
+  bloco.appendChild(nota);
+  nota.addEventListener('click', clique);
+  nota.addEventListener('dblclick', doisCliques);
 }
 
-const botao = document.querySelectorAll('.element');
-for (let i = 0; i < botao.length; i+=1){
-  botao[i].addEventListener('mouseover',() => {
-    botao[i].style.cursor = 'pointer';})
-};
+function clique(event) {
+    event.target.classList.add('cinza');
+}
+
+function doisCliques(event) {
+    event.target.classList.toggle('completed');
+}
+
+function limpar() {
+  let lista = document.querySelector('ol');
+    lista.innerHTML = '';
+  }
+
+function limpaSelecao() {
+  let lista = document.querySelector('ol');
+  let item = document.querySelectorAll('.completed');
+    for (let i = 0; i < item.length; i+= 1){
+        lista.removeChild(item[i])
+        }
+    }
