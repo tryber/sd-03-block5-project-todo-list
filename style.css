@@ -1,5 +1,5 @@
 body {
-  background: rgb(78 , 205 , 196);
+  background: #313638;
   display: flex;
   font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif;
   margin: 0 auto;
@@ -10,25 +10,35 @@ h1 {
   margin: 0;
 }
 
+form {
+  display: flex;
+}
+
+input {
+  border-radius: 10px;
+  border: none;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  padding: 13px;
+  margin: 0.4em;
+  text-align: center;
+  text-decoration: none;
+  flex-grow: 1;
+}
+
 .content {
-  background-color: rgb(247 , 255 , 247);
+  background-color: #E0DFD5;
   border-radius: 15px;
   margin-top: 5%;
   padding: 2em;
 }
 
 .add-tarefa {
-  background-color: rgb(255 , 107 , 107);
-  border: none;
-  border-radius: 10px;
+  background-color: #E4B363;
   color: white;
-  font-family: Roboto, Arial, Helvetica, sans-serif;
-  padding: 13px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
 }
 
-.bottom-form input {
-  background-color: rgb(255 , 107 , 107);
+.bottom-button {
+  background-color: #EF6461;
+  color: white;
 }
