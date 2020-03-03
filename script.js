@@ -23,7 +23,10 @@ document.getElementById("remover-finalizados").addEventListener("click", () => {
 
 document.getElementById("salvar-tarefas").addEventListener("click", () => {
   let todoList = []
-  document.querySelectorAll("li").forEach(e => { todoList.push(e.innerHTML) })
+  document.querySelectorAll("li").forEach(e => {
+  console.log(element)
+  todoList.push(e.innerHTML) })
+
   window.localStorage.setItem("Todo-array", todoList)
 })
 
