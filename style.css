@@ -2,3 +2,6 @@ button {
     cursor: url("pointer/pointer.png"),pointer;
     
 }
+.cursor {
+    cursor: pointer;
+}
