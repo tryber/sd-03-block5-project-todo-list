@@ -91,7 +91,7 @@ function moverCima() {
 function moverBaixo() {
   const ultimo = listaTarefas.lastChild;
   if (itemSelecionado && itemSelecionado !== ultimo) {
-    listaTarefas.insertBefore(itemSelecionado.nextElementSibling, itemSelecionado);
+    listaTarefas.insertBefore(itemSelecionado, itemSelecionado.nextElementSibling.nextElementSibling);
   }
 }
 
