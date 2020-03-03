@@ -1,5 +1,5 @@
 body {
-  background: #313638;
+  background: rgba( 49 , 54 , 56 , 1 );
   display: flex;
   font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif;
   margin: 0 auto;
@@ -12,6 +12,11 @@ h1 {
 
 form {
   display: flex;
+}
+
+i {
+  padding: 0.6em;
+  margin: auto;
 }
 
 input {
@@ -27,18 +32,18 @@ input {
 }
 
 .content {
-  background-color: #E0DFD5;
+  background-color: rgba( 224 , 223 , 213 , 1 );
   border-radius: 15px;
   margin-top: 5%;
   padding: 2em;
 }
 
 .add-tarefa {
-  background-color: #E4B363;
+  background-color: rgba( 228 , 179 , 99 , 1 );
   color: white;
 }
 
 .bottom-button {
-  background-color: #EF6461;
+  background-color: rgba( 239 , 100 , 97 , 1 );
   color: white;
 }
