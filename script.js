@@ -17,3 +17,8 @@ botaoApagarTudo.addEventListener("click", function apagarTudo() {
   listaOrdenada.innerHTML = "";
 });
 
+const cursor = document.querySelector('.class');
+
+document.addEventListener('mousemove', e =>{
+  cursor.setAttribute("style", "top:" +e.pageY+"px; left:"+e.pageX+"px;")
+})
