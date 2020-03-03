@@ -5,45 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
-    <title>Arte com Pixels - Rodrigo Brezolin</title>
+    <title>Lista de Tarefas - Rodrigo Brezolin</title>
 </head>
 <body>
-    <h1 id="title">Paleta de Cores</h1>
+    <header>
+        <h1 id="title">Minha Lista de Tarefas</h1>
+    </header>
     <section id="container">
-        <article id="color-palette">
-            <div id="black" class="color selected"></div>
-            <div id="red" class="color"></div>
-            <div id="blue" class="color"></div>
-            <div id="green" class="color"></div>
-        </article>
-        <br>
-        <article id="pixel-board">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div><br>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div><br>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div><br>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div><br>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div><br><br>
-            <button id="clear-board">APAGAR TUDO</button>
+        <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+        <input type="text" id="texto-tarefa">
+        <button id="enviar">Enviar</button>
+        <article id="listaPai">
+
+          <ol id="lista"></ol>
+
         </article>
     </section>
 </body>

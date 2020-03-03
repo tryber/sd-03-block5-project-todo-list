@@ -1,0 +1,36 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+#container, #funcionamento, #title{
+  text-align:center;
+}
+
+#texto-tarefa{
+  margin-bottom:30px;
+  width:500px;
+  height:20px;
+  border-radius:5px;
+}
+
+body{
+    background-color: rgb(43, 99, 255);
+    color: white;
+}
+
+#listaPai{
+    background-color: white;
+    padding: 5px 0 10px 0;
+    color:black;
+    font-size: 18px;
+  margin:0 auto;
+  width: 960px;
+  min-height:300px;
+  border-radius: 10px;
+  
+}
+
+li{
+  border-bottom: 1px solid rgb(184, 190, 184);
+}
