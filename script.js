@@ -27,6 +27,16 @@ function completedItens() {
   else itemClass.add('completed');
 }
 
+function clearList() {
+  const list = document.getElementById('lista-tarefas');
+  const itens = list.children;
+  const total = list.childElementCount;
+  for (let index = total-1; index >= 0; index -= 1) {
+    console.log(itens,index);
+    list.removeChild(itens[index]);
+  }
+}
+
 function ONLOAD() {
   const buttonMakeToDo = document.getElementById('criar-tarefa');
   buttonMakeToDo.addEventListener('click', makeToDo);
