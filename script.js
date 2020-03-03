@@ -45,6 +45,14 @@ function clearCompleted() {
   }
 }
 
+function saveList() {
+  const list = document.getElementById('lista-tarefas').parentElement.innerHTML;
+  localStorage.setItem('LastSave', list);
+  const lista = localStorage.getItem('LastSave');
+//  document.body.appendChild(list);
+  console.log(list);
+}
+
 function ONLOAD() {
   const buttonMakeToDo = document.getElementById('criar-tarefa');
   buttonMakeToDo.addEventListener('click', makeToDo);
@@ -54,6 +62,9 @@ function ONLOAD() {
 
   const buttonClearCompleted = document.getElementById('remover-finalizados');
   buttonClearCompleted.addEventListener('click', clearCompleted);
+
+  const buttonSaveList = document.getElementById('salvar-tarefas');
+  buttonSaveList.addEventListener('click', saveList);
 }
 
 window.onload = ONLOAD();
