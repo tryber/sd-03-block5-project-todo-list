@@ -62,6 +62,23 @@ function recoverList() {
   }
 }
 
+function upWard() {
+  const selectedItem = document.getElementsByClassName('selected-item')[0];
+  selectedItem.parentElement.insertBefore(selectedItem, selectedItem.previousElementSibling);
+}
+
+function downWard() {
+  const selectedItem = document.getElementsByClassName('selected-item')[0];
+  const nextItem = selectedItem.nextElementSibling;
+  
+  if (nextItem !== selectedItem.parentElement.lastChild.nextElementSibling) {
+    selectedItem.parentElement.insertBefore(nextItem, selectedItem);
+  }
+  else {
+    selectedItem.parentElement.insertBefore(selectedItem, selectedItem.parentElement.firstChild);
+  }
+}
+
 function ONLOAD() {
   recoverList();
 
@@ -76,6 +93,11 @@ function ONLOAD() {
 
   const buttonSaveList = document.getElementById('salvar-tarefas');
   buttonSaveList.addEventListener('click', saveList);
+  //botoes cima e baixo
+  const buttonUpWard = document.getElementById('mover-cima');
+  buttonUpWard.addEventListener('click', upWard);
+  const buttonDownWard = document.getElementById('mover-baixo');
+  buttonDownWard.addEventListener('click', downWard);
 }
 
 window.onload = ONLOAD();
