@@ -3,7 +3,6 @@
   <head>
     <title>To-do-List</title>
     <link href="./style.css" rel="stylesheet">
-    <script src="./script.js"></script>
   </head>
   <body>
     <header>
@@ -12,8 +11,7 @@
        <nav>
        </nav>
     </header>
-    <article>
-      <section>
+    <div>
           <form>
             <label for="texto-tarefa"></label>
             <input type="text" id="texto-tarefa" class="tarefa" name="texto-tarefa">
@@ -23,11 +21,14 @@
             <ol id="lista-tarefas">
             </ol>
           </div>
+          <form>
           <button type="button" id="apaga-tudo" class="button" onclick="apagaTudo()" onmouseover="mudaIcone()">Limpa tudo</button>
-          <button type="button" id="remover-finalizados" class="button" onmouseover="mudaIcone()">Remove Finalizados</button>
-      </section>
-    </article>
+          <label for="remover-finalizados"></label>
+          <button id="remover-finalizados" type="button" class="button" onmouseover="mudaIcone()">Remove Finalizados</button>
+          </form>
+        </div>
     <footer>
     </footer>
+    <script src="./script.js"></script>
   </body>
 </html>
