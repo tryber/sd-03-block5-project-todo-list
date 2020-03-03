@@ -2,7 +2,7 @@ window.onload= function(){
     let botao=document.getElementById("criar-tarefa")
     let texto= document.getElementById("texto-tarefa")
     function addText(){  
-        if (texto === '') {
+        if (texto.value === '') {
           window.alert("OPS, adicione uma tarefa");
         }else{
             let li = document.createElement("li");
