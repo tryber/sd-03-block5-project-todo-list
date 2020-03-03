@@ -83,14 +83,14 @@ function salvaLista() {
 
 function moverCima() {
   const primeiro = listaTarefas.firstChild;
-  if(itemSelecionado && itemSelecionado !== primeiro) {
+  if (itemSelecionado && itemSelecionado !== primeiro) {
     listaTarefas.insertBefore(itemSelecionado, itemSelecionado.previousElementSibling);
   }
 }
 
 function moverBaixo() {
   const ultimo = listaTarefas.lastChild;
-  if(itemSelecionado && itemSelecionado !== ultimo) {
+  if (itemSelecionado && itemSelecionado !== ultimo) {
     listaTarefas.insertBefore(itemSelecionado.nextElementSibling, itemSelecionado);
   }
 }
