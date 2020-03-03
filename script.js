@@ -15,10 +15,9 @@ criarTarefa.addEventListener("click", function () {
 
   li.addEventListener("click", function () {
     li.style.backgroundColor = "rgb(128,128,128)";
-
-    li.addEventListener("dblclick", function () {
-      li.style.textDecoration = "line-through";
-    })
+  })
+  li.addEventListener("dblclick", function () {
+    li.style.textDecoration = "line-through";
   })
 })
 
