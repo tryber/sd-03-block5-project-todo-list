@@ -1,21 +1,52 @@
-body {
+header {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-stretch: extra-condensed;
+    letter-spacing: -1.5pt;
+}
+
+article {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.barraMenu {
+    border: 3px dashed blue;
 }
 
 ol {
     background-color: lightblue;
 }
 
-.botoesMenu {
-    background-color: honeydew;
-    border: 2px solid green;
-    color: mediumblue;
+button {
     cursor: pointer;
     transition-duration: 0.5s;
 }
 
-.botoesMenu:hover {
-    background-color: limegreen;
+.botAdd {
+    background-color: honeydew;
+    border: 2px solid green;
+    color: green;
+}
+
+.botMov {
+    background-color: honeydew;
+    border: 2px solid blue;
+    color: mediumblue;
+}
+
+.botApaga {
+    background-color: honeydew;
+    border: 2px solid red;
+    color: red;
+}
+
+button:hover {
+    background-color: black;
     color: linen;
+}
+
+.cinza {
+    background-color: rgb(128, 128, 128);
+}
+
+.completed {
+    text-decoration: line-through;
 }
