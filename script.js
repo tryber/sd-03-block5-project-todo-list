@@ -13,6 +13,8 @@ criarTarefa.addEventListener("click", function () {
 
   document.getElementById("texto-tarefa").value = "";
 
+  li.style.cursor = "pointer";
+
   li.addEventListener("click", function () {
     li.style.backgroundColor = "rgb(128,128,128)";
   })
