@@ -41,8 +41,10 @@ window.onload = function() {
   })
 
   buttonFinalizados.addEventListener("click", function(){
-    
+    console.log(document.getElementsByClassName("completed").length)
+    for (let i = 0; i < document.getElementsByClassName("completed").length; i++) {
+      lista.removeChild(document.getElementsByClassName("completed")[i]);
+     }
   })
-
 
 }

@@ -6,6 +6,10 @@
   cursor: pointer;
 }
 
+.remove-finalizados {
+  cursor: pointer;
+}
+
 .li-criada {
   cursor: pointer;
 }
