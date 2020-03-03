@@ -16,8 +16,10 @@
     </header><br>
     <article>
       <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
-      <input type="text" id="texto-tarefa" onfocus="this.value=''">
+      <input type="text" id="texto-tarefa">
       <button class="criar-tarefa" id="criar-tarefa" onclick="adicionarItem()">Adicionar</button>
+      <button class="limpar-campo-input" id="limpar-campo-input"
+        onclick="document.getElementById('texto-tarefa').value = ''">Limpar campo</button>
       <ol id="lista-tarefas"></ol>
     </article>
     <script src="script.js"></script>
