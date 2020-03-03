@@ -4,6 +4,13 @@ const deleteButton = document.getElementById('apaga-tudo');
 const removeCompleted = document.getElementById('remover-finalizados');
 const grabInput = document.getElementById('texto-tarefa');
 const grabList = document.getElementById('lista-tarefas');
+const saveButton = document.getElementById('salvar-tarefas');
+let pegarLi = document.querySelectorAll('li');
+
+// Verify if user have saved list
+if (localStorage.getItem('todo-list')) {
+  grabList.innerHTML = localStorage.getItem('todo-list')
+}
 
 // Functions
 function addTodo() {
@@ -40,7 +47,14 @@ function removeComp() {
   }
 }
 
+// Função salvar tarefas
+function saveTodo() {
+  let pegarInner = document.getElementById('lista-tarefas').innerHTML;
+  localStorage.setItem('todo-list', pegarInner);
+}
+
 // Event listener
 addButton.addEventListener('click', addTodo);
 deleteButton.addEventListener('click', deleteAll);
 removeCompleted.addEventListener('click', removeComp);
+saveButton.addEventListener('click', saveTodo)
