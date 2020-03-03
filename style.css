@@ -20,3 +20,12 @@ body {
 #lista-tarefas {
     font-size: 2em;
 }
+
+button:hover {
+    cursor: pointer;
+}
+
+ol,
+li:hover {
+    cursor: pointer;
+}
