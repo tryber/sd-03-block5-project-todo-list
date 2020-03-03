@@ -36,14 +36,14 @@ function removeSelectedItem (event){
 }
 
 function moveItemUp (event){
-    let elementToMove = document.getElementsByClassName("grey");
+    let elementToMove = document.querySelector(".grey");
     let completeList = document.querySelectorAll("li");
     for (i = 0; i < completeList.length; i += 1){
         if (completeList[i].classList == "grey"){
-            let toMoveUp = completeList[i].innerText;
-            let toMoveDown = completeList[i-1].innerText;
-            completeList[i].innerText = toMoveDown;
-            completeList[i-1].innerText = toMoveUp;
+            let toMoveUp = completeList[i].innerHTML;
+            let toMoveDown = completeList[i-1].innerHTML;
+            completeList[i].innerHTML = toMoveDown;
+            completeList[i-1].innerHTML = toMoveUp;
             completeList[i].classList.remove("grey");
             completeList[i-1].classList.add("grey");
             break
@@ -52,14 +52,14 @@ function moveItemUp (event){
 }
 
 function moveItemDown (event){
-    let elementToMove = document.getElementsByClassName("grey");
+    let elementToMove = document.querySelector(".grey");
     let completeList = document.querySelectorAll("li");
     for (i = 0; i < completeList.length; i += 1){
         if (completeList[i].classList == "grey"){
-            let toMoveUp = completeList[i+1].innerText;
-            let toMoveDown = completeList[i].innerText;
-            completeList[i].innerText = toMoveUp;
-            completeList[i+1].innerText = toMoveDown;
+            let toMoveUp = completeList[i+1].innerHTML;
+            let toMoveDown = completeList[i].innerHTML;
+            completeList[i].innerHTML = toMoveUp;
+            completeList[i+1].innerHTML = toMoveDown;
             completeList[i].classList.remove("grey");
             completeList[i+1].classList.add("grey");
             break
