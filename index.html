@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gerador de Lista</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    
+  </head>
+
+  <body>
+    <header>
+      <h1>Minha Lista de Tarefas</h1>
+      <p id="funcionamento"> Clique duas vezes em um item para marcá-lo 
+        como completo</p>
+    </header>
+    <div>
+      <label for="texto-tarefa"> Digite o nome do item</label>
+      <input type="text" id="texto-tarefa">
+      <input type="button" value="Adicionar">
+    </div>
+    <div>
+      <ol id="lista-taredas">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ol>
+    </div>
+    <div>
+      <label for="criar-tarefa"></label>
+      <input type="submit" id="criar-tarefa" value="Novo item">
+    </div>
+    <div>
+      <label for="apaga-tudo"></label>
+      <input type="button" id="apaga-tudo" value="Apaga Tudo">
+    </div>
+    <div>
+      <label for="remover-finalizados"></label>
+      <input type="button" id="remover-finalizados" value="Remover Finalizados">
+    </div>
+  </body>
+</html>
