@@ -22,9 +22,13 @@
       <li></li>
     </ol>
     <div id="buttons">
-      <button id="criar-tarefa">Criar tarefa!</button>
-      <button id="apaga-tudo">Apagar todas as tarefas!</button>
-      <button id="remover-finalizados">Remover tarefas finalizadas!</button>
+      <button id="criar-tarefa" onclick="createTask()">Criar tarefa!</button>
+      <button id="apaga-tudo" onclick="deleteAllTasks()">
+        Apagar todas as tarefas!
+      </button>
+      <button id="remover-finalizados" onclick="removeCompleted()">
+        Remover tarefas finalizadas!
+      </button>
     </div>
     <script src="script.js"></script>
   </body>

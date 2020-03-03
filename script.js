@@ -1,11 +1,11 @@
 function createTask() {
-  //cria as tarefas
+  alert("Task created!");
 }
 
 function deleteAllTasks() {
-  //apaga todas as tarefas
+  alert("Removed all tasks!");
 }
 
-function removeComplete() {
-  //apaga tarefas completas
+function removeCompleted() {
+  alert("Removed all completed tasks!");
 }
