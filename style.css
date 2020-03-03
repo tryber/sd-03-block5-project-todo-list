@@ -1,4 +1,7 @@
-button {
+button, li {
   cursor: pointer;
 }
 
+.selected-item {
+  background-color: rgb(128 , 128 , 128);
+}
