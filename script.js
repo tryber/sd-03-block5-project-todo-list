@@ -1,4 +1,4 @@
-
+window.onload = function(){
 
   const texto = document.querySelector('#texto-tarefa');
   const botaoTarefa = document.getElementById('criar-tarefa');
@@ -11,7 +11,7 @@
     document.getElementById('texto-tarefa').value = "";
   }
 
-  botaoTarefa.addEventListener("click", listarTarefas);
+  botaoTarefa.addEventListener('click', listarTarefas);
 
   const apagaTudo = document.getElementById('apaga-tudo');
 
@@ -19,5 +19,11 @@
     location.reload(true);
   });
 
+  // function removeAll (){
+  //   let lista = document.getElementById("lista-tarefas")
+  //   while (lista.firstChild){
+  //   lista.removeChild(lista.lastChild)
+  //   }
+  //   }
 
-
+}

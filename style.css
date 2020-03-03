@@ -5,11 +5,10 @@ button{
   cursor: pointer;
 }
 
-
 li{
   cursor: pointer;
 }
 
-li:hover{
-  background-color: rgb(128, 128, 128);
+.corLista{
+  background-color: rbg(128,128,128);
 }
