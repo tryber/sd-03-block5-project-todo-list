@@ -9,23 +9,26 @@ window.onload = function() {
     let item1 = document.createElement("li");
     lista.appendChild(item1);
     item1.innerHTML = input1.value;
-    item1.classList.add("li-criada");
-    item1.addEventListener("click", function(){
-      item1.style.backgroundColor = "rgb(128,128,128)";
-    });
+    backgroundGrey(item1);
+    riskingOrNot(item1);
     input1.value = "";
   }
   button.addEventListener("click", listed)
 
-  
-
-
-  // let liPage = document.querySelectorAll(".li-criada");
-  // for (let i = 0; i < 5; i++){
-  //   console.log(i)
-  //   liPage[i].addEventListener("click", function() {
-  //     liPage[i].style.backgroundColor = rgb(128,128,128);
-  //   });
-  // }
+  function backgroundGrey(element) {
+    element.addEventListener("click", function(){
+      element.style.backgroundColor = "rgb(128,128,128)";
+    });
+  }
+  function riskingOrNot(element){
+    element.addEventListener("dblclick", function() {
+      if (element.classList.contains("completed")){
+        element.classList.remove("completed");
+        element.classList.add("textDecoration");
+      } else { 
+        element.classList.add("completed");
+      }
+    })
+  }
 
 }
