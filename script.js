@@ -75,7 +75,7 @@ function moverBaixo() {
   const elementos = lista.length - 1;
   for (let i = elementos; i >= 0; i -= 1) {
     if (lista[i].classList.contains('selected')) {
-      ol.insertBefore(lista[i - 1], lista[i]);
+      ol.insertBefore(lista[i].nextSibling, lista[i]);
     }
   }
 }
