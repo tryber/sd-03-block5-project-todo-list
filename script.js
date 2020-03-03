@@ -1,3 +1,4 @@
+//add tarefa a lista
 let criarTarefa = document.querySelector("#criar-tarefa");
 let textoTarefa = document.querySelector("#texto-tarefa");
 let listaOrdenada = document.querySelector("ol");
@@ -9,8 +10,10 @@ criarTarefa.addEventListener("click", function textonaLista() {
   textoTarefa.value = "";
  });
 
+ // apagar tarefas
 const botaoApagarTudo = document.querySelector("#apaga-tudo");
 
 botaoApagarTudo.addEventListener("click", function apagarTudo() {
   listaOrdenada.innerHTML = "";
 });
+
