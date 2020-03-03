@@ -23,3 +23,17 @@ li {
 .completed {
   text-decoration: line-through;
 }
+
+section {
+  text-align: center;
+}
+
+li {
+  margin: 0 auto;
+  text-align: center;
+  width: 20%;
+}
+
+form {
+  text-align: center;
+}
