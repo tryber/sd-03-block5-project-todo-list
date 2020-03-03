@@ -23,9 +23,21 @@ i:hover {
   color: rgba( 123 , 127 , 128 , 1 );
 }
 
-input {
-  border-radius: 10px;
+button {
   border: none;
+  border-radius: 10px;
+  flex-grow: 1;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 0.4em;
+  padding: 13px;
+  text-align: center;
+  text-decoration: none;
+}
+
+input {
+  border: none;
+  border-radius: 10px;
   flex-grow: 1;
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: 16px;
