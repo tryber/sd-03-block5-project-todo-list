@@ -4,8 +4,14 @@ const listaTarefas = document.getElementById('lista-tarefas');
 const botaoApagaTudo = document.getElementById('apaga-tudo');
 const botaoApagaFinalizados = document.getElementById('remover-finalizados');
 const botaoApagaSelecionados = document.getElementById('remover-selecionado');
+const botaoSalvaLista = document.getElementById('salvar-tarefas');
 const botaoMoveCima = document.getElementById('mover-cima');
 const botaoMoveBaixo = document.getElementById('mover-baixo');
+
+let listaSalva = localStorage.getItem('lista');
+if(listaSalva){
+  listaTarefas.innerHTML = listaSalva;
+}
 
 function criaTarefa() {
   const item = document.createElement('li');
@@ -35,6 +41,7 @@ function apagaTudo() {
   for (let i = elementos; i >= 0; i -= 1) {
     lista[i].remove();
   }
+  localStorage.clear()
 }
 
 function apagaFinalizados() {
@@ -57,24 +64,29 @@ function apagaSelecionados() {
   }
 }
 
+function salvaLista() {
+  localStorage.clear()
+  localStorage.setItem('lista',listaTarefas.innerHTML)
+}
+
 function moverCima() {
-  const ol = document.querySelector('ol');
   const lista = document.querySelectorAll('li');
   const elementos = lista.length - 1;
+  const primeiro = listaTarefas.firstChild;
   for (let i = elementos; i > 0; i -= 1) {
-    if (lista[i].classList.contains('selected')) {
-      ol.insertBefore(lista[i], lista[i - 1]);
+    if (lista[i].classList.contains('selected') && (lista[i].classList.contains('selected') != primeiro)) {
+      listaTarefas.insertBefore(lista[i], lista[i - 1]);
     }
   }
 }
 
 function moverBaixo() {
-  const ol = document.querySelector('ol');
   const lista = document.querySelectorAll('li');
   const elementos = lista.length - 1;
+  const ultimo = listaTarefas.lastChild;
   for (let i = elementos; i >= 0; i -= 1) {
-    if (lista[i].classList.contains('selected')) {
-      ol.insertBefore(lista[i].nextSibling, lista[i]);
+    if (lista[i].classList.contains('selected') && (lista[i].classList.contains('selected') != ultimo)) {
+      listaTarefas.insertBefore(lista[i].nextSibling, lista[i]);
     }
   }
 }
@@ -83,5 +95,6 @@ botaoTarefa.addEventListener('click', criaTarefa);
 botaoApagaTudo.addEventListener('click', apagaTudo);
 botaoApagaFinalizados.addEventListener('click', apagaFinalizados);
 botaoApagaSelecionados.addEventListener('click', apagaSelecionados);
+botaoSalvaLista.addEventListener('click', salvaLista);
 botaoMoveCima.addEventListener('click', moverCima);
 botaoMoveBaixo.addEventListener('click', moverBaixo);
