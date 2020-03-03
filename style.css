@@ -73,3 +73,7 @@ input {
 .bottom-button:hover {
   background-color: rgba( 218 , 91 , 89 , 1 );
 }
+
+.completed {
+  text-decoration: line-through;
+}
