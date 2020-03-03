@@ -10,7 +10,7 @@ function addinput () {
     let addIten = document.createTextNode(iten);
     list.appendChild(addIten);
     listando.appendChild(list);
-    txtInput.value = " "
+    txtInput.value = ""
     txtInput.focus ()
 }
 
