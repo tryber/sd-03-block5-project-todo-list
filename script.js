@@ -1,10 +1,9 @@
 const lista = document.getElementsByClassName('lista-tarefas')[0].firstElementChild;
+const criarTarefa = document.getElementById('criar-tarefa');
+const apagaTudo = document.getElementById('apaga-tudo');
+const removeFinalizados = document.getElementById('remover-finalizados'); 
 
-function testa() {
-  console.log('funciona');
-}
-
-function armazenaLimpa() {
+criarTarefa.addEventListener('click', function armazenaLimpa() {
   const tarefa = document.getElementsByClassName('tarefa')[0];
   const elementos = document.createElement('li');
   if (tarefa.value === '') {
@@ -17,7 +16,7 @@ function armazenaLimpa() {
     lista.appendChild(elementos);
     tarefa.value = '';
   }
-}
+});
 
 function itemSelecionado() {
   const itemClicado = event.srcElement;
@@ -39,31 +38,40 @@ function taxaItem() {
   }
 }
 
-function mudaIcone() {
+criarTarefa.addEventListener('mouseover', function() {
   const muda = document.getElementsByClassName('button');
   muda[0].style.cursor = 'pointer';
   muda[1].style.cursor = 'pointer';
   muda[2].style.cursor = 'pointer';
-}
+});
 
-function apagaTudo() {
-  lista.innerHTML='';
-}
+apagaTudo.addEventListener('mouseover', function() {
+  const muda = document.getElementsByClassName('button');
+  muda[0].style.cursor = 'pointer';
+  muda[1].style.cursor = 'pointer';
+  muda[2].style.cursor = 'pointer';
+});
 
-let removeFinalizados = document.getElementById('remover-finalizados');
+removeFinalizados.addEventListener('mouseover', function() {
+  const muda = document.getElementsByClassName('button');
+  muda[0].style.cursor = 'pointer';
+  muda[1].style.cursor = 'pointer';
+  muda[2].style.cursor = 'pointer';
+});
 
-removeFinalizados.addEventListener('click', function() {
+apagaTudo.addEventListener('click', function() {
+  lista.innerHTML = '';
+});
 
-  let elementosFinalizados = document.getElementsByClassName('lista-tarefas')[0].firstElementChild;
-  let filhos = document.getElementsByClassName('elemento');
-  let numeroElementos = filhos.length;
-  let elimina = [];
-  let conta = 0;
+removeFinalizados.addEventListener('click', function () {
+  const elementosFinalizados = document.getElementsByClassName('lista-tarefas')[0].firstElementChild;
+  const filhos = document.getElementsByClassName('elemento');
+  const numeroElementos = filhos.length;
 
   if (elementosFinalizados.lastElementChild != null) {
-    for (let i = numeroElementos-1; i >= 0 ; i -= 1) {
+    for (let i = numeroElementos - 1; i >= 0; i -= 1) {
       if (filhos[i].className === 'elemento item-selecionado completed') {
-        lista.removeChild(filhos[i])
+        lista.removeChild(filhos[i]);
       }
     }
   }
