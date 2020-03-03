@@ -1,22 +1,7 @@
 const lista = document.getElementsByClassName('lista-tarefas')[0].firstElementChild;
 const criarTarefa = document.getElementById('criar-tarefa');
 const apagaTudo = document.getElementById('apaga-tudo');
-const removeFinalizados = document.getElementById('remover-finalizados'); 
-
-criarTarefa.addEventListener('click', function armazenaLimpa() {
-  const tarefa = document.getElementsByClassName('tarefa')[0];
-  const elementos = document.createElement('li');
-  if (tarefa.value === '') {
-    // do nothing
-  } else {
-    elementos.addEventListener('click', itemSelecionado);
-    elementos.addEventListener('dblclick', taxaItem);
-    elementos.innerHTML = tarefa.value;
-    elementos.className = 'elemento';
-    lista.appendChild(elementos);
-    tarefa.value = '';
-  }
-});
+const removeFinalizados = document.getElementById('remover-finalizados');
 
 function itemSelecionado() {
   const itemClicado = event.srcElement;
@@ -38,28 +23,22 @@ function taxaItem() {
   }
 }
 
-criarTarefa.addEventListener('mouseover', function() {
-  const muda = document.getElementsByClassName('button');
-  muda[0].style.cursor = 'pointer';
-  muda[1].style.cursor = 'pointer';
-  muda[2].style.cursor = 'pointer';
+criarTarefa.addEventListener('click', function armazenaLimpa() {
+  const tarefa = document.getElementsByClassName('tarefa')[0];
+  const elementos = document.createElement('li');
+  if (tarefa.value === '') {
+    // do nothing
+  } else {
+    elementos.addEventListener('click', itemSelecionado);
+    elementos.addEventListener('dblclick', taxaItem);
+    elementos.innerHTML = tarefa.value;
+    elementos.className = 'elemento';
+    lista.appendChild(elementos);
+    tarefa.value = '';
+  }
 });
 
-apagaTudo.addEventListener('mouseover', function() {
-  const muda = document.getElementsByClassName('button');
-  muda[0].style.cursor = 'pointer';
-  muda[1].style.cursor = 'pointer';
-  muda[2].style.cursor = 'pointer';
-});
-
-removeFinalizados.addEventListener('mouseover', function() {
-  const muda = document.getElementsByClassName('button');
-  muda[0].style.cursor = 'pointer';
-  muda[1].style.cursor = 'pointer';
-  muda[2].style.cursor = 'pointer';
-});
-
-apagaTudo.addEventListener('click', function() {
+apagaTudo.addEventListener('click', function () {
   lista.innerHTML = '';
 });
 
@@ -75,4 +54,25 @@ removeFinalizados.addEventListener('click', function () {
       }
     }
   }
+});
+
+criarTarefa.addEventListener('mouseover', function () {
+  const muda = document.getElementsByClassName('button');
+  muda[0].style.cursor = 'pointer';
+  muda[1].style.cursor = 'pointer';
+  muda[2].style.cursor = 'pointer';
+});
+
+apagaTudo.addEventListener('mouseover', function () {
+  const muda = document.getElementsByClassName('button');
+  muda[0].style.cursor = 'pointer';
+  muda[1].style.cursor = 'pointer';
+  muda[2].style.cursor = 'pointer';
+});
+
+removeFinalizados.addEventListener('mouseover', function () {
+  const muda = document.getElementsByClassName('button');
+  muda[0].style.cursor = 'pointer';
+  muda[1].style.cursor = 'pointer';
+  muda[2].style.cursor = 'pointer';
 });
