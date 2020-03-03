@@ -6,26 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    
     <title>Lista de tarefas</title>
 </head>
 
 <body>
     <div id="container">
         <header>Minha Lista de Tarefas</header>
-        
+
         <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
         <input type="text" id="texto-tarefa" name="tarefa">
 
         <button id="criar-tarefa">Nova tarefa</button>
+        <div id="taskPlace">
+            <ol id="lista-tarefas">
 
-        <ol id="lista-tarefas">
-
-        </ol>
+            </ol>
+        </div>
         <button id="apaga-tudo">Apagar todas</button>
         <button id="remover-finalizados">Remover finalizados</button>
     </div>
+    
     <script src="script.js"></script>
-
 </body>
 
 </html>

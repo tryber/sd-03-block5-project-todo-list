@@ -13,3 +13,18 @@ body {
     font-size: 0.5em;
 }
 
+#taskplace {
+    background-color: blueviolet;
+}
+
+li {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+.completed{
+    text-decoration: "line-through";
+}

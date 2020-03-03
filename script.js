@@ -1,6 +1,10 @@
 listaDeTarefas = []
+var i = 0
 
 var botaoCriar = document.getElementById('criar-tarefa')
+var idr = document.getElementById('taskPlace')
+var olId = document.getElementById("lista-tarefas")
+var completed = document.getElementsByClassName('completed')
 
 function type() {
 
@@ -11,15 +15,31 @@ function type() {
   document.getElementById("lista-tarefas").appendChild(li);
   document.getElementById("texto-tarefa").value = '';
   listaDeTarefas.push(li)
-
-  console.log('oi criado a li ' + li)
-  console.log(listaDeTarefas[i])
-
+  li.id = 'liId' + i
+    ++i
+  console.log('criado a li ' + li)
 
 }
 
-funtion remove () {
-    
+function identifyObj(event) {
+  var pickId = event.target.id;
+  document.getElementById(pickId).style.background = 'green'
 }
+
+function changeColorLi(event) {
+  var pickId = event.target.id;
+  if ((document.getElementById(pickId).style.background = 'rgb(128,128,128)' )===true) {document.getElementById(pickId).style.background = 'white' } else {ocument.getElementById(pickId).style.background = 'rgb(128,128,128)' }
+
+}
+
+function pickObj(e) {
+  var idSelect = (e.target.id);
+  objPicked = idSelect
+  var taskRemoved = document.getElementById('objPicked')
+  console.log(taskRemoved)
+}
+
 
 botaoCriar.addEventListener('click', type);
+
+olId.addEventListener('click', changeColorLi)
