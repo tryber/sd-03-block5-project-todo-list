@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Lista de Tarefas</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>Minha Lista de Tarefas</h1>
+    </header><br>
+    <article>
+      <section>
+        <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+      </section>
+      <section>
+        <form>
+          <input type="text" id="texto-tarefa" onfocus="this.value='';">
+          <button class="criar-tarefa" id="criar-tarefa" onclick="adicionarValor()">Adicionar</button>
+        </form>
+      </section>
+      <section>
+        <ol id="lista-tarefas">
+          
+        </ol>
+      </section>
+    </article>
+  </body>
+
+</html>
