@@ -20,10 +20,23 @@ function addTask() {
 }
 
 
-let listOfTasks = document.querySelectorAll(".tarefa")
 
-for (let i = 0; i < listOfTasks.length; i++){
-   let taskSelected = listOfTasks[i]
-   taskSelected.getElementsByClassName.background = "red"
-    
+let listOfTasks = document.getElementsByClassName("tarefa")
+
+for (let i = 0; i < 25; i++) {
+    listOfTasks[i].addEventListener("click", changeColor)
+
+    function changeColor() {
+        listOfTasks[i].style.backgroundColor = 'rgb(' + 128 + ',' + 128 + ',' + 128 + ')'
+    }
 }
+
+  
+        
+
+    
+
+
+  
+
+
