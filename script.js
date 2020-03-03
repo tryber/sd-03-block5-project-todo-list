@@ -1,7 +1,7 @@
 function adicionarValor() {
   let itensLista = document.getElementById('texto-tarefa').value;
-  let listaTarefaLi = document.createElement('li');
-  listaTarefaLi.innerHTML = itensLista;
+  let li = document.createElement('li');
   let ol = document.getElementById('lista-tarefas');
-  ol.appendChild(listaTarefaLi);
+  ol.appendChild(li);
+  li.textContent = itensLista;
 }
