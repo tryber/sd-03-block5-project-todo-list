@@ -56,9 +56,9 @@ function recoverList() {
 
   container.innerHTML = recoveredList;
 
-  for (const item of container.children) {
-    item.addEventListener('click', selectItem);
-    item.addEventListener('dblclick', completedItens);
+  for (let item = (container.children.length - 1); item >= 0; item -= 1) {
+    container.children[item].addEventListener('click', selectItem);
+    container.children[item].addEventListener('dblclick', completedItens);
   }
 }
 
@@ -70,11 +70,10 @@ function upWard() {
 function downWard() {
   const selectedItem = document.getElementsByClassName('selected-item')[0];
   const nextItem = selectedItem.nextElementSibling;
-  
+
   if (nextItem !== selectedItem.parentElement.lastChild.nextElementSibling) {
     selectedItem.parentElement.insertBefore(nextItem, selectedItem);
-  }
-  else {
+  } else {
     selectedItem.parentElement.insertBefore(selectedItem, selectedItem.parentElement.firstChild);
   }
 }
@@ -97,7 +96,7 @@ function ONLOAD() {
 
   const buttonSaveList = document.getElementById('salvar-tarefas');
   buttonSaveList.addEventListener('click', saveList);
-  //botoes cima e baixo
+  // botoes cima e baixo
   const buttonUpWard = document.getElementById('mover-cima');
   buttonUpWard.addEventListener('click', upWard);
   const buttonDownWard = document.getElementById('mover-baixo');
