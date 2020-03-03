@@ -2,6 +2,7 @@ button {
   background-color: lightgray;
   border: 2px solid lavender;
   border-radius: 4px;
+  margin: 0 5px;
   padding: 5px 10px;
 }
 
@@ -12,6 +13,10 @@ button:hover {
 
 li {
   cursor: pointer;
+}
+
+.tarefa {
+  display: inline-block;
 }
 
 .selected {
