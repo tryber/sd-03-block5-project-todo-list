@@ -111,6 +111,7 @@ button{
     clear: both;
     font-size: x-large;
     font-family: lista;
+    cursor: pointer;
 }
 
 .finalizado{
@@ -125,6 +126,6 @@ button{
     font-size: 15px;
 }
 
-button:hover{
-    cursor: pointer;
+.bgc{
+    background-color: rgb(128, 128, 128);
 }

@@ -39,6 +39,18 @@ function apagarTudo(){
     }
 }
 
-document.querySelector('.botao').addEventListener('mouseover',() => {
-    document.querySelector('.botao').style.cursor = 'pointer';
-  });
+/*let overLista = document.getElementsByClassName('lista');
+overLista.document.addEventListener('click', function(){
+  for (let i = 0; i < overLista.length; i++){
+    let id = overLista[i].getAttribute('id');
+    if(overLista[i].className == 'lista'){
+        overLista[i].className = 'bgc';
+        alert('deu');
+    }
+    else if(overLista[i].className == 'bgc'){
+        overLista[i].className == 'bgc';
+        alert('certo')
+    }
+  } 
+});*/ 
+
