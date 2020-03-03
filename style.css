@@ -15,20 +15,24 @@ form {
 }
 
 i {
-  padding: 0.6em;
   margin: auto;
+  padding: 0.6em;
+}
+
+i:hover {
+  color: rgba( 123 , 127 , 128 , 1 );
 }
 
 input {
   border-radius: 10px;
   border: none;
+  flex-grow: 1;
   font-family: Roboto, Arial, Helvetica, sans-serif;
   font-size: 16px;
-  padding: 13px;
   margin: 0.4em;
+  padding: 13px;
   text-align: center;
   text-decoration: none;
-  flex-grow: 1;
 }
 
 .content {
@@ -43,7 +47,15 @@ input {
   color: white;
 }
 
+.add-tarefa:hover {
+  background-color: rgba( 208 , 163 , 90 , 1 );
+}
+
 .bottom-button {
   background-color: rgba( 239 , 100 , 97 , 1 );
   color: white;
+}
+
+.bottom-button:hover {
+  background-color: rgba( 218 , 91 , 89 , 1 );
 }
