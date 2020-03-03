@@ -22,9 +22,10 @@ document.getElementById("remover-finalizados").addEventListener("click", () => {
 })
 
 document.getElementById("salvar-tarefas").addEventListener("click", () => {
-  localStorage.setItem("Lista de Tarefas", document.getElementById("lista-tarefas"))
+  localStorage.setItem("Lista de Tarefas", document.getElementById("lista-tarefas").innerHTML)
 })
 
 if (window.localStorage.getItem("Lista de Tarefas") != null) {
-  console.log(window.localStorage.getItem("Lista de Tarefas"))
+  document.getElementById('lista-tarefas').innerHTML = window.localStorage.getItem('Lista de Tarefas')
 }
+
