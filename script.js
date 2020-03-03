@@ -1,5 +1,7 @@
 window.onload = function() {
-  let button = document.getElementsByClassName("adicionando-tarefa")[0];
+  let buttonAdd = document.getElementsByClassName("adicionando-tarefa")[0];
+  let buttonClear = document.getElementsByClassName("removendo-tarefas")[0];
+  let buttonFinalizados = document.getElementsByClassName("remove-finalizados")[0];
   let lista = document.getElementsByClassName("lista-ordenada")[0];
   let input1 = document.getElementsByClassName("tarefa")[0];
   
@@ -9,11 +11,12 @@ window.onload = function() {
     let item1 = document.createElement("li");
     lista.appendChild(item1);
     item1.innerHTML = input1.value;
+    item1.classList.add("li-criada");
     backgroundGrey(item1);
     riskingOrNot(item1);
     input1.value = "";
   }
-  button.addEventListener("click", listed)
+  buttonAdd.addEventListener("click", listed)
 
   function backgroundGrey(element) {
     element.addEventListener("click", function(){
@@ -30,5 +33,16 @@ window.onload = function() {
       }
     })
   }
+
+  buttonClear.addEventListener("click", function() {
+    while (lista.lastElementChild){
+      lista.removeChild(lista.lastElementChild);
+    }
+  })
+
+  buttonFinalizados.addEventListener("click", function(){
+    
+  })
+
 
 }
