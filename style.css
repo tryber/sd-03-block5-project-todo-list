@@ -5,3 +5,7 @@ body {
 .btn {
     cursor: pointer;
 }
+
+.completed {
+    text-decoration: line-through;
+}
