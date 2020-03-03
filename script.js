@@ -5,6 +5,7 @@ const inputText = document.querySelector('#texto-tarefa');
 const listaOrd = document.querySelector('#lista-tarefas');
 const botaoCriarTarefa = document.querySelector('#criar-tarefa');
 const botaoApagarTudo = document.querySelector('#apaga-tudo');
+const botaoRemoverFin = document.querySelector('#remover-finalizados');
 let itemDeLista = null;
 
 
@@ -12,6 +13,7 @@ let itemDeLista = null;
 
 botaoCriarTarefa.addEventListener('click', adicionarTarefa);
 botaoApagarTudo.addEventListener('click', apagarLista);
+botaoRemoverFin.addEventListener('click', apagarFinalizados);
 
 
 
@@ -34,15 +36,23 @@ function apagarLista() {
 }
 
 
+function apagarFinalizados() {
+    let lista = document.querySelectorAll('li');
+    for (i = lista.length-1; i>=0; i-=1){
+        if(lista[i].classList.contains('completed')) {
+            lista[i].remove();
+        }
+    }
+}
+
+
 function criarEventListenerLi(li) {
     li.addEventListener('click', alterarClasseCheck);
     li.addEventListener('dblclick', alterarClasseComplete);
-    console.log('Event Listener criado');
 }
 
 function limpaCaixaTexto (){
     inputText.value = '';
-    console.log('input text apagado');
 }
 
 function adicionaClasseAoLi(li){
