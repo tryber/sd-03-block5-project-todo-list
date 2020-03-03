@@ -5,25 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Tarefas</title>
     <link href="style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header><h1>Minha Lista de Tarefas</h1></header>
-    <p id="funcionamento">
-      Clique duas vezes em um item para marcá-lo como completo
-    </p>
-    <form>
-      <input type="text" id="texto-tarefa" />
-      <input type="button" value="Adicionar" id="criar-tarefa" />
-    </form>
-    <ol id="lista-tarefa"></ol>
-    <form>
-        <input type="button" value="Apagar tudo" id="apaga-tudo">
-        <input type="button" value="Remover Finalizados" id="remover-finalizados">
-        <input type="button" value="Salvar tarefas" id="salvar-tarefas">
-        <input type="button" value="Mover-Acima" id="mover-cima">
-        <input type="button" value="Mover-Abaixo" id="mover-baixo">
-        <input type="button" value="Remover Selecionado" id="remover-selecionado">
-    </form>
+    <div class="content">
+      <header><h1>Minha Lista de Tarefas</h1></header>
+      <p id="funcionamento">
+        Clique duas vezes em um item para marcá-lo como completo
+      </p>
+      <form>
+        <input type="text" id="texto-tarefa" />
+        <input type="button" value="Adicionar" id="criar-tarefa" class="add-tarefa"/>
+      </form>
+      <ol id="lista-tarefa"></ol>
+      <form class="bottom-form">
+        <input type="button" value="Apagar tudo" id="apaga-tudo" />
+        <input
+          type="button"
+          value="Remover Finalizados"
+          id="remover-finalizados"
+        />
+        <input type="button" value="Salvar tarefas" id="salvar-tarefas" class="salvar-tarefas"/>
+        <input type="button" value="Mover-Acima" id="mover-cima" class="mover-cima"/>
+        <input type="button" value="Mover-Abaixo" id="mover-baixo" class="mover-baixo"/>
+        <input
+          type="button"
+          value="Remover Selecionado"
+          id="remover-selecionado"
+          class="remover-selecionado"
+        />
+      </form>
+    </div>
 
     <script src="script.js"></script>
   </body>
