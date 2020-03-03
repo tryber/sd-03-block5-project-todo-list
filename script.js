@@ -85,6 +85,8 @@ function moverCima() {
   const primeiro = listaTarefas.firstChild;
   if (itemS && itemS !== primeiro) {
     listaTarefas.insertBefore(itemS, itemS.previousElementSibling);
+  } else {
+    alert('Não é possível mover esse item para cima!')
   }
 }
 
@@ -92,6 +94,8 @@ function moverBaixo() {
   const ultimo = listaTarefas.lastChild;
   if (itemS && itemS !== ultimo) {
     listaTarefas.insertBefore(itemS, itemS.nextElementSibling.nextElementSibling);
+  } else {
+    alert('Não é possível mover esse item para baixo!')
   }
 }
 
