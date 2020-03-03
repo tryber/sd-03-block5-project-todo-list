@@ -46,7 +46,7 @@ Esta é uma oportunidade de você exercitar sua criatividade e experimentar os c
 
 ### 2 - Abaixo do título deve haver um pequeno e discreto parágrafo com `id="funcionamento"` e com o texto "Clique duas vezes em um item para marcá-lo como completo" explicando o funcionamento da lista para o usuário.
 
-### 3 - Deve haver um `input` com o `id="texto-tarefa"` onde o usuário poderá digitar o nome do item que deseja adicionar à lista.
+### 3 - Deve haver um `input` com o `id="texto-tarefa"` onde o usuário poderá digitar o nome do item que deseja adicionar à lista.  
 
 ### 4 - Deve haver uma lista ordenada de tarefas com o `id="lista-tarefas"`.
 
