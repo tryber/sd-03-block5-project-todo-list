@@ -49,11 +49,19 @@ function saveList() {
   const list = document.getElementById('lista-tarefas').parentElement.innerHTML;
   localStorage.setItem('LastSave', list);
   const lista = localStorage.getItem('LastSave');
-//  document.body.appendChild(list);
   console.log(list);
 }
 
+function recoverList() {
+  const container = document.getElementById('lista-tarefa-container');
+  const recoveredList = window.localStorage.getItem('LastSave');
+
+  container.innerHTML = recoveredList;
+}
+
 function ONLOAD() {
+  recoverList();
+
   const buttonMakeToDo = document.getElementById('criar-tarefa');
   buttonMakeToDo.addEventListener('click', makeToDo);
 
