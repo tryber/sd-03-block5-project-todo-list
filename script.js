@@ -3,6 +3,7 @@ const botaoTarefa = document.getElementById('criar-tarefa');
 const listaTarefas = document.getElementById('lista-tarefas');
 const botaoApagaTudo = document.getElementById('apaga-tudo');
 const botaoApagaFinalizados = document.getElementById('remover-finalizados');
+const botaoApagaSelecionados = document.getElementById('remover-selecionado');
 
 function criaTarefa() {
   const item = document.createElement('li');
@@ -44,6 +45,17 @@ function apagaFinalizados() {
     }
 }
 
+function apagaSelecionados() {
+    const lista = document.getElementsByTagName('li');
+    let elementos = lista.length - 1;
+    for (let i = elementos ; i >= 0 ; i -= 1) {
+        if(lista[i].classList.contains('selected')) {
+            lista[i].remove();
+        }
+    }
+}
+
 botaoTarefa.addEventListener('click', criaTarefa);
 botaoApagaTudo.addEventListener('click', apagaTudo);
 botaoApagaFinalizados.addEventListener('click', apagaFinalizados);
+botaoApagaSelecionados.addEventListener('click', apagaSelecionados);
