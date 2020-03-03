@@ -9,7 +9,7 @@ const botaoMoveCima = document.getElementById('mover-cima');
 const botaoMoveBaixo = document.getElementById('mover-baixo');
 
 let listaSalva = localStorage.getItem('lista');
-if(listaSalva){
+if (listaSalva) {
   listaTarefas.innerHTML = listaSalva;
 }
 
@@ -19,20 +19,28 @@ function criaTarefa() {
   listaTarefas.appendChild(item);
   tarefaInput.value = null;
 
-  item.addEventListener('dblclick', function () {
-    if (item.classList.contains('completed')) {
-      item.classList.remove('completed');
-    } else {
-      item.classList.add('completed');
-    }
+  item.addEventListener('dblclick', function() {
+    completedItem(item);
   });
-  item.addEventListener('click', function () {
-    if (item.classList.contains('selected')) {
-      item.classList.remove('selected');
-    } else {
-      item.classList.add('selected');
-    }
+  item.addEventListener('click', function() {
+    selectedItem(item);
   });
+}
+
+function completedItem(item) {
+  if (item.classList.contains('completed')) {
+    item.classList.remove('completed');
+  } else {
+    item.classList.add('completed');
+  }
+}
+
+function selectedItem(item) {
+  if (item.classList.contains('selected')) {
+    item.classList.remove('selected');
+  } else {
+    item.classList.add('selected');
+  }
 }
 
 function apagaTudo() {
@@ -41,7 +49,7 @@ function apagaTudo() {
   for (let i = elementos; i >= 0; i -= 1) {
     lista[i].remove();
   }
-  localStorage.clear()
+  localStorage.clear();
 }
 
 function apagaFinalizados() {
@@ -65,8 +73,8 @@ function apagaSelecionados() {
 }
 
 function salvaLista() {
-  localStorage.clear()
-  localStorage.setItem('lista',listaTarefas.innerHTML)
+  localStorage.clear();
+  localStorage.setItem('lista', listaTarefas.innerHTML);
 }
 
 function moverCima() {
@@ -74,7 +82,10 @@ function moverCima() {
   const elementos = lista.length - 1;
   const primeiro = listaTarefas.firstChild;
   for (let i = elementos; i > 0; i -= 1) {
-    if (lista[i].classList.contains('selected') && (lista[i].classList.contains('selected') != primeiro)) {
+    if (
+      lista[i].classList.contains('selected') &&
+      lista[i].classList.contains('selected') != primeiro
+    ) {
       listaTarefas.insertBefore(lista[i], lista[i - 1]);
     }
   }
@@ -85,7 +96,10 @@ function moverBaixo() {
   const elementos = lista.length - 1;
   const ultimo = listaTarefas.lastChild;
   for (let i = elementos; i >= 0; i -= 1) {
-    if (lista[i].classList.contains('selected') && (lista[i].classList.contains('selected') != ultimo)) {
+    if (
+      lista[i].classList.contains('selected') &&
+      lista[i].classList.contains('selected') != ultimo
+    ) {
       listaTarefas.insertBefore(lista[i].nextSibling, lista[i]);
     }
   }
