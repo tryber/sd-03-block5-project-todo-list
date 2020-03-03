@@ -27,7 +27,6 @@ window.onload = function() {
     element.addEventListener("dblclick", function() {
       if (element.classList.contains("completed")){
         element.classList.remove("completed");
-        element.classList.add("textDecoration");
       } else { 
         element.classList.add("completed");
       }
@@ -41,10 +40,9 @@ window.onload = function() {
   })
 
   buttonFinalizados.addEventListener("click", function(){
-    console.log(document.getElementsByClassName("completed").length)
-    for (let i = 0; i < document.getElementsByClassName("completed").length; i++) {
-      lista.removeChild(document.getElementsByClassName("completed")[i]);
-     }
+    document.querySelectorAll(".completed").forEach(function(element){
+      element.remove();
+    })
   })
 
 }
