@@ -51,10 +51,15 @@ function saveList() {
 }
 
 function recoverList() {
-  const container = document.getElementById('lista-tarefa-container');
+  const container = document.getElementById('lista-tarefas');
   const recoveredList = window.localStorage.getItem('LastSave');
 
   container.innerHTML = recoveredList;
+
+  for (const item of container.children) {
+    item.addEventListener('click', selectItem);
+    item.addEventListener('dblclick', completedItens);
+  }
 }
 
 function ONLOAD() {
