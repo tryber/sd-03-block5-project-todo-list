@@ -1,16 +1,13 @@
-const criarTarefa = document.querySelector("#criar-tarefa");
-const textoTarefa = document.querySelector("#texto-tarefa");
-const listaOrdenada = document.querySelector("ol");
+let criarTarefa = document.querySelector("#criar-tarefa");
+let textoTarefa = document.querySelector("#texto-tarefa");
+let listaOrdenada = document.querySelector("ol");
 
 criarTarefa.addEventListener("click", function textonaLista() {
-  const itemLista = document.createElement("li");
+  let itemLista = document.createElement("li");
   itemLista.innerText = textoTarefa.value;
-  itemLista.className = "tarefa";
-  textoTarefa.value = "";
   listaOrdenada.appendChild(itemLista);
-  listaOrdenada.querySelectorAll("li").forEach(singleClickTarefa);
-  listaOrdenada.querySelectorAll("li").forEach(doubleClickTarefa);
-});
+  textoTarefa.value = "";
+ });
 
 const botaoApagarTudo = document.querySelector("#apaga-tudo");
 
