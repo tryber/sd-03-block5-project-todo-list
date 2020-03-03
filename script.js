@@ -14,9 +14,8 @@ addItem.addEventListener("click", function(){
         }
     })
     newItem.addEventListener("click", function(){
-        newItem.classList.toggle("gray");
-        if (newItem.classList == "gray") {
-            newItem.style.backgroundColor = "rgb(128,128,128)";
+        newItem.classList.toggle("grey");
+        if (newItem.classList == "grey") {
         } else {
             newItem.style.removeProperty("background-color");
         }
@@ -28,11 +27,49 @@ clearAll.addEventListener("click", function(){
     let itemList = document.querySelector("#lista-tarefas");
     itemList.innerHTML = "";
 })
-
 let removeCompleted = document.querySelector("#remover-finalizados");
 removeCompleted.addEventListener("click", function(){
     let elementsToRemove = document.getElementsByClassName("completed");
     while (elementsToRemove.length > 0) {
         document.querySelector("#lista-tarefas").removeChild(elementsToRemove[0]);
+    }
+})
+let removeSelected = document.querySelector("#remover-selecionado");
+removeSelected.addEventListener("click", function(){
+    let elementsToRemove = document.getElementsByClassName("grey");
+    while (elementsToRemove.length > 0) {
+        document.querySelector("#lista-tarefas").removeChild(elementsToRemove[0]);
+    }
+})
+let moveUp = document.querySelector("#mover-cima");
+moveUp.addEventListener("click", function(){
+    let elementToMove = document.getElementsByClassName("grey");
+    let completeList = document.querySelectorAll("li");
+    for (i = 0; i < completeList.length; i += 1){
+        if (completeList[i].classList == "grey"){
+            let toMoveUp = completeList[i].innerText;
+            let toMoveDown = completeList[i-1].innerText;
+            completeList[i].innerText = toMoveDown;
+            completeList[i-1].innerText = toMoveUp;
+            completeList[i].classList.remove("grey");
+            completeList[i-1].classList.add("grey");
+            break
+        }
+    }
+})
+let moveDown = document.querySelector("#mover-baixo");
+moveDown.addEventListener("click", function(){
+    let elementToMove = document.getElementsByClassName("grey");
+    let completeList = document.querySelectorAll("li");
+    for (i = 0; i < completeList.length; i += 1){
+        if (completeList[i].classList == "grey"){
+            let toMoveUp = completeList[i+1].innerText;
+            let toMoveDown = completeList[i].innerText;
+            completeList[i].innerText = toMoveUp;
+            completeList[i+1].innerText = toMoveDown;
+            completeList[i].classList.remove("grey");
+            completeList[i+1].classList.add("grey");
+            break
+        }
     }
 })

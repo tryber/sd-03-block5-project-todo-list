@@ -12,3 +12,6 @@ header {
 button, li {
     cursor: pointer;
 }
+.grey {
+    background-color: rgb(128,128,128);
+}
