@@ -4,6 +4,7 @@ document.getElementById("criar-tarefa").addEventListener("click", () => {
   li.textContent = document.getElementById("texto-tarefa").value
   li.addEventListener("dblclick", () => { (li.style.textDecoration == "line-through") ? li.style.textDecoration = "none" : li.style.textDecoration = "line-through"; })
   li.addEventListener("click", () => { li.style.backgroundColor = "rgb(128,128,128)" })
+  li.style.cursor = "pointer"
   document.getElementById("texto-tarefa").value = ''
   document.getElementById("lista-tarefas").appendChild(li)
 })
