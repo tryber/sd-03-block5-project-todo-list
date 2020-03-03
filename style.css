@@ -24,6 +24,7 @@ i:hover {
 }
 
 button {
+  cursor: pointer;
   border: none;
   border-radius: 10px;
   flex-grow: 1;
@@ -36,6 +37,7 @@ button {
 }
 
 input {
+  cursor: pointer;
   border: none;
   border-radius: 10px;
   flex-grow: 1;
