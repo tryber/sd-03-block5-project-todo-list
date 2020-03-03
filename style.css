@@ -19,7 +19,7 @@ ol li {
   cursor: pointer;
   position: relative;
   padding: 12px 8px 12px 40px;
-  background: #eee;
+  background-color: #eee;
   font-size: 18px;
   transition: 0.2s;
   
@@ -40,7 +40,7 @@ ol li:hover {
 ol li.completed {
   background: #888;
   color: #fff;
-  text-decoration: line-through;
+  text-decoration: line-through solid rgb(0, 0, 0);
 }
 
 /* Add a "completed" mark when clicked on */
@@ -58,7 +58,7 @@ ol li.completed::before {
 }
 
 ol li.selected{
-  background-color: rgb(128,128,128);
+  background-color: rgb(128, 128, 128)!important;
   color: #fff;
 }
 

@@ -42,3 +42,12 @@ apagafinalizados.addEventListener('click', function(){
         list.removeChild(finalizado);
     })
 });
+
+const apagaselecionados = document.getElementById('remover-selecionado');
+
+apagaselecionados.addEventListener('click', function(){
+    let selecionados = document.querySelectorAll('.selected');
+    [].forEach.call(selecionados, selecionado => {
+        list.removeChild(selecionado);
+    })
+});
