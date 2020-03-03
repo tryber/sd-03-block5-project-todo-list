@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--Retirei a tag de linkar o javascript daqui e coloquei no final do body como teste-->
+    <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Lista de Tarefas</title>
   </head>
@@ -17,12 +17,10 @@
     <article>
       <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
       <input type="text" id="texto-tarefa">
-      <button class="criar-tarefa" id="criar-tarefa" onclick="adicionarItem()">Adicionar</button>
-      <button class="limpar-campo-input" id="limpar-campo-input"
-        onclick="document.getElementById('texto-tarefa').value = ''">Limpar campo</button>
+      <button class="criar-tarefa btn" id="criar-tarefa" onclick="adicionarItem()">Adicionar</button>
+      <button class="limpar-campo-input btn" id="btn-limpar-campo" onclick="limparInput()">Limpar campo</button>
       <ol id="lista-tarefas"></ol>
     </article>
-    <script src="script.js"></script>
   </body>
 
 </html>
