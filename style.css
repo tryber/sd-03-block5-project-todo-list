@@ -1,5 +1,6 @@
 .unchecked {
     background-color: white;
+    cursor: pointer;
 }
 
 .checked {
