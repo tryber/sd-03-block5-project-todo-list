@@ -46,10 +46,8 @@ function clearCompleted() {
 }
 
 function saveList() {
-  const list = document.getElementById('lista-tarefas').parentElement.innerHTML;
+  const list = document.getElementById('lista-tarefas').innerHTML;
   localStorage.setItem('LastSave', list);
-  const lista = localStorage.getItem('LastSave');
-  console.log(list);
 }
 
 function recoverList() {
