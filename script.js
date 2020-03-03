@@ -79,6 +79,10 @@ function downWard() {
   }
 }
 
+function removeSelected() {
+  document.getElementsByClassName('selected-item')[0].remove();
+}
+
 function ONLOAD() {
   recoverList();
 
@@ -98,6 +102,9 @@ function ONLOAD() {
   buttonUpWard.addEventListener('click', upWard);
   const buttonDownWard = document.getElementById('mover-baixo');
   buttonDownWard.addEventListener('click', downWard);
+
+  const buttonRemoveSelected = document.getElementById('remover-selecionado');
+  buttonRemoveSelected.addEventListener('click', removeSelected);
 }
 
 window.onload = ONLOAD();
