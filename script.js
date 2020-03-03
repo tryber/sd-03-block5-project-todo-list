@@ -8,7 +8,7 @@ const botaoSalvaLista = document.getElementById('salvar-tarefas');
 const botaoMoveCima = document.getElementById('mover-cima');
 const botaoMoveBaixo = document.getElementById('mover-baixo');
 
-let listaSalva = localStorage.getItem('lista');
+const listaSalva = localStorage.getItem('lista');
 if (listaSalva) {
   listaTarefas.innerHTML = listaSalva;
 }
@@ -19,10 +19,10 @@ function criaTarefa() {
   listaTarefas.appendChild(item);
   tarefaInput.value = null;
 
-  item.addEventListener('dblclick', function() {
+  item.addEventListener('dblclick', function () {
     completedItem(item);
   });
-  item.addEventListener('click', function() {
+  item.addEventListener('click', function () {
     selectedItem(item);
   });
 }
@@ -82,10 +82,7 @@ function moverCima() {
   const elementos = lista.length - 1;
   const primeiro = listaTarefas.firstChild;
   for (let i = elementos; i > 0; i -= 1) {
-    if (
-      lista[i].classList.contains('selected') &&
-      lista[i].classList.contains('selected') != primeiro
-    ) {
+    if (lista[i].classList.contains('selected') && lista[i].classList.contains('selected') !== primeiro) {
       listaTarefas.insertBefore(lista[i], lista[i - 1]);
     }
   }
@@ -96,10 +93,7 @@ function moverBaixo() {
   const elementos = lista.length - 1;
   const ultimo = listaTarefas.lastChild;
   for (let i = elementos; i >= 0; i -= 1) {
-    if (
-      lista[i].classList.contains('selected') &&
-      lista[i].classList.contains('selected') != ultimo
-    ) {
+    if (lista[i].classList.contains('selected') && lista[i].classList.contains('selected') !== ultimo) {
       listaTarefas.insertBefore(lista[i].nextSibling, lista[i]);
     }
   }
