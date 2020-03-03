@@ -13,3 +13,9 @@ function addinput () {
     txtInput.value = " "
     txtInput.focus ()
 }
+
+// addIten.addEventListener("dblclick", completar);
+
+// function completar () {
+//     console.log(iten);
+// }
