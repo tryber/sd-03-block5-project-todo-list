@@ -1,7 +1,3 @@
-button:hover {
-    cursor: pointer;
-}
-
 .unchecked {
     background-color: white;
 }
@@ -13,4 +9,8 @@ button:hover {
 .completed {
     text-decoration: line-through;
     font-style: italic;
+}
+
+button:hover{
+    cursor: pointer;
 }
