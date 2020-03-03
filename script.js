@@ -14,24 +14,25 @@ document.getElementById("criar-tarefa").addEventListener("click", () => {
 })
 
 document.getElementById("apaga-tudo").addEventListener("click", () => {
-  document.querySelectorAll("li").forEach( function (e) {e.remove()})
+  document.querySelectorAll("li").forEach(function (e) { e.remove() })
 })
 
 document.getElementById("remover-finalizados").addEventListener("click", () => {
-  document.querySelectorAll("li").forEach( function (e) { if (e.classList[0] == "completed") { e.remove() }})
+  document.querySelectorAll("li").forEach(function (e) { if (e.classList[0] == "completed") { e.remove() } })
 })
 
 document.getElementById("salvar-tarefas").addEventListener("click", () => {
   let todoList = []
   document.querySelectorAll("li").forEach(e => {
-  console.log(e)
-  todoList.push(e.innerHTML) })
-
+    todoList.push(e.textContent)
+    // classList.push(e.className)
+  })
+  // window.localStorage.setItem("Class-array", classList)
   window.localStorage.setItem("Todo-array", todoList)
 })
 
-if(window.localStorage.getItem("Todo-array") != null){
-  window.localStorage.getItem("Todo-array").split(',').forEach( e => {
+if (window.localStorage.getItem("Todo-array") != null) {
+  window.localStorage.getItem("Todo-array").split(',').forEach(e => {
     createLine(e)
   })
 }
