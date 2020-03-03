@@ -29,3 +29,9 @@ ol,
 li:hover {
     cursor: pointer;
 }
+
+.deixaCinza {
+    background-color: rgb(128, 128, 128)
+}
+
+.itemLista {}
