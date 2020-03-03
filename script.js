@@ -1,4 +1,4 @@
-let botao = document.getElementById("enviar");
+let botao = document.querySelector("#criar-tarefa");
 let pegaTexto = document.querySelector("#texto-tarefa");
 let exibeLista = document.querySelector("#lista-tarefas");
 

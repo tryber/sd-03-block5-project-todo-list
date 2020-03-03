@@ -7,7 +7,7 @@ html, body{
   text-align:center;
 }
 
-#enviar{
+#criar-tarefa{
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   -webkit-box-shadow: rgb(199, 200, 193) 0 0 10px;
@@ -49,4 +49,5 @@ body{
 
 li{
   border-bottom: 1px solid rgb(184, 190, 184);
+  cursor: pointer;
 }
