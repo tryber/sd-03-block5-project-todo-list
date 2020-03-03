@@ -22,19 +22,9 @@ document.getElementById("remover-finalizados").addEventListener("click", () => {
 })
 
 document.getElementById("salvar-tarefas").addEventListener("click", () => {
-  let todoList = []
-  document.querySelectorAll("li").forEach(e => {
-    todoList.push(e.textContent)
-    // classList.push(e.className)
-  })
-  // window.localStorage.setItem("Class-array", classList)
-  window.localStorage.setItem("Todo-array", todoList)
+  localStorage.setItem("Lista de Tarefas", document.getElementById("lista-tarefas"))
 })
 
-if (window.localStorage.getItem("Todo-array") != null) {
-  window.localStorage.getItem("Todo-array").split(',').forEach(e => {
-    createLine(e)
-  })
+if (window.localStorage.getItem("Lista de Tarefas") != null) {
+  console.log(window.localStorage.getItem("Lista de Tarefas"))
 }
-
-
