@@ -22,9 +22,9 @@ function cor(numero){
     for (let id = 0; id < divs.length; id++) {
         let ids = divs[id].getAttribute('id');
         if(divs[id].className == "lista"){
-            divs[id].className = "finalizado";
+            divs[id].className = "completed";
         }
-        else if(divs[id].className == "finalizado"){
+        else if(divs[id].className == "completed"){
             divs[id].className = "lista";
         }
     }
@@ -38,19 +38,3 @@ function apagarTudo(){
         child = e.lastElementChild; 
     }
 }
-
-/*let overLista = document.getElementsByClassName('lista');
-overLista.document.addEventListener('click', function(){
-  for (let i = 0; i < overLista.length; i++){
-    let id = overLista[i].getAttribute('id');
-    if(overLista[i].className == 'lista'){
-        overLista[i].className = 'bgc';
-        alert('deu');
-    }
-    else if(overLista[i].className == 'bgc'){
-        overLista[i].className == 'bgc';
-        alert('certo')
-    }
-  } 
-});*/ 
-

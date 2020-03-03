@@ -76,9 +76,7 @@ header p{
     background-repeat: no-repeat;
     width: 20px;
     height: 20px;
-    border: none;document.querySelector('.element').addEventListener('mouseover',() => {
-        document.querySelector('.element').style.cursor = 'pointer';
-      });
+    border: none;
 }
 
 .btntachado{
@@ -112,9 +110,10 @@ button{
     font-size: x-large;
     font-family: lista;
     cursor: pointer;
+    background-color: rgb(128, 128, 128);
 }
 
-.finalizado{
+.completed{
     clear: both;
     font-size: x-large;
     font-family: lista;
@@ -126,6 +125,6 @@ button{
     font-size: 15px;
 }
 
-.bgc{
-    background-color: rgb(128, 128, 128);
+button:hover{
+    cursor: pointer;
 }
