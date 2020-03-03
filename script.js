@@ -7,6 +7,7 @@ function addTarefa() {
   bloco.appendChild(nota);
   nota.addEventListener('click', clique);
   nota.addEventListener('dblclick', doisCliques);
+  document.getElementById('texto-tarefa').value = '';
 }
 
 function clique(event) {
