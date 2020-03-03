@@ -14,6 +14,8 @@ if (listaSalva) {
   listaTarefas.innerHTML = listaSalva;
 }
 
+let itemSelecionado;
+
 function completedItem(item) {
   if (item.classList.contains('completed')) {
     item.classList.remove('completed');
@@ -27,6 +29,7 @@ function selectedItem(item) {
     item.classList.remove('selected');
   } else {
     item.classList.add('selected');
+    itemSelecionado = item;
   }
 }
 
@@ -79,24 +82,16 @@ function salvaLista() {
 }
 
 function moverCima() {
-  const lista = document.querySelectorAll('li');
-  const elementos = lista.length - 1;
   const primeiro = listaTarefas.firstChild;
-  for (let i = elementos; i > 0; i -= 1) {
-    if (lista[i].classList.contains('selected') && lista[i].classList.contains('selected') !== primeiro) {
-      listaTarefas.insertBefore(lista[i], lista[i - 1]);
-    }
+  if(itemSelecionado && itemSelecionado !== primeiro) {
+    listaTarefas.insertBefore(itemSelecionado, itemSelecionado.previousElementSibling);
   }
 }
 
 function moverBaixo() {
-  const lista = document.querySelectorAll('li');
-  const elementos = lista.length - 1;
   const ultimo = listaTarefas.lastChild;
-  for (let i = elementos; i >= 0; i -= 1) {
-    if (lista[i].classList.contains('selected') && lista[i].classList.contains('selected') !== ultimo) {
-      listaTarefas.insertBefore(lista[i].nextSibling, lista[i]);
-    }
+  if(itemSelecionado && itemSelecionado !== ultimo) {
+    listaTarefas.insertBefore(itemSelecionado.nextElementSibling, itemSelecionado);
   }
 }
 
