@@ -6,19 +6,21 @@ window.onload = function() {
         let taskInput = document.getElementById('texto-tarefa').value;
         let liElement = document.createElement("li");
         liElement.innerHTML = taskInput;
-        //Adiciona a classe btn para cursor dor mouse
+        //Adiciona a classe btn para adicionar cursor pointer.
         liElement.classList.add("btn");
         //Adicionar fundo cinza ao elemento.
+
         liElement.addEventListener('click', event => {
             liElement.style.backgroundColor = "rgb(128,128,128)"
         });
 
         //Risca Item selecionado com duplo-click (adicionando a classe completed)
         liElement.addEventListener('dblclick', event => {
-            if (liElement.classList[0] != "completed") {
-                liElement.classList.add("completed");
-            } else {
+            if (liElement.classList.contains('completed')) {
                 liElement.classList.remove("completed");
+
+            } else {
+                liElement.classList.add("completed");
             }
         });
         //Limpa a caixa de input
