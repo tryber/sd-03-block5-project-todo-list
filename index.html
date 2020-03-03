@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minha Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minha Lista de Tarefas</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-  <heade><h1>Minha Lista de Tarefas</h1></header>
+  <body>
+    <header><h1>Minha Lista de Tarefas</h1></header>
 
     <p id="funcionamento">
       Clique duas vezes em um item para marcá-lo como completo
@@ -19,13 +17,25 @@
     <label for="texto-tarefa">
       Escreva a sua tarefa e clique no botão "Criar Tarefa".
     </label>
-    <input type="text" placeholder="Digite sua tarefa aqui" class="input-tarefa" id="texto-tarefa" autofocus />
+    <input
+      type="text"
+      placeholder="Digite sua tarefa aqui"
+      class="input-tarefa"
+      id="texto-tarefa"
+      autofocus
+    />
 
     <section class="buttons-container">
-      <button id="criar-tarefa" class="criar-tarefa pointer">criar tarefa</button>
-      <button id="salvar-tarefas" class="salvar tarefas pointer">salvar-tarefas</button>
+      <button id="criar-tarefa" class="criar-tarefa pointer">
+        criar tarefa
+      </button>
+      <button id="salvar-tarefas" class="salvar tarefas pointer">
+        salvar-tarefas
+      </button>
       <button id="mover-cima" class="mover-cima pointer">mover pra cima</button>
-      <button id="mover-baixo" class="mover-baixo pointer">mover pra baixo</button>
+      <button id="mover-baixo" class="mover-baixo pointer">
+        mover pra baixo
+      </button>
       <button id="apaga-tudo" class="apaga-tudo pointer">apagar tudo</button>
       <button id="remover-finalizados" class="remover-finalizados pointer">
         remover-finalizados
@@ -33,12 +43,9 @@
     </section>
 
     <section class="list-container">
-      <ol id="lista-tarefas">
-        <li class="cursor"></li>
-      </ol>
+      <ol id="lista-tarefas"></ol>
     </section>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

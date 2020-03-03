@@ -5,6 +5,7 @@ let listaOrdenada = document.querySelector("ol");
 
 criarTarefa.addEventListener("click", function textonaLista() {
   let itemLista = document.createElement("li");
+  itemLista.className = 'cursor';
   itemLista.innerText = textoTarefa.value;
   listaOrdenada.appendChild(itemLista);
   textoTarefa.value = "";
