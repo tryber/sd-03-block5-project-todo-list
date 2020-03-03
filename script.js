@@ -12,6 +12,14 @@ criarTarefa.addEventListener("click", function () {
   ol.appendChild(li);
 
   document.getElementById("texto-tarefa").value = "";
+
+  li.addEventListener("click", function () {
+    li.style.backgroundColor = "rgb(128,128,128)";
+
+    li.addEventListener("dblclick", function () {
+      li.style.textDecoration = "line-through";
+    })
+  })
 })
 
 const apagaTudo = document.getElementById("apaga-tudo");
@@ -19,5 +27,3 @@ const apagaTudo = document.getElementById("apaga-tudo");
 apagaTudo.addEventListener("click", function () {
   location.reload(true);
 })
-
-
