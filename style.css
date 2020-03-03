@@ -9,6 +9,6 @@ header {
 .main-content {
     text-align: center;
 }
-button {
+button, li {
     cursor: pointer;
 }
