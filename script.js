@@ -1,6 +1,7 @@
 const tarefaInput = document.getElementById('texto-tarefa');
-const botaoTarefa = document.getElementById('criar-tarefa');
 const listaTarefas = document.getElementById('lista-tarefas');
+
+const botaoTarefa = document.getElementById('criar-tarefa');
 const botaoApagaTudo = document.getElementById('apaga-tudo');
 const botaoApagaFinalizados = document.getElementById('remover-finalizados');
 const botaoApagaSelecionados = document.getElementById('remover-selecionado');
@@ -11,20 +12,6 @@ const botaoMoveBaixo = document.getElementById('mover-baixo');
 const listaSalva = localStorage.getItem('lista');
 if (listaSalva) {
   listaTarefas.innerHTML = listaSalva;
-}
-
-function criaTarefa() {
-  const item = document.createElement('li');
-  item.innerText = tarefaInput.value;
-  listaTarefas.appendChild(item);
-  tarefaInput.value = null;
-
-  item.addEventListener('dblclick', function () {
-    completedItem(item);
-  });
-  item.addEventListener('click', function () {
-    selectedItem(item);
-  });
 }
 
 function completedItem(item) {
@@ -41,6 +28,20 @@ function selectedItem(item) {
   } else {
     item.classList.add('selected');
   }
+}
+
+function criaTarefa() {
+  const item = document.createElement('li');
+  item.innerText = tarefaInput.value;
+  listaTarefas.appendChild(item);
+  tarefaInput.value = null;
+
+  item.addEventListener('dblclick', function () {
+    completedItem(item);
+  });
+  item.addEventListener('click', function () {
+    selectedItem(item);
+  });
 }
 
 function apagaTudo() {
