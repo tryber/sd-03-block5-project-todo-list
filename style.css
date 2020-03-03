@@ -1,6 +1,12 @@
+body {
+    background-color: khaki;
+    display: inline-flexbox;
+}
+
 header {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     letter-spacing: -1.5pt;
+    width: 100%;
 }
 
 article {
@@ -18,6 +24,10 @@ ol {
 button {
     cursor: pointer;
     transition-duration: 0.5s;
+}
+
+li {
+    cursor: pointer;
 }
 
 .botAdd {
