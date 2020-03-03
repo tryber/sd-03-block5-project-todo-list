@@ -1,48 +1,41 @@
-let addItem = document.getElementById("criar-tarefa");
-addItem.addEventListener("click", function(){
+function doubleClick (event) {
+    event.target.classList.toggle("completed");
+}
+
+function simpleClick (event){
+    event.target.classList.toggle("grey");
+}
+
+function createItem (event){
     let newItemContent = document.querySelector("#texto-tarefa").value;
     let newItem = document.createElement("li");
     newItem.innerText = newItemContent;
     document.getElementById("lista-tarefas").appendChild(newItem);
     document.querySelector("#texto-tarefa").value = "";
-    newItem.addEventListener("dblclick", function(){
-        newItem.classList.toggle("completed");
-        if (newItem.classList == "completed") {
-            newItem.style.textDecoration = "line-through";
-        } else {
-            newItem.style.removeProperty("text-decoration");
-        }
-    })
-    newItem.addEventListener("click", function(){
-        newItem.classList.toggle("grey");
-        if (newItem.classList == "grey") {
-        } else {
-            newItem.style.removeProperty("background-color");
-        }
-    })
-})
+    newItem.addEventListener("dblclick", doubleClick)
+    newItem.addEventListener("click", simpleClick)
+}
 
-let clearAll = document.querySelector("#apaga-tudo");
-clearAll.addEventListener("click", function(){
+function clearList (event){
     let itemList = document.querySelector("#lista-tarefas");
     itemList.innerHTML = "";
-})
-let removeCompleted = document.querySelector("#remover-finalizados");
-removeCompleted.addEventListener("click", function(){
+}
+
+function removeCompletedItem (event){
     let elementsToRemove = document.getElementsByClassName("completed");
     while (elementsToRemove.length > 0) {
         document.querySelector("#lista-tarefas").removeChild(elementsToRemove[0]);
     }
-})
-let removeSelected = document.querySelector("#remover-selecionado");
-removeSelected.addEventListener("click", function(){
+}
+
+function removeSelectedItem (event){
     let elementsToRemove = document.getElementsByClassName("grey");
     while (elementsToRemove.length > 0) {
         document.querySelector("#lista-tarefas").removeChild(elementsToRemove[0]);
     }
-})
-let moveUp = document.querySelector("#mover-cima");
-moveUp.addEventListener("click", function(){
+}
+
+function moveItemUp (event){
     let elementToMove = document.getElementsByClassName("grey");
     let completeList = document.querySelectorAll("li");
     for (i = 0; i < completeList.length; i += 1){
@@ -56,9 +49,9 @@ moveUp.addEventListener("click", function(){
             break
         }
     }
-})
-let moveDown = document.querySelector("#mover-baixo");
-moveDown.addEventListener("click", function(){
+}
+
+function moveItemDown (event){
     let elementToMove = document.getElementsByClassName("grey");
     let completeList = document.querySelectorAll("li");
     for (i = 0; i < completeList.length; i += 1){
@@ -72,11 +65,40 @@ moveDown.addEventListener("click", function(){
             break
         }
     }
-})
+}
+
+function saveList (event){
+    let currentList = document.querySelector("#lista-tarefas");
+    localStorage.setItem("saveItens", currentList.innerHTML);
+}
+
+
+let addItem = document.getElementById("criar-tarefa");
+addItem.addEventListener("click", createItem);
+
+let clearAll = document.querySelector("#apaga-tudo");
+clearAll.addEventListener("click", clearList);
+
+let removeCompleted = document.querySelector("#remover-finalizados");
+removeCompleted.addEventListener("click", removeCompletedItem);
+
+let removeSelected = document.querySelector("#remover-selecionado");
+removeSelected.addEventListener("click", removeSelectedItem);
+
+let moveUp = document.querySelector("#mover-cima");
+moveUp.addEventListener("click", moveItemUp);
+
+let moveDown = document.querySelector("#mover-baixo");
+moveDown.addEventListener("click", moveItemDown);
+
 let currentList = localStorage.saveItens;
-if (currentList) document.querySelector("#lista-tarefas").innerHTML = currentList;
+if (currentList) {
+    document.querySelector("#lista-tarefas").innerHTML = currentList;
+    let savedItens = document.querySelectorAll("li");
+    for (i = 0; i < savedItens.length; i += 1){
+        savedItens[i].addEventListener("click", doubleClick);
+        savedItens[i].addEventListener("click", simpleClick);
+    }
+}
 let saveItens = document.querySelector("#salvar-tarefas");
-saveItens.addEventListener("click", function(){
-    let currentList = document.querySelector("#lista-tarefas").innerHTML;
-    localStorage.setItem("saveItens", currentList);
-})
+saveItens.addEventListener("click", saveList);
