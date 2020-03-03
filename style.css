@@ -12,3 +12,7 @@ li {
     
     background-color: lawngreen;
 }
+
+.completed {
+    text-decoration: line-through;
+}

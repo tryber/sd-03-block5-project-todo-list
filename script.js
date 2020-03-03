@@ -17,11 +17,23 @@ function addTask() {
     document.getElementById("texto-tarefa").value = ""
 
     
+    bullet.addEventListener("click", changeColor)
+    function changeColor(){
+        bullet.style.backgroundColor = "rgb(128,128,128)"
+    }
+    
+    bullet.addEventListener("dblclick", lineThrough)
+    function lineThrough() {
+        if (bullet.classList == "tarefa completed"){
+            bullet.classList.remove("completed")
+        }else{bullet.classList.add("completed")}
+        
+    }
 }
 
 
+// posso usar o bullet.classList.toggle("class") ou bullet.class.contains("")
 
-let listOfTasks = document.getElementById("tarefa")
 
 
 
@@ -32,5 +44,3 @@ let listOfTasks = document.getElementById("tarefa")
 
 
   
-
-
