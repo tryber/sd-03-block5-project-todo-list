@@ -24,12 +24,6 @@ function addTask() {
 let listOfTasks = document.getElementById("tarefa")
 
 
-    listOfTasks.addEventListener("click", changeColor)
-
-    function changeColor() {
-        document.getElementById("tarefa").style.backgroundColor = "red"
-    }
-
 
 
 
