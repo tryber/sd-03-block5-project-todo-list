@@ -5,18 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do List</title>
+    <link rel="stylesheet" href="style.css" media="all">
+    <script src="script.js"></script>
 </head>
 
 <body>
-    <header>
+    <header class='centered'>
         <h1 id='title'>Minha Lista de Tarefas</h1>
-        <p id='funcionamento'>Clique duas vezes em um item para marcá-lo como completo</p>
+        <p id='funcionamento'>Clique duas vezes em um item para marca-lo como completo</p>
     </header>
     <div>
-        <h2>Insira a Tarefa a ser listada</h2> <br>
-        <input id="texto-tarefa">
+
+        <h2>Não posso esquecer de:</h2>
+        <input type='text' id="texto-tarefa" onkeyup="raschunhoTarefa()" class="fonteKinder">
+        <button id="criar-tarefa" onclick="addTarefa()">Adicionar Tarefa</button>
     </div>
-    <section></section>
+    <section>
+        <p id="rascunho"></p>
+        <ol id="lista-tarefas">
+
+
+
+        </ol>
+
+        <nav><button id="apaga-tudo" class="fonteKinder">Apagar Lista</button>
+            <button id="remover-finalizados" class="fonteKinder">Remover Finalizados</button></nav>
+    </section>
     <footer></footer>
 
 </body>

@@ -1,0 +1,22 @@
+@font-face {
+    font-family: kindergarten;
+    src: url("/kindergarten.ttf")
+}
+
+body {
+    margin: 10px;
+    font-family: kindergarten;
+}
+
+.fonteKinder {
+    font-family: kindergarten;
+}
+
+#funcionamento {
+    font-style: italic;
+    font-size: 0.75em;
+}
+
+#lista-tarefas {
+    font-size: 2em;
+}
