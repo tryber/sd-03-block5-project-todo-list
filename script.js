@@ -1,6 +1,6 @@
 window.onload = function(){
 
-  const texto = document.querySelector('#texto-tarefa');
+  const texto = document.getElementById('texto-tarefa');
   const botaoTarefa = document.getElementById('criar-tarefa');
   const lista = document.getElementById('lista-tarefas');
 
