@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Tarefas</title>
     <link href="style.css" rel="stylesheet" />
-</head>
-<body>
-
-
+  </head>
+  <body>
+    <header><h1>Minha Lista de Tarefas</h1></header>
+    <p id="funcionamento">
+      Clique duas vezes em um item para marcá-lo como completo
+    </p>
+    <form>
+      <input type="text" id="texto-tarefa" />
+      <input type="button" value="Adicionar" id="criar-tarefa" />
+    </form>
+    <ol id="lista-tarefa"></ol>
+    <form>
+        <input type="button" value="Apagar tudo" id="apaga-tudo">
+        <input type="button" value="Remover Finalizados" id="remover-finalizados">
+        <input type="button" value="Salvar tarefas" id="salvar-tarefas">
+        <input type="button" value="Mover-Acima" id="mover-cima">
+        <input type="button" value="Mover-Abaixo" id="mover-baixo">
+        <input type="button" value="Remover Selecionado" id="remover-selecionado">
+    </form>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
