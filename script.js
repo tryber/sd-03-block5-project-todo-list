@@ -14,5 +14,5 @@ document.getElementById("apaga-tudo").addEventListener("click", () => {
 })
 
 document.getElementById("remover-finalizados").addEventListener("click", () => {
-  document.querySelectorAll("li").forEach( function (e) { if (e.style.textDecoration == "line-through") { e.remove() }})
+  document.querySelectorAll("li").forEach( function (e) { if (e.classList[0] == "completed") { e.remove() }})
 })
