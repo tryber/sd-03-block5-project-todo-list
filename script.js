@@ -1,23 +1,25 @@
-/* Criando um botão que pega o valor da caixa de texto, atriubiu ao valor de uma lista recem criada.*/
 let botaoCriarTarefa = document.querySelector('#criar-tarefa');
 let caixaTexto = document.querySelector('#texto-tarefa');
 let addLista = document.querySelector('#lista-tarefas');
-let allLista = document.querySelectorAll('li');
 
-botaoCriarTarefa.addEventListener('click', addTarefa);
-
-function addTarefa() {
-  let textoInput = caixaTexto.value;
+function criaTarefa() {
   criarLista = document.createElement('li');
-  criarLista.innerHTML = textoInput;
-  criarLista.classList.add('no-color');
+  criarLista.innerHTML = caixaTexto.value;
   addLista.appendChild(criarLista);
   limpaCaixa();
-  criarLista.addEventListener('click', function() {
-    criarLista.classList.remove('no-color');
-    criarLista.classList.add('bgcolor');
-  });
+  criarLista.addEventListener('click', highTask);
+  criarLista.addEventListener('dblclick', check);
 }
+
+function highTask(event) {
+  event.target.classList.toggle('bgcolor');
+}
+
+function check(event) {
+  event.target.classList.toggle('completed');
+}
+
+botaoCriarTarefa.addEventListener('click', criaTarefa);
 
 function limpaCaixa() {
   caixaTexto.value = '';
