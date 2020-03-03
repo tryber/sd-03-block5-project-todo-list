@@ -2,6 +2,7 @@ window.onload = function() {
   let buttonAdd = document.getElementsByClassName("adicionando-tarefa")[0];
   let buttonClear = document.getElementsByClassName("removendo-tarefas")[0];
   let buttonFinalizados = document.getElementsByClassName("remove-finalizados")[0];
+  let buttonSalve = document.getElementsByClassName("salva-lista")[0];
   let lista = document.getElementsByClassName("lista-ordenada")[0];
   let input1 = document.getElementsByClassName("tarefa")[0];
   
@@ -44,5 +45,15 @@ window.onload = function() {
       element.remove();
     })
   })
+
+  buttonSalve.addEventListener("click", function() {
+    localStorage.setItem("Lista de Tarefas", lista.innerHTML);    
+  })
+
+  if(window.localStorage.getItem("Lista de Tarefas")){
+    lista.innerHTML = window.localStorage.getItem("Lista de Tarefas");
+  }
+
+  
 
 }
