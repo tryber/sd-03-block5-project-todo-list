@@ -7,6 +7,22 @@ html, body{
   text-align:center;
 }
 
+#enviar{
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -webkit-box-shadow: rgb(199, 200, 193) 0 0 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 2px solid #108cc6;
+  color: rgb(43, 99, 255);
+  width: 80px;
+  height: 30px;
+  font-size: 14px;
+  display: inline-block;
+  margin: auto;
+  text-decoration: none;
+}
+
 #texto-tarefa{
   margin-bottom:30px;
   width:500px;

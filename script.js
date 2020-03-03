@@ -1,8 +1,19 @@
-let botao = document.querySelector("#enviar");
-botao.addEventListener("click", function(){
-    let pegaTexto = document.querySelector("#texto-tarefa").value;
-    let exibeLista = document.querySelector("#lista");
+let botao = document.getElementById("enviar");
+let pegaTexto = document.querySelector("#texto-tarefa");
+let exibeLista = document.querySelector("#lista-tarefas");
+
+
+
+
+function criaLista(){
+
     let criaLi = document.createElement("li");
-    criaLi.innerHTML = pegaTexto;
+    criaLi.innerHTML = pegaTexto.value;
     exibeLista.appendChild(criaLi);
-});
+
+    pegaTexto.value = null;
+
+}
+    
+    
+botao.addEventListener("click", criaLista);
