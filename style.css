@@ -2,6 +2,6 @@
   cursor: pointer;
 }
 
-/* .limpar-campo-input button {
-  cursor: pointer;
-} */
+li#completed{
+  color: purple;
+}

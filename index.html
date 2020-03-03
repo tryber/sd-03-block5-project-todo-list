@@ -16,9 +16,9 @@
     </header><br>
     <article>
       <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
-      <input type="text" id="texto-tarefa">
+      <input type="text" id="texto-tarefa" onfocus="this.value=''">
       <button class="criar-tarefa btn" id="criar-tarefa" onclick="adicionarItem()">Adicionar</button>
-      <button class="limpar-campo-input btn" id="btn-limpar-campo" onclick="limparInput()">Limpar campo</button>
+      <!-- <button class="limpar-campo-input btn" id="btn-limpar-campo" onclick="limparInput()">Limpar campo</button> -->
       <ol id="lista-tarefas"></ol>
     </article>
   </body>
