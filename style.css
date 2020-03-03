@@ -1,4 +1,5 @@
 button:hover {
+  background-color: lavender;
   cursor: pointer;
 }
 
@@ -12,4 +13,24 @@ li {
 
 .completed {
   text-decoration: line-through;
+}
+
+body {
+  background-color: lavender;
+}
+
+header {
+  text-align: center;
+}
+
+article {
+  background-color: honeydew;
+  padding: 20px;
+}
+
+button {
+  background-color: lightgray;
+  border: 2px solid lavender;
+  border-radius: 4px;
+  padding: 5px 10px;
 }

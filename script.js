@@ -4,7 +4,6 @@ const listaTarefas = document.getElementById('lista-tarefas');
 const botaoApagaTudo = document.getElementById('apaga-tudo');
 const botaoApagaFinalizados = document.getElementById('remover-finalizados');
 const botaoApagaSelecionados = document.getElementById('remover-selecionado');
-const botaoSalva = document.getElementById('salvar-tarefas');
 const botaoMoveCima = document.getElementById('mover-cima');
 const botaoMoveBaixo = document.getElementById('mover-baixo');
 
