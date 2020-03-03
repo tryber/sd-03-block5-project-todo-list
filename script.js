@@ -6,6 +6,7 @@ txtTarefa.addEventListener("click", addinput);
 
 function addinput () {
     let list = document.createElement("li");
+    list.className = "seta"
     let iten = txtInput.value
     let addIten = document.createTextNode(iten);
     list.appendChild(addIten);
@@ -13,6 +14,8 @@ function addinput () {
     txtInput.value = ""
     txtInput.focus ()
 }
+
+
 
 // addIten.addEventListener("dblclick", completar);
 
