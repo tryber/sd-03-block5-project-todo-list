@@ -44,8 +44,13 @@ function deleteAll() {
 
 
 let eraseCompleted = document.getElementById("remover-finalizados")
+eraseCompleted.addEventListener("click", removeCompleted)
 
-
+function removeCompleted() {
+    document.querySelectorAll('.completed').forEach(function(selected){
+        selected.remove()
+        })
+    }
 
 
 
