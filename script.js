@@ -73,3 +73,10 @@ moveDown.addEventListener("click", function(){
         }
     }
 })
+let currentList = localStorage.saveItens;
+if (currentList) document.querySelector("#lista-tarefas").innerHTML = currentList;
+let saveItens = document.querySelector("#salvar-tarefas");
+saveItens.addEventListener("click", function(){
+    let currentList = document.querySelector("#lista-tarefas").innerHTML;
+    localStorage.setItem("saveItens", currentList);
+})
