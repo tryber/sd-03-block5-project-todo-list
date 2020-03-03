@@ -6,10 +6,17 @@ window.onload = function(){
 
   function listarTarefas () {
     let item1 = document.createElement("li");
+    item1.textContent = texto.value;
     lista.appendChild(item1);
-    item1.innerHTML = texto.value;
+    document.getElementById('texto-tarefa').value = "";
   }
-  botaoTarefa.addEventListener("click", listarTarefas)
+
+  botaoTarefa.addEventListener("click", listarTarefas);
+
+  const apagaTudo = document.getElementById('apaga-tudo');
+  apagaTudo.addEventListener('click', function(){
+    location.reload(true);
+  });
 
 
 }

@@ -2,4 +2,14 @@ button{
   box-shadow: 1px 1px 2px black;
   background-color: chocolate;
   color: whitesmoke;
+  cursor: pointer;
+}
+
+
+li{
+  cursor: pointer;
+}
+
+li:hover{
+  background-color: rgb(128, 128, 128);
 }
