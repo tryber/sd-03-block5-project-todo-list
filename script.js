@@ -11,6 +11,7 @@ window.onload= function(){
             li.appendChild(t);
             document.getElementById("lista-tarefas").appendChild(li);
         }
+        document.getElementById("texto-tarefa").value = ""
     }
     botao.addEventListener("click", addText)
 }
