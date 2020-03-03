@@ -35,6 +35,16 @@ function addTask() {
 // posso usar o bullet.classList.toggle("class") ou bullet.class.contains("")
 
 
+let eraseButton = document.getElementById("apaga-tudo")
+eraseButton.addEventListener("click", deleteAll)
+
+function deleteAll() {
+    document.getElementById("lista-tarefas").innerHTML = ""
+}
+
+
+let eraseCompleted = document.getElementById("remover-finalizados")
+
 
 
 
