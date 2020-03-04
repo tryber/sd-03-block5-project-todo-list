@@ -4,5 +4,5 @@ ct.addEventListener('click', criarTarefa);
 function criarTarefa() {
   let li = document.createElement('li');
   document.getElementById('lista-tarefas').appendChild(li);
-  li.innerHTML = "Minha primeira tarefa";
+  li.innerHTML = "minha primeira tarefa";
 }
