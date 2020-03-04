@@ -1,7 +1,10 @@
-.btn {
+button, li {
   cursor: pointer;
 }
 
-li.completed{
-  color: purple;
+.completed{
+  text-decoration: line-through;
+}
+.corTag{
+  background-color: rgb(128,128,128);
 }

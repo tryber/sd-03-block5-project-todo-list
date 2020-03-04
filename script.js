@@ -1,30 +1,17 @@
-function adicionarItem() {
+function adicionarItem(event) {
   let itensLista = document.getElementById('texto-tarefa').value;
-  let li = document.createElement('li');
-  li.setAttribute("class", "completed");
-  let ol = document.getElementById('lista-tarefas');
-  li.textContent = itensLista;
-  ol.appendChild(li);
-
-  //limpar
-  if (document.getElementById('texto-tarefa').value != "") {
-    document.getElementById('texto-tarefa').value = "";
-  }
-
-  //cor background li
-  document.querySelector(".completed").addEventListener("click", function () {
-    li.style.backgroundColor = "rgb(128, 128, 128)";
-  })
-  //style text-decoration
-  li.addEventListener("dblclick", function () {
-    li.style.textDecoration = "line-through";
-  })
-
+  let tagLi = document.createElement('li');
+  tagLi.setAttribute("class", "completed corTag");
+  let tagOl = document.getElementById('lista-tarefas');
+  tagLi.textContent = itensLista;
+  tagOl.appendChild(tagLi);
+  document.getElementById('texto-tarefa').value = "";
+  //style text-decoration e cor background
 }
+document.getElementsByClassName("completed").addEventListener("dblclick", function (event) {
+  event.target.classList.toggle('completed');
+});
 
-//limpar campo input
-// function limparInput() {
-//   if (document.getElementById('texto-tarefa').value != "") {
-//     document.getElementById('texto-tarefa').value = "";
-//   }
-// }
+document.getElementsByClassName("corTag").addEventListener("click", function () {
+  event.target.classList.toggle('corTag');
+});
