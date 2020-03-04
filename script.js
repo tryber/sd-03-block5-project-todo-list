@@ -38,4 +38,10 @@ function addRiscado() {
   }
 }
 
+function removeRiscado() {
+  for (let = 0; l < lis.length; l += 1) {
+    lis[l].classList.remove('completed');
+  }
+}
+
 lista.addEventListener('dblclick', addRiscado);
