@@ -6,7 +6,7 @@ let listaOrdenada = document.querySelector("ol");
 
 criarTarefa.addEventListener("click", function textonaLista() {
   let itemLista = document.createElement("li");
-  itemLista.className = "cursor";
+  itemLista.className = "cursor completed";
   itemLista.innerText = textoTarefa.value;
   listaOrdenada.appendChild(itemLista);
   textoTarefa.value = "";
@@ -17,4 +17,3 @@ const botaoApagarTudo = document.querySelector("#apaga-tudo");
 botaoApagarTudo.addEventListener("click", function apagarTudo() {
   listaOrdenada.innerHTML = "";
 });
-
