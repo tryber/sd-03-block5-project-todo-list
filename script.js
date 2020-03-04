@@ -14,8 +14,6 @@ if (listaSalva) {
   listaTarefas.innerHTML = listaSalva;
 }
 
-let itemS;
-
 function completedItem(item) {
   if (item.classList.contains('completed')) {
     item.classList.remove('completed');
@@ -29,7 +27,6 @@ function selectedItem(item) {
     item.classList.remove('selected');
   } else {
     item.classList.add('selected');
-    itemS = item;
   }
 }
 
@@ -82,6 +79,7 @@ function salvaLista() {
 }
 
 function moverCima() {
+  const itemS = document.querySelector('.selected');
   const primeiro = listaTarefas.firstChild;
   if (itemS && itemS !== primeiro) {
     listaTarefas.insertBefore(itemS, itemS.previousElementSibling);
@@ -91,6 +89,7 @@ function moverCima() {
 }
 
 function moverBaixo() {
+  const itemS = document.querySelector('.selected');
   const ultimo = listaTarefas.lastChild;
   if (itemS && itemS !== ultimo) {
     listaTarefas.insertBefore(itemS, itemS.nextElementSibling.nextElementSibling);
