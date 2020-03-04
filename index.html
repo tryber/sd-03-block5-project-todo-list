@@ -14,7 +14,7 @@
                 <h4 class="instructions">Clique duas vezes em um item para marcá-lo como completo</h4>
             </nav>
             <span class="sub-div input">
-                <input type="text" id="new-task-input" placeholder="Nova tarefa" maxlength="55">
+                <input class="new-task-input" type="text" id="new-task-input" placeholder="Nova tarefa" maxlength="55">
                 <button type="button" value="Adicionar" id="new-task-btn" maxlength="30" class="btn blue">Adicionar</button>
             </span>
             <div class="sub-div div-list">
@@ -29,9 +29,9 @@
                 <button class="btn green btn-main" id="btn-save" type="button" >Salvar Lista</button></span>
             </div>
         </div>
-        <div id="feedback">
+        <div class="feedback" id="feedback">
             <span>Saved Items</span>
-            <table id="feedbackSave">
+            <table class="feedbackSave" id="feedbackSave">
                 <thead>
                     <th>Sequence</th>
                     <th>Assignment</th>
@@ -41,7 +41,7 @@
             <div>
                 <button class="btn green btn-confirm" id="btn-confirm" type="button" >Confirmar</button>
                 <button class="btn red btn-cancel" id="btn-cancel" type="button" >Cancel</button>  
-            </div>     
+            </div>
         </div>
     </main>
     <script src="script.js"></script>

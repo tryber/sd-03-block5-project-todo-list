@@ -4,12 +4,17 @@
 }
 
 body {
-    background-color: #0fa36b;
+    background-color: rgb(15,163,107);
     margin: 0;
 }
 
 button:hover {
     filter: saturate(40%);
+}
+
+h1 img {
+    height:40px;
+    margin-left: 10px;
 }
 
 li {
@@ -35,7 +40,6 @@ main {
 }
 
 .btn {
-    border: 0px;
     font-family: 'Segoe UI', sans-serif;
     font-size: 15px;
     color: aliceblue;
@@ -54,31 +58,31 @@ main {
 }
 
 .completed {
-    text-decoration: line-through;
     color: gray;
+    text-decoration: line-through;
 }
 
 .container {
     background: white;
-    font-family: 'Segoe UI', sans-serif;
     border: 1px black solid;
     border-radius: 35px;
-    min-width: 900px;
     display: flex;
     flex-direction: column;
+    font-family: 'Segoe UI', sans-serif;
+    min-width: 900px;
 }
 
 .header {
-    font-size: 30px;
+    align-items: center;
     flex-direction: column;
-    width: auto;
+    font-size: 30px;
     height: auto;
     text-align: center;
-    align-items: center;
+    width: auto;
 }
 
 .red {
-    background:darkred;
+    background: darkred;
     border-radius: 30px;
 }
 
@@ -96,28 +100,19 @@ main {
     padding: 20px;
 }
 
-#input-txt {
-    font-size: 20px;
-}
-
 .input {
     display: flex;
-    flex-direction:column;
-}
-
-h1 img {
-    height:40px;
-    margin-left: 10px;
+    flex-direction: column;
 }
 
 .instructions {
     font-size: 20px;
     font-style: italic;
-    text-shadow: 1px 1px;
     opacity: 0.5;
+    text-shadow: 1px 1px;
 }
 
-#feedback {
+.feedback {
     background: azure;
     border: 3px black solid;
     border-radius: 10px;
@@ -132,20 +127,20 @@ h1 img {
     z-index: 2;
 }
 
-#btn-confirm {
+.btn-confirm {
     margin-top: 20px;
 }
 
-#feedback span {
+.feedback span {
     font-size: 20px;
 }
 
-#new-task-input {
+.new-task-input {
     border-radius: 10px;
     font-size: 20px;
     text-align: center;
 }
 
-#list-void {
+.list-void {
     margin-left: 10%;
 }
