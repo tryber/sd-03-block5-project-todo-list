@@ -2,17 +2,18 @@
 <html lang="">
     <head>
         <meta charset="utf-8">
-        <title>Projet | To-Do List</title>
+        <title>Project | To-Do List</title>
 
         <!-- Bootstrap CSS -->
-        <link href="style.css.css" rel="stylesheet" type="text/css">
+        <link href="style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <header>
             <h1>Minha Lista de Tarefas</h1>
         </header>
         <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
-        <input id="texto-tarefa"> 
+        <input id="texto-tarefa">
+        <button id="criar-tarefa">Criar lista-tarefas</button>
         <ol id="lista-tarefas">
             <li>minha primeira tarefa</li>
             <li>minha tarefa</li>
@@ -25,19 +26,13 @@
             <li>primeira tarefa</li>
             <li>não posso remover essa tarefa</li>
         </ol>
-        <button id="criar-tarefa">Criar lista-tarefas</button>
         <br>
-        <br>
+        <div class="botoes">
         <button id="apaga-tudo">Apagar tudo</button>
-        <br>
-        <br>
         <button id="remover-finalizados">Remover Finalizados</button>
-        <br>
-        <br>
         <button id="salvar-tarefas">Salvar Lista</button>
-        <br>
-        <br>
         <button id="remover-selecionado">remover selecionado</button>
         <script src="script.js"></script>
+        </div>
     </body>
 </html>
