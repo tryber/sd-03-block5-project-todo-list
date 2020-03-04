@@ -36,5 +36,10 @@ botoes[0].addEventListener("click", function(){
 
 
 botoes[1].addEventListener("click", function(){
-        
+      for(let i = 0; i < listSize;  i++){
+          let lista = document.querySelectorAll("li");
+          lista[0].remove();
+      }
+      listSize = 0;
+
 })
