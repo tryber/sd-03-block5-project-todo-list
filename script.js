@@ -6,13 +6,14 @@ function setTaskText() {
 }
 
 function createTask() {
-  let liElem = document.createElement("li");
-  let olElem = document.getElementById("lista-tarefas");
+  const liElem = document.createElement("li");
+  const olElem = document.getElementById("lista-tarefas");
   liElem.innerText = taskPreText;
   olElem.appendChild(liElem);
   document.getElementById("texto-tarefa").value = "";
   liElem.id = i;
-  i++;
+  i += 1;
+  liElem.addEventListener("click", selected);
 }
 
 function deleteAllTasks() {
@@ -21,4 +22,8 @@ function deleteAllTasks() {
 
 function removeCompleted() {
   alert("Removed all completed tasks!");
+}
+function selected() {
+  let getId = event.target.id;
+  document.getElementById(getId).classList.toggle("selected");
 }
