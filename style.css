@@ -2,6 +2,6 @@
   cursor: pointer;
 }
 
-li#completed{
+li.completed{
   color: purple;
 }
