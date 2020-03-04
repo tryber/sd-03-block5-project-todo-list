@@ -1,0 +1,14 @@
+body {
+    background-color: cadetblue;
+}
+
+.quadro {
+    background-color: chartreuse;
+    border-radius: 10px;
+    height: 250px;
+    margin-left: 20px;
+    padding: 10px;
+    width: 660px;
+    
+    
+}
