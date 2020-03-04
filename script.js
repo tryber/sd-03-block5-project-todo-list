@@ -16,3 +16,4 @@ const botaoApagarTudo = document.querySelector("#apaga-tudo");
 botaoApagarTudo.addEventListener("click", function apagarTudo() {
   listaOrdenada.innerHTML = "";
 });
+
