@@ -8,4 +8,6 @@ criar_tarefa.addEventListener('click', criarTarefa);
 function criarTarefa() {
     let tarefa = document.createElement('li')
     lista_tarefas.appendChild(tarefa).innerHTML = texto_tarefa.value;
+
+    texto_tarefa.value = '';
 }
