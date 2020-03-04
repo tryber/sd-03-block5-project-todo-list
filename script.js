@@ -53,23 +53,18 @@ function apagaTudo() {
 }
 
 function apagaFinalizados() {
-  const lista = document.getElementsByTagName('li');
-  const elementos = lista.length - 1;
+  const finalizados = document.getElementsByTagName('li');
+  const elementos = finalizados.length - 1;
   for (let i = elementos; i >= 0; i -= 1) {
-    if (lista[i].classList.contains('completed')) {
-      lista[i].remove();
+    if (finalizados[i].classList.contains('completed')) {
+      finalizados[i].remove();
     }
   }
 }
 
 function apagaSelecionados() {
-  const lista = document.getElementsByTagName('li');
-  const elementos = lista.length - 1;
-  for (let i = elementos; i >= 0; i -= 1) {
-    if (lista[i].classList.contains('selected')) {
-      lista[i].remove();
-    }
-  }
+  const selecionado = document.getElementsByClassName('selected')[0];
+  selecionado.remove();
 }
 
 function salvaLista() {
