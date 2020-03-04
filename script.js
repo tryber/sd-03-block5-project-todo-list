@@ -3,11 +3,11 @@ const criarTarefa = document.getElementById("criar-tarefa");
 let listaTarefas = document.getElementById("texto-tarefa");
 const removerFinalizados = document.getElementById("remover-finalizados")
 const ol = document.getElementById("lista-tarefas");
-
+const salvarTarefas = document.getElementById("salvar-tarefas");
 
 criarTarefa.addEventListener("click", function () {
   listaTarefas = document.getElementById("texto-tarefa").value;
-  let li = document.createElement("li");
+  var li = document.createElement("li");
   li.textContent = listaTarefas;
   ol.appendChild(li);
 
@@ -34,4 +34,8 @@ const apagaTudo = document.getElementById("apaga-tudo");
 
 apagaTudo.addEventListener("click", function () {
   location.reload(true);
+})
+
+salvarTarefas.addEventListener("click", function(){
+  localStorage.salvarTarefas = document.getElementsByTagName("li")
 })
