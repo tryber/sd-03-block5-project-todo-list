@@ -20,12 +20,22 @@ for(let i = 0; i < botoes.length; i++){
 }
 let tarefas = document.querySelector("ol").childNodes;
 botoes[0].addEventListener("click", function(){
-    for(let i = 0; i <= listSize; i++){
+    for(let i = 1; i <= listSize; i++){
         tarefas[i].addEventListener("click", function(){
             tarefas[i].style.backgroundColor = "rgb(128,128,128)";
         })
     }
 })
+botoes[0].addEventListener("click", function(){
+    for(let i = 1; i <= listSize; i++){
+        tarefas[i].addEventListener("dblclick", function(){
+            if(tarefas[i].className == "item"){
+                tarefas[i].className = "item completed"
+            }
+        })
+    }
+})
+
 
 botoes[1].addEventListener("click", function(){
         
