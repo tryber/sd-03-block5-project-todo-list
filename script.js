@@ -7,21 +7,29 @@ window.onload = function(){
   //novoItem.addEventListener("click", function(){});
   
   function listed (){
-    let item1 = document.createElement("li");
-    listaTarefa.appendChild (item1);
-    item1.textContent = textoTarefa.value;   
+    let ol = document.createElement("li");
+    listaTarefa.appendChild (ol);
+    ol.textContent = textoTarefa.value;   
+    document.getElementById("texto-tarefa").value = "";
   }
   criarTarefas.addEventListener("click",listed)
+
+  /*
+  function mouseColor(){
+    document.getElementsByTagName("li");
+    ol.style.backgroundColor = "rgb (128,128,128)";  
+  }
+  //ol.addEventListener("click",mouseColor);
   
-  document.getElementById("texto-tarefa").value = "";
+  mouseColor(listed)*/
 
+  function apagarLista(){
+    while(listaTarefa.firstChild)
+    listaTarefa.removeChild(listaTarefa.lastChild);
 
-
-  let apagarLista = document.getElementsByClassName("apagar-tudo");
-  
- // apagarLista.addEventListener("click",function(){
-   // });
-
-
+  }
+  let apagaTudo = document.getElementById("apaga-tudo");
+  apagaTudo.addEventListener("click",apagarLista);
 
 }
+

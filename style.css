@@ -2,8 +2,6 @@ body {
   background-color: rgb(132, 197, 171) ;
 }
   li {
-    background-color:rgb (128,128,128);
-    border: 1px solid black;
     cursor: pointer;
   }
   button {
