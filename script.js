@@ -1,6 +1,15 @@
 let botaoCriarTarefa = document.querySelector('#criar-tarefa');
 let caixaTexto = document.querySelector('#texto-tarefa');
 let addLista = document.querySelector('#lista-tarefas');
+let eraseBtn = document.querySelector('#apaga-tudo');
+let checkLi = document.querySelector('li');
+let checkOl = document.querySelector('ol');
+
+
+eraseBtn.addEventListener('click', function () {
+  checkOl.innerHTML = "";
+})
+
 
 function criaTarefa() {
   criarLista = document.createElement('li');
@@ -24,3 +33,6 @@ botaoCriarTarefa.addEventListener('click', criaTarefa);
 function limpaCaixa() {
   caixaTexto.value = '';
 }
+
+
+
