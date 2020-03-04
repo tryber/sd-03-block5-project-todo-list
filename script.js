@@ -11,8 +11,9 @@ function criarTarefa() {
     lista_tarefas.appendChild(tarefa).innerHTML = texto_tarefa.value;
     // Limpa input
     texto_tarefa.value = '';
-    // Adiciona classe (cinza)
+    // Adiciona classe 'cinza' e 'cursor'
     tarefa.addEventListener('click', tarefaCinza);
+    tarefa.classList.add('cursor');
 }
 
 // Função: ao clicar na tarefa, deixar cinza.
