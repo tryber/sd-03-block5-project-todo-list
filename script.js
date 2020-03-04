@@ -3,7 +3,10 @@ function doubleClick(event) {
 }
 
 function simpleClick() {
-  event.target.classList.toggle('grey');
+    if (document.getElementsByClassName('grey')[0] != null) { 
+      document.getElementsByClassName('grey')[0].classList.remove('grey'); 
+    }
+    event.target.classList.add('grey');
 }
 
 function createItem() {
@@ -36,23 +39,19 @@ function removeSelectedItem() {
 }
 
 function moveItemUp() {
-  const elementToMove = document.querySelectorAll('.grey');
-  for (let i = 0; i , i < elementToMove.length; i += 1){
-    if (elementToMove[i]) {
-      if (elementToMove[i].previousElementSibling) {
-        elementToMove[i].parentNode.insertBefore(elementToMove[i], elementToMove[i].previousElementSibling);
-      }
+  const elementToMove = document.querySelector('.grey');
+  if (elementToMove) {
+    if (elementToMove.previousElementSibling) {
+      elementToMove.parentNode.insertBefore(elementToMove, elementToMove.previousElementSibling);
     }
   }
 }
 
 function moveItemDown() {
-  const elementToMove = document.querySelectorAll('.grey');
-  for (let i = 0; i , i < elementToMove.length; i += 1){
-    if (elementToMove[i]) {
-      if (elementToMove[i].nextElementSibling) {
-        elementToMove[i].parentNode.insertBefore(elementToMove[i].nextElementSibling, elementToMove[i]);
-      }
+  const elementToMove = document.querySelector('.grey');
+  if (elementToMove) {
+    if (elementToMove.nextElementSibling) {
+      elementToMove.parentNode.insertBefore(elementToMove.nextElementSibling, elementToMove);
     }
   }
 }
