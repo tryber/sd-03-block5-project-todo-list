@@ -1,6 +1,5 @@
-let button = document.getElementById("criar-tarefa")
+let button = document.getElementById("criar-tarefa")   //adicionar evento de criar lista no botao 
 button.addEventListener("click", addTask)
-
 
 function addTask() {
 
@@ -13,11 +12,11 @@ function addTask() {
     bullet.innerHTML = Task
     document.getElementById("texto-tarefa").value = ""
 
-    // adicionar click
-    bullet.addEventListener("click", changeColor)
+    // adicionar click  
+    bullet.addEventListener("click", changeColor)    //pra cada li criado eu crio um evento (estava colando fora da funcao)
     function changeColor() {
-        bullet.classList.add("selected")
         bullet.style.backgroundColor = "rgb(128,128,128)"
+        bullet.classList.add("selected")   //adiciona a classe selected pois irei precisar dessa classe depois para remover
     }
 
     // adicionar doubleclick
@@ -36,7 +35,7 @@ function addTask() {
         document.getElementById("lista-tarefas").innerHTML = ""
     }
 
-    //remover completo
+    //remover finalizados
     let eraseCompleted = document.getElementById("remover-finalizados")
     eraseCompleted.addEventListener("click", removeCompleted)
 
@@ -61,18 +60,34 @@ function addTask() {
     let moveUp = document.getElementById("mover-cima")
     moveUp.addEventListener("click", movUp)
 
-    function movUp(){
+    function movUp() {
         document.querySelectorAll(".selected").forEach(function (selected) {
-            
-            document.getElementById("lista-tarefas").removeChild(selected.nextElementSibling)
-            
+
+            document.getElementById("lista-tarefas").insertBefore(selected, selected.nextElementSibling)
+
         })
     }
 
-     
     
-} 
-    
+}
+
+
+/*
+if (localStorage.getItem('dados')) {
+    document.getElementById("lista-tarefas").innerHTML = localStorage.getItem("dados")
+    document.querySelectorAll("li")
+
+    localStorage.setItem('dados', document.getElementById('lista-tarefas').innerHTML) //observar onde colocar o localStorage
+
+         for (let i = 0; i < 25; i++) {
+            savedTasks[i].addEventListener("click", changeColor)
+            savedTasks[i].addEventListener("dblclick", lineThrough)
+        }
+*/
+
+
+
+
 
 
 
