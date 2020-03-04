@@ -18,11 +18,11 @@ document.getElementById('criar-tarefa').addEventListener('click', () => {
 });
 
 document.getElementById('apaga-tudo').addEventListener('click', () => {
-  document.querySelectorAll('li').forEach(function (e) { e.remove() })
+  document.querySelectorAll('li').forEach(function (e) { e.remove(); });
 });
 
 document.getElementById('remover-finalizados').addEventListener('click', () => {
-  document.querySelectorAll('li').forEach(function (e) { if (e.classList.contains('completed')) { e.remove() } });
+  document.querySelectorAll('li').forEach(function (e) { if (e.classList.contains('completed')) { e.remove(); } });
 });
 
 document.getElementById('salvar-tarefas').addEventListener('click', () => {
@@ -31,21 +31,20 @@ document.getElementById('salvar-tarefas').addEventListener('click', () => {
 
 if (window.localStorage.getItem('Lista de Tarefas')) {
   document.getElementById('lista-tarefas').innerHTML = window.localStorage.getItem('Lista de Tarefas');
-  document.querySelectorAll('li').forEach(function (li) { addListeners(li) });
-};
+  document.querySelectorAll('li').forEach(function (li) { addListeners(li); });
+}
 
 document.getElementById('mover-cima').addEventListener('click', () => {
-  selected = document.querySelector('.selected');
+  const selected = document.querySelector('.selected');
   if (selected) {
     if (selected.previousElementSibling) {
       selected.parentNode.insertBefore(selected, selected.previousElementSibling);
     }
   }
-
 });
 
 document.getElementById('mover-baixo').addEventListener('click', () => {
-  selected = document.querySelector('.selected');
+  const selected = document.querySelector('.selected');
   if (selected) {
     if (selected.nextElementSibling) {
       selected.parentNode.insertBefore(selected.nextElementSibling, selected);

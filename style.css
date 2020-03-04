@@ -49,6 +49,11 @@ input {
   text-decoration: none;
 }
 
+li:hover {
+  background-color: rgba( 208 , 163 , 90 , 1 );
+  border-radius: 5px;
+}
+
 .content {
   background-color: rgba( 224 , 223 , 213 , 1 );
   border-radius: 15px;
@@ -80,4 +85,6 @@ input {
 
 .selected {
   background-color: gray;
+  border-radius: 5px;
 }
+
