@@ -32,13 +32,6 @@ function identifyObj(event) {
   }
 }
 
-// function changeColorLi(event) {
-//   var pickId = event.target.id;
-//   document.getElementById(pickId).style.backgroundColor = 'rgb(128,128,128)'
-//   backgroundTarefa != 'white'
-//   console.log('cinza')
-// }
-
 function changeColorLi(event) {
       var pegaId = event.target.id;
       document.getElementById(pegaId).classList.toggle('selected');
