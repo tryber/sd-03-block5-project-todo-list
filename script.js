@@ -8,8 +8,8 @@ const dlista = document.getElementById('apaga-tudo');
 blista.addEventListener('click', function() {
     const lisTarefa = document.createElement('li');
     olista.appendChild(lisTarefa);
-    lisTarefa.className = "listA"
     lisTarefa.innerText = texttarefa.value;
+    lisTarefa.classList.add('lista-tarefa');
     document.getElementById('texto-tarefa').value = '';
 });
 
