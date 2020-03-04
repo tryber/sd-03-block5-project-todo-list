@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo List | Ilan Herbach</title>
+    <title>To do list | Ilan Herbach</title>
   </head>
   <body>
     <article>
@@ -19,13 +19,16 @@
       </section>
       <section>
         <input id="texto-tarefa" name="" type="text" />
-         <button id="criar-tarefa">Add</button>
-         </section>
+        <button id="criar-tarefa">Add</button>
+      </section>
       <ol id="lista-tarefas"></ol>
       <section>
+        <button id="remover-selecionado" class="padrao">Remove selected</button>
+        <button class="padrao" id="remover-finalizados">
+          Remove completed
+        </button>
+        <button id="salvar-tarefas" class="padrao">Salvar</button>
         <button id="apaga-tudo">Delete all</button>
-        <button id="remover-finalizados">Remove completed</button>
-        <button id="salvar-tarefas">Salvar</button>
       </section>
     </article>
   </body>

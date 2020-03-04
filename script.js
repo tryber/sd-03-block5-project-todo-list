@@ -1,15 +1,12 @@
 // Grab objects
-const addButton = document.getElementById('criar-tarefa');
-const deleteButton = document.getElementById('apaga-tudo');
-const removeCompleted = document.getElementById('remover-finalizados');
+const buttons = document.querySelectorAll('button');
 const grabInput = document.getElementById('texto-tarefa');
 const grabList = document.getElementById('lista-tarefas');
-const saveButton = document.getElementById('salvar-tarefas');
 let pegarLi = document.querySelectorAll('li');
 
 // Verify if user have saved list
 if (localStorage.getItem('todo-list')) {
-  grabList.innerHTML = localStorage.getItem('todo-list')
+  grabList.innerHTML = localStorage.getItem('todo-list');
 }
 
 // Functions
@@ -33,12 +30,14 @@ function addTodo() {
   });
 }
 
+// Delete everything
 function deleteAll() {
   for (let i = document.querySelectorAll('li').length; i >= 1; i--) {
     document.querySelector('li').remove();
   }
 }
 
+// Remove completed items
 function removeComp() {
   for (let i = document.querySelectorAll('li').length - 1; i >= 0; i--) {
     if (document.querySelectorAll('li')[i].classList.contains('completed')) {
@@ -47,14 +46,24 @@ function removeComp() {
   }
 }
 
-// Função salvar tarefas
+// Function save to Do List
 function saveTodo() {
   let pegarInner = document.getElementById('lista-tarefas').innerHTML;
   localStorage.setItem('todo-list', pegarInner);
 }
 
+// Remove selected function
+function removeSelected() {
+  pegarLi = document.querySelectorAll('li');
+  for (let i = 0; i < pegarLi.length; i += 1) {
+    if (pegarLi[i].classList.contains('selected')) {
+      pegarLi[i].remove();
+    }
+  }
+}
 // Event listener
-addButton.addEventListener('click', addTodo);
-deleteButton.addEventListener('click', deleteAll);
-removeCompleted.addEventListener('click', removeComp);
-saveButton.addEventListener('click', saveTodo)
+buttons[0].addEventListener('click', addTodo);
+buttons[4].addEventListener('click', deleteAll);
+buttons[2].addEventListener('click', removeComp);
+buttons[3].addEventListener('click', saveTodo);
+buttons[1].addEventListener('click', removeSelected);
