@@ -23,10 +23,10 @@ function completedItem(item) {
 }
 
 function selectedItem(item) {
-  if (item.classList.contains('selected') != null) {
-    item.classList.remove('selected');
+  if (document.getElementsByClassName('selected')[0] != null) {
+    document.getElementsByClassName('selected')[0].classList.remove('selected');
   }
-  item.classList.add('selected');
+    item.classList.add('selected');
 }
 
 function criaTarefa() {
