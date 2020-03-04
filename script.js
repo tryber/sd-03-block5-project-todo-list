@@ -10,3 +10,7 @@ function addText(){
    lista.appendChild(listaAdd,inputTexto)
    listaAdd.innerText = inputTexto
 }
+function limpar (){
+   let inputTexto = document.getElementById("texto-tarefa").value = ''
+
+}
