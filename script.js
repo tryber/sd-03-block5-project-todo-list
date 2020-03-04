@@ -7,7 +7,7 @@ window.onload = function() {
         let liElement = document.createElement("li");
         liElement.innerHTML = taskInput;
         //Adiciona a classe btn para adicionar cursor pointer.
-        liElement.classList.add("btn");
+        liElement.classList.add("pointer");
         //Adicionar fundo cinza ao elemento.
 
         liElement.addEventListener('click', event => {
@@ -25,7 +25,7 @@ window.onload = function() {
         });
         //Limpa a caixa de input
         document.getElementById("texto-tarefa").value = '';
-        //Adiciona o nó li ao elemento ol
+        //Finalmente, adiciona o nó li ao elemento ol
         if (taskInput !== "") { //If para não adicionar item em branco
             document.getElementById('lista-tarefas').appendChild(liElement);
         }
@@ -35,6 +35,7 @@ window.onload = function() {
     addTaskBtn.addEventListener("click", createList);
 
     //Limpar todos os registros:
+
     function clearAll() {
         let ol = document.getElementById('lista-tarefas');
         while (ol.firstChild) {
@@ -44,4 +45,13 @@ window.onload = function() {
     let clearAllBtn = document.getElementById('apaga-tudo');
     clearAllBtn.addEventListener('click', clearAll);
 
+    //Limpa Apenas registros selecionados
+    function clearCompleted() {
+        let completedTasks = document.querySelectorAll('.completed');
+        completedTasks.forEach(element => {
+            element.remove();
+        });
+    }
+    let clearCompletedBtn = document.getElementById('remover-finalizados');
+    clearCompletedBtn.addEventListener('click', clearCompleted);
 }
