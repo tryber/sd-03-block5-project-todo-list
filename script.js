@@ -3,15 +3,10 @@ function doubleClick(event) {
 }
 
 function simpleClick() {
-  if (document.getElementsByClassName('grey')[0] != null && document.getElementsByClassName('grey')[0] != event.target) {
+  if (document.getElementsByClassName('grey')[0] != null) {
     document.getElementsByClassName('grey')[0].classList.remove('grey');
-    event.target.classList.add('grey');
-  } else if (document.getElementsByClassName('grey')[0] != null && document.getElementsByClassName('grey')[0] == event.target) {
-    document.getElementsByClassName('grey')[0].classList.remove('grey');
-  } 
-  else {
-    event.target.classList.add('grey');
   }
+  event.target.classList.add('grey');
 }
 
 function createItem() {
