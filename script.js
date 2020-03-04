@@ -1,6 +1,10 @@
 const addListeners = (li) => {
   li.addEventListener('dblclick', function () {
-    (li.classList.contains('completed')) ? li.classList.remove('completed') : li.classList.add('completed')
+    if (li.classList.contains('completed')) {
+      li.classList.remove('completed')
+    } else {
+      li.classList.add('completed')
+    }
   });
   li.addEventListener('click', (element) => {
     if (document.getElementsByClassName('selected')[0] != null) { document.getElementsByClassName('selected')[0].classList.remove('selected'); }
