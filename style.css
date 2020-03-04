@@ -1,7 +1,7 @@
-completed {
+.completed {
     text-decoration: line-through;
 }
 
-over {
+.mouse-over {
     cursor: pointer;
 }

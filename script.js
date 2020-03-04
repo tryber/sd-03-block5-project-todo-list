@@ -3,15 +3,9 @@ const texto_tarefa = document.querySelector('#texto-tarefa');
 const lista_tarefas = document.querySelector('#lista-tarefas');
 
 criar_tarefa.addEventListener('click', criarTarefa);
-criar_tarefa.addEventListener('mouseover', mudaPonteiro);
 
 // Função: cria novo item abaixo, e limpa input de texto.
 function criarTarefa() {
     let tarefa = document.createElement('li')
     lista_tarefas.appendChild(tarefa).innerHTML = texto_tarefa.value;
-}
-
-// Função: mudar ponteiro para 'mão'
-function mudaPonteiro() {
-
 }
