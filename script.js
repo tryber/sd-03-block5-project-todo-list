@@ -69,4 +69,3 @@ botaoCriar.addEventListener('click', type);
 olId.addEventListener('click', changeColorLi)
 deleteAll.addEventListener('click', deleteTasks)
 olId.addEventListener('dblclick', riscaTexto)
-pickId.addEventListener('click', identifyObj)
