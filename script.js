@@ -14,14 +14,16 @@ botaoAddTarefa.addEventListener("mouseover", function(){
     botaoAddTarefa.style.cursor = "pointer";
     
 })
-
+let tarefas = document.querySelector("ol").childNodes;
 botaoAddTarefa.addEventListener("click", function(){
-    var tarefas = document.querySelector("ol").childNodes;7
     for(let i = 1; i < tarefas.length; i++){
      console.log(tarefas[i].innerHTML);
         tarefas[i].addEventListener("click", function(){
-            tarefas[i].style.color = "rgb(128,128,128)";
+            tarefas[i].style.backgroundColor = "rgb(128,128,128)";
         })
+        //tarefas[i].addEventListener("dblclick", function(){
+            
+       // })
     }
 })
 
