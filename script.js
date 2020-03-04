@@ -1,38 +1,49 @@
+window.onload = function(){
+
   const texto = document.getElementById('texto-tarefa');
   const botaoTarefa = document.getElementById('criar-tarefa');
   const lista = document.getElementById('lista-tarefas');
+  const botaoApagaTudo = document.getElementById('apaga-tudo');
 
-  function listarTarefas () {
+  function listarTarefas (){
     let item1 = document.createElement("li");
     lista.appendChild(item1);
     item1.textContent = texto.value;
-    item1.classList.add('li');
+    item1.classList.add('listaTarefa');
     document.getElementById('texto-tarefa').value = "";
-  }
+  };
 
   botaoTarefa.addEventListener('click', listarTarefas);
-
-  // let liGray = document.getElementsByClassName('li');
-
-  // liGray.addEventListener('click', function(){
-  //   liGray.style.backgroundColor = "rgb (128, 128, 128)";
-  // })
-
-
-  // corLista.addEventListener('click', function(){
-  //   item1.style.backgroundColor = 'rgb (128, 128, 128)'
-  // })
-
 
 
   function apagarTudo (){
     while (lista.firstChild){
-    lista.removeChild(lista.lastChild);
+      lista.removeChild(lista.lastChild);
+    }
+  };
+
+  botaoApagaTudo.addEventListener('click', apagarTudo);
+
+
+
+  let lis = document.getElementsByClassName('listaTarefa');
+
+  function addFundoCinza(){
+    for (let l = 0; l < lis.length; l += 1){
+    lis[l].style.backgroundColor = 'rgb(128,128,128)';
+    }
+  };
+
+  lista.addEventListener('click', addFundoCinza);
+
+
+
+
+
+  function addRiscado(){
+    lis.classList.add('completed');
   }
-}
 
-   const apagaTudo = document.getElementById('apaga-tudo');
-   apagaTudo.addEventListener('click', apagarTudo);
+  lista.addEventListener('dbclick', addRiscado);
 
-
-    //location.reload(true);
+};

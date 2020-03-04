@@ -7,8 +7,14 @@ button{
 
 li{
   cursor: pointer;
+  margin: 2px;
+  width: 40%;
 }
 
-.corLista{
-  background-color: rbg(128,128,128);
+.selected{
+  background-color: rgb(128,128,128);
+}
+
+.completed{
+  text-decoration: line-through;
 }
