@@ -40,10 +40,10 @@ main {
 }
 
 .btn {
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 15px;
     color: aliceblue;
     cursor:pointer;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15px;
     margin: 5px;
     padding: 10px 20px;
 }
