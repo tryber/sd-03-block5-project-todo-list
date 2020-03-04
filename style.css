@@ -8,6 +8,43 @@ body {
     font-family: kindergarten;
 }
 
+#criar-tarefa {
+    border-radius: 30px;
+    transition-duration: 0.5s;
+    font-family: kindergarten;
+}
+
+#criar-tarefa:hover {
+    background-color: grey;
+    color: white;
+}
+
+#apaga-tudo {
+    border-radius: 30px;
+    transition-duration: 0.5s;
+    font-family: kindergarten;
+}
+
+#apaga-tudo:hover {
+    background-color: grey;
+    color: white;
+}
+
+#remover-finalizados {
+    border-radius: 30px;
+    transition-duration: 0.5s;
+    font-family: kindergarten;
+}
+
+#remover-finalizados:hover {
+    background-color: grey;
+    color: white;
+}
+
+#firstContent {
+    display: block;
+}
+
 .fonteKinder {
     font-family: kindergarten;
 }
@@ -19,6 +56,15 @@ body {
 
 #lista-tarefas {
     font-size: 2em;
+    display: block;
+}
+
+#barraNavegacao {
+    position: relative;
+    bottom: 10px;
+}
+
+#container {
     display: block;
 }
 
@@ -39,4 +85,6 @@ li:hover {
     text-decoration: line-through;
 }
 
-.itemLista {}
+.itemLista {
+    font-style: italic;
+}

@@ -39,8 +39,6 @@ function riscadinha() {
 
 function removeCompletos() {
     let b = document.querySelectorAll('.itemLista')
-    while (a.firstChild) {
-        a.removeChild(a.firstChild);
-    }
+    console.log
 
 }
