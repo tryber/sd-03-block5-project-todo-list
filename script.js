@@ -37,32 +37,18 @@ function removeSelectedItem (event){
 
 function moveItemUp (event){
     let elementToMove = document.querySelector(".grey");
-    let completeList = document.querySelectorAll("li");
-    for (i = 0; i < completeList.length; i += 1){
-        if (completeList[i].classList == "grey"){
-            let toMoveUp = completeList[i].innerHTML;
-            let toMoveDown = completeList[i-1].innerHTML;
-            completeList[i].innerHTML = toMoveDown;
-            completeList[i-1].innerHTML = toMoveUp;
-            completeList[i].classList.remove("grey");
-            completeList[i-1].classList.add("grey");
-            break
+    if (elementToMove) {
+        if (elementToMove.previousElementSibling) {
+            elementToMove.parentNode.insertBefore(elementToMove, elementToMove.previousElementSibling);
         }
     }
 }
 
 function moveItemDown (event){
     let elementToMove = document.querySelector(".grey");
-    let completeList = document.querySelectorAll("li");
-    for (i = 0; i < completeList.length; i += 1){
-        if (completeList[i].classList == "grey"){
-            let toMoveUp = completeList[i+1].innerHTML;
-            let toMoveDown = completeList[i].innerHTML;
-            completeList[i].innerHTML = toMoveUp;
-            completeList[i+1].innerHTML = toMoveDown;
-            completeList[i].classList.remove("grey");
-            completeList[i+1].classList.add("grey");
-            break
+    if (elementToMove) {
+        if (elementToMove.nextElementSibling) {
+            elementToMove.parentNode.insertBefore(elementToMove.nextElementSibling, elementToMove);
         }
     }
 }
@@ -71,7 +57,6 @@ function saveList (event){
     let currentList = document.querySelector("#lista-tarefas");
     localStorage.setItem("saveItens", currentList.innerHTML);
 }
-
 
 let addItem = document.getElementById("criar-tarefa");
 addItem.addEventListener("click", createItem);
@@ -96,7 +81,7 @@ if (currentList) {
     document.querySelector("#lista-tarefas").innerHTML = currentList;
     let savedItens = document.querySelectorAll("li");
     for (i = 0; i < savedItens.length; i += 1){
-        savedItens[i].addEventListener("click", doubleClick);
+        savedItens[i].addEventListener("dblclick", doubleClick);
         savedItens[i].addEventListener("click", simpleClick);
     }
 }
