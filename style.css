@@ -34,12 +34,6 @@ li {
 .large {
   transform: scale(1.3);
 }
-.marcado {
-  background-color: rgb( 1208, 128, 128);
-}
 .cursor {
   background-color: rgb(128, 128, 128);
-}
-.completed {
-  text-decoration: line-through;
 }

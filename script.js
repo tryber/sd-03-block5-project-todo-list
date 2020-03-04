@@ -3,7 +3,6 @@ let criarTarefa = document.querySelector("#criar-tarefa");
 let textoTarefa = document.querySelector("#texto-tarefa");
 let listaOrdenada = document.querySelector("ol");
 
-
 criarTarefa.addEventListener("click", function textonaLista() {
   let itemLista = document.createElement("li");
   itemLista.className = "cursor completed";
