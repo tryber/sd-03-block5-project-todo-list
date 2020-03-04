@@ -29,6 +29,16 @@ function adicionarItem() {
 
   lista.addEventListener('dblclick', riscartarefa);
 
+  // botão para apagar tudo
+  const botaoapagatudo = document.getElementById('apaga-tudo');
+
+  function apagartudo() {
+    document.getElementById('lista-tarefas').innerHTML = '';
+  }
+
+  botaoapagatudo.addEventListener('click', apagartudo);
 }
 
 criartarefa.addEventListener('click', adicionarItem);
+
+
