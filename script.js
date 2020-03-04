@@ -1,13 +1,13 @@
-const tarefaInput = document.getElementById('texto-tarefa');
-const listaTarefas = document.getElementById('lista-tarefas');
+const tarefaInput = document.querySelector('#texto-tarefa');
+const listaTarefas = document.querySelector('#lista-tarefas');
 
-const botaoTarefa = document.getElementById('criar-tarefa');
-const botaoApagaTudo = document.getElementById('apaga-tudo');
-const botaoApagaFinalizados = document.getElementById('remover-finalizados');
-const botaoApagaSelecionados = document.getElementById('remover-selecionado');
-const botaoSalvaLista = document.getElementById('salvar-tarefas');
-const botaoMoveCima = document.getElementById('mover-cima');
-const botaoMoveBaixo = document.getElementById('mover-baixo');
+const botaoTarefa = document.querySelector('#criar-tarefa');
+const botaoApagaTudo = document.querySelector('#apaga-tudo');
+const botaoApagaFinalizados = document.querySelector('#remover-finalizados');
+const botaoApagaSelecionados = document.querySelector('#remover-selecionado');
+const botaoSalvaLista = document.querySelector('#salvar-tarefas');
+const botaoMoveCima = document.querySelector('#mover-cima');
+const botaoMoveBaixo = document.querySelector('#mover-baixo');
 
 const listaSalva = localStorage.getItem('lista');
 if (listaSalva) {
@@ -36,10 +36,10 @@ function criaTarefa() {
   listaTarefas.appendChild(item);
   tarefaInput.value = null;
 
-  item.addEventListener('dblclick', function() {
+  item.addEventListener('dblclick', function () {
     completedItem(item);
   });
-  item.addEventListener('click', function() {
+  item.addEventListener('click', function () {
     selectedItem(item);
   });
 }
