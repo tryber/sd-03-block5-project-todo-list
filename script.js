@@ -6,14 +6,16 @@ console.log(listaordenada);
 // console.log(inputTextoTarefa);
 
 function adicionarItem() {
-  let lista = document.createElement("li")
-  //console.log(teste);
-  
+  let lista = document.createElement("li");
   lista.innerHTML = document.getElementById("texto-tarefa").value;
-  //let valorInput = document.getElementById("texto-tarefa").value;
-  //console.log(valorInput);
   listaordenada.appendChild(lista);
   document.getElementById("texto-tarefa").value = "";
+
+  // alterar cor de fundo da lista ao clicar no item da lista
+  function alterarcordefundodalista() {
+    lista.style.backgroundColor = "rgb(128,128,128)";
+  }
+  lista.addEventListener("click", alterarcordefundodalista)
 }
 
 criartarefa.addEventListener("click", adicionarItem);

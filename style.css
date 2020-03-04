@@ -6,6 +6,11 @@ button {
   cursor: pointer;
 }
 
+li {
+  cursor: pointer;
+  margin-top: 5px;
+}
+
 .quadro {
   background-color: chartreuse;
   border-radius: 10px;
