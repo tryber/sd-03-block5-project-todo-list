@@ -224,24 +224,24 @@ window.onload = function () {
   }
   function addTask() {
     let elementFather = returnById('ol-list');
-    let textInput = returnById('new-task-input').value;
+    let textInput = returnById('texto-tarefa').value;
     let taskLi = addTextTask(createItem('li'), textInput);
     addElementInHTML(taskLi, elementFather);
-    returnById('new-task-input').value = '';
+    returnById('texto-tarefa').value = '';
   }
   addClickInputBtn(returnById('new-task-btn'));
   function addClickInputBtn(element) {
     element.addEventListener('click', function () {
-      if (returnById('new-task-input').value) {
+      if (returnById('texto-tarefa').value) {
         addTask();
       }
     });
   }
-  addKeyupTextInput(returnById('new-task-input'));
+  addKeyupTextInput(returnById('texto-tarefa'));
   function addKeyupTextInput(element) {
     element.addEventListener('keydown', function (){
       if (event.keyCode == 13){
-        if (returnById('new-task-input').value) {
+        if (returnById('texto-tarefa').value) {
           addTask();
         }
       }
