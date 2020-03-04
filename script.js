@@ -83,8 +83,6 @@ function moverCima() {
   if (itemS) {
     if (itemS.previousElementSibling) {
       itemS.parentNode.insertBefore(itemS, itemS.previousElementSibling);
-    } else {
-      alert('Não é possível mover esse item para cima!');
     }
   }
 }
@@ -94,8 +92,6 @@ function moverBaixo() {
   if (itemS) {
     if (itemS.nextElementSibling) {
       itemS.parentNode.insertBefore(itemS.nextElementSibling, itemS);
-    } else {
-      alert('Não é possível mover esse item para baixo!');
     }
   }
 }
