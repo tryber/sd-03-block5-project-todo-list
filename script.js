@@ -8,6 +8,7 @@ var completed = document.getElementsByClassName('completed')
 var deleteAll = document.getElementById('apaga-tudo')
 var liCriada = ''
 var riscado = false
+var backgroundTarefa = 'white'
 
 function type() {
 
@@ -30,12 +31,30 @@ function type() {
 // }
 
 function changeColorLi(event) {
+  if (backgroundTarefa == 'white') {
+    var pickId = event.target.id;
+    document.getElementById(pickId).style.backgroundColor = 'rgb(128,128,128)'
+    backgroundTarefa != 'white'
+    console.log('cinza')} 
+  else {
   var pickId = event.target.id;
-  document.getElementById(pickId).style.background = 'rgb(128,128,128)'
-
+  document.getElementById(pickId).style.background = 'white'
+  console.log('branco')}
 }
 
+// function changeColorLi(event) {
+//   var pickId = event.target.id;
+//   backgroundTarefa = document.getElementById(pickId).style.backgroundColor
+//   if (backgroundTarefa == 'rgb(128,128,128)') {
+//     backgroundTarefa = 'white'
+//   } else if (backgroundTarefa == 'white') {
+//     backgroundTarefa = 'rgb(128,128,128)'
+//   }
+// }
+
+
 function reverseColorLi(event) {
+
   var pickId = event.target.id;
   document.getElementById(pickId).style.background = 'white'
 }
@@ -48,24 +67,31 @@ function deleteTasks() {
 }
 
 function riscaTexto(event) {
-  if (riscado === false){
-  var risca = event.target.id;
-  var teste = document.getElementById(risca)
-  teste.classList.add('completed')}
-  riscado = true
-  
+  if (riscado == false) {
+    var risca = event.target.id;
+    var teste = document.getElementById(risca)
+    teste.classList.add('completed')
+    riscado = true
+  } else {
+    var risca = event.target.id;
+    var teste = document.getElementById(risca)
+    teste.classList.add('incompleta')
+    riscado = false
   }
-   
+
+}
 
 
-function limpaTexto(event) {
-  if (riscado === true){
-  var risca = event.target.id;
-  var teste = document.getElementById(risca)
-  teste.classList.add('incompleta')} 
-  riscado = false
-  }
-   
+
+// function limpaTexto(event) {
+//   if (riscado === true) {
+//     var risca = event.target.id;
+//     var teste = document.getElementById(risca)
+//     teste.classList.add('incompleta')
+//   }
+//   riscado = false
+// }
+
 
 
 function pickObj(e) {
@@ -79,7 +105,7 @@ function pickObj(e) {
 botaoCriar.addEventListener('click', type);
 
 olId.addEventListener('click', changeColorLi)
-olId.addEventListener('click', reverseColorLi)
+// addEventListener('click', reverseColorLi)
 deleteAll.addEventListener('click', deleteTasks)
 olId.addEventListener('dblclick', riscaTexto)
-olId.addEventListener('dblclick', limpaTexto)
+// olId.addEventListener('dblclick', limpaTexto)
