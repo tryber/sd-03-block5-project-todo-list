@@ -26,11 +26,22 @@ window.onload = function() {
         //Limpa a caixa de input
         document.getElementById("texto-tarefa").value = '';
         //Adiciona o nó li ao elemento ol
-        document.getElementById('lista-tarefas').appendChild(liElement);
-
+        if (taskInput !== "") { //If para não adicionar item em branco
+            document.getElementById('lista-tarefas').appendChild(liElement);
+        }
     }
 
     let addTaskBtn = document.getElementById('criar-tarefa');
     addTaskBtn.addEventListener("click", createList);
+
+    //Limpar todos os registros:
+    function clearAll() {
+        let ol = document.getElementById('lista-tarefas');
+        while (ol.firstChild) {
+            ol.removeChild(ol.firstChild);
+        }
+    }
+    let clearAllBtn = document.getElementById('apaga-tudo');
+    clearAllBtn.addEventListener('click', clearAll);
 
 }
