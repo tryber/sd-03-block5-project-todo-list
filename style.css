@@ -14,3 +14,11 @@ body {
 .seta {
     cursor: pointer;
 }
+
+.riscado {
+    text-decoration: line-through;
+}
+
+.marcado {
+    background-color: rgb(128, 128, 128);
+}
