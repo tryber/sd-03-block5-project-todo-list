@@ -10,6 +10,11 @@ if (localStorage.getItem('todo-list')) {
 }
 
 // Functions
+function updateLi() {
+  pegarLi = document.querySelectorAll('li');
+  return pegarLi;
+}
+
 function addTodo() {
   const createLi = document.createElement('li');
   createLi.innerText = grabInput.value;
@@ -28,6 +33,7 @@ function addTodo() {
       event.target.classList.add('selected');
     }
   });
+  updateLi();
 }
 
 // Delete everything
@@ -44,6 +50,7 @@ function removeComp() {
       document.querySelectorAll('li')[i].remove();
     }
   }
+  updateLi();
 }
 
 // Function save to Do List
@@ -54,16 +61,38 @@ function saveTodo() {
 
 // Remove selected function
 function removeSelected() {
-  pegarLi = document.querySelectorAll('li');
   for (let i = 0; i < pegarLi.length; i += 1) {
     if (pegarLi[i].classList.contains('selected')) {
       pegarLi[i].remove();
     }
   }
+  updateLi();
 }
+// Move selected item up
+function moveUp() {
+  let mover = document.querySelector('.selected');
+  if (mover) {
+    if (mover.previousElementSibling) {
+      mover.parentNode.insertBefore(mover, mover.previousElementSibling);
+    }
+  }
+}
+
+// Move selected item down
+function moveDown() {
+  let mover = document.querySelector('.selected');
+  if (mover) {
+    if (mover.nextElementSibling) {
+      mover.parentNode.insertBefore(mover.nextElementSibling, mover);
+    }
+  }
+}
+
 // Event listener
 buttons[0].addEventListener('click', addTodo);
-buttons[4].addEventListener('click', deleteAll);
-buttons[2].addEventListener('click', removeComp);
-buttons[3].addEventListener('click', saveTodo);
-buttons[1].addEventListener('click', removeSelected);
+buttons[1].addEventListener('click', moveUp);
+buttons[2].addEventListener('click', moveDown);
+buttons[3].addEventListener('click', removeSelected);
+buttons[4].addEventListener('click', removeComp);
+buttons[5].addEventListener('click', saveTodo);
+buttons[6].addEventListener('click', deleteAll);

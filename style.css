@@ -34,14 +34,10 @@ section {
 }
 
 li {
-  margin: 0 auto;
+  margin-left: 20%;
   text-align: center;
-  width: 20%;
-  
-}
-
-form {
-  text-align: center;
+  width: 50%;
+  overflow-wrap: break-word;
 }
 
 #criar-tarefa {
@@ -62,4 +58,10 @@ input {
   -moz-box-shadow:    1px 1px 6px 2px #ccc;
   -webkit-box-shadow: 1px 1px 6px 2px #ccc;
   box-shadow:         1px 1px 6px 2px #ccc;
+}
+
+article {
+  border: black 0.5px solid;
+  padding: 2%;
+  margin: 1% 10% 0% 10%;
 }
