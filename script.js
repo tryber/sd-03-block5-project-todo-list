@@ -36,10 +36,10 @@ function criaTarefa() {
   listaTarefas.appendChild(item);
   tarefaInput.value = null;
 
-  item.addEventListener('dblclick', function () {
+  item.addEventListener('dblclick', function() {
     completedItem(item);
   });
-  item.addEventListener('click', function () {
+  item.addEventListener('click', function() {
     selectedItem(item);
   });
 }
@@ -81,22 +81,22 @@ function salvaLista() {
 function moverCima() {
   const itemS = document.querySelector('.selected');
   if (itemS) {
-    if (itemS.previousElementSibling){
-      listaTarefas.insertBefore(itemS, itemS.previousElementSibling);
+    if (itemS.previousElementSibling) {
+      itemS.parentNode.insertBefore(itemS, itemS.previousElementSibling);
     } else {
       alert('Não é possível mover esse item para cima!');
     }
-  } 
+  }
 }
 
 function moverBaixo() {
   const itemS = document.querySelector('.selected');
   if (itemS) {
     if (itemS.nextElementSibling) {
-      listaTarefas.insertBefore(itemS.nextElementSibling, itemS);
+      itemS.parentNode.insertBefore(itemS.nextElementSibling, itemS);
     } else {
       alert('Não é possível mover esse item para baixo!');
-    } 
+    }
   }
 }
 
