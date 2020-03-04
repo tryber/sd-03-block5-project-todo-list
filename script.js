@@ -3,6 +3,7 @@ let pegaTexto = document.querySelector("#texto-tarefa");
 let exibeLista = document.querySelector("#lista-tarefas");
 let btapagaTudo = document.querySelector("#apaga-tudo");
 let btapagaSelecionados = document.querySelector("#remover-finalizados");
+let tarefa = document.getElementsByTagName("li");
 
 
 function itemSelecionado(item) {
@@ -40,19 +41,20 @@ function criaLista(){
     });
 }
 
-function apagaTudo(){
-    let li = document.getElementsByTagName("li");
-    linew = li.length + 2;
-    for(i=0; i<=linew; i++){
-        li[i].remove();
+function apagaTudo() {
+    let numTarefas = tarefa.length-1;
+    for (let i = numTarefas; i >= 0; i--) {
+      tarefa[i].remove();
     }
 }
 
-function apagaSelecionados(){
-   /*  lii = document.querySelectorAll("li");
-    while(lii.classList.contains("completed"){
-        lii.remove();
-    } */
+function apagaSelecionados() {
+    let numTarefas = tarefa.length - 1;
+    for (let i = numTarefas; i >= 0; i--) {
+        if (tarefa[i].classList.contains("completed")) {
+            tarefa[i].remove();
+        }
+    }
 }
     
 
@@ -60,5 +62,5 @@ function apagaSelecionados(){
 
 
 btapagaTudo.addEventListener("click", apagaTudo);
-//btapagaSelecionados.addEventListener("click", apagaSelecionados);
+btapagaSelecionados.addEventListener("click", apagaSelecionados);
 botao.addEventListener("click", criaLista);

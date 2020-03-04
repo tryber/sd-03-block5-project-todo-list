@@ -10,35 +10,37 @@ body{
 
 h1{
   font-family: 'Baloo Paaji', cursive;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 #container, #funcionamento, #title{
   text-align:center;
 }
 
-#criar-tarefa{
+#criar-tarefa, #apaga-tudo, #remover-finalizados{
   background-color: #ffffff;
   border-radius: 5px;
   border: 2px solid #108cc6;
   color: rgb(43, 99, 255);
-  width: 80px;
-  height: 30px;
+  width: 100px;
+  height: 45px;
   font-size: 14px;
   display: inline-block;
   margin: auto;
   text-decoration: none;
 }
 
-#criar-tarefa:hover {
+#criar-tarefa, #apaga-tudo, #remover-finalizados:hover {
   cursor: pointer;
 }
+
 
 #texto-tarefa{
   margin-bottom:30px;
   width:500px;
-  height:20px;
+  height:40px;
   border-radius:5px;
+  font-size: 24px;
 }
 
 #listaPai{
@@ -47,6 +49,7 @@ h1{
   color:black;
   font-size: 18px;
   margin:0 auto;
+  margin-top: 30px;
   width: 960px;
   min-height:300px;
   border-radius: 10px;
@@ -56,6 +59,7 @@ h1{
 li{
   border-bottom: 1px solid rgb(184, 190, 184);
   cursor: pointer;
+  font-size: 24px;
 }
 
 .selected{
