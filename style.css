@@ -1,20 +1,25 @@
 body {
-    background-color: darkslategray;
-    margin: 0;
+  background-color: darkslategray;
+  margin: 0;
 }
+
 header {
-    background-color: white;
-    text-align: center;
+  background-color: white;
+  text-align: center;
 }
+
 .main-content {
-    text-align: center;
+  text-align: center;
 }
-button, li {
-    cursor: pointer;
+
+button , li {
+  cursor: pointer;
 }
+
 .grey {
-    background-color: rgb(128,128,128);
+  background-color: rgb(128 , 128 , 128);
 }
+
 .completed {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
