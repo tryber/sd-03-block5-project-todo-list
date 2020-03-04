@@ -4,10 +4,18 @@ const lista_tarefas = document.querySelector('#lista-tarefas');
 
 criar_tarefa.addEventListener('click', criarTarefa);
 
-// Função: cria novo item abaixo, e limpa input de texto.
+// Função: cria nova tarefa abaixo, e limpa input de texto.
 function criarTarefa() {
-    let tarefa = document.createElement('li')
+    // Cria tarefa
+    let tarefa = document.createElement('li');
     lista_tarefas.appendChild(tarefa).innerHTML = texto_tarefa.value;
-
+    // Limpa input
     texto_tarefa.value = '';
+    // Adiciona classe (cinza)
+    tarefa.addEventListener('click', tarefaCinza);
+}
+
+// Função: ao clicar na tarefa, deixar cinza.
+function tarefaCinza() {
+    this.className = 'selected';
 }
