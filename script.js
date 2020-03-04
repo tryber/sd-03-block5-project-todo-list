@@ -9,3 +9,5 @@ function addTask() {
 }
 
 createTask.addEventListener("click", addTask());
+
+// esse diabo nao funciona!!!!!!
