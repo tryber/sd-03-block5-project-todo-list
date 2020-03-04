@@ -17,13 +17,17 @@ botaoAddTarefa.addEventListener("mouseover", function(){
 let tarefas = document.querySelector("ol").childNodes;
 botaoAddTarefa.addEventListener("click", function(){
     for(let i = 1; i < tarefas.length; i++){
-     console.log(tarefas[i].innerHTML);
         tarefas[i].addEventListener("click", function(){
             tarefas[i].style.backgroundColor = "rgb(128,128,128)";
         })
-        //tarefas[i].addEventListener("dblclick", function(){
-            
-       // })
+        tarefas[i].addEventListener("dblclick", function(){
+            if(tarefas[i].className == "completed"){
+                tarefas[i].className = "";
+            }
+            else{
+            tarefas[i].className = "completed";
+            }
+        })
     }
 })
 
