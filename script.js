@@ -4,7 +4,7 @@ let listando = document.getElementById("lista-tarefas");
 
 txtTarefa.addEventListener("click", addinput);
 
-function addinput () {at
+function addinput () {
     let list = document.createElement("li");
     list.className = "seta"
     let iten = txtInput.value
