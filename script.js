@@ -15,6 +15,8 @@ function pegarValorTarefa(){
 function criarItemLista(texto){
     let item = document.createElement("li");
     item.innerHTML = texto;
+    adicionarEvento("click",item,alterarCorFundoItem);
+    adicionarEvento("dblclick",item,riscarItem);
     return item;
 }
 function adicionarItemLista(item){
@@ -22,5 +24,16 @@ function adicionarItemLista(item){
 }
 function limparInputTarefas(){
     tarefa.value = "";
+}
+function adicionarEvento(evento,elemento,funcao){
+     elemento.addEventListener(evento,function(s){
+        funcao(elemento);
+     });
+}
+function alterarCorFundoItem(item){
+     item.style.backgroundColor = "rgb(128,128,128)";
+}
+function riscarItem(item){
+    item.style.textDecoration = "line-through";
 }
 

@@ -13,9 +13,12 @@
 .button:hover{
     cursor: pointer;
 }
+#lista-tarefas li:hover{
+    cursor: pointer;
+}
 #remover-finalizados{
 
 }
 #apaga-tudo{
-    
+
 }
