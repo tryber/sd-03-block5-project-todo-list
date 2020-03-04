@@ -1,0 +1,70 @@
+/* font-family: 'Satisfy', cursive; font-family: 'Sue Ellen Francisco', cursive; font-family: 'Chakra Petch', sans-serif; */
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(150, 187, 255);
+}
+
+header {
+  background-color: rgb(252, 233, 189);
+  height: 80px;
+}
+
+h1 {
+  font-family: Satisfy, cursive;
+  font-size: 60px;
+  font-weight: 100;
+  margin: auto;
+  padding-top: 20px;
+  text-align: center;
+}
+
+p {
+  font-size: 15px;
+  font-family: Roboto mono, monospace;
+}
+
+li {
+  font-family: Sue Ellen Francisco, cursive;
+  font-size: 30px;
+}
+
+button {
+  background-color: rgb(33, 85, 179);
+  color: white;
+  font-family: Chakra Petch, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 4px;
+}
+
+footer {
+  position: relative;
+  top: 100px;
+  text-align: center;
+  font-size: ;
+  font-family: Roboto mono, monospace;
+}
+
+.container {
+  background-color: rgb(255, 221, 148);
+  width: 800px;
+  margin: auto;
+  height: 600px;
+  position: relative;
+  top: 70px;
+  padding: 40px;
+}
+
+.align-center{
+  text-align: center;
+}
+
+.wrap {
+  max-width: 500px;
+  margin: auto;
+}
+
+.topo {
+  margin-top: 50px;
+}

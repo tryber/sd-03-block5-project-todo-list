@@ -5,32 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To Do List</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Chakra+Petch|Roboto+Mono|Satisfy|Sue+Ellen+Francisco&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
     <h1>Minha Lista de Tarefas</h1>
   </header>
-  <section>
-    <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
-  </section>
-  <section>
-    <p>
-      <input type="text" name="texto-tarefa" id="texto-tarefa">
-      <button id="criar-tarefa">Adicionar</button>
-    </p>
-  </section>
-  <section>
-    <ol id="lista-tarefas">
-    </ol>
-  </section>
-  <section>
-    <button id="remover-selecionado">X</button>
-    <button id="mover-cima">Cima</button>
-    <button id="mover-baixo">baixo</button>
-    <button id="remover-finalizador">limpar completos</button>
-    <button id="apaga-tudo">limpar lista</button>
-    <button id="salvar-tarefas">salvar lista</button>
-  </section>
+  <div class="container">
+    <section class="wrap">
+      <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo.</p>
+      <p>Clique para selecionar.</p>
+      <p>Clique nos botões para limpar (x) para mover para cima (<), para baixo (>) e para limpar itens ou salvar.</p>
+    </section>
+    <section>
+      <p class="align-center">
+        <input type="text" name="texto-tarefa" id="texto-tarefa" size="40">
+        <button id="criar-tarefa">Adicionar</button>
+      </p>
+    </section>
+    <section>
+      <ol id="lista-tarefas" class="wrap">
+        <li>teste</li>
+      </ol>
+    </section>
+    <section class="align-center">
+      <button  class="topo" id="remover-selecionado">X</button>
+      <button id="mover-cima"><</button>
+      <button id="mover-baixo">></button>
+      <button id="remover-finalizador">limpar completos</button>
+      <button id="apaga-tudo">limpar lista</button>
+      <button id="salvar-tarefas">salvar lista</button>
+    </section>
+  </div>
+  <footer>
+    Desenvolvido por Luma Arruda, para o curso de Desenvolvimento de Software da Trybe
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
