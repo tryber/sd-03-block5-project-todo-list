@@ -32,5 +32,22 @@ if (window.localStorage.getItem("Lista de Tarefas")) {
   document.querySelectorAll("li").forEach ( function (li) {addListeners(li)})
 }
 
-// document.getElementById("mover-cima").addEventListener('click', () => {})
+document.getElementById("mover-cima").addEventListener('click', () => {
+  selected = document.querySelector('.selected');
+  if(selected.previousElementSibling && selected != null){
+    selected.parentNode.insertBefore(selected, selected.previousElementSibling);
+  }
+})
 
+document.getElementById("mover-baixo").addEventListener('click', () => {
+  selected = document.querySelector('.selected');
+  if(selected.nextElementSibling){
+    selected.parentNode.insertBefore(selected.nextElementSibling, selected);
+  }
+})
+
+document.getElementById("remover-selecionado").addEventListener('click', () => {
+  if(document.querySelector(".selected")){
+    document.querySelector(".selected").remove()
+  }
+})
