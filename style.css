@@ -1,3 +1,10 @@
 button, li {
   cursor: pointer;
 }
+
+/* .completed {
+  text-decoration: line-through;
+} */
+/* .comp-dois{
+  background-color: rgb(128,128,128);
+} */
