@@ -8,11 +8,13 @@ const addListeners = (li) => {
 }
 
 document.getElementById("criar-tarefa").addEventListener("click", () => {
-  let li = document.createElement("li")
-  li.textContent = document.getElementById("texto-tarefa").value
-  addListeners(li)
-  document.getElementById("lista-tarefas").appendChild(li)
-  document.getElementById("texto-tarefa").value = ''
+  if(document.getElementById("texto-tarefa").value){
+    let li = document.createElement("li")
+    li.textContent = document.getElementById("texto-tarefa").value
+    addListeners(li)
+    document.getElementById("lista-tarefas").appendChild(li)
+    document.getElementById("texto-tarefa").value = ''
+  }
 })
 
 document.getElementById("apaga-tudo").addEventListener("click", () => {
@@ -34,15 +36,20 @@ if (window.localStorage.getItem("Lista de Tarefas")) {
 
 document.getElementById("mover-cima").addEventListener('click', () => {
   selected = document.querySelector('.selected');
-  if(selected.previousElementSibling && selected != null){
-    selected.parentNode.insertBefore(selected, selected.previousElementSibling);
+  if(selected){
+    if(selected.previousElementSibling){
+      selected.parentNode.insertBefore(selected, selected.previousElementSibling);
+    }
   }
+
 })
 
 document.getElementById("mover-baixo").addEventListener('click', () => {
   selected = document.querySelector('.selected');
-  if(selected.nextElementSibling){
-    selected.parentNode.insertBefore(selected.nextElementSibling, selected);
+  if(selected){
+    if(selected.nextElementSibling){
+      selected.parentNode.insertBefore(selected.nextElementSibling, selected);
+    }
   }
 })
 
