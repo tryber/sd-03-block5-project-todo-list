@@ -34,5 +34,13 @@ function selecionada() {
 
 function riscadinha() {
     var pegarId2 = event.target.id;
-    document.getElementById(pegarId2).classList.toggle('finalizado');
+    document.getElementById(pegarId2).classList.toggle('completed');
+}
+
+function removeCompletos() {
+    let b = document.querySelectorAll('.itemLista')
+    while (a.firstChild) {
+        a.removeChild(a.firstChild);
+    }
+
 }

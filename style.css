@@ -19,6 +19,7 @@ body {
 
 #lista-tarefas {
     font-size: 2em;
+    display: block;
 }
 
 button:hover {
@@ -31,10 +32,10 @@ li:hover {
 }
 
 .deixaCinza {
-    background-color: rgb(128, 128, 128)
+    background-color: rgb(128, 128, 128);
 }
 
-.finalizado {
+.completed {
     text-decoration: line-through;
 }
 
