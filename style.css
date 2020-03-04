@@ -2,8 +2,10 @@
     color: rgb(128, 128, 128);
 }
 
-.list {
-    border: 1px solid black;
-    margin: 1px;
-    background-color: aqua;
+.selected {
+    background-color: rgb(128, 128, 128);
+}
+
+.completed {
+    text-decoration: line-through;
 }

@@ -10,7 +10,7 @@ blista.addEventListener('click', function() {
     olista.appendChild(lisTarefa);
     lisTarefa.className = "listA"
     lisTarefa.innerText = texttarefa.value;
-    texttarefa.value = " ";
+    document.getElementById('texto-tarefa').value = '';
 });
 
 
