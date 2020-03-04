@@ -1,16 +1,14 @@
-let botaoAdd = document.getElementById("criar-tarefa")
-let inputTexto = document.getElementById("texto-tarefa").value
-let lista = document.getElementById("lista-tarefas")
-
-let listaTexto = document.createTextNode("oi")
+const botaoAdd = document.getElementById("criar-tarefa")
+const inputTexto = document.getElementById("texto-tarefa").value
+const lista = document.getElementById("lista-tarefas")
 
 function addText(){
-   let inputTexto = document.getElementById("texto-tarefa").value
-   let listaAdd = document.createElement("li")
+   const inputTexto = document.getElementById("texto-tarefa").value
+   const listaAdd = document.createElement("li")
    lista.appendChild(listaAdd,inputTexto)
    listaAdd.innerText = inputTexto
 }
 function limpar (){
-   let inputTexto = document.getElementById("texto-tarefa").value = ''
+   const inputTexto = document.getElementById("texto-tarefa").value = ''
 
 }
