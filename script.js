@@ -29,9 +29,7 @@ botoes[0].addEventListener("click", function(){
 botoes[0].addEventListener("click", function(){
     for(let i = 1; i <= listSize; i++){
         tarefas[i].addEventListener("dblclick", function(){
-            if(tarefas[i].className == "item"){
-                tarefas[i].className = "item completed"
-            }
+            tarefas[i].className = "item completed"
         })
     }
 })
