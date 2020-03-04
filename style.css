@@ -19,3 +19,7 @@ li {
   padding: 10px;
   width: 660px;
 }
+
+.completed {
+  text-decoration: line-through;
+}

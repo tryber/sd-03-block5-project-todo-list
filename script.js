@@ -1,12 +1,12 @@
-let criartarefa = document.getElementById('criar-tarefa');
-console.log(criartarefa);
-let listaordenada = document.getElementById('lista-tarefas');
-console.log(listaordenada);
+const criartarefa = document.getElementById('criar-tarefa');
+//console.log(criartarefa);
+const listaordenada = document.getElementById('lista-tarefas');
+//console.log(listaordenada);
 // let inputTextoTarefa = document.getElementById("texto-tarefa");
 // console.log(inputTextoTarefa);
 
 function adicionarItem() {
-  let lista = document.createElement('li');
+  const lista = document.createElement('li');
   lista.innerHTML = document.getElementById('texto-tarefa').value;
   listaordenada.appendChild(lista);
   document.getElementById('texto-tarefa').value = '';
@@ -16,6 +16,15 @@ function adicionarItem() {
     lista.style.backgroundColor = 'rgb(128,128,128)';
   }
   lista.addEventListener('click', alterarcordefundodalista);
+
+
+  //dublo clique no item risca a tarefa
+  lista.addEventListener('dblclick',riscartarefa)
+
+  function riscartarefa() {
+    lista.classList.add('completed');
+  }
+
 }
 
 criartarefa.addEventListener('click', adicionarItem);
