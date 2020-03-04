@@ -4,6 +4,7 @@ let texto = document.querySelector('#texto-tarefa');
 let btnApagaTudo = document.querySelector('#apaga-tudo');
 let btnRemoverFinalizados = document.querySelector('#remover-finalizados');
 let btnRemoverSelecionados = document.querySelector('#remover-selecionado');
+let btnMoverCima = document.querySelector('#mover-cima');
 
 btnCriar.addEventListener("click", addLista);
 
@@ -45,6 +46,14 @@ function addLista(){
       })
     }
     apagarSelecionados();
+
+    function moverCima() {
+      btnMoverCima.addEventListener("click", function() {let sp2 = document.querySelector(".selected");
+      let elPai = sp2.parentNode
+      elPai.insertBefore(sp2, novoItem)
+      })
+    }
+    moverCima();
 
     function apagarTudo(){
       btnApagaTudo.addEventListener("click", function() {
