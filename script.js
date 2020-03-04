@@ -6,6 +6,8 @@ var idr = document.getElementById('taskPlace')
 var olId = document.getElementById("lista-tarefas")
 var completed = document.getElementsByClassName('completed')
 var deleteAll = document.getElementById('apaga-tudo')
+var liCriada = ''
+var riscado = false
 
 function type() {
 
@@ -16,7 +18,7 @@ function type() {
   document.getElementById("lista-tarefas").appendChild(li);
   document.getElementById("texto-tarefa").value = '';
   listaDeTarefas.push(li)
-  li.id =  i
+  li.id = i
     ++i
   console.log('criado a li ' + li)
 
@@ -39,19 +41,31 @@ function reverseColorLi(event) {
 }
 
 function deleteTasks() {
-  // for (var j = 0; j<listaDeTarefas.length; j += 1){
-    
-  //   var liDel = document.getElementById("lista-tarefas");
-  //   list.removeChild(list.childNodes[j]);
-  //   console.log(j)
-    
-  // } 
   var elemento = document.getElementById("lista-tarefas");
-while (elemento.firstChild) {
-  elemento.removeChild(elemento.firstChild);
-}
+  while (elemento.firstChild) {
+    elemento.removeChild(elemento.firstChild);
+  }
 }
 
+function riscaTexto(event) {
+  if (riscado === false){
+  var risca = event.target.id;
+  var teste = document.getElementById(risca)
+  teste.classList.add('completed')}
+  riscado = true
+  
+  }
+   
+
+
+function limpaTexto(event) {
+  if (riscado === true){
+  var risca = event.target.id;
+  var teste = document.getElementById(risca)
+  teste.classList.add('incompleta')} 
+  riscado = false
+  }
+   
 
 
 function pickObj(e) {
@@ -65,5 +79,7 @@ function pickObj(e) {
 botaoCriar.addEventListener('click', type);
 
 olId.addEventListener('click', changeColorLi)
-olId.addEventListener('dblclick', reverseColorLi)
+olId.addEventListener('click', reverseColorLi)
 deleteAll.addEventListener('click', deleteTasks)
+olId.addEventListener('dblclick', riscaTexto)
+olId.addEventListener('dblclick', limpaTexto)

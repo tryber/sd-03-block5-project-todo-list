@@ -19,6 +19,10 @@ body {
 
 li {
     cursor: pointer;
+    width: 200px;
+    height: 20px;
+   
+
 }
 
 button {
@@ -26,5 +30,11 @@ button {
 }
 
 .completed{
-    text-decoration: "line-through";
+    text-decoration: line-through;
+    
+}
+
+.incompleta {
+    text-decoration: none;
+
 }
