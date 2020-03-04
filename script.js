@@ -17,10 +17,10 @@ criarTarefa.addEventListener("click", function () {
 
   li.addEventListener("click", function () {
     li.style.backgroundColor = "rgb(128,128,128)";
-    li.style.width = "300px";
   })
 
-  li.addEventListener("dblclick", function () {
+  let selecionar = li;
+  selecionar.addEventListener("dblclick", function () {
     if (li.classList.contains("completed")) {
       li.classList.remove("completed")
     }
@@ -28,14 +28,11 @@ criarTarefa.addEventListener("click", function () {
       li.classList.add("completed")
     }
   })
+
 })
 
 const apagaTudo = document.getElementById("apaga-tudo");
 
 apagaTudo.addEventListener("click", function () {
   location.reload(true);
-})
-
-salvarTarefas.addEventListener("click", function(){
-  localStorage.salvarTarefas = document.getElementsByTagName("li")
 })
