@@ -1,5 +1,22 @@
-.botoes button {
+.botoes {
     display: inline;
+}
+.botoes button {
+    border: 2px;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.b1 {
+    background-color: green;
+}
+
+.b2 {
+    background-color: red;
+}
+
+.b3 {
+    background-color: rgb(255, 102, 0);
 }
 
 .completed {
