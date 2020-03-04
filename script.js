@@ -7,8 +7,9 @@ const select = document.getElementsByClassName('selected');
 blista.addEventListener('click', function() {
     const lisTarefa = document.createElement('li');
     olista.appendChild(lisTarefa);
-    texttarefa.valur = " ";
     lisTarefa.innerText = texttarefa.value;
+    texttarefa.value = " ";
+
 });
 
 dlista.addEventListener('click', function() {
