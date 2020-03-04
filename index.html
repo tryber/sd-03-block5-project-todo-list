@@ -1,49 +1,49 @@
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Todo list</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Todo list</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <div class="container">
-            <nav class="header">
-                <header>Minha lista de tarefas</header> <!-- Project requirement => Minha Lista de Tarefas in the <header> tag -->
-                <p class="instructions" id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p> <!-- Project requirement => p, id funcionamento -->
-            </nav>
-            <span class="sub-div input">
-                <input class="new-task-input" type="text" id="texto-tarefa" placeholder="Nova tarefa" maxlength="55">
-                <button type="button" value="Adicionar" id="new-task-btn" maxlength="30" class="btn blue">Adicionar</button>
-            </span>
-            <div class="sub-div div-list">
-                <ol id="ol-list"></ol>
-            </div>
-            <div class="buttons-bottom sub-div">
-                <button class="btn red btn-main" id="btn-delete-item" type="button"><img src="icons/delete-icon.png" ></button>
-                <button class="btn orange btn-main" id="btn-up" type="button"><img src="icons/up-arrow.png" ></button>
-                <button class="btn orange btn-main" id="btn-down" type="button"><img src="icons/down-arrow.png"></button>
-                <button class="btn blue btn-main" id="btn-delete-completes" type="button">Limpar Completos</button>
-                <button class="btn red btn-main" id="btn-delete-ALL" type="button" >Limpar Lista</button>
-                <button class="btn green btn-main" id="btn-save" type="button" >Salvar Lista</button></span>
-            </div>
-        </div>
-        <div class="feedback" id="feedback">
-            <span>Saved Items</span>
-            <table class="feedbackSave" id="feedbackSave">
-                <thead>
-                    <th>Sequence</th>
-                    <th>Assignment</th>
-                    <th>Accomplished</th>
-                </thead>
-            </table>
-            <div>
-                <button class="btn green btn-confirm" id="btn-confirm" type="button" >Confirmar</button>
-                <button class="btn red btn-cancel" id="btn-cancel" type="button" >Cancel</button>
-            </div>
-        </div>
-    </main>
-    <script src="script.js"></script>
+  <main>
+    <div class="container">
+      <header class="header">
+        <header>Minha lista de tarefas</header> <!-- Project requirement => Minha Lista de Tarefas in the <header> tag -->
+        <p class="instructions" id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p> <!-- Project requirement => p, id funcionamento -->
+      </header>
+      <span class="sub-div input">
+        <input class="new-task-input" type="text" id="texto-tarefa" placeholder="Nova tarefa" maxlength="55">
+        <button type="button" value="Adicionar" id="criar-tarefa" maxlength="30" class="btn blue">Adicionar</button>
+      </span>
+      <div class="sub-div div-list">
+          <ol id="lista-tarefas"></ol>
+      </div>
+      <div class="buttons-bottom sub-div">
+        <button class="btn red btn-main" id="btn-delete-item" type="button"><img src="icons/delete-icon.png" ></button>
+        <button class="btn orange btn-main" id="mover-cima" type="button"><img src="icons/up-arrow.png" ></button>
+        <button class="btn orange btn-main" id="mover-baixo" type="button"><img src="icons/down-arrow.png"></button>
+        <button class="btn blue btn-main" id="btn-delete-completes" type="button">Limpar Completos</button>
+        <button class="btn red btn-main" id="btn-delete-ALL" type="button" >Limpar Lista</button>
+        <button class="btn green btn-main" id="salvar-tarefas" type="button" >Salvar Lista</button></span>
+      </div>
+    </div>
+    <div class="feedback" id="feedback">
+      <span>Saved Items</span>
+      <table class="feedbackSave" id="feedbackSave">
+        <thead>
+          <th>Sequence</th>
+          <th>Assignment</th>
+          <th>Accomplished</th>
+        </thead>
+      </table>
+      <div>
+          <button class="btn green btn-confirm" id="btn-confirm" type="button" >Confirmar</button>
+          <button class="btn red btn-cancel" id="btn-cancel" type="button" >Cancel</button>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>

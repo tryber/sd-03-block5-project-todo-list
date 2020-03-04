@@ -1,12 +1,12 @@
 window.onload = function () {
   reloadList();
-  addClickUpBtn(returnById('btn-up'));
+  addClickUpBtn(returnById('mover-cima'));
   function addClickUpBtn(element) {
     element.addEventListener('click', function () {
       moveUp(returnById('select'));
     });
   }
-  addClickDownBtn(returnById('btn-down'));
+  addClickDownBtn(returnById('mover-baixo'));
   function addClickDownBtn(element) {
     element.addEventListener('click', function () {
       moveDown(returnById('select'));
@@ -102,7 +102,7 @@ window.onload = function () {
     let position;
     for (position = 0; position < localStorage.length/2; position++) {
       let text = localStorage[ 'item' + position] ;
-      let elementFather = returnById('ol-list');
+      let elementFather = returnById('lista-tarefas');
       let task = addTextTask(createItem('li'), text);
       if (localStorage['completed' + position] == '1') {
         markCompleted(task);
@@ -110,7 +110,7 @@ window.onload = function () {
       addElementInHTML(task, elementFather);
     };
   }
-  addClickSaveBtn(returnById('btn-save'));
+  addClickSaveBtn(returnById('salvar-tarefas'));
   function addClickSaveBtn(btn) {
     btn.addEventListener('click' , function () {
       saveList();
@@ -189,10 +189,10 @@ window.onload = function () {
       if (returnById('select')) {
         removeIdSelect(returnById('select'));
         this.id = 'select';
-        this.style.background = 'rgb(66,76,85)';
+        this.style.background = 'rgb(128,128,128)';
       } else {
         this.id = 'select';
-        this.style.background = 'rgb(66,76,85)';
+        this.style.background = 'rgb(128,128,128)';
       }
     });
   }
@@ -223,13 +223,13 @@ window.onload = function () {
     });
   }
   function addTask() {
-    let elementFather = returnById('ol-list');
+    let elementFather = returnById('lista-tarefas');
     let textInput = returnById('texto-tarefa').value;
     let taskLi = addTextTask(createItem('li'), textInput);
     addElementInHTML(taskLi, elementFather);
     returnById('texto-tarefa').value = '';
   }
-  addClickInputBtn(returnById('new-task-btn'));
+  addClickInputBtn(returnById('criar-tarefa'));
   function addClickInputBtn(element) {
     element.addEventListener('click', function () {
       if (returnById('texto-tarefa').value) {
