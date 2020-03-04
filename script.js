@@ -6,6 +6,7 @@ let lista = document.getElementById("lista-tarefas");
 
 botaoAdicionar.addEventListener("click",function(s){
     adicionarItemLista(criarItemLista(pegarValorTarefa()));
+    limparInputTarefas();
 });
 
 function pegarValorTarefa(){
@@ -18,5 +19,8 @@ function criarItemLista(texto){
 }
 function adicionarItemLista(item){
      lista.appendChild(item);
+}
+function limparInputTarefas(){
+    tarefa.value = "";
 }
 
