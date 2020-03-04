@@ -1,20 +1,20 @@
-button{
-  box-shadow: 1px 1px 2px black;
+button {
   background-color: chocolate;
+  box-shadow: 1px 1px 2px black;
   color: whitesmoke;
   cursor: pointer;
 }
 
-li{
+li {
   cursor: pointer;
   margin: 2px;
   width: 40%;
 }
 
-.selected{
-  background-color: rgb(128,128,128);
+.selected {
+  background-color: rgb(128, 128, 128);
 }
 
-.completed{
+.completed {
   text-decoration: line-through;
 }
