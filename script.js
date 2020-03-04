@@ -92,7 +92,7 @@ function moverBaixo() {
   const itemS = document.querySelector('.selected');
   const ultimo = listaTarefas.lastChild;
   if (itemS && itemS !== ultimo) {
-    listaTarefas.insertBefore(itemS, itemS.nextElementSibling.nextElementSibling);
+    listaTarefas.insertBefore(itemS.nextElementSibling, itemS);
   } else {
     alert('Não é possível mover esse item para baixo!');
   }
