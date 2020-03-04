@@ -1,14 +1,13 @@
 listaDeTarefas = []
+listaDeTarefasMarcadas = []
 var i = 0
 
 var botaoCriar = document.getElementById('criar-tarefa')
-var idr = document.getElementById('taskPlace')
 var olId = document.getElementById("lista-tarefas")
 var completed = document.getElementsByClassName('completed')
 var deleteAll = document.getElementById('apaga-tudo')
-var liCriada = ''
-var riscado = false
-var backgroundTarefa = 'white'
+// var riscado = false
+// var backgroundTarefa = 'white'
 
 function type() {
 
@@ -25,39 +24,27 @@ function type() {
 
 }
 
-// function identifyObj(event) {
-//   var pickId = event.target.id;
-//   document.getElementById(pickId).style.background = 'green'
-// }
-
-function changeColorLi(event) {
-  if (backgroundTarefa == 'white') {
-    var pickId = event.target.id;
-    document.getElementById(pickId).style.backgroundColor = 'rgb(128,128,128)'
-    backgroundTarefa != 'white'
-    console.log('cinza')} 
-  else {
+function identifyObj(event) {
   var pickId = event.target.id;
-  document.getElementById(pickId).style.background = 'white'
-  console.log('branco')}
+  var corDeFundoTarefa = document.getElementById(pickId).style.backgroundColor
+  if (corDeFundoTarefa = 'rgb(128,128,128)') {
+    corDeFundoTarefa = 'white'
+  }
 }
 
 // function changeColorLi(event) {
 //   var pickId = event.target.id;
-//   backgroundTarefa = document.getElementById(pickId).style.backgroundColor
-//   if (backgroundTarefa == 'rgb(128,128,128)') {
-//     backgroundTarefa = 'white'
-//   } else if (backgroundTarefa == 'white') {
-//     backgroundTarefa = 'rgb(128,128,128)'
-//   }
+//   document.getElementById(pickId).style.backgroundColor = 'rgb(128,128,128)'
+//   backgroundTarefa != 'white'
+//   console.log('cinza')
 // }
 
+function changeColorLi(event) {
+      var pegaId = event.target.id;
+      document.getElementById(pegaId).classList.toggle('selected');
+      }
 
-function reverseColorLi(event) {
 
-  var pickId = event.target.id;
-  document.getElementById(pickId).style.background = 'white'
-}
 
 function deleteTasks() {
   var elemento = document.getElementById("lista-tarefas");
@@ -67,32 +54,16 @@ function deleteTasks() {
 }
 
 function riscaTexto(event) {
-  if (riscado == false) {
-    var risca = event.target.id;
-    var teste = document.getElementById(risca)
-    teste.classList.add('completed')
-    riscado = true
-  } else {
-    var risca = event.target.id;
-    var teste = document.getElementById(risca)
-    teste.classList.add('incompleta')
-    riscado = false
-  }
-
+  var getId = event.target.id;
+  document.getElementById(getId).classList.toggle('completed');
 }
 
+function limpaTexto(event) {
 
-
-// function limpaTexto(event) {
-//   if (riscado === true) {
-//     var risca = event.target.id;
-//     var teste = document.getElementById(risca)
-//     teste.classList.add('incompleta')
-//   }
-//   riscado = false
-// }
-
-
+  var limpa = event.target.id;
+  var teste = document.getElementById(limpa)
+  limpa.classList.add('incompleta')
+}
 
 function pickObj(e) {
   var idSelect = (e.target.id);
@@ -101,11 +72,8 @@ function pickObj(e) {
   console.log(taskRemoved)
 }
 
-
 botaoCriar.addEventListener('click', type);
-
 olId.addEventListener('click', changeColorLi)
-// addEventListener('click', reverseColorLi)
 deleteAll.addEventListener('click', deleteTasks)
 olId.addEventListener('dblclick', riscaTexto)
-// olId.addEventListener('dblclick', limpaTexto)
+pickId.addEventListener('click', identifyObj)
