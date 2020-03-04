@@ -4,6 +4,8 @@
 .completed {
   text-decoration: line-through;
 }
-button {
+ol,
+li,
+button:hover {
   cursor: pointer;
 }
