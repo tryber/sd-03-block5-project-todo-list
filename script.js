@@ -5,6 +5,12 @@ function adicionarItem() {
   let ol = document.getElementById('lista-tarefas');
   li.textContent = itensLista;
   ol.appendChild(li);
+
+  //limpar
+  if (document.getElementById('texto-tarefa').value != "") {
+    document.getElementById('texto-tarefa').value = "";
+  }
+
   //cor background li
   document.querySelector(".completed").addEventListener("click", function () {
     li.style.backgroundColor = "rgb(128, 128, 128)";
@@ -13,10 +19,12 @@ function adicionarItem() {
   li.addEventListener("dblclick", function () {
     li.style.textDecoration = "line-through";
   })
+
 }
 
-function limparInput() {
-  if (document.getElementById('texto-tarefa').value != "") {
-    document.getElementById('texto-tarefa').value = "";
-  }
-}
+//limpar campo input
+// function limparInput() {
+//   if (document.getElementById('texto-tarefa').value != "") {
+//     document.getElementById('texto-tarefa').value = "";
+//   }
+// }
