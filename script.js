@@ -26,7 +26,7 @@ function selectedItem(item) {
   if (document.getElementsByClassName('selected')[0] != null) {
     document.getElementsByClassName('selected')[0].classList.remove('selected');
   }
-    item.classList.add('selected');
+  item.classList.add('selected');
 }
 
 function criaTarefa() {
