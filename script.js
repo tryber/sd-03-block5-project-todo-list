@@ -28,10 +28,11 @@ function addTodo() {
     }
   });
   createLi.addEventListener('click', function(event) {
-    if (event.target.classList.contains('selected')) {
-    } else {
-      event.target.classList.add('selected');
+    let previousSelected = document.getElementsByClassName('selected')[0];
+    if (previousSelected != null) {
+      previousSelected.classList.remove("selected");
     }
+      event.target.classList.add('selected');
   });
   updateLi();
 }
