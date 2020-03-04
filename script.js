@@ -1,4 +1,9 @@
-// variáveis
+// verifica se existe lista salva e seta na página
+if (localStorage.getItem('listaSalva')) {
+    const listaSalva = localStorage.getItem('listaSalva');
+    adicionarTarefaSalva(listaSalva);
+}
+
 
 //elementos
 const inputText = document.querySelector('#texto-tarefa');
@@ -6,6 +11,7 @@ const listaOrd = document.querySelector('#lista-tarefas');
 const botaoCriarTarefa = document.querySelector('#criar-tarefa');
 const botaoApagarTudo = document.querySelector('#apaga-tudo');
 const botaoRemoverFin = document.querySelector('#remover-finalizados');
+const botaoSalvarTarefas = document.querySelector('#salvar-tarefas');
 let itemDeLista = null;
 
 
@@ -14,6 +20,7 @@ let itemDeLista = null;
 botaoCriarTarefa.addEventListener('click', adicionarTarefa);
 botaoApagarTudo.addEventListener('click', apagarLista);
 botaoRemoverFin.addEventListener('click', apagarFinalizados);
+botaoSalvarTarefas.addEventListener('click', salvarTarefas);
 
 
 
@@ -29,10 +36,22 @@ function adicionarTarefa() {
     criarEventListenerLi(itemDeLista);
 }
 
+function adicionarTarefaSalva(listaSalva) {
+    let lista = document.getElementById('lista-tarefas');
+    lista.innerHTML = listaSalva;
+}
+
+function salvarTarefas() {
+    const lista = document.getElementById('lista-tarefas').innerHTML;
+    localStorage.setItem('listaSalva',lista);
+}
+
+
 function apagarLista() {
     while (listaOrd.hasChildNodes()) {
         listaOrd.removeChild(listaOrd.firstChild);
     }
+    localStorage.removeItem('listaSalva');
 }
 
 
