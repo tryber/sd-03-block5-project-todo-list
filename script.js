@@ -22,19 +22,20 @@ function apagarTudo() {
 
 botaoApagaTudo.addEventListener('click', apagarTudo);
 
-let lis = document.getElementsByClassName('listaTarefa');
+const lis = document.getElementsByClassName('listaTarefa');
 
 function addFundoCinza() {
   for (let l = 0; l < lis.length; l += 1) {
-  lis[l].style.backgroundColor = 'rgb(128,128,128)';
+  lis[l].classList.add('selected');
   }
 };
 
 lista.addEventListener('click', addFundoCinza);
 
-function addRiscado(){
-  lis.classList.add('completed');
-  lis.style.textDecorationLine = 'lineThrough';
+function addRiscado() {
+  for (let l = 0; l < lis.length; l += 1) {
+  lis[l].classList.add('completed');
+  }
 }
 
-lista.addEventListener('dbclick', addRiscado);
+lista.addEventListener('dblclick', addRiscado);
