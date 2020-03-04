@@ -1,14 +1,14 @@
 const addListeners = (li) => {
-  li.addEventListener('dblclick', () => { (li.classList[0] === 'completed') ? li.classList.remove('completed') : li.classList.add('completed'); })
+  li.addEventListener('dblclick', () => { (li.classList[0] === 'completed') ? li.classList.remove('completed') : li.classList.add('completed'); });
   li.addEventListener('click', (element) => {
-    if(document.getElementsByClassName('selected')[0] != null){ document.getElementsByClassName('selected')[0].classList.remove('selected'); }
+    if (document.getElementsByClassName('selected')[0] != null) { document.getElementsByClassName('selected')[0].classList.remove('selected'); }
     element.toElement.classList.add('selected');
   })
   li.style.cursor = 'pointer';
 }
 
 document.getElementById('criar-tarefa').addEventListener('click', () => {
-  if(document.getElementById('texto-tarefa').value){
+  if (document.getElementById('texto-tarefa').value) {
     let li = document.createElement('li');
     li.textContent = document.getElementById('texto-tarefa').value;
     addListeners(li);
@@ -31,13 +31,13 @@ document.getElementById('salvar-tarefas').addEventListener('click', () => {
 
 if (window.localStorage.getItem('Lista de Tarefas')) {
   document.getElementById('lista-tarefas').innerHTML = window.localStorage.getItem('Lista de Tarefas');
-  document.querySelectorAll('li').forEach ( function (li) {addListeners(li)});
+  document.querySelectorAll('li').forEach(function (li) { addListeners(li) });
 }
 
 document.getElementById('mover-cima').addEventListener('click', () => {
   selected = document.querySelector('.selected');
-  if(selected){
-    if(selected.previousElementSibling){
+  if (selected) {
+    if (selected.previousElementSibling) {
       selected.parentNode.insertBefore(selected, selected.previousElementSibling);
     }
   }
@@ -46,15 +46,15 @@ document.getElementById('mover-cima').addEventListener('click', () => {
 
 document.getElementById('mover-baixo').addEventListener('click', () => {
   selected = document.querySelector('.selected');
-  if(selected){
-    if(selected.nextElementSibling){
+  if (selected) {
+    if (selected.nextElementSibling) {
       selected.parentNode.insertBefore(selected.nextElementSibling, selected);
     }
   }
 })
 
 document.getElementById('remover-selecionado').addEventListener('click', () => {
-  if(document.querySelector('.selected')){
+  if (document.querySelector('.selected')) {
     document.querySelector('.selected').remove();
   }
 })
