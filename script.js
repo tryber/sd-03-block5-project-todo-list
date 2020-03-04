@@ -22,7 +22,7 @@ document.getElementById("apaga-tudo").addEventListener("click", () => {
 })
 
 document.getElementById("remover-finalizados").addEventListener("click", () => {
-  document.querySelectorAll("li").forEach(function (e) { if (e.classList[0] == "completed") { e.remove() } })
+  document.querySelectorAll("li").forEach(function (e) { if (e.classList.contains("completed")) { e.remove() } })
 })
 
 document.getElementById("salvar-tarefas").addEventListener("click", () => {
