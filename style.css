@@ -23,7 +23,8 @@ h1{
   border: 2px solid #108cc6;
   color: rgb(43, 99, 255);
   width: 100px;
-  height: 45px;
+  height: 40px;
+  padding-top: 3px;
   font-size: 14px;
   display: inline-block;
   margin: auto;
@@ -38,7 +39,7 @@ h1{
 #texto-tarefa{
   margin-bottom:30px;
   width:500px;
-  height:40px;
+  height:38px;
   border-radius:5px;
   font-size: 24px;
 }
