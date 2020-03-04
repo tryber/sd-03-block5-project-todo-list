@@ -6,7 +6,7 @@ function simpleClick() {
   event.target.classList.toggle('grey');
 }
 
-function createItem(event) {
+function createItem() {
   const newItemContent = document.querySelector('#texto-tarefa').value;
   const newItem = document.createElement('li');
   newItem.innerText = newItemContent;
@@ -29,31 +29,35 @@ function removeCompletedItem() {
 }
 
 function removeSelectedItem() {
-  let elementsToRemove = document.getElementsByClassName('grey');
+  const elementsToRemove = document.getElementsByClassName('grey');
   while (elementsToRemove.length > 0) {
     document.querySelector('#lista-tarefas').removeChild(elementsToRemove[0]);
   }
 }
 
 function moveItemUp() {
-  const elementToMove = document.querySelector('.grey');
-  if (elementToMove) {
-    if (elementToMove.previousElementSibling) {
-      elementToMove.parentNode.insertBefore(elementToMove, elementToMove.previousElementSibling);
+  const elementToMove = document.querySelectorAll('.grey');
+  for (let i = 0; i , i < elementToMove.length; i += 1){
+    if (elementToMove[i]) {
+      if (elementToMove[i].previousElementSibling) {
+        elementToMove[i].parentNode.insertBefore(elementToMove[i], elementToMove[i].previousElementSibling);
+      }
     }
   }
 }
 
 function moveItemDown() {
-  const elementToMove = document.querySelector('.grey');
-  if (elementToMove) {
-    if (elementToMove.nextElementSibling) {
-      elementToMove.parentNode.insertBefore(elementToMove.nextElementSibling, elementToMove);
+  const elementToMove = document.querySelectorAll('.grey');
+  for (let i = 0; i , i < elementToMove.length; i += 1){
+    if (elementToMove[i]) {
+      if (elementToMove[i].nextElementSibling) {
+        elementToMove[i].parentNode.insertBefore(elementToMove[i].nextElementSibling, elementToMove[i]);
+      }
     }
   }
 }
 
-function saveList(event) {
+function saveList() {
   const currentList = document.querySelector('#lista-tarefas');
   localStorage.setItem('saveItens', currentList.innerHTML);
 }
