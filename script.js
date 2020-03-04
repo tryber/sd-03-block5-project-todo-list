@@ -1,7 +1,7 @@
 const criartarefa = document.getElementById('criar-tarefa');
-//console.log(criartarefa);
+// console.log(criartarefa);
 const listaordenada = document.getElementById('lista-tarefas');
-//console.log(listaordenada);
+// console.log(listaordenada);
 // let inputTextoTarefa = document.getElementById("texto-tarefa");
 // console.log(inputTextoTarefa);
 
@@ -18,12 +18,16 @@ function adicionarItem() {
   lista.addEventListener('click', alterarcordefundodalista);
 
 
-  //dublo clique no item risca a tarefa
-  lista.addEventListener('dblclick',riscartarefa)
-
+  // dublo clique no item risca a tarefa
   function riscartarefa() {
-    lista.classList.add('completed');
+    if (lista.classList == 'completed') {
+      lista.classList.remove('completed');
+    } else {
+      lista.classList.add('completed');
+    }
   }
+
+  lista.addEventListener('dblclick', riscartarefa);
 
 }
 
