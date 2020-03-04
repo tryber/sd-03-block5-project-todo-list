@@ -18,37 +18,21 @@ function addLista(){
     texto.value = null;
     
     function riscar(){
-          novoItem.addEventListener("dblclick", function() {
+          novoItem.addEventListener("dblclick", () => {
             novoItem.classList.toggle ("completed")  
       })
     }
     riscar();
 
     function selecionado(){
-      novoItem.addEventListener("click", function() {
+      novoItem.addEventListener("click", () => {
         novoItem.classList.toggle ("selected")  
       })
     }
     selecionado();
 
-    function apagarFinalizados() {
-      btnRemoverFinalizados.addEventListener("click", function() {
-        let completed = document.querySelector(".completed");
-        lista.removeChild(completed)
-      })
-    }
-    apagarFinalizados();
-
-    function apagarSelecionados() {
-      btnRemoverSelecionados.addEventListener("click", function() {
-        let selected = document.querySelector(".selected");
-        lista.removeChild(selected)
-      })
-    }
-    apagarSelecionados();
-
     function moverCima() {
-      btnMoverCima.addEventListener("click", function() {let sp2 = document.querySelector(".selected");
+      btnMoverCima.addEventListener("click", () => {let sp2 = document.querySelector(".selected");
       let elPai = sp2.parentNode
       elPai.insertBefore(sp2, novoItem)
       })
@@ -56,10 +40,24 @@ function addLista(){
     moverCima();
 
     function apagarTudo(){
-      btnApagaTudo.addEventListener("click", function() {
+      btnApagaTudo.addEventListener("click", () => {
               lista.removeChild(novoItem)
             })
           }
       apagarTudo();
 
 };
+
+    btnRemoverFinalizados.addEventListener("click", () => {
+      document.querySelectorAll('.completed').forEach( (completed) => {
+          completed.remove()
+      })
+
+  })
+
+  btnRemoverSelecionados.addEventListener("click", () => {
+    document.querySelectorAll('.selected').forEach( (selected) => {
+        selected.remove()
+    })
+
+})
