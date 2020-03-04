@@ -7,6 +7,10 @@ let btnRemoverFinalizados = document.querySelector('#remover-finalizados');
 btnCriar.addEventListener("click", addLista);
 
 function addLista(){
+  if (texto.value == 0){
+    texto.style.borderColor = "#fb7f7f"
+  } else {
+    texto.style.borderColor = "initial";
 
     let novoItem = document.createElement('li')
     novoItem.innerText = texto.value
@@ -45,4 +49,4 @@ function addLista(){
       apagarTudo();
 
 };
-
+}

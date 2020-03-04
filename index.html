@@ -4,25 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To Do List</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleTD.css">
 </head>
 <body>
+  <div class="inbox">
   <header>
     <h1>Minha Lista de Tarefas</h1>
     <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
   </header>
   <section>
     <input type="text" id="texto-tarefa">
-    <button id="criar-tarefa">Incluir</button>
+    <button class="btnTxt" id="criar-tarefa">Incluir</button>
     <ol id="lista-tarefas">
     </ol>
   </section>
-    <button id="apaga-tudo">Apagar Tudo</button>
-    <button id="remover-finalizados"></button>
-    <button id="remover-selecionado"></button>
-    <button id="mover-cima"></button>
-    <button id="mover-baixo"></button>
-    <script src="script.js"></script>
+  <section class="btnbaixo">
+    <button class="icones" id="remover-selecionado">&#120;</button>
+    <button class="icones" id="mover-cima">&#8593</button>
+    <button class="icones" id="mover-baixo">&#8595;</button>
+    <button class="btnTxt" id="remover-finalizados">Limpar Completos</button>
+    <button class="btnTxt" id="apaga-tudo">Limpar Lista</button>
+    <button class="btnTxt" id="salvar">Salvar Lista</button>
+  </section>
+  </div>
+    <script src="scriptTD.js"></script>
   
 </body>
 </html>
