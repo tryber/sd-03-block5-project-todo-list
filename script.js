@@ -23,7 +23,7 @@ listando.addEventListener("click", function (backg) {
 
 listando.addEventListener("dblclick", function (event) {
     let marc = event.target; 
-    marc.className = "riscado"
+    marc.className = "completed"
 
 })
 
