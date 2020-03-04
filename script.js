@@ -16,7 +16,7 @@ function criarItemLista(texto){
     let item = document.createElement("li");
     item.innerHTML = texto;
     adicionarEvento("click",item,alterarCorFundoItem);
-    adicionarEvento("dblclick",item,riscarItem);
+    adicionarEvento("dblclick",item,riscoItem);
     return item;
 }
 function adicionarItemLista(item){
@@ -33,7 +33,10 @@ function adicionarEvento(evento,elemento,funcao){
 function alterarCorFundoItem(item){
      item.style.backgroundColor = "rgb(128,128,128)";
 }
-function riscarItem(item){
-    item.style.textDecoration = "line-through";
+function riscoItem(item){
+    if(item.style.textDecoration == "line-through")
+      item.style.textDecoration = "none";
+    else item.style.textDecoration = "line-through";
 }
+
 

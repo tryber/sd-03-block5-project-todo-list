@@ -19,6 +19,12 @@
 #remover-finalizados{
 
 }
+#remover-finalizados:hover{
+    cursor: pointer;
+}
 #apaga-tudo{
 
+}
+#apaga-tudo:hover{
+    cursor: pointer;
 }
