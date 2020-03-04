@@ -1,7 +1,41 @@
+body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
 button {
-    cursor: url("pointer/pointer.png"),pointer;
-    
+  background-color: rgb(108, 247, 103);
+  border-color: black;
+  color: white;
+  cursor: url("pointer/pointer.png"), pointer;
+  text-transform: uppercase;
+}
+header {
+  background-color: rgb(108, 247, 103);
+  margin-top: 0;
+  padding-top: 0;
+}
+h1 {
+  color: white;
+  height: 50px;
+  text-align: center;
 }
 .cursor {
-    cursor: pointer;
+  cursor: pointer;
+}
+label {
+  color: white;
+  text-transform: uppercase;
+}
+li {
+  color: white;
+  background: rgb(108, 247, 103);
+  padding: 1em;
+  text-transform: uppercase;
+  transform: scale(0.9);
+  transform-origin: 0 0;
+  transition: transform 0.6s;
+}
+.large {
+  transform: scale(1.3);
 }
