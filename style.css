@@ -2,6 +2,8 @@
     color: rgb(128, 128, 128);
 }
 
-.selected {
+.list {
+    border: 1px solid black;
+    margin: 1px;
     background-color: aqua;
 }
