@@ -1,15 +1,8 @@
 let botaoCriarTarefa = document.querySelector('#criar-tarefa');
 let caixaTexto = document.querySelector('#texto-tarefa');
 let addLista = document.querySelector('#lista-tarefas');
-let eraseBtn = document.querySelector('#apaga-tudo');
 let checkLi = document.querySelector('li');
 let checkOl = document.querySelector('ol');
-
-
-eraseBtn.addEventListener('click', function () {
-  checkOl.innerHTML = "";
-})
-
 
 function criaTarefa() {
   criarLista = document.createElement('li');
@@ -34,5 +27,16 @@ function limpaCaixa() {
   caixaTexto.value = '';
 }
 
+let eraseBtn = document.querySelector('#apaga-tudo');
+eraseBtn.addEventListener('click', function() {
+  checkOl.innerHTML = '';
+});
 
+let tedBtn = document.querySelector('#remover-finalizados');
+tedBtn.addEventListener('click', function() {
+  const elementsToRemove = document.getElementsByClassName('completed');
+  while (elementsToRemove.length > 0) {
+    document.querySelector('#lista-tarefas').removeChild(elementsToRemove[0]);
+  }
+});
 
