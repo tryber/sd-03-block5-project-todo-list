@@ -15,18 +15,18 @@ if (listaSalva) {
 }
 
 function completedItem(item) {
-  if (item.classList.contains('completed') != null) {
+  if (item.classList.contains('completed')) {
     item.classList.remove('completed');
+  } else {
+    item.classList.add('completed');
   }
-  item.classList.add('completed');
 }
 
 function selectedItem(item) {
-  if (item.classList.contains('selected')) {
+  if (item.classList.contains('selected') != null) {
     item.classList.remove('selected');
-  } else {
-    item.classList.add('selected');
   }
+  item.classList.add('selected');
 }
 
 function criaTarefa() {
