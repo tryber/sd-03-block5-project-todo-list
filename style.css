@@ -34,4 +34,8 @@ li:hover {
     background-color: rgb(128, 128, 128)
 }
 
+.finalizado {
+    text-decoration: line-through;
+}
+
 .itemLista {}

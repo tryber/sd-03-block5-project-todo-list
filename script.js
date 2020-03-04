@@ -1,9 +1,10 @@
+//ideia do Luis
+let i = 0;
+let oList = document.getElementById('lista-tarefas');
+
 function raschunhoTarefa() {
     window.text = document.querySelector('#texto-tarefa').value;
-    document.querySelector('#rascunho').innerHTML = text;
-
 }
-
 
 function addTarefa() {
     let novaTarefa = document.createElement('LI');
@@ -12,6 +13,9 @@ function addTarefa() {
     document.getElementById('lista-tarefas').appendChild(novaTarefa);
     novaTarefa.classList.add('itemLista');
     document.getElementById('texto-tarefa').value = '';
+    novaTarefa.id = i;
+    i++;
+    console.log('criado a li ' + novaTarefa);
 }
 
 function apagaTudo() {
@@ -22,7 +26,13 @@ function apagaTudo() {
 
 }
 
-function marked() {
+function selecionada() {
+    var pegarId = event.target.id;
+    document.getElementById(pegarId).classList.toggle('deixaCinza');
 
+}
 
+function riscadinha() {
+    var pegarId2 = event.target.id;
+    document.getElementById(pegarId2).classList.toggle('finalizado');
 }

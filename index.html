@@ -22,13 +22,13 @@
     </div>
     <section>
         <p id="rascunho"></p>
-        <ol type='text' id="lista-tarefas" onclick="marked()">
+        <ol type='text' id="lista-tarefas" onclick="selecionada(event)">
 
 
 
         </ol>
 
-        <nav><button id="apaga-tudo" class="fonteKinder" onclick="apagaTudo()">Apagar Lista</button>
+        <nav><button id="apaga-tudo" class="fonteKinder" onclick="apagaTudo()" ondblclick="riscadinha()">Apagar Lista</button>
             <button id="remover-finalizados" class="fonteKinder">Remover Finalizados</button></nav>
     </section>
     <footer></footer>
