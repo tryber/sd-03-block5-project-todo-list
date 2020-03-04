@@ -15,11 +15,10 @@ if (listaSalva) {
 }
 
 function completedItem(item) {
-  if (item.classList.contains('completed')) {
+  if (item.classList.contains('completed') != null) {
     item.classList.remove('completed');
-  } else {
-    item.classList.add('completed');
   }
+  item.classList.add('completed');
 }
 
 function selectedItem(item) {
@@ -83,6 +82,8 @@ function moverCima() {
   if (itemS) {
     if (itemS.previousElementSibling) {
       itemS.parentNode.insertBefore(itemS, itemS.previousElementSibling);
+    } else {
+      alert('Não é possível mover esta tarefa para cima');
     }
   }
 }
@@ -92,6 +93,8 @@ function moverBaixo() {
   if (itemS) {
     if (itemS.nextElementSibling) {
       itemS.parentNode.insertBefore(itemS.nextElementSibling, itemS);
+    } else {
+      alert('Não é possível mover esta tarefa para baixo');
     }
   }
 }
