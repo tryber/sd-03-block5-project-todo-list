@@ -1,13 +1,13 @@
-const todoList = document.getElementById("lista-tarefas");
-const createTask = document.getElementById("criar-tarefa");
-const taskText = document.getElementById("texto-tarefa");
+const todoList = document.getElementById('lista-tarefas');
+const createTask = document.getElementById('criar-tarefa');
 
 function addTask() {
-  let newTask = document.createElement("li");
-  newTask.innerHTML = taskText;
+  const taskText = document.getElementById('texto-tarefa').value;
+  let newTask = document.createElement('li');
+  let taskNode = document.createTextNode(taskText);
+  newTask.appendChild(taskNode);
   todoList.appendChild(newTask);
+  taskText = '';
 }
 
-createTask.addEventListener("click", addTask());
-
-// esse diabo nao funciona!!!!!!
+createTask.addEventListener('click', addTask);
