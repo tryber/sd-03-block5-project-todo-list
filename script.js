@@ -3,6 +3,7 @@ let btnCriar = document.querySelector('#criar-tarefa');
 let texto = document.querySelector('#texto-tarefa');
 let btnApagaTudo = document.querySelector('#apaga-tudo');
 let btnRemoverFinalizados = document.querySelector('#remover-finalizados');
+let btnRemoverSelecionados = document.querySelector('#remover-selecionado');
 
 btnCriar.addEventListener("click", addLista);
 
@@ -36,6 +37,14 @@ function addLista(){
       })
     }
     apagarFinalizados();
+
+    function apagarSelecionados() {
+      btnRemoverSelecionados.addEventListener("click", function() {
+        let selected = document.querySelector(".selected");
+        lista.removeChild(selected)
+      })
+    }
+    apagarSelecionados();
 
     function apagarTudo(){
       btnApagaTudo.addEventListener("click", function() {
