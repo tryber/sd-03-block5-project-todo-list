@@ -6,22 +6,14 @@ console.log(listaordenada);
 // console.log(inputTextoTarefa);
 
 function adicionarItem() {
-  let lista = document.createElement("li") 
+  let lista = document.createElement("li")
   //console.log(teste);
-  let valorInput = document.getElementById("texto-tarefa").value;
-  console.log(valorInput);
-  if (document.getElementById("texto-tarefa").value == '') {
-    console.log("Input está vazio")
-  } else {
-    listaordenada.appendChild(lista);
-    lista.innerHTML = valorInput;
-  } 
+  
+  lista.innerHTML = document.getElementById("texto-tarefa").value;
+  //let valorInput = document.getElementById("texto-tarefa").value;
+  //console.log(valorInput);
+  listaordenada.appendChild(lista);
+  document.getElementById("texto-tarefa").value = "";
 }
 
-function limparinput(){
-  ;
-}
-
-
-criartarefa.addEventListener("click",adicionarItem);
-criartarefa.addEventListener("click",limparinput);
+criartarefa.addEventListener("click", adicionarItem);
