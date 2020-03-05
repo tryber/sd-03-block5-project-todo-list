@@ -1,22 +1,17 @@
 window.onload = function () {
-  function addClickUpBtn(element) {
-    element.addEventListener('click', function () {
-      moveUp(returnById('select'));
-    });
-  }
   addClickUpBtn(returnById('mover-cima'));
-  function addClickDownBtn(element) {
-    element.addEventListener('click', function () {
-      moveDown(returnById('select'));
-    });
-  }
-  addClickDownBtn(returnById('mover-baixo'));
   function moveUp(element) {
     if (element) {
       const elementFather = element.parentNode;
       elementFather.insertBefore(element, element.previousElementSibling);
     }
   }
+  function addClickUpBtn(element) {
+    element.addEventListener('click', function () {
+      moveUp(returnById('select'));
+    });
+  }
+  addClickDownBtn(returnById('mover-baixo'));
   function moveDown(element) {
     if (element) {
       const elementFather = element.parentNode;
@@ -24,8 +19,13 @@ window.onload = function () {
         elementFather.insertBefore(element, elementFather.firstElementChild);
       } else {
         elementFather.insertBefore(element.nextElementSibling, element);
-      };
+      }
     }
+  }
+  function addClickDownBtn(element) {
+    element.addEventListener('click', function () {
+      moveDown(returnById('select'));
+    });
   }
   function reduceSize(string) {
     if (string.length > 30) {
@@ -40,10 +40,10 @@ window.onload = function () {
     let indiceTask = addTextTask(createItem('td'), number);
     let row=createItem('tr');
     let elementFather = returnById('feedbackSave');
-    addElementInHTML(indiceTask,row);
-    addElementInHTML(textTask,row);
-    addElementInHTML(lineTaskStatus,row);
-    addElementInHTML(row,elementFather);
+    addElementInHTML(indiceTask, row);
+    addElementInHTML(textTask, row);
+    addElementInHTML(lineTaskStatus, row);
+    addElementInHTML(row, elementFather);
     returnById('feedback').style.visibility='visible';
   }
   function removeTaskSaves() {
@@ -55,7 +55,7 @@ window.onload = function () {
       let position;
       for(position = 0; position < sizeTasks; position++) {
         deleteElement(tasks[0]);
-      };
+      }
     }
   }
   function saveList() {
@@ -76,8 +76,8 @@ window.onload = function () {
           showSaveTasks(list[position].textContent, 'SIM',(position+1));
         } else {
           showSaveTasks(list[position].textContent, 'NÃO',(position+1));
-        };
-      };
+        }
+      }
       disableAllMainBtn();
       filterBrightnesslight(returnById('feedback'));
     }
@@ -94,7 +94,7 @@ window.onload = function () {
         localStorage.setItem('completed' + position, 1);
       } else {
         localStorage.setItem('completed' + position, 0);
-      };
+      }
     }
   }
   function reloadList() {
@@ -105,7 +105,7 @@ window.onload = function () {
       let task = addTextTask(createItem('li'), text);
       if (localStorage['completed' + position] == '1') {
         markCompleted(task);
-      };
+      }
       addElementInHTML(task, elementFather);
     }
   }
