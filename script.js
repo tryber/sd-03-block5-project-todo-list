@@ -25,28 +25,12 @@ function deleteAllTasks() {
 }
 
 function removeCompleted() {
-  // mesmo usando o getElementsByClass e só dando um remove
-  // ou fazendo umas pirueta e pegando o pai e removendo o filho
-  // ele n remove, fica dando um undefinid ou sla
   let listCompleted = document.querySelectorAll("li");
-  for (let i = listCompleted.length; i > 0; i--) {
+  for (let i = 0; i < listCompleted.length; i++) {
     if (listCompleted[i].classList.contains("completed")) {
-      listCompleted.listParent.removeChild[i];
-    } else {
-      console.log("Some shit is happening!");
+      listCompleted[i].remove();
     }
   }
-  console.log(listCompleted);
-  /*
-  function apagaSelecionados() {
-    let numTarefas = tarefa.length - 1;
-    for (let i = numTarefas; i >= 0; i--) {
-        if (tarefa[i].classList.contains("completed")) {
-            tarefa[i].remove();
-        }
-    }
-}
-  */
 }
 function selected() {
   let getId = event.target.id;
