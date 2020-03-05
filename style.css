@@ -3,6 +3,10 @@ button {
     cursor: pointer;
 }
 
+li.item {
+    cursor: pointer;
+}
+
 .grey {
     background-color: rgb(128,128,128);
 }
