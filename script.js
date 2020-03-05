@@ -34,7 +34,7 @@ botaoCria.addEventListener('click', function () {
     const inputTexto = document.getElementById('texto-tarefa').value;
     novaTarefa.innerHTML = inputTexto;
     listaOrdenada.appendChild(novaTarefa);
-    texto.value = ' ';
+    texto.value = '';
 
     oneClick();
     twoClick();
