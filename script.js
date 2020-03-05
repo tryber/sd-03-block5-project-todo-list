@@ -4,8 +4,8 @@ function newTask() {
   let li = document.createElement('li');
   let inputValue = document.getElementById('texto-tarefa').value;
   let text = document.createTextNode(inputValue);
-  console.log(document.getElementById('lista-tarefas')
-  )
+/*   console.log(document.getElementById('lista-tarefas')
+ */
   let ol = document.getElementById('lista-tarefas');
   li.onmouseouver;
   addOverClass(li)
@@ -44,10 +44,10 @@ apagarTudo.addEventListener('click', function () {
   document.getElementById('container').appendChild(newOl);
 })
 const removerFin = document.getElementById('remover-finalizados')
-let selected = document.getElementsByClassName('selected')
+
 removerFin.addEventListener('click', function (){
-for (let i in selected){
-  console.log(selected)
+  let selected = document.querySelectorAll('.selected')
+ for  (let i in selected){
   selected[i].remove()
   console.log(selected)
 }
