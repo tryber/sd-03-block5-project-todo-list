@@ -1,0 +1,22 @@
+#criar-tarefa {
+    cursor:pointer;
+}
+.overPointer{
+    cursor:pointer;
+}
+.cinza-bg{
+   background-color: rgb(128,128,128);
+}
+li{
+    width: 350px;
+}
+.cinza{
+    background: rgb(128,128,128);
+}
+.overLine{
+    text-decoration: line-through;
+
+}
+.completed{
+    text-decoration: line-through;
+}

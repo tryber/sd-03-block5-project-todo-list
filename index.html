@@ -4,14 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha lista de tarefas - Gabriel Luiz</title>
-    <style>
-        #criar-tarefa {
-            cursor:pointer;
-        }
-        .overPointer{
-            cursor:pointer;
-        }
-    </style> 
+     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header title="Minha lista de Tarefas">
@@ -19,16 +12,14 @@
     <h3><p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p></h3>
 </header>
 <section>
-    <input type="text" id="texto-tarefa" class="texto-tarefa"><button id="criar-tarefa" class="criar-tarefa">Adicionar</button>
+    <input autofocus type="text" id="texto-tarefa" class="texto-tarefa"><button id="criar-tarefa" class="criar-tarefa">Adicionar</button>
 <article id="lista-de-tarefas">
     <ol id="lista-tarefas">
-        <li>minha primeira tarefa</li>
-        <li>b</li>
-        <li>c</li>
+
     </ol>
 </article>
 <footer>
-<button id="apaga-tudo" class="overPointer">X</button>
+<button id="apaga-item" class="overPointer">X</button>
 <button id="mover-cima" class="overPointer">top</button>
 <button id="mover-baixo" class="overPointer">bot</button>
 <button id="remover-finalizados" class="overPointer">Limpar Finalizados</button>
