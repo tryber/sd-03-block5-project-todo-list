@@ -2,13 +2,14 @@
     color: rgb(128, 128, 128);
 }
 
-.selected {
+
+/* .selected {
     background-color: rgb(128, 128, 128);
 }
 
 .completed {
     text-decoration: line-through;
-}
+} */
 
 .cursor {
     cursor: pointer;
