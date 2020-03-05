@@ -3,6 +3,7 @@ window.onload = function() {
   let buttonClear = document.getElementsByClassName("removendo-tarefas")[0];
   let buttonFinalizados = document.getElementsByClassName("remove-finalizados")[0];
   let buttonSalve = document.getElementsByClassName("salva-lista")[0];
+  let buttonRemove = document.getElementsByClassName("removendo-selecionado")[0]
   let lista = document.getElementsByClassName("lista-ordenada")[0];
   let input1 = document.getElementsByClassName("tarefa")[0];
   
@@ -22,6 +23,7 @@ window.onload = function() {
   function backgroundGrey(element) {
     element.addEventListener("click", function(){
       element.style.backgroundColor = "rgb(128,128,128)";
+      element.classList.add("selecionado");
     });
   }
   function riskingOrNot(element){
@@ -54,6 +56,11 @@ window.onload = function() {
     lista.innerHTML = window.localStorage.getItem("Lista de Tarefas");
   }
 
+  function deleteSelected() {
+    document.querySelectorAll(".selecionado").forEach(function(element){
+      element.remove()
+    })
+  }
+  buttonRemove.addEventListener("click", deleteSelected);
   
-
 }
