@@ -1,11 +1,11 @@
 body {
     background-color: khaki;
-    display: inline-flexbox;
 }
 
 header {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     letter-spacing: -1.5pt;
+    line-height: 5px;
     width: 100%;
 }
 
@@ -15,10 +15,11 @@ article {
 
 .barraMenu {
     border: 3px dashed blue;
+    padding: 5px;
 }
 
 ol {
-    background-color: lightblue;
+    background-color: lavender;
 }
 
 button {

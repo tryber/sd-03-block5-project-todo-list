@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de tarefas</title>
+    <title>Lista de tarefas v0.8</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,18 +17,18 @@
         <div class="barraMenu">
             <input id="texto-tarefa" type="text"><button id="criar-tarefa" class="botAdd" type="button"
                 onclick="insereItem()">Adicionar item</button>
-            <button class="botMov" type="button" onclick="insereItem()">Up</button>
-            <button class="botMov" type="button" onclick="insereItem()">Down</button>
+            <button class="botMov" id="mover-cima" type="button" onclick="movUp()">Up</button>
+            <button class="botMov" id="mover-baixo" type="button" onclick="movDown()">Down</button>
             <button class="botApaga" id="remover-selecionado" type="button" onclick="apagaItem()">Apagar
                 selecionado</button>
             <button class="botApaga" id="remover-finalizados" type="button" onclick="apagaFinalizados()">Apagar
                 finalizados</button>
             <button class="botApaga" id="apaga-tudo" type="button" onclick="apagaTudo()">Limpar lista</button>
-            <button class="botAdd" type="button" onclick="insereItem()">Salvar lista</button>
+            <button class="botAdd" id="salvar-tarefas" type="button" onclick="armazenaItens()">Salvar lista</button>
+            <button class="botApaga" id="apagaLocalStorage" type="button" onclick="apagaLS()">Apagar Local Storage</button>
         </div>
         <ol id="lista-tarefas"></ol>
     </article>
     <script src="script.js"></script>
 </body>
-
 </html>
