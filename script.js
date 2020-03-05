@@ -2,6 +2,7 @@ let blista = document.getElementById('criar-tarefa');
 let olista = document.getElementById('lista-tarefas');
 let texttarefa = document.getElementById('texto-tarefa');
 let dlista = document.getElementById('apaga-tudo');
+let botaoFinalizado = document.getElementById('remover-finalizados');
 
 
 
@@ -40,3 +41,11 @@ function dblclick() {
         })
     }
 }
+
+botaoFinalizado.addEventListener('click', function() {
+    let removeLI = document.getElementsByClassName('completed');
+    for (let r = 0; r < removeLI.length; r += 1) {
+        if (removeLI[r].style.textDecoration === "line-through")
+            olista.removeChild(removeLI[r]);
+    }
+});
