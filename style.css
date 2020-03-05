@@ -1,0 +1,11 @@
+.over {
+  background-color:rgb(128,128,128)
+}
+
+li {
+  cursor: pointer
+
+}
+.selected{
+  text-decoration: line-through ;
+}
