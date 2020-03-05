@@ -1,6 +1,4 @@
-let taskPreText;
 let i = 0;
-let listArray;
 
 function setTaskText() {
   taskPreText = document.getElementById("texto-tarefa").value;
@@ -12,6 +10,7 @@ function createTask() {
   liElem.innerText = taskPreText;
   olElem.appendChild(liElem);
   document.getElementById("texto-tarefa").value = "";
+  taskPreText = "";
   liElem.id = i;
   i += 1;
   liElem.addEventListener("click", selected);
@@ -19,14 +18,35 @@ function createTask() {
 }
 
 function deleteAllTasks() {
-  let listArray = document.getElementById("lista-tarefas");
-  while (listArray.firstChild) {
-    listArray.removeChild(listArray.firstChild);
+  let listParent = document.getElementById("lista-tarefas");
+  while (listParent.firstChild) {
+    listParent.removeChild(listParent.firstChild);
   }
 }
 
 function removeCompleted() {
-  alert("Removed all completed tasks!");
+  // mesmo usando o getElementsByClass e só dando um remove
+  // ou fazendo umas pirueta e pegando o pai e removendo o filho
+  // ele n remove, fica dando um undefinid ou sla
+  let listCompleted = document.querySelectorAll("li");
+  for (let i = listCompleted.length; i > 0; i--) {
+    if (listCompleted[i].classList.contains("completed")) {
+      listCompleted.listParent.removeChild[i];
+    } else {
+      console.log("Some shit is happening!");
+    }
+  }
+  console.log(listCompleted);
+  /*
+  function apagaSelecionados() {
+    let numTarefas = tarefa.length - 1;
+    for (let i = numTarefas; i >= 0; i--) {
+        if (tarefa[i].classList.contains("completed")) {
+            tarefa[i].remove();
+        }
+    }
+}
+  */
 }
 function selected() {
   let getId = event.target.id;
