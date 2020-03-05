@@ -128,7 +128,7 @@ Esta é uma oportunidade de você exercitar sua criatividade e experimentar os c
 
 ### DURANTE O DESENVOLVIMENTO
 
-* ⚠ **LEMBRE-SE DE CRIAR TODOS OS ARQUIVOS DENTRO DA PASTA COM O SEU NOME** ⚠
+* ⚠ **LEMBRE-SE DE CRIAR TODOS OS ARQUIVOS DENTRO DA RAIZ DO PROJETO** ⚠
 
 * Faça `commits` das alterações que você fizer no código regularmente
 
