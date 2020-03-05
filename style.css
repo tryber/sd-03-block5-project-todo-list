@@ -11,9 +11,8 @@
     text-decoration: line-through;
 } */
 
-button {
-    background-color: rgb(0, 0, 0);
-    color: whitesmoke;
+button,
+.completed {
     cursor: pointer;
     border-radius: 5px;
 }
