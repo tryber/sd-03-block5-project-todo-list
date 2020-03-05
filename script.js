@@ -13,6 +13,7 @@ blista.addEventListener('click', function() {
     document.getElementById('texto-tarefa').value = '';
 
     click();
+    dblclick();
 });
 
 
@@ -35,7 +36,7 @@ function dblclick() {
     let dobleclick = document.getElementsByClassName('completed');
     for (let l = 0; l < dobleclick.length; l += 1) {
         dobleclick[l].addEventListener('dblclick', function() {
-            dobleclick[l].textDecoration = "underline overline";
+            dobleclick[l].style.textDecoration = "line-through";
         })
     }
 }
