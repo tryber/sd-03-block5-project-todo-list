@@ -1,41 +1,40 @@
 window.onload = function () {
-  reloadList();
-  addClickUpBtn(returnById('mover-cima'));
   function addClickUpBtn(element) {
     element.addEventListener('click', function () {
       moveUp(returnById('select'));
     });
   }
-  addClickDownBtn(returnById('mover-baixo'));
+  addClickUpBtn(returnById('mover-cima'));
   function addClickDownBtn(element) {
     element.addEventListener('click', function () {
       moveDown(returnById('select'));
     });
   }
+  addClickDownBtn(returnById('mover-baixo'));
   function moveUp(element) {
     if (element) {
-      let elementFather = element.parentNode;
+      const elementFather = element.parentNode;
       elementFather.insertBefore(element, element.previousElementSibling);
-    };
+    }
   }
   function moveDown(element) {
     if (element) {
-      let elementFather = element.parentNode;
+      const elementFather = element.parentNode;
       if (element == elementFather.lastChild) {
         elementFather.insertBefore(element, elementFather.firstElementChild);
       } else {
         elementFather.insertBefore(element.nextElementSibling, element);
       };
-    };
+    }
   }
   function reduceSize(string) {
     if (string.length > 30) {
       return string.substring(0,30) + '...';
     } else {
       return string;
-    };
+    }
   }
-  function showSaveTasks(task,status,number) {
+  function showSaveTasks(task, status, number) {
     let textTask = addTextTask(createItem('td'), reduceSize(task));
     let lineTaskStatus = addTextTask(createItem('td'), status);
     let indiceTask = addTextTask(createItem('td'), number);
@@ -57,7 +56,7 @@ window.onload = function () {
       for(position = 0; position < sizeTasks; position++) {
         deleteElement(tasks[0]);
       };
-    };
+    }
   }
   function saveList() {
     let list = returnByTagName('li');
@@ -81,7 +80,7 @@ window.onload = function () {
       };
       disableAllMainBtn();
       filterBrightnesslight(returnById('feedback'));
-    };
+    }
   }
   function sendLocalStorage() {
     localStorage.clear();
@@ -96,7 +95,7 @@ window.onload = function () {
       } else {
         localStorage.setItem('completed' + position, 0);
       };
-    };
+    }
   }
   function reloadList() {
     let position;
@@ -108,28 +107,28 @@ window.onload = function () {
         markCompleted(task);
       };
       addElementInHTML(task, elementFather);
-    };
+    }
   }
-  addClickSaveBtn(returnById('salvar-tarefas'));
+  reloadList();
   function addClickSaveBtn(btn) {
     btn.addEventListener('click' , function () {
       saveList();
       filterBrightnessDark(returnByClassName('container')[0]);
     });
   }
-  addClickDeleteCompletesBtn(returnById('btn-delete-completes'));
+  addClickSaveBtn(returnById('salvar-tarefas'));
   function addClickDeleteCompletesBtn(btn) {
     btn.addEventListener('click', function () {
       deleteCompleted();
     });
   }
-  addClickDeleteBtn(returnById('btn-delete-ALL'));
+  addClickDeleteCompletesBtn(returnById('remover-finalizados'));
   function addClickDeleteBtn(btn) {
     btn.addEventListener('click', function () {
       deleteAllItem();
     });
   }
-  addClickDeleteItemBtn(returnById('btn-delete-item'));
+  addClickDeleteBtn(returnById('apaga-tudo'));
   function addClickDeleteItemBtn(btn) {
     btn.addEventListener('click', function () {
       if (returnById('select')) {
@@ -137,6 +136,7 @@ window.onload = function () {
       }
     });
   }
+  addClickDeleteItemBtn(returnById('remover-selecionado'));
   function filterBrightnessDark(element){
     element.style.filter= 'brightness(40%)';
   }
@@ -149,7 +149,7 @@ window.onload = function () {
     let position;
     for (position = 0; position < sizeList; position++) {
       deleteElement(list[0]);
-    };
+    }
   }
   function deleteCompleted() {
     let list = returnByClassName('completed');
@@ -157,7 +157,7 @@ window.onload = function () {
     let i;
     for (i = 0; i<sizeList; i++) {
       deleteElement(list[0]);
-    };
+    }
   }
   function returnByClassName(name) {
     return  document.getElementsByClassName(name);
@@ -178,7 +178,7 @@ window.onload = function () {
       element.className = 'completed';
     } else {
       element.className = '';
-    };
+    }
   }
   function removeIdSelect(element) {
     element.style.background = '';
@@ -201,20 +201,19 @@ window.onload = function () {
       disableElement(indice);
     }
   }
-  addClickCancelBtn(returnById('btn-cancel'));
   function addClickCancelBtn(element){
     element.addEventListener('click', function () {
       feedbackBtn();
       alert('Operação de salvar a tela cancelada');
     });
   }
+  addClickCancelBtn(returnById('btn-cancel'));
   function feedbackBtn(){
     returnById('feedback').style.visibility='hidden';
     disableAllMainBtn();
     removeTaskSaves();
     filterBrightnesslight(returnByClassName('container')[0]);
   }
-  addClickConfirmBtn(returnById('btn-confirm'));
   function addClickConfirmBtn(element) {
     element.addEventListener('click', function () {
       sendLocalStorage();
@@ -222,6 +221,7 @@ window.onload = function () {
       alert('Lista Salva');
     });
   }
+  addClickConfirmBtn(returnById('btn-confirm'));
   function addTask() {
     let elementFather = returnById('lista-tarefas');
     let textInput = returnById('texto-tarefa').value;
@@ -229,7 +229,6 @@ window.onload = function () {
     addElementInHTML(taskLi, elementFather);
     returnById('texto-tarefa').value = '';
   }
-  addClickInputBtn(returnById('criar-tarefa'));
   function addClickInputBtn(element) {
     element.addEventListener('click', function () {
       if (returnById('texto-tarefa').value) {
@@ -237,7 +236,7 @@ window.onload = function () {
       }
     });
   }
-  addKeyupTextInput(returnById('texto-tarefa'));
+  addClickInputBtn(returnById('criar-tarefa'));
   function addKeyupTextInput(element) {
     element.addEventListener('keydown', function (){
       if (event.keyCode == 13){
@@ -247,6 +246,7 @@ window.onload = function () {
       }
     });
   }
+  addKeyupTextInput(returnById('texto-tarefa'));
   function addElementInHTML(elementChild , elementFather) {
     elementFather.appendChild(elementChild);
   }
@@ -268,5 +268,5 @@ window.onload = function () {
     } else {
       element.disabled= false;
     }
-  };
+  }
 }
