@@ -1,5 +1,6 @@
 const botaoCria = document.getElementById('criar-tarefa');
 const botaoApaga = document.getElementById('apaga-tudo');
+const botaoApagaSelecionado = document.getElementById('remover-finalizados');
 const listaOrdenada = document.getElementById('lista-tarefas');
 const texto = document.getElementById('texto-tarefa');
 
@@ -7,7 +8,7 @@ function oneClick() {
     let tarefas = document.querySelectorAll('.completed');
 
     for (let i = 0; i < tarefas.length; i += 1) {
-        if (tarefas[i].style.backgroundColor == '#808080') {
+        if (tarefas[i].style.backgroundColor === "#808080") {
             tarefas[i].addEventListener('click', function () {
                 tarefas[i].style.backgroundColor = '#ffffff';
             });
@@ -22,9 +23,13 @@ function oneClick() {
 function twoClick() {
     let tarefas = document.querySelectorAll('.completed');
     for (let i = 0; i < tarefas.length; i += 1) {
-        tarefas[i].addEventListener('dblclick', function () {
-            tarefas[i].style.textDecoration = "line-through"
-        });
+        if (tarefas[i].style.textDecoration === "line-through") {
+            tarefas[i].style.textDecoration = "none";
+        } else {
+            tarefas[i].addEventListener('dblclick', function () {
+                tarefas[i].style.textDecoration = "line-through";
+            });
+        }
     }
 }
 
@@ -41,6 +46,14 @@ botaoCria.addEventListener('click', function () {
 });
 
 botaoApaga.addEventListener('click', function () {
-    listaOrdenada.innerHTML = ' ';
+    listaOrdenada.innerHTML = '';
 });
 
+botaoApagaSelecionado.addEventListener('click', function () {
+    let tarefas = document.querySelectorAll('.completed');
+    for (let i = 0; i < tarefas.length; i += 1) {
+        if (tarefas[i].style.textDecoration === "line-through") {
+            listaOrdenada.removeChild(tarefas[i]);
+        }
+    }
+})
