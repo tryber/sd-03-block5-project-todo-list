@@ -18,13 +18,15 @@ botaoCriarTarefa.addEventListener('click', function (){
 
 
 function taxarTexto(evento) {
-let decoration =   event.target.style.textDecoration;
+let decoration =   evento.target.style.textDecoration;
 console.log(decoration);
 if(decoration == 'line-through'){
-event.target.style.textDecoration = '';
+evento.target.style.textDecoration = '';
+evento.target.setAttribute('class', '');
 console.log("strike")
 } else if (decoration != 'line-through'){
-  event.target.style.textDecoration = 'line-through';
+  evento.target.style.textDecoration = 'line-through';
+  evento.target.setAttribute('class', 'completed');
 }
 }
 
