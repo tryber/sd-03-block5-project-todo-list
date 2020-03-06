@@ -16,3 +16,15 @@ button,
     cursor: pointer;
     border-radius: 5px;
 }
+
+.lista {
+    width: 300px;
+    height: auto;
+    border: 2px solid rgb(71, 71, 163);
+    text-align: center;
+    padding: 30px;
+}
+
+.minha-lista {
+    color: blue;
+}

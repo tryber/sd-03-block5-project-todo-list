@@ -8,9 +8,9 @@ let botaoFinalizado = document.getElementById('remover-finalizados');
 
 blista.addEventListener('click', function() {
     let lisTarefa = document.createElement('li');
+    lisTarefa.classList = 'completed';
     olista.appendChild(lisTarefa);
     lisTarefa.innerText = texttarefa.value;
-    lisTarefa.classList.add('completed');
     document.getElementById('texto-tarefa').value = '';
 
     click();
@@ -45,7 +45,8 @@ function dblclick() {
 botaoFinalizado.addEventListener('click', function() {
     let removeLI = document.getElementsByClassName('completed');
     for (let r = 0; r < removeLI.length; r += 1) {
-        if (removeLI[r].style.textDecoration === "line-through")
+        if (removeLI[r].style.textDecoration === "line-through") {
             olista.removeChild(removeLI[r]);
+        }
     }
-});
+})
