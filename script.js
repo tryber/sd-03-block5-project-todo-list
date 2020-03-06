@@ -4,6 +4,8 @@ window.onload = function() {
   let buttonFinalizados = document.getElementsByClassName("remove-finalizados")[0];
   let buttonSalve = document.getElementsByClassName("salva-lista")[0];
   let buttonRemove = document.getElementsByClassName("removendo-selecionado")[0]
+  let buttonDown = document.getElementsByClassName("move-baixo")[0];
+  let buttonUp = document.getElementsByClassName("move-cima")[0];
   let lista = document.getElementsByClassName("lista-ordenada")[0];
   let input1 = document.getElementsByClassName("tarefa")[0];
   
@@ -62,5 +64,30 @@ window.onload = function() {
     })
   }
   buttonRemove.addEventListener("click", deleteSelected);
+
+
+
+  function moveUp() {
+    selecionado = document.querySelectorAll(".selecionado");
+    for(let i = 0; i < selecionado.length; i++) {
+      lista.insertBefore(selecionado[i], selecionado[i].previousSibling);
+    }
+  }
+  buttonUp.addEventListener("click", moveUp);
+
+  function moveDown() {
+    let selecionado = document.querySelectorAll(".selecionado");
+    for (let i = 0; i < selecionado.length; i++){
+      console.log(selecionado[i]);
+      console.log(lista.lastChild);
+      if (selecionado[i] === lista.lastChild) {
+        selecionado[i] = lista.insertBefore(selecionado[i], document.querySelectorAll("li")[0]);
+      } else {
+        lista.insertBefore(selecionado[i], selecionado[i].nextSibling.nextSibling);
+      }
+    }
+  }
+  buttonDown.addEventListener("click", moveDown);
+
   
 }
