@@ -13,11 +13,14 @@ window.onload = function (){
     liFilho =  listaTarefas.appendChild(document.createElement('li'))
     console.log(localStorage.key(i));
 
-    if(localStorage.getItem(localStorage.key(i)) == 'li-class-complete' + i){
-      liFilho.innerHTML=localStorage.getItem('li' + i);
+    if(localStorage.key(i) == 'li-class-complete' + i){
+     
+      liFilho.innerHTML= localStorage.getItem('li-class-complete' + i);
+      liFilho.setAttribute('class','completed');
+      liFilho.style.textDecoration = 'line-through';
       console.log("aqui");
     }else{
-      liFilho.innerHTML.innerHTML= localStorage.getItem('li-class-complete' + i);
+      liFilho.innerHTML=localStorage.getItem('li' + i);
      }  
   }
     
@@ -66,13 +69,12 @@ botaosavalTarefas.addEventListener('click', function(){
 let elementoschild = document.querySelectorAll('#lista-tarefas li'); 
  for (i=0; i< elementoschild.length; i++){ 
     if(elementoschild[i].getAttribute('class') == 'completed'){
-    localStorage.setItem('li-class-complete' + i,elementoschild[i].innerHTML);
     localStorage.removeItem('li' + i,elementoschild[i].innerHTML); 
-}else if(elementoschild[i].getAttribute('class') == null) {
-   localStorage.setItem('li' + i,elementoschild[i].innerHTML);
-   //localStorage.removeItem('li-class-complete' + i,elementoschild[i].innerHTML);
-   
-  }  
+    localStorage.setItem('li-class-complete' + i,elementoschild[i].innerHTML);
+  }else {
+    localStorage.removeItem('li-class-complete' + i,elementoschild[i].innerHTML);
+    localStorage.setItem('li' + i,elementoschild[i].innerHTML);
+   }  
  }
 })
 
