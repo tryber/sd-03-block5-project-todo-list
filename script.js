@@ -22,8 +22,9 @@ botaoCriarTarefa.addEventListener('click', function () {
 botaoApagaTarefasCompletas.addEventListener('click', removerTerminados);
  
  function removerTerminados(){
-  let listaCompletos = document.getElementsByClassName('completed');
-  for(i = 0;i < listaCompletos.length-1; i++){
+  let listaCompletos = document.querySelectorAll('#lista-tarefas > li.completed');
+  console.log( document.querySelectorAll('#lista-tarefas > li.completed'));
+  for(i = 0;i <= listaCompletos.length; i++){
     if(listaCompletos[i] == null){
      console.log("nulo");
     }else{
