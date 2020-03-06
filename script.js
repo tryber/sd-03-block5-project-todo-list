@@ -13,8 +13,7 @@ window.onload = function (){
     liFilho =  listaTarefas.appendChild(document.createElement('li'))
     console.log(localStorage.key(i));
 
-    if(localStorage.key(i) == 'li-class-complete' + i){
-     
+    if(localStorage.key(i) == 'li-class-complete' + i){     
       liFilho.innerHTML= localStorage.getItem('li-class-complete' + i);
       liFilho.setAttribute('class','completed');
       liFilho.style.textDecoration = 'line-through';
@@ -69,10 +68,10 @@ botaosavalTarefas.addEventListener('click', function(){
 let elementoschild = document.querySelectorAll('#lista-tarefas li'); 
  for (i=0; i< elementoschild.length; i++){ 
     if(elementoschild[i].getAttribute('class') == 'completed'){
-   // localStorage.removeItem('li' + i,elementoschild[i].innerHTML); 
+    localStorage.removeItem('li' + i,elementoschild[i].innerHTML); 
     localStorage.setItem('li-class-complete' + i,elementoschild[i].innerHTML);
   }else {
-    //localStorage.removeItem('li-class-complete' + i,elementoschild[i].innerHTML);
+    localStorage.removeItem('li-class-complete' + i,elementoschild[i].innerHTML);
     localStorage.setItem('li' + i,elementoschild[i].innerHTML);
    }  
  }
