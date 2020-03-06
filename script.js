@@ -23,7 +23,7 @@ botaoApagaTarefasCompletas.addEventListener('click', removerTerminados);
  
  function removerTerminados(){
   let listaCompletos = document.getElementsByClassName('completed');
-  for(i = 0;i < listaCompletos.length; i++){
+  for(i = 0;i < listaCompletos.length-1; i++){
     if(listaCompletos[i] == null){
      console.log("nulo");
     }else{
