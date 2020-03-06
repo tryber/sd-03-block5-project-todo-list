@@ -69,10 +69,10 @@ botaosavalTarefas.addEventListener('click', function(){
 let elementoschild = document.querySelectorAll('#lista-tarefas li'); 
  for (i=0; i< elementoschild.length; i++){ 
     if(elementoschild[i].getAttribute('class') == 'completed'){
-    localStorage.removeItem('li' + i,elementoschild[i].innerHTML); 
+   // localStorage.removeItem('li' + i,elementoschild[i].innerHTML); 
     localStorage.setItem('li-class-complete' + i,elementoschild[i].innerHTML);
   }else {
-    localStorage.removeItem('li-class-complete' + i,elementoschild[i].innerHTML);
+    //localStorage.removeItem('li-class-complete' + i,elementoschild[i].innerHTML);
     localStorage.setItem('li' + i,elementoschild[i].innerHTML);
    }  
  }
