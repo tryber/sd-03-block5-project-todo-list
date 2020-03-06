@@ -19,13 +19,19 @@ botaoCriarTarefa.addEventListener('click', function () {
   }
 })
 
-botaoApagaTarefasCompletas.addEventListener('click', function () {
- let listaCompletos = document.getElementsByClassName('completed');
- for(i = 0;i < listaCompletos.length; i++){
-listaCompletos[i].parentNode.removeChild(listaCompletos[i]);
- }
+botaoApagaTarefasCompletas.addEventListener('click', removerTerminados);
  
-})
+ function removerTerminados(){
+  let listaCompletos = document.getElementsByClassName('completed');
+  for(i = 0;i <= listaCompletos.length; i++){
+    if(listaCompletos[i] == null){
+     console.log("nulo");
+    }else{
+    listaCompletos[i].parentNode.removeChild(listaCompletos[i]);
+  }}
+
+ }
+
 
 botaoApagaTarefas.addEventListener('click', function(){
 listaTarefas.innerHTML="";
