@@ -21,7 +21,7 @@ botaoCriarTarefa.addEventListener('click', function () {
 
 botaoApagaTarefasCompletas.addEventListener('click', function () {
  let listaCompletos = document.getElementsByClassName('completed');
- for(i in listaCompletos){
+ for(i = 0;i < listaCompletos.length; i++){
 listaCompletos[i].parentNode.removeChild(listaCompletos[i]);
  }
  
