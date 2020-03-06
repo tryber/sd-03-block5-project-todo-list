@@ -3,9 +3,10 @@ let botaoCriarTarefa = document.getElementById('criar-tarefa');
 let textoInput = document.getElementById('texto-tarefa');  
 let listaTarefas = document.getElementById('lista-tarefas');
 let botaoApagaTarefas = document.getElementById('apaga-tudo');
-
+let botaoApagaTarefasCompletas = document.getElementById('remover-finalizados');
 let itemList;
-botaoCriarTarefa.addEventListener('click', function (){ 
+
+botaoCriarTarefa.addEventListener('click', function () { 
   if(textoInput.value != ""){  
     itemList = document.createElement('li'); 
     itemList.addEventListener('click',  mudaCor);   
@@ -16,6 +17,14 @@ botaoCriarTarefa.addEventListener('click', function (){
   }else{
    alert('Favor digitar um valor valido !');
   }
+})
+
+botaoApagaTarefasCompletas.addEventListener('click', function () {
+ let listaCompletos = document.getElementsByClassName('completed');
+ for(i in listaCompletos){
+listaCompletos[i].parentNode.removeChild(listaCompletos[i]);
+ }
+ 
 })
 
 botaoApagaTarefas.addEventListener('click', function(){
