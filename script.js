@@ -7,6 +7,7 @@ botaoCriarTarefa.addEventListener('click', function (){
   if(textoInput.value != ""){  
     itemList = document.createElement('li'); 
     itemList.addEventListener('click',  mudaCor);   
+    itemList.addEventListener('dblclick',  taxarTexto);
     listaTarefas.appendChild(itemList).innerHTML = textoInput.value;
     console.log(document.getElementById('lista-tarefas'));
     textoInput.value ="";
@@ -14,6 +15,18 @@ botaoCriarTarefa.addEventListener('click', function (){
    alert('Favor digitar um valor valido !');
   }
 })
+
+
+function taxarTexto(evento) {
+let decoration =   event.target.style.textDecoration;
+console.log(decoration);
+if(decoration == 'line-through'){
+event.target.style.textDecoration = '';
+console.log("strike")
+} else if (decoration != 'line-through'){
+  event.target.style.textDecoration = 'line-through';
+}
+}
 
 function mudaCor(evento){
   let color = event.target.style.backgroundColor;
