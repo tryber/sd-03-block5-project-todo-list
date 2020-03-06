@@ -7,12 +7,18 @@ let botaoApagaTarefas = document.getElementById('apaga-tudo');
 let botaoApagaTarefasCompletas = document.getElementById('remover-finalizados');
 let itemList;
 let botaosavalTarefas = document.getElementById('salvar-tarefas');
-
+let liFilho;
 window.onload = function (){
   for(i=0; i < localStorage.length; i++) {
-     listaTarefas.appendChild(document.createElement('li')).innerHTML=localStorage.getItem('li' + i);
-  }
-}
+    liFilho =  listaTarefas.appendChild(document.createElement('li'))
+    liFilho.innerHTML=localStorage.getItem('li' + i);
+    }
+    
+   liFilho = document.querySelectorAll('#lista-tarefas li');
+   for(x=0; x< liFilho.length; x++){
+   liFilho[x].addEventListener('click', mudaCor);
+   liFilho[x].addEventListener('dblclick', taxarTexto);
+}}
 
 
 
