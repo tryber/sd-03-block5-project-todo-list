@@ -11,6 +11,7 @@ let liFilho;
 window.onload = function (){
   for(i=0; i < localStorage.length; i++) {
     liFilho =  listaTarefas.appendChild(document.createElement('li'))
+    
     liFilho.innerHTML=localStorage.getItem('li' + i);
     }
     
@@ -56,10 +57,16 @@ listaTarefas.innerHTML="";
 
 
 botaosavalTarefas.addEventListener('click', function(){
-let elementoschild = document.querySelectorAll('#lista-tarefas li');  
-
- for (i=0; i< elementoschild.length; i++){   
+let elementoschild = document.querySelectorAll('#lista-tarefas li'); 
+ for (i=0; i< elementoschild.length; i++){ 
+    if(elementoschild[i].getAttribute('class') == 'completed'){
+    localStorage.setItem('li-class-complete' + i,elementoschild[i].innerHTML);
+    localStorage.removeItem('li' + i,elementoschild[i].innerHTML); 
+}else if(elementoschild[i].getAttribute('class') == null) {
+   localStorage.removeItem('li-class-complete' + i,elementoschild[i].innerHTML );
    localStorage.setItem('li' + i,elementoschild[i].innerHTML);
+   console.log("aqui");
+  }  
  }
 })
 
