@@ -1,5 +1,5 @@
 
-
+let selecionado;
 let tarefa = document.getElementById("texto-tarefa");
 let botaoAdicionar = document.getElementById("criar-tarefa");
 let botaoLimparTudo = document.getElementById("apaga-tudo");
@@ -36,7 +36,8 @@ function limparInputTarefas(){
 
 function adicionarEvento(evento,elemento,funcao){
      elemento.addEventListener(evento,function(s){
-        funcao(elemento);
+         
+        funcao(elemento);console.log(s.target);
      });
 }
 
@@ -49,9 +50,9 @@ function alterarCorFundoItem(item){
 }
 
 function riscoItem(item){
-    if(item.style.textDecoration == "line-through")
-      item.style.textDecoration = "none";
-    else item.style.textDecoration = "line-through";
+   if(item.classList.contains("completed"))
+   item.classList.remove("completed");
+   else  item.classList.add("completed");
 }
 
 function limparItensFinalizados(){

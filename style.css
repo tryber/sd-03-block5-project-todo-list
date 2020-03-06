@@ -19,7 +19,7 @@
 #remover-finalizados{
 
 }
-#remover-finalizados:hover{
+#remover-finalizados button:hover{
     cursor: pointer;
 }
 #apaga-tudo{
@@ -27,4 +27,7 @@
 }
 #apaga-tudo:hover{
     cursor: pointer;
+}
+.completed{
+    text-decoration: line-through;
 }
