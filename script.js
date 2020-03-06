@@ -11,9 +11,15 @@ let liFilho;
 window.onload = function (){
   for(i=0; i < localStorage.length; i++) {
     liFilho =  listaTarefas.appendChild(document.createElement('li'))
-    
-    liFilho.innerHTML=localStorage.getItem('li' + i);
-    }
+    console.log(localStorage.key(i));
+
+    if(localStorage.getItem(localStorage.key(i)) == 'li-class-complete' + i){
+      liFilho.innerHTML=localStorage.getItem('li' + i);
+      console.log("aqui");
+    }else{
+      liFilho.innerHTML.innerHTML= localStorage.getItem('li-class-complete' + i);
+     }  
+  }
     
    liFilho = document.querySelectorAll('#lista-tarefas li');
    for(x=0; x< liFilho.length; x++){
@@ -63,9 +69,9 @@ let elementoschild = document.querySelectorAll('#lista-tarefas li');
     localStorage.setItem('li-class-complete' + i,elementoschild[i].innerHTML);
     localStorage.removeItem('li' + i,elementoschild[i].innerHTML); 
 }else if(elementoschild[i].getAttribute('class') == null) {
-   localStorage.removeItem('li-class-complete' + i,elementoschild[i].innerHTML );
    localStorage.setItem('li' + i,elementoschild[i].innerHTML);
-   console.log("aqui");
+   //localStorage.removeItem('li-class-complete' + i,elementoschild[i].innerHTML);
+   
   }  
  }
 })
