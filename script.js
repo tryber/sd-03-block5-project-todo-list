@@ -2,6 +2,8 @@
 let botaoCriarTarefa = document.getElementById('criar-tarefa');
 let textoInput = document.getElementById('texto-tarefa');  
 let listaTarefas = document.getElementById('lista-tarefas');
+let botaoApagaTarefas = document.getElementById('apaga-tudo');
+
 let itemList;
 botaoCriarTarefa.addEventListener('click', function (){ 
   if(textoInput.value != ""){  
@@ -16,6 +18,9 @@ botaoCriarTarefa.addEventListener('click', function (){
   }
 })
 
+botaoApagaTarefas.addEventListener('click', function(){
+listaTarefas.innerHTML="";
+})
 
 function taxarTexto(evento) {
 let decoration =   evento.target.style.textDecoration;
