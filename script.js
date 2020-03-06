@@ -35,7 +35,7 @@ let li = document.getElementsByTagName('li');
 
 apagarTudo.addEventListener('click', function () {
   document.getElementById('lista-tarefas').remove();
-  newOl = document.createElement('ol');
+  let newOl = document.createElement('ol');
   newOl.id = 'lista-tarefas';
   document.getElementById('container').appendChild(newOl);
 });
