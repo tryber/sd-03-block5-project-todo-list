@@ -1,10 +1,20 @@
 
+
 let botaoCriarTarefa = document.getElementById('criar-tarefa');
 let textoInput = document.getElementById('texto-tarefa');  
 let listaTarefas = document.getElementById('lista-tarefas');
 let botaoApagaTarefas = document.getElementById('apaga-tudo');
 let botaoApagaTarefasCompletas = document.getElementById('remover-finalizados');
 let itemList;
+let botaosavalTarefas = document.getElementById('salvar-tarefas');
+
+window.onload = function (){
+  for(i=0; i < localStorage.length; i++) {
+     listaTarefas.appendChild(document.createElement('li')).innerHTML=localStorage.getItem('li' + i);
+  }
+}
+
+
 
 botaoCriarTarefa.addEventListener('click', function () { 
   if(textoInput.value != ""){  
@@ -36,6 +46,15 @@ botaoApagaTarefasCompletas.addEventListener('click', removerTerminados);
 
 botaoApagaTarefas.addEventListener('click', function(){
 listaTarefas.innerHTML="";
+})
+
+
+botaosavalTarefas.addEventListener('click', function(){
+let elementoschild = document.querySelectorAll('#lista-tarefas li');  
+
+ for (i=0; i< elementoschild.length; i++){   
+   localStorage.setItem('li' + i,elementoschild[i].innerHTML);
+ }
 })
 
 function taxarTexto(evento) {
