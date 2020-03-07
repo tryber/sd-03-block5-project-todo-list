@@ -18,6 +18,7 @@ function criarTarefa() {
   li.addEventListener('dblclick', function line() {
     if (li.style.textDecoration == 'line-through') {
       li.style.textDecoration = 'none';
+      li.classList.remove('completed');
     }else{
       li.style.textDecoration = 'line-through';
       li.classList = 'completed';
