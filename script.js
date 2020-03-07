@@ -19,6 +19,7 @@ function criarTarefa() {
       li.style.textDecoration = 'none';
     }else{
       li.style.textDecoration = 'line-through';
+      li.classList = 'completed';
     }
   });
 }
