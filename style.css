@@ -1,18 +1,18 @@
 li {
-    background-color: white;
-    cursor: pointer;
+  background-color: white;
+  cursor: pointer;
 }
 
 .checked {
-    background-color: rgb(128, 128, 128);
-    cursor: pointer;
+  background-color: rgb(128, 128, 128);
+  cursor: pointer;
 }
 
 .completed {
-    text-decoration: line-through;
-    font-style: italic;
+  font-style: italic;
+  text-decoration: line-through;
 }
 
-button:hover{
-    cursor: pointer;
+button:hover {
+  cursor: pointer;
 }
