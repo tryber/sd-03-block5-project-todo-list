@@ -15,13 +15,8 @@ function addLi(){
     }
 } 
 
-//function excluirTudo(){
-//    let excluir = document.getElementById('Limpar-Lista')
-//    let tarefas = document.getElementById('tarefas-ordenadas').getElementsByTagName("ol")[0]
-//    let rmtarefa = tarefas.getElementsByTagName("li")[0]
-//    let rmtarefavalue = tarefas.getElementsByTagName("li").length
-//    excluir.addEventListener('click', function (){
-//        while (rmtarefavalue > 0)
-//            tarefas.removeChild(rmtarefa)
-//    })
-//}
+let listaOrdenada = document.querySelector('ol')
+let eraseBtn = document.querySelector('#apaga-tudo');
+eraseBtn.addEventListener('click', function() {
+  listaOrdenada.innerHTML = '';
+});

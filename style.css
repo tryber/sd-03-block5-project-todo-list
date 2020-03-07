@@ -2,8 +2,13 @@ body{
     background-color: rgb(11, 192, 11);
 }
 
+li {
+    cursor: pointer;
+}
+
 #funcionamento{
-    margin-left: 50px;
+    margin-left: 0px;
+    opacity: 50%;
 }
 
 #texto-tarefa{
@@ -69,7 +74,7 @@ body{
     cursor: pointer;
 }
 
-#Limpar-Lista{
+#apaga-tudo{
     background-color: rgb(161, 4, 4);
     width: 150px;
     height: 30px;
