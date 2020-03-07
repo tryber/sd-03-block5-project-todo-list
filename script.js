@@ -11,19 +11,23 @@ function addOverClass(x) {
 
     x.classList.toggle('selected');
   });
+  x.addEventListener('click', function(){
+    x.remove()
+  })
 
 }
 
 function newTask() {
   const li = document.createElement('li');
-  let inputValue = document.getElementById('texto-tarefa').value;
-  const text = document.createTextNode(inputValue);
+  let inputValue = document.getElementById('texto-tarefa');
+  const text = document.createTextNode(inputValue.value);
   const ol = document.getElementById('lista-tarefas');
   li.onmouseouver;
   addOverClass(li);
   li.appendChild(text);
   ol.appendChild(li);
-  inputValue = '';
+  document.getElementById('texto-tarefa').value = '';
+
 
 }
 
@@ -38,6 +42,7 @@ apagarTudo.addEventListener('click', function () {
   let newOl = document.createElement('ol');
   newOl.id = 'lista-tarefas';
   document.getElementById('container').appendChild(newOl);
+
 });
 const removerFin = document.getElementById('remover-finalizados');
 
@@ -47,3 +52,4 @@ removerFin.addEventListener('click', function () {
     selected[i].remove();
   }
 });
+
