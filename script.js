@@ -87,10 +87,6 @@ function limpaCaixaTexto (){
     inputText.value = '';
 }
 
-// function adicionaClasseAoLi(li){
-//     li.classList.add('unchecked');
-// }
-
 function alterarClasseCheck(event) {
     if(document.getElementsByClassName('checked')[0] != null) {
         document.getElementsByClassName('checked')[0].classList.remove('checked');

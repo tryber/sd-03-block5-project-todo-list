@@ -1,10 +1,11 @@
-.unchecked {
+li {
     background-color: white;
     cursor: pointer;
 }
 
 .checked {
     background-color: rgb(128, 128, 128);
+    cursor: pointer;
 }
 
 .completed {
