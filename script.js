@@ -31,25 +31,37 @@ moverBaixo.addEventListener('click', moverParaBaixo);
 
 
 function moverParaCima() {
-    let ElSelecionado = document.getElementsByClassName('checked')[0];
-    let ElSuperior = ElSelecionado.previousElementSibling;
-    let lista = document.getElementById('lista-tarefas');
-    if (ElSuperior != null) {
-        lista.insertBefore(ElSelecionado, ElSuperior);
+    let ElSelecionado = document.querySelector('.checked');
+    if (ElSelecionado.previousElementSibling != null) {
+        ElSelecionado.parentNode.insertBefore(ElSelecionado, ElSelecionado.previousElementSibling)
     } else {
         alert("Você chegou no topo da lista");
     }
+//     let ElSelecionado = document.getElementsByClassName('checked')[0];
+//     let ElSuperior = ElSelecionado.previousElementSibling;
+//     let lista = document.getElementById('lista-tarefas');
+//     if (ElSuperior != null) {
+//         lista.insertBefore(ElSelecionado, ElSuperior);
+//     } else {
+//         alert("Você chegou no topo da lista");
+//     }
 }
 
 function moverParaBaixo() {
-    let ElSelecionado = document.getElementsByClassName('checked')[0];
-    let ElInferior = ElSelecionado.nextElementSibling;
-    let lista = document.getElementById('lista-tarefas');
-    if (ElInferior != null) {
-        lista.insertBefore(ElInferior, ElSelecionado);
+    let ElSelecionado = document.querySelector('.checked');
+    if (ElSelecionado.nextElementSibling != null) {
+        ElSelecionado.parentNode.insertBefore(ElSelecionado.nextElementSibling, ElSelecionado);
     } else {
-        alert("Você chegou no fim da lista");
+        alert("Você chegou no topo da lista");
     }
+    // let ElSelecionado = document.getElementsByClassName('checked')[0];
+    // let ElInferior = ElSelecionado.nextElementSibling;
+    // let lista = document.getElementById('lista-tarefas');
+    // if (ElInferior != null) {
+    //     lista.insertBefore(ElInferior, ElSelecionado);
+    // } else {
+    //     alert("Você chegou no fim da lista");
+    // }
 }
 
 function adicionarTarefa() {
