@@ -44,7 +44,7 @@ function adicionarTarefa() {
     itemDeLista = document.createElement('li');
     itemDeLista.innerHTML = (textoDigitado);
     listaOrd.appendChild(itemDeLista);
-    adicionaClasseAoLi(itemDeLista);
+    // adicionaClasseAoLi(itemDeLista);
     limpaCaixaTexto();
     criarEventListenerLi(itemDeLista);
 }
@@ -87,18 +87,15 @@ function limpaCaixaTexto (){
     inputText.value = '';
 }
 
-function adicionaClasseAoLi(li){
-    li.classList.add('unchecked');
-}
+// function adicionaClasseAoLi(li){
+//     li.classList.add('unchecked');
+// }
 
 function alterarClasseCheck(event) {
-    if(event.target.classList.contains('unchecked')) {
-        event.target.classList.remove('unchecked');
-        event.target.classList.add('checked');
-    } else {
-        event.target.classList.remove('checked');
-        event.target.classList.add('unchecked');
+    if(document.getElementsByClassName('checked')[0] != null) {
+        document.getElementsByClassName('checked')[0].classList.remove('checked');
     }
+    event.target.classList.add('checked');
 }
 
 function alterarClasseComplete(event) {
