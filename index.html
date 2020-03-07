@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="tudo">
+        <header id="cabeçalho">
+            <br>
+            <h1 id="tarefas"><strong>Minha lista de Tarefas</strong></h1>
+        </header>
+        <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+        <label for="inertext"></label>
+        <input type="text" name="inertext" id="texto-tarefa" value="">
+        <button id="criar-tarefa" onclick="addLi()">Adicionar</button>
+        <div id="tarefas-ordenadas">
+            <ol id="lista-tarefas"></ol>
+        </div>
+        <div id="funçoes">
+            <label for="excluir"></label>
+            <input type="button" value="X" name="excluir" id="excluir">
+            <label for="subir"></label>
+            <input type="button" value="|" name="subir" id="subir">
+            <label for="descer"></label>
+            <input type="button" value="|" name="descer" id="descer">
+            <label for="Limpar-Completos"></label>
+            <input type="button" value="Limpar Concluidos" name="Limpar-Completos" id="Limpar-Completos">
+            <label for="Limpar-Lista"></label>
+            <input type="button" value="Limpar Lista" name="Limpar-Lista" id="Limpar-Lista"
+            onclick="excluirTudo()">
+            <label for="Salva"></label>
+            <input type="button" value="Salva Lista" name="Salva" id="Salva-Lista">
+        </div>
+        <br>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
