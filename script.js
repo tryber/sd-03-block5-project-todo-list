@@ -1,6 +1,6 @@
-ct = document.getElementById('criar-tarefa');
-tt = document.getElementById('texto-tarefa');
-at = document.getElementById('apaga-tudo');
+let ct = document.getElementById('criar-tarefa');
+let tt = document.getElementById('texto-tarefa');
+let at = document.getElementById('apaga-tudo');
 ct.addEventListener('click', criarTarefa);
 at.addEventListener('click', apagaTudo);
 
@@ -10,12 +10,12 @@ function criarTarefa() {
   li.innerHTML = tt.value;
   tt.value = '';
 
-  li.addEventListener('click', function bg(){
+  li.addEventListener('click', function bg() {
     li.style.backgroundColor = 'rgb(128, 128, 128)';
   });
 
-  li.addEventListener('dblclick', function line(){
-    if (li.style.textDecoration == 'line-through'){
+  li.addEventListener('dblclick', function line() {
+    if (li.style.textDecoration == 'line-through') {
       li.style.textDecoration = 'none';
     }else{
       li.style.textDecoration = 'line-through';
