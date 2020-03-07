@@ -1,7 +1,7 @@
-let ct = document.getElementById('criar-tarefa');
-let tt = document.getElementById('texto-tarefa');
-let at = document.getElementById('apaga-tudo');
-let rf = document.getElementById('remover-finalizados');
+const ct = document.getElementById('criar-tarefa');
+const tt = document.getElementById('texto-tarefa');
+const at = document.getElementById('apaga-tudo');
+const rf = document.getElementById('remover-finalizados');
 ct.addEventListener('click', criarTarefa);
 at.addEventListener('click', apagaTudo);
 
@@ -16,10 +16,10 @@ function criarTarefa() {
   });
 
   li.addEventListener('dblclick', function line() {
-    if (li.style.textDecoration == 'line-through') {
+    if (li.style.textDecoration === 'line-through') {
       li.style.textDecoration = 'none';
       li.classList.remove('completed');
-    }else{
+    }else {
       li.style.textDecoration = 'line-through';
       li.classList = 'completed';
     }
@@ -34,9 +34,9 @@ function apagaTudo() {
 }
 
 rf.addEventListener('click', () => {
-  document.querySelectorAll('li').forEach(function (e) { 
-    if (e.classList.contains('completed')) { 
-      e.remove(); 
-    } 
+  document.querySelectorAll('li').forEach(function (e) {
+    if (e.classList.contains('completed')) {
+      e.remove();
+    }
   });
 });
