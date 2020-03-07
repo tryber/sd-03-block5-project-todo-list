@@ -1,6 +1,7 @@
 let ct = document.getElementById('criar-tarefa');
 let tt = document.getElementById('texto-tarefa');
 let at = document.getElementById('apaga-tudo');
+let rf = document.getElementById('remover-finalizados');
 ct.addEventListener('click', criarTarefa);
 at.addEventListener('click', apagaTudo);
 
@@ -30,3 +31,11 @@ function apagaTudo() {
     a.removeChild(a.firstChild);
   }
 }
+
+rf.addEventListener('click', () => {
+  document.querySelectorAll('li').forEach(function (e) { 
+    if (e.classList.contains('completed')) { 
+      e.remove(); 
+    } 
+  });
+});
