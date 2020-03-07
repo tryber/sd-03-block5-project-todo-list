@@ -9,7 +9,7 @@ function addOverClass(x) {
   }); */
   x.addEventListener('dblclick', function () {
 
-    x.classList.toggle('selected');
+    x.classList.toggle('completed');
   });
 /*   x.addEventListener('click', function(){
     x.remove()
@@ -47,9 +47,9 @@ apagarTudo.addEventListener('click', function () {
 const removerFin = document.getElementById('remover-finalizados');
 
 removerFin.addEventListener('click', function () {
-  let selected = document.querySelectorAll('.selected');
-  for (let i in selected) {
-    selected[i].remove();
+  let completed = document.querySelectorAll('.completed');
+  for (let i in completed) {
+    completed[i].remove();
   }
 });
 

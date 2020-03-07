@@ -6,7 +6,7 @@ li {
   cursor: pointer
 
 }
-.selected{
+.completed{
   text-decoration: line-through ;
 
 }
