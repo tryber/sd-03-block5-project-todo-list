@@ -1,8 +1,8 @@
 // verifica se existe lista salva e seta na página
-// if (localStorage.getItem('listaSalva')) {
-//     const listaSalva = localStorage.getItem('listaSalva');
-//     adicionarTarefaSalva(listaSalva);
-// }
+if (localStorage.getItem('listaSalva')) {
+    const listaSalva = localStorage.getItem('listaSalva');
+    adicionarTarefaSalva(listaSalva);
+}
 
 
 //elementos
