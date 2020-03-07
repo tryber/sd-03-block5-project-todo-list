@@ -1,26 +1,29 @@
 header {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", Verdana, sans-serif;
 }
 
 input {
   width: 100%;
 }
 
-input[type=text] {
-  background-color: rgb(231, 231, 231);
-  border: 2px solid rgb(129, 129, 129);
+input [ type = "text" ] {
+  background-color: rgb(231 , 231 , 231);
+  border: 2px solid rgb(129 , 129 , 129);
   border-radius: 4px;
   box-sizing: border-box;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   margin: 8px 0;
   padding: 12px 20px;
   width: 100%;
 }
 
 button {
-  background-color: rgb(231, 231, 231);
-  border: 2px solid rgb(129, 129, 129);
+  background-color: rgb(231 , 231 , 231);
+  border: 2px solid rgb(129 , 129 , 129);
   border-radius: 4px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", Verdana, sans-serif;
+}
+
+button:hover {
   cursor: pointer;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 }
