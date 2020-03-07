@@ -31,22 +31,22 @@ moverBaixo.addEventListener('click', moverParaBaixo);
 
 
 function moverParaCima() {
-    let ElSelecionado = document.getElementsByClassName('checked');
-    let ElSuperior = ElSelecionado[0].previousElementSibling;
+    let ElSelecionado = document.getElementsByClassName('checked')[0];
+    let ElSuperior = ElSelecionado.previousElementSibling;
     let lista = document.getElementById('lista-tarefas');
     if (ElSuperior != null) {
-        lista.insertBefore(ElSelecionado[0], ElSuperior);
+        lista.insertBefore(ElSelecionado, ElSuperior);
     } else {
         alert("Você chegou no topo da lista");
     }
 }
 
 function moverParaBaixo() {
-    let ElSelecionado = document.getElementsByClassName('checked');
-    let ElInferior = ElSelecionado[0].nextElementSibling;
+    let ElSelecionado = document.getElementsByClassName('checked')[0];
+    let ElInferior = ElSelecionado.nextElementSibling;
     let lista = document.getElementById('lista-tarefas');
     if (ElInferior != null) {
-        lista.insertBefore(ElInferior, ElSelecionado[0]);
+        lista.insertBefore(ElInferior, ElSelecionado);
     } else {
         alert("Você chegou no fim da lista");
     }
