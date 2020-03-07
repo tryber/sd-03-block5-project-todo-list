@@ -1,12 +1,12 @@
 // verifica se existe lista salva e seta na página
 if (localStorage.getItem('listaSalva')) {
   const listaSalva = localStorage.getItem('listaSalva');
-  let lista = document.getElementById('lista-tarefas');
+  const lista = document.getElementById('lista-tarefas');
   lista.innerHTML = listaSalva;
 }
 
 
-//elementos
+//  elementos
 const inputText = document.querySelector('#texto-tarefa');
 const listaOrd = document.querySelector('#lista-tarefas');
 const botaoCriarTarefa = document.querySelector('#criar-tarefa');
@@ -18,19 +18,7 @@ const moverBaixo = document.querySelector('#mover-baixo');
 const botaoRemoverSel = document.querySelector('#remover-selecionado');
 let itemDeLista = null;
 
-
-//eventListeners
-
-botaoCriarTarefa.addEventListener('click', adicionarTarefa);
-botaoApagarTudo.addEventListener('click', apagarLista);
-botaoRemoverFin.addEventListener('click', apagarFinalizados);
-botaoSalvarTarefas.addEventListener('click', salvarTarefas);
-moverCima.addEventListener('click', moverParaCima);
-moverBaixo.addEventListener('click', moverParaBaixo);
-botaoRemoverSel.addEventListener('click', removerSelecionado);
-
-
-//funções
+//  funções
 
 function removerSelecionado() {
   let selecionados = document.querySelectorAll('.checked')
@@ -121,3 +109,13 @@ function moverParaBaixo() {
     alert("Você chegou no fim da lista");
   }
 }
+
+//  eventListeners
+
+botaoCriarTarefa.addEventListener('click', adicionarTarefa);
+botaoApagarTudo.addEventListener('click', apagarLista);
+botaoRemoverFin.addEventListener('click', apagarFinalizados);
+botaoSalvarTarefas.addEventListener('click', salvarTarefas);
+moverCima.addEventListener('click', moverParaCima);
+moverBaixo.addEventListener('click', moverParaBaixo);
+botaoRemoverSel.addEventListener('click', removerSelecionado);
