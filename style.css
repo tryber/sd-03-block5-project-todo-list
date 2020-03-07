@@ -7,8 +7,12 @@
 .cinza-bg{
    background-color: rgb(128,128,128);
 }
-li{
+ol li{
+    cursor:pointer;
     width: 350px;
+    height: 18px;
+    padding: 12px 8px 12px 40px;
+    background-color: #eee;
 }
 .cinza{
     background: rgb(128,128,128);
