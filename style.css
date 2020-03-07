@@ -25,16 +25,8 @@ button {
   font-family: "Lucida Sans", "Lucida Sans Regular", Verdana, sans-serif;
 }
 
-button:hover {
+li {
   cursor: pointer;
-}
-
-li:hover {
-  cursor: pointer;
-}
-
-li:checked {
-  background-color: rgb(128,128,128);
 }
 
 .selecionada {
