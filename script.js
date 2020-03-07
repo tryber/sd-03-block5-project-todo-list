@@ -9,6 +9,7 @@ var indiceLista =1;
 var listaItens = listaOL.childNodes;
 var tamanhoLista = listaOL.childElementCount;
 var riscado = false;
+var cinza = false;
 var selecionado = 0;
 //listaItens.addEventListener('click', addCinza);
 
@@ -61,9 +62,17 @@ function addTarefa(){
         console.log(inputAdd.value);
 }
     function addCinza(indice){
+        if(cinza === false){
         console.log(indice);
         listaItens[indice].style.background = 'rgb(128,128,128)';
         console.log("cinza");
+        cinza = true;
+    }else{
+        console.log(indice);
+        listaItens[indice].style.background = '#eee';
+        console.log("cinza");
+        cinza = false;
+        }
     }
     function addOverline(indice){
         if(riscado === false){
