@@ -21,5 +21,6 @@ button {
   background-color: rgb(231, 231, 231);
   border: 2px solid rgb(129, 129, 129);
   border-radius: 4px;
+  cursor: pointer;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 }
