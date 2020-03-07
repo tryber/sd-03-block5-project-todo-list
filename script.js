@@ -1,19 +1,19 @@
 function addOverClass(x) {
-  x.addEventListener('mouseover', function () {
+  x.addEventListener('click', function () {
 
     x.classList.add('over');
   });
-  x.addEventListener('mouseout', function () {
+/*   x.addEventListener('mouseout', function () {
 
     x.classList.remove('over');
-  });
+  }); */
   x.addEventListener('dblclick', function () {
 
     x.classList.toggle('selected');
   });
-  x.addEventListener('click', function(){
+/*   x.addEventListener('click', function(){
     x.remove()
-  })
+  }) */
 
 }
 
