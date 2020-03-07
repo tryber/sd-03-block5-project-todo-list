@@ -1,8 +1,8 @@
 // verifica se existe lista salva e seta na página
-if (localStorage.getItem('listaSalva')) {
-    const listaSalva = localStorage.getItem('listaSalva');
-    adicionarTarefaSalva(listaSalva);
-}
+// if (localStorage.getItem('listaSalva')) {
+//     const listaSalva = localStorage.getItem('listaSalva');
+//     adicionarTarefaSalva(listaSalva);
+// }
 
 
 //elementos
@@ -14,6 +14,7 @@ const botaoRemoverFin = document.querySelector('#remover-finalizados');
 const botaoSalvarTarefas = document.querySelector('#salvar-tarefas');
 const moverCima = document.querySelector('#mover-cima');
 const moverBaixo = document.querySelector('#mover-baixo');
+const botaoRemoverSel = document.querySelector('#remover-selecionado');
 let itemDeLista = null;
 
 
@@ -23,63 +24,20 @@ botaoCriarTarefa.addEventListener('click', adicionarTarefa);
 botaoApagarTudo.addEventListener('click', apagarLista);
 botaoRemoverFin.addEventListener('click', apagarFinalizados);
 botaoSalvarTarefas.addEventListener('click', salvarTarefas);
-moverCima.addEventListener('click', moveUp);
-moverBaixo.addEventListener('click', moveDown);
+moverCima.addEventListener('click', moverParaCima);
+moverBaixo.addEventListener('click', moverParaBaixo);
+botaoRemoverSel.addEventListener('click', removerSelecionado);
 
 
 //funções
 
-function moveUp() {
-    let mover = document.querySelector('.checked');
-    if (mover) {
-      if (mover.previousElementSibling) {
-        mover.parentNode.insertBefore(mover, mover.previousElementSibling);
-      }
+function removerSelecionado() {
+    let selecionados = document.querySelectorAll('.checked')
+    for (let i = 0; i < selecionados.length; i+=1) {
+        selecionados[i].remove();
     }
-  }
+}
 
-  function moveDown() {
-    let mover = document.querySelector('.checked');
-    if (mover) {
-      if (mover.nextElementSibling) {
-        mover.parentNode.insertBefore(mover.nextElementSibling, mover);
-      }
-    }
-  }
-
-// function moverParaCima() {
-//     let ElSelecionado = document.querySelector('.checked');
-//     if (ElSelecionado.previousElementSibling != null) {
-//         ElSelecionado.parentNode.insertBefore(ElSelecionado, ElSelecionado.previousElementSibling)
-//     } else {
-//         alert("Você chegou no topo da lista");
-//     }
-//     let ElSelecionado = document.getElementsByClassName('checked')[0];
-//     let ElSuperior = ElSelecionado.previousElementSibling;
-//     let lista = document.getElementById('lista-tarefas');
-//     if (ElSuperior != null) {
-//         lista.insertBefore(ElSelecionado, ElSuperior);
-//     } else {
-//         alert("Você chegou no topo da lista");
-//     }
-// }
-
-// function moverParaBaixo() {
-//     let ElSelecionado = document.querySelector('.checked');
-//     if (ElSelecionado.nextElementSibling != null) {
-//         ElSelecionado.parentNode.insertBefore(ElSelecionado.nextElementSibling, ElSelecionado);
-//     } else {
-//         alert("Você chegou no topo da lista");
-//     }
-    // let ElSelecionado = document.getElementsByClassName('checked')[0];
-    // let ElInferior = ElSelecionado.nextElementSibling;
-    // let lista = document.getElementById('lista-tarefas');
-    // if (ElInferior != null) {
-    //     lista.insertBefore(ElInferior, ElSelecionado);
-    // } else {
-    //     alert("Você chegou no fim da lista");
-    // }
-// }
 
 function adicionarTarefa() {
     let textoDigitado = inputText.value;
@@ -148,5 +106,27 @@ function alterarClasseComplete(event) {
         event.target.classList.remove('completed');
     } else {
         event.target.classList.add('completed');
+    }
+}
+
+function moverParaCima() {
+    let ElSelecionado = document.getElementsByClassName('checked')[0];
+    let ElSuperior = ElSelecionado.previousElementSibling;
+    let lista = document.getElementById('lista-tarefas');
+    if (ElSuperior != null) {
+        lista.insertBefore(ElSelecionado, ElSuperior);
+    } else {
+        alert("Você chegou no topo da lista");
+    }
+}
+
+function moverParaBaixo() {
+    let ElSelecionado = document.getElementsByClassName('checked')[0];
+    let ElInferior = ElSelecionado.nextElementSibling;
+    let lista = document.getElementById('lista-tarefas');
+    if (ElInferior != null) {
+        lista.insertBefore(ElInferior, ElSelecionado);
+    } else {
+        alert("Você chegou no fim da lista");
     }
 }
