@@ -21,56 +21,10 @@ let itemDeLista = null;
 //  funções
 
 function removerSelecionado() {
-  let selecionados = document.querySelectorAll('.checked')
+  const selecionados = document.querySelectorAll('.checked');
   for (let i = 0; i < selecionados.length; i += 1) {
     selecionados[i].remove();
   }
-}
-
-
-function adicionarTarefa() {
-  let textoDigitado = inputText.value;
-  itemDeLista = document.createElement('li');
-  itemDeLista.innerHTML = (textoDigitado);
-  listaOrd.appendChild(itemDeLista);
-  // adicionaClasseAoLi(itemDeLista);
-  limpaCaixaTexto();
-  criarEventListenerLi(itemDeLista);
-}
-
-
-
-function salvarTarefas() {
-  const lista = document.getElementById('lista-tarefas').innerHTML;
-  localStorage.setItem('listaSalva', lista);
-}
-
-
-function apagarLista() {
-  while (listaOrd.hasChildNodes()) {
-    listaOrd.removeChild(listaOrd.firstChild);
-  }
-  localStorage.removeItem('listaSalva');
-}
-
-
-function apagarFinalizados() {
-  let lista = document.querySelectorAll('li');
-  for (i = lista.length - 1; i >= 0; i -= 1) {
-    if (lista[i].classList.contains('completed')) {
-      lista[i].remove();
-    }
-  }
-}
-
-
-function criarEventListenerLi(li) {
-  li.addEventListener('click', alterarClasseCheck);
-  li.addEventListener('dblclick', alterarClasseComplete);
-}
-
-function limpaCaixaTexto() {
-  inputText.value = '';
 }
 
 function alterarClasseCheck(event) {
@@ -88,25 +42,66 @@ function alterarClasseComplete(event) {
   }
 }
 
+function criarEventListenerLi(li) {
+  li.addEventListener('click', alterarClasseCheck);
+  li.addEventListener('dblclick', alterarClasseComplete);
+}
+
+function limpaCaixaTexto() {
+  inputText.value = '';
+}
+
+function adicionarTarefa() {
+  const textoDigitado = inputText.value;
+  itemDeLista = document.createElement('li');
+  itemDeLista.innerHTML = (textoDigitado);
+  listaOrd.appendChild(itemDeLista);
+  limpaCaixaTexto();
+  criarEventListenerLi(itemDeLista);
+}
+
+function salvarTarefas() {
+  const lista = document.getElementById('lista-tarefas').innerHTML;
+  localStorage.setItem('listaSalva', lista);
+}
+
+
+function apagarLista() {
+  while (listaOrd.hasChildNodes()) {
+    listaOrd.removeChild(listaOrd.firstChild);
+  }
+  localStorage.removeItem('listaSalva');
+}
+
+function apagarFinalizados() {
+  const lista = document.querySelectorAll('li');
+  for (let i = lista.length - 1; i >= 0; i -= 1) {
+    if (lista[i].classList.contains('completed')) {
+      lista[i].remove();
+    }
+  }
+}
+
+
 function moverParaCima() {
-  let ElSelecionado = document.getElementsByClassName('checked')[0];
-  let ElSuperior = ElSelecionado.previousElementSibling;
-  let lista = document.getElementById('lista-tarefas');
+  const ElSelecionado = document.getElementsByClassName('checked')[0];
+  const ElSuperior = ElSelecionado.previousElementSibling;
+  const lista = document.getElementById('lista-tarefas');
   if (ElSuperior != null) {
     lista.insertBefore(ElSelecionado, ElSuperior);
   } else {
-    alert("Você chegou no topo da lista");
+    alert('Você chegou no topo da lista');
   }
 }
 
 function moverParaBaixo() {
-  let ElSelecionado = document.getElementsByClassName('checked')[0];
-  let ElInferior = ElSelecionado.nextElementSibling;
-  let lista = document.getElementById('lista-tarefas');
+  const ElSelecionado = document.getElementsByClassName('checked')[0];
+  const ElInferior = ElSelecionado.nextElementSibling;
+  const lista = document.getElementById('lista-tarefas');
   if (ElInferior != null) {
     lista.insertBefore(ElInferior, ElSelecionado);
   } else {
-    alert("Você chegou no fim da lista");
+    alert('Você chegou no fim da lista');
   }
 }
 
