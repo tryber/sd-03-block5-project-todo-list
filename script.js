@@ -9,6 +9,18 @@ function criarTarefa() {
   document.getElementById('lista-tarefas').appendChild(li);
   li.innerHTML = tt.value;
   tt.value = '';
+
+  li.addEventListener('click', function bg(){
+    li.style.backgroundColor = 'rgb(128, 128, 128)';
+  });
+
+  li.addEventListener('dblclick', function line(){
+    if (li.style.textDecoration == 'line-through'){
+      li.style.textDecoration = 'none';
+    }else{
+      li.style.textDecoration = 'line-through';
+    }
+  });
 }
 
 function apagaTudo() {
@@ -17,4 +29,3 @@ function apagaTudo() {
     a.removeChild(a.firstChild);
   }
 }
-
