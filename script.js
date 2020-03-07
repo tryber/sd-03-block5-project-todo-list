@@ -4,10 +4,14 @@ const limpar = document.getElementById('apaga-tudo')
 
 function addTarefa() {
   const lista = document.createElement("li");
-  lista.className = "cursor"
+  lista.className = "cursor item"
   listaTarefa.appendChild(lista, tarefa);
   lista.innerText = tarefa.value;
   tarefa.value = "";
+  const items = document.getElementsByClassName('item');
+  for (let i = 0; i < items.length; i++) {
+    items[i].addEventListener('click', bgGray)
+  }
 }
 
 function limpaLita(){
@@ -17,28 +21,6 @@ function limpaLita(){
 }
 
 function bgGray(){
-  const lista = document.createElement("li");
-  for (let i = 0; i < lista.length; i += 1){
-    lista[i].classList.remove('rover')
-  }
-
+  event.target.className ='grey'
 }
 
-function mudaSelected(c) {
-
-  for (let i = 0; i < coresArr.length; i += 1) {
-    coresArr[i].classList.remove("selected");
-  }
-
-  const name = "selected";
-  const arr = coresArr[c].className.split(" ");
-  if (arr.indexOf(name) === -1) {
-    coresArr[c].className += " " + name;
-  }
-  //pegar o valor da cor
-  const color = document.querySelector(".selected");
-  const style = getComputedStyle(color);
-  const backgroundColor = style.backgroundColor;
-  let corAtual = backgroundColor;
-  //talve deletar entre esses coment
-}
