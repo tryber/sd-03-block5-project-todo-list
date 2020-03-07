@@ -23,20 +23,37 @@ botaoCriarTarefa.addEventListener('click', adicionarTarefa);
 botaoApagarTudo.addEventListener('click', apagarLista);
 botaoRemoverFin.addEventListener('click', apagarFinalizados);
 botaoSalvarTarefas.addEventListener('click', salvarTarefas);
-moverCima.addEventListener('click', moverParaCima);
-moverBaixo.addEventListener('click', moverParaBaixo);
+moverCima.addEventListener('click', moveUp);
+moverBaixo.addEventListener('click', moveDown);
 
 
 //funções
 
-
-function moverParaCima() {
-    let ElSelecionado = document.querySelector('.checked');
-    if (ElSelecionado.previousElementSibling != null) {
-        ElSelecionado.parentNode.insertBefore(ElSelecionado, ElSelecionado.previousElementSibling)
-    } else {
-        alert("Você chegou no topo da lista");
+function moveUp() {
+    let mover = document.querySelector('.checked');
+    if (mover) {
+      if (mover.previousElementSibling) {
+        mover.parentNode.insertBefore(mover, mover.previousElementSibling);
+      }
     }
+  }
+
+  function moveDown() {
+    let mover = document.querySelector('.checked');
+    if (mover) {
+      if (mover.nextElementSibling) {
+        mover.parentNode.insertBefore(mover.nextElementSibling, mover);
+      }
+    }
+  }
+
+// function moverParaCima() {
+//     let ElSelecionado = document.querySelector('.checked');
+//     if (ElSelecionado.previousElementSibling != null) {
+//         ElSelecionado.parentNode.insertBefore(ElSelecionado, ElSelecionado.previousElementSibling)
+//     } else {
+//         alert("Você chegou no topo da lista");
+//     }
 //     let ElSelecionado = document.getElementsByClassName('checked')[0];
 //     let ElSuperior = ElSelecionado.previousElementSibling;
 //     let lista = document.getElementById('lista-tarefas');
@@ -45,15 +62,15 @@ function moverParaCima() {
 //     } else {
 //         alert("Você chegou no topo da lista");
 //     }
-}
+// }
 
-function moverParaBaixo() {
-    let ElSelecionado = document.querySelector('.checked');
-    if (ElSelecionado.nextElementSibling != null) {
-        ElSelecionado.parentNode.insertBefore(ElSelecionado.nextElementSibling, ElSelecionado);
-    } else {
-        alert("Você chegou no topo da lista");
-    }
+// function moverParaBaixo() {
+//     let ElSelecionado = document.querySelector('.checked');
+//     if (ElSelecionado.nextElementSibling != null) {
+//         ElSelecionado.parentNode.insertBefore(ElSelecionado.nextElementSibling, ElSelecionado);
+//     } else {
+//         alert("Você chegou no topo da lista");
+//     }
     // let ElSelecionado = document.getElementsByClassName('checked')[0];
     // let ElInferior = ElSelecionado.nextElementSibling;
     // let lista = document.getElementById('lista-tarefas');
@@ -62,7 +79,7 @@ function moverParaBaixo() {
     // } else {
     //     alert("Você chegou no fim da lista");
     // }
-}
+// }
 
 function adicionarTarefa() {
     let textoDigitado = inputText.value;
