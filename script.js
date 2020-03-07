@@ -12,6 +12,8 @@ const botaoCriarTarefa = document.querySelector('#criar-tarefa');
 const botaoApagarTudo = document.querySelector('#apaga-tudo');
 const botaoRemoverFin = document.querySelector('#remover-finalizados');
 const botaoSalvarTarefas = document.querySelector('#salvar-tarefas');
+const moverCima = document.querySelector('#mover-cima');
+const moverBaixo = document.querySelector('#mover-baixo');
 let itemDeLista = null;
 
 
@@ -21,10 +23,34 @@ botaoCriarTarefa.addEventListener('click', adicionarTarefa);
 botaoApagarTudo.addEventListener('click', apagarLista);
 botaoRemoverFin.addEventListener('click', apagarFinalizados);
 botaoSalvarTarefas.addEventListener('click', salvarTarefas);
-
+moverCima.addEventListener('click', moverParaCima);
+moverBaixo.addEventListener('click', moverParaBaixo);
 
 
 //funções
+
+
+function moverParaCima() {
+    let ElSelecionado = document.getElementsByClassName('checked');
+    let ElSuperior = ElSelecionado[0].previousElementSibling;
+    let lista = document.getElementById('lista-tarefas');
+    if (ElSuperior != null) {
+        lista.insertBefore(ElSelecionado[0], ElSuperior);
+    } else {
+        alert("Você chegou no topo da lista");
+    }
+}
+
+function moverParaBaixo() {
+    let ElSelecionado = document.getElementsByClassName('checked');
+    let ElInferior = ElSelecionado[0].nextElementSibling;
+    let lista = document.getElementById('lista-tarefas');
+    if (ElInferior != null) {
+        lista.insertBefore(ElInferior, ElSelecionado[0]);
+    } else {
+        alert("Você chegou no fim da lista");
+    }
+}
 
 function adicionarTarefa() {
     let textoDigitado = inputText.value;
