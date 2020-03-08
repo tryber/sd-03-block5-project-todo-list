@@ -1,7 +1,7 @@
 const criar = document.getElementById('criar-tarefa');
 const tarefa = document.getElementById('texto-tarefa');
 const limpar = document.getElementById('apaga-tudo');
-const finalizador = document.getElementById('remover-finalizados'); //adicionar funcao
+const finalizador = document.getElementById('remover-finalizados');
 const listaTarefa = document.getElementById('lista-tarefas');
 
 function limpaLista() {
@@ -15,9 +15,9 @@ function bgGray() {
   event.target.className = 'cursor gray';
 }
 
-function tick() {
-  event.target.className = 'cursor completed';
-}
+// function tick() {
+//   event.target.className = 'cursor completed';
+// }
 
 function addTarefa() {
   const lista = document.createElement('li');
