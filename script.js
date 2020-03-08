@@ -8,18 +8,27 @@ let botaoApagaTarefasCompletas = document.getElementById('remover-finalizados');
 let itemList;
 let botaosavalTarefas = document.getElementById('salvar-tarefas');
 let liFilho;
+let element = {position:0,
+               element:"",
+               text:"",
+               class:""
+};
 window.onload = function (){
+  let listaObj = JSON.parse(localStorage.getItem('elementos-1'));
+ 
   for(i=0; i < localStorage.length; i++) {
+    let listaObj = JSON.parse(localStorage.getItem('elementos-'+ i));
+    
     liFilho =  listaTarefas.appendChild(document.createElement('li'))
-    console.log(localStorage.key(i));
 
-    if(localStorage.key(i) == 'li-class-complete' + i){     
-      liFilho.innerHTML= localStorage.getItem('li-class-complete' + i);
+    if(listaObj.class == 'li-class-complete' + i){  
+      console.log(listaObj.text);
+      liFilho.innerHTML= listaObj.text;
       liFilho.setAttribute('class','completed');
       liFilho.style.textDecoration = 'line-through';
       console.log("aqui");
     }else{
-      liFilho.innerHTML=localStorage.getItem('li' + i);
+      liFilho.innerHTML=listaObj.text;
      }  
   }
     
@@ -68,13 +77,23 @@ botaosavalTarefas.addEventListener('click', function(){
 let elementoschild = document.querySelectorAll('#lista-tarefas li'); 
  for (i=0; i< elementoschild.length; i++){ 
     if(elementoschild[i].getAttribute('class') == 'completed'){
-    localStorage.removeItem('li' + i,elementoschild[i].innerHTML); 
-    localStorage.setItem('li-class-complete' + i,elementoschild[i].innerHTML);
+    element['element'] = 'li';
+    element['class'] = 'li-class-complete' + i;
+    element['text'] = elementoschild[i].innerHTML;
+    element['position'] = i ;
+    localStorage.setItem('elementos-' + i, JSON.stringify( element));
+   
   }else {
-    localStorage.removeItem('li-class-complete' + i,elementoschild[i].innerHTML);
-    localStorage.setItem('li' + i,elementoschild[i].innerHTML);
-   }  
- }
+    element.element = 'li';
+    element.class = null; 
+    element.text = elementoschild[i].innerHTML;
+    element.position = i ;
+    localStorage.setItem('elementos-' + i,JSON.stringify( element));
+   }
+  
+  
+ }    
+ console.log(element);
 })
 
 function taxarTexto(evento) {
