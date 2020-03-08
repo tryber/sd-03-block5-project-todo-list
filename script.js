@@ -1,16 +1,17 @@
-const listaTarefa = document.getElementById("lista-tarefas");
-const tarefa = document.getElementById("texto-tarefa");
-const limpar = document.getElementById("apaga-tudo");
+const listaTarefa = document.getElementById('lista-tarefas');
+const tarefa = document.getElementById('texto-tarefa');
+const limpar = document.getElementById('apaga-tudo');
 
 function addTarefa() {
-  const lista = document.createElement("li");
-  lista.className = "cursor item";
+  const lista = document.createElement('li');
+  lista.className = 'cursor item';
   listaTarefa.appendChild(lista, tarefa);
   lista.innerText = tarefa.value;
-  tarefa.value = "";
-  const items = document.getElementsByClassName("item");
+  tarefa.value = ' ';
+  const items = document.getElementsByClassName('item');
   for (let i = 0; i < items.length; i++) {
-    items[i].addEventListener("click", bgGray);
+    items[i].addEventListener('click', bgGray);
+    items[i].addEventListener('dblclick', tick);
   }
 }
 
@@ -21,5 +22,9 @@ function limpaLita() {
 }
 
 function bgGray() {
-  event.target.className = "grey";
+  event.target.className = 'grey';
+}
+
+function tick() {
+  event.target.className = 'completed';
 }
