@@ -1,55 +1,56 @@
 
 * {
-    margin: 0;
+  margin: 0;
 }
 
 body {
-    background-color: black;
+  background-color: black;
 }
 
 header {
-    background-image: linear-gradient(#012626, #01403A, #035951);
-    border: 2px solid #012626;
-    color: #ADD4D9;
-    font-family: 'Roboto', sans-serif;
-    height: 100px;
-    margin: auto;
-    text-align: center;
-    width: 600px;
+  background-image: linear-gradient(#012626, #01403A, #035951);
+  border: 2px solid #012626;
+  color: #ADD4D9;
+  font-family: 'Roboto', sans-serif;
+  height: 100px;
+  margin: auto;
+  text-align: center;
+  width: 600px;
 }
 
 .background-model {
-    background-image: linear-gradient(#04D99D, #03A688, #027368);
-    border: 2px solid #012626;
-    height: 30%;
-    margin: auto;
-    width: 600px;
+  background-image: linear-gradient(#04D99D, #03A688, #027368);
+  border: 2px solid #012626;
+  height: 30%;
+  margin: auto;
+  width: 600px;
 }
 
 .botao-model {
-    background-color: #025373;
-    border-color: #025373;
-    color: white;
-    font-weight: bold;
-    margin: 2px;
+  background-color: #025373;
+  border-color: #025373;
+  color: white;
+  font-weight: bold;
+  margin: 2px;
 }
 
 .lista-style {
-    color: #011616;
-    font-family: 'Roboto', sans-serif;
-    font-size: 15px;
-    font-weight: bold;
+  color: #011616;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .completed {
-    text-decoration: line-through solid black;
+  text-decoration: line-through solid black;
 }
 
 .item {
-    cursor: pointer;
-    border: 1px solid black;
+  border: 1px solid black;
+  cursor: pointer;
+
 }
 
 .marcador {
-    background-color: grey;
+  background-color: grey;
 }
