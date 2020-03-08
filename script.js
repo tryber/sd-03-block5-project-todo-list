@@ -17,8 +17,8 @@ let element = {position:0,
                class:""
 };
 
-let selected = document.querySelectorAll('.selected');
-console.log(selected);
+let selected = document.querySelectorAll('#selected');
+
 window.onload = function (){
   let listaObj = JSON.parse(localStorage.getItem('elementos-1'));
  
@@ -130,17 +130,23 @@ console.log("strike")
 }
 
 function mudaCor(evento){
-  selected = document.querySelectorAll('.selected');
-
-   if(selected.length  < 1) {       
-    evento.target.classList.add("selected");
+  selected = document.querySelectorAll('#selected'); 
+  console.log(selected.length);    
+    if(selected.length < 1){
+    evento.target.setAttribute('id','selected');
     console.log('menor que 1 ',selected.length);
-    selected = document.querySelectorAll('.selected');
-  } 
-  else if(selected.length + 1  > 1  ){
-    console.log('maior que 1 ',selected);
-    selected[0].classList.remove("selected");
-    evento.target.classList.add('selected');
-   } 
+    selected = document.querySelectorAll('#selected');
+} else{
+  selected[0].setAttribute('id','');
+  evento.target.setAttribute('id','selected');
+
+
+}
+    
+ 
+   // console.log('maior que 1 ',selected);
+   // selected[0].setAttribute('id','selected');
+    //evento.target.classList.add('selected');
+  
   }
 
