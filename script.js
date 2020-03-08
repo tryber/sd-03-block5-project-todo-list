@@ -78,13 +78,13 @@ window.onload = function() {
   function moveDown() {
     let selecionado = document.querySelectorAll(".selecionado");
     for (let i = 0; i < selecionado.length; i++){
-      console.log(selecionado[i]);
-      console.log(lista.lastChild);
-      if (selecionado[i] === lista.lastChild) {
-        selecionado[i] = lista.insertBefore(selecionado[i], document.querySelectorAll("li")[0]);
-      } else {
+      // console.log(selecionado[i]);
+      // console.log(lista.lastChild);
+      // if (selecionado[i] === lista.lastChild) {
+      //   selecionado[i] = lista.insertBefore(selecionado[i], document.querySelectorAll("li")[0]);
+      // } else {
         lista.insertBefore(selecionado[i], selecionado[i].nextSibling.nextSibling);
-      }
+      // }
     }
   }
   buttonDown.addEventListener("click", moveDown);
