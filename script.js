@@ -100,13 +100,32 @@ let elementoschild = document.querySelectorAll('#lista-tarefas li');
 })
 
 botaoMoverCima.addEventListener('click', function(){
- 
 
-})
+  selected = document.querySelectorAll('#selected'); 
+  console.log(selected.length);
+  if(selected.length == 0){
+    listaTarefas.firstElementChild.setAttribute('id','selected');
+    } else if(selected[0].getAttribute('id') == 'selected' ){
+    selected[0].previousSibling.setAttribute('id','selected');
+    selected[0].setAttribute('id','');
+//  selected[0].previousSibling.setAttribute('id','');
+}
+}
+
+)
 
 botaoMoverBaixo.addEventListener('click', function(){
-  
- 
+  selected = document.querySelectorAll('#selected');
+  if(selected.length == 0){
+    listaTarefas.lastElementChild.setAttribute('id','selected');
+    } else if(selected[0].getAttribute('id') == 'selected' ){
+     
+      selected[0].nextSibling.setAttribute('id','selected');
+      selected[0].setAttribute('id','');
+      console.log(selected[0].nextSibling.getAttribute('id'));
+
+  //  selected[0].previousSibling.setAttribute('id','');
+  }  
 
 })
 
@@ -139,14 +158,4 @@ function mudaCor(evento){
 } else{
   selected[0].setAttribute('id','');
   evento.target.setAttribute('id','selected');
-
-
-}
-    
- 
-   // console.log('maior que 1 ',selected);
-   // selected[0].setAttribute('id','selected');
-    //evento.target.classList.add('selected');
-  
-  }
-
+}}
