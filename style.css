@@ -4,7 +4,7 @@ body {
 }
 
 header {
-  background-image: linear-gradient( lightseagreen, darkcyan);
+  background-image: linear-gradient( lightseagreen , darkcyan);
   border: 2px solid darkslategray;
   color: darkslategray;
   font-family: Roboto, sans-serif;
@@ -15,7 +15,7 @@ header {
 }
 
 .background-model {
-  background-image: linear-gradient( lightseagreen, darkcyan);
+  background-image: linear-gradient( lightseagreen , darkcyan);
   border: 2px solid darkslategray;
   margin: auto;
   width: 600px;
