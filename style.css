@@ -1,0 +1,29 @@
+#centro {
+    margin: auto;
+    width: 500px;
+    height: 100%;
+    background-color: #6495ED;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border:solid 1px;
+    border-radius:20px;
+}
+  
+/* criando classe com a cor cinza */
+  .item-selecionado {
+    background-color:  rgb(128,128,128);
+  }
+  
+  /* criando classe e deixando sua propriedade formato riscado */
+  .completed {
+    text-decoration: line-through;
+  }
+  
+  .lista-tarefas {
+    width: 300px;
+  }
+ 
+   /* criando uma tag para modificar quando o mouse apontar  */
+  li {
+    cursor: pointer;
+  }
