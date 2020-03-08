@@ -8,11 +8,16 @@ function funAdicionar() {
   tagli.innerHTML = input.value;
   lista.appendChild(tagli);
   tagli.addEventListener('click', funBackground);
+  tagli.addEventListener('dblclick', funRiscado);
   input.value = '';
 }
 
 function funBackground(event) {
   event.target.classList.add('selecionada');
+}
+
+function funRiscado(event) {
+  event.target.classList.add('completed');
 }
 
 botao.addEventListener('click', funAdicionar);

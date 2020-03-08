@@ -1,5 +1,5 @@
 header {
-  font-family: "Lucida Sans", "Lucida Sans Regular", Verdana, sans-serif;
+  font-family: Verdana, sans-serif;
 }
 
 input {
@@ -11,7 +11,7 @@ input [ type = "text" ] {
   border: 2px solid rgb(129,129,129);
   border-radius: 4px;
   box-sizing: border-box;
-  font-family: "Courier New", Courier, monospace;
+  font-family: Courier, monospace;
   margin: 8px 0;
   padding: 12px 20px;
   width: 100%;
@@ -22,7 +22,7 @@ button {
   border: 2px solid rgb(129,129,129);
   border-radius: 4px;
   cursor: pointer;
-  font-family: "Lucida Sans", "Lucida Sans Regular", Verdana, sans-serif;
+  font-family: Verdana, sans-serif;
 }
 
 li {
@@ -31,4 +31,8 @@ li {
 
 .selecionada {
   background-color: rgb(128,128,128);
+}
+
+.completed {
+  text-decoration: line-through;
 }
