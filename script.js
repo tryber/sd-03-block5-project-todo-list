@@ -33,7 +33,7 @@ function addTarefa() {
 }
 
 finalizador.addEventListener('click', () => {
-  document.querySelectorAll('li').forEach(function(e) {
+  document.querySelectorAll('li').forEach(function (e) {
     if (e.classList.contains('completed')) {
       e.remove();
     }
