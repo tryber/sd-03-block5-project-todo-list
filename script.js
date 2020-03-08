@@ -3,17 +3,17 @@ function addOverClass(x) {
 
     x.classList.add('over');
   });
-/*   x.addEventListener('mouseout', function () {
+  /*   x.addEventListener('mouseout', function () {
 
-    x.classList.remove('over');
-  }); */
+      x.classList.remove('over');
+    }); */
   x.addEventListener('dblclick', function () {
 
     x.classList.toggle('completed');
   });
-/*   x.addEventListener('click', function(){
-    x.remove()
-  }) */
+  /*   x.addEventListener('click', function(){
+      x.remove()
+    }) */
 
 }
 
@@ -49,7 +49,10 @@ const removerFin = document.getElementById('remover-finalizados');
 removerFin.addEventListener('click', function () {
   let completed = document.querySelectorAll('.completed');
   for (let i in completed) {
-    completed[i].remove();
+    function blah() {
+      completed[i].remove();
+    }
+    blah
   }
 });
 
