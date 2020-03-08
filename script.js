@@ -73,7 +73,7 @@ criar_Tarefa.addEventListener('mouseover', function () {
 });
 
 
-apaga_Tudo.addEventListener('mouseover', function () {
+apagar_Tudo.addEventListener('mouseover', function () {
   const maozinha = document.getElementsByClassName('button');
   maozinha[0].style.cursor = 'pointer';
   maozinha[1].style.cursor = 'pointer';
