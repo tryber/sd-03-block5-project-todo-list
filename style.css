@@ -4,9 +4,9 @@ body {
 }
 
 header {
-  background-image: linear-gradient(LightSeaGreen, DarkCyan, Teal);
+  background-image: linear-gradient(lightseagreen, darkcyan);
   border: 2px solid DarkSlateGray;
-  color: DarkSlateGray;
+  color: darkslategray;
   font-family: Roboto, sans-serif;
   height: 150px;
   margin: auto;
@@ -15,21 +15,21 @@ header {
 }
 
 .background-model {
-  background-image: linear-gradient(LightSeaGreen, DarkCyan, Teal);
-  border: 2px solid DarkSlateGray;
+  background-image: linear-gradient(lightseagreen, darkcyan);
+  border: 2px solid darkslategray;
   margin: auto;
   width: 600px;
 }
 
 .botao-model {
-  background-color: PowderBlue;
-  border-color: PaleTurquoise;
-  color: DarkSlateGray;
+  background-color: powderblue;
+  border-color: paleturquoise;
+  color: darkslategray;
   margin: 2px;
 }
 
 .lista-style {
-  color: #011d1d;
+  color: darkslategray;
   font-family: Roboto, sans-serif;
   font-size: 15px;
 }
