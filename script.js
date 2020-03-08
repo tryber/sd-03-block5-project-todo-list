@@ -17,7 +17,8 @@ let element = {position:0,
                class:""
 };
 
-
+let selected = document.querySelectorAll('.selected');
+console.log(selected);
 window.onload = function (){
   let listaObj = JSON.parse(localStorage.getItem('elementos-1'));
  
@@ -120,20 +121,26 @@ let decoration =   evento.target.style.textDecoration;
 console.log(decoration);
 if(decoration == 'line-through'){
 evento.target.style.textDecoration = '';
-evento.target.setAttribute('class', '');
+evento.target.classList.remove('completed');
 console.log("strike")
 } else if (decoration != 'line-through'){
   evento.target.style.textDecoration = 'line-through';
-  evento.target.setAttribute('class', 'completed');
+  evento.target.classList.add('completed');
 }
 }
 
 function mudaCor(evento){
-  let color = event.target.style.backgroundColor;
-  console.log(color);
-  if(color == 'rgb(128, 128, 128)'){
-  evento.target.style.backgroundColor='rgb(255,255,255)';
-  } else if(evento.target.style.backgroundColor != 'rgb(128, 128, 128)'){
-    evento.target.style.backgroundColor='rgb(128,128,128)';
-  }}
+  selected = document.querySelectorAll('.selected');
+
+   if(selected.length  < 1) {       
+    evento.target.classList.add("selected");
+    console.log('menor que 1 ',selected.length);
+    selected = document.querySelectorAll('.selected');
+  } 
+  else if(selected.length + 1  > 1  ){
+    console.log('maior que 1 ',selected);
+    selected[0].classList.remove("selected");
+    evento.target.classList.add('selected');
+   } 
+  }
 
