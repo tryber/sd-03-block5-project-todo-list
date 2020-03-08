@@ -7,12 +7,17 @@ let botaoApagaTarefas = document.getElementById('apaga-tudo');
 let botaoApagaTarefasCompletas = document.getElementById('remover-finalizados');
 let itemList;
 let botaosavalTarefas = document.getElementById('salvar-tarefas');
+let botaoMoverCima = document.getElementById('mover-cima');
+let botaoMoverBaixo = document.getElementById('mover-baixo');
+let removerSelecionado = document.getElementById('remover-selecionado');
 let liFilho;
 let element = {position:0,
                element:"",
                text:"",
                class:""
 };
+
+
 window.onload = function (){
   let listaObj = JSON.parse(localStorage.getItem('elementos-1'));
  
@@ -90,10 +95,24 @@ let elementoschild = document.querySelectorAll('#lista-tarefas li');
     element.position = i ;
     localStorage.setItem('elementos-' + i,JSON.stringify( element));
    }
+   }    
+})
+
+botaoMoverCima.addEventListener('click', function(){
+ 
+
+})
+
+botaoMoverBaixo.addEventListener('click', function(){
   
+ 
+
+})
+
+removerSelecionado.addEventListener('click', function(){
   
- }    
- console.log(element);
+ 
+
 })
 
 function taxarTexto(evento) {
@@ -117,3 +136,4 @@ function mudaCor(evento){
   } else if(evento.target.style.backgroundColor != 'rgb(128, 128, 128)'){
     evento.target.style.backgroundColor='rgb(128,128,128)';
   }}
+
