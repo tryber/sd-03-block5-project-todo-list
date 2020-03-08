@@ -80,7 +80,7 @@ apagar_Tudo.addEventListener('mouseover', function () {
   maozinha[2].style.cursor = 'pointer';
 });
 
-remove_Finalizados.addEventListener('mouseover', function () {
+remover_Finalizados.addEventListener('mouseover', function () {
   const maozinha = document.getElementsByClassName('button');
   maozinha[0].style.cursor = 'pointer';
   maozinha[1].style.cursor = 'pointer';
