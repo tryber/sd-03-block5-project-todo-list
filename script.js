@@ -1,7 +1,14 @@
-const criar = document.getElementById('cria-tarefa')
-const limpar = document.getElementById('apaga-tudo');
-const listaTarefa = document.getElementById('lista-tarefas');
+const criar = document.getElementById('criar-tarefa');
 const tarefa = document.getElementById('texto-tarefa');
+const limpar = document.getElementById('apaga-tudo');
+// const finalizador = document.getElementById('remover-finalizados'); //adicionar funcao
+const listaTarefa = document.getElementById('lista-tarefas');
+
+function limpaLista() {
+  for (let i = 0; i < listaTarefa.childNodes.length; i += 0) {
+    listaTarefa.removeChild(listaTarefa.childNodes[i]);
+  }
+}
 
 function bgGray() {
   event.target.className = 'grey';
@@ -14,20 +21,12 @@ function tick() {
 function addTarefa() {
   const lista = document.createElement('li');
   lista.className = 'cursor item';
-  listaTarefa.appendChild(lista, tarefa);
-  lista.innerText = tarefa.value;
-  tarefa.value = ' ';
-  // const items = document.getElementsByClassName('item');
+  listaTarefa.appendChild(lista);
+  lista.innerHTML = tarefa.value;
+  tarefa.value = '';
   lista.addEventListener('click', bgGray);
-    // items[i].addEventListener('dblclick', tick);
 
 }
 
-function limpaLita() {
-  for (let i = 0; i < listaTarefa.childNodes.length; i += 0) {
-    listaTarefa.removeChild(listaTarefa.childNodes[i]);
-  }
-}
-
-// criar.addEventListener('click', addTarefa )
-// limpar.addEventListener('click', apagaTudo);
+criar.addEventListener('click', addTarefa);
+limpar.addEventListener('click', limpaLista);
