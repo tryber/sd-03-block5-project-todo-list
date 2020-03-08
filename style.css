@@ -1,9 +1,16 @@
 body {
-  background-color: rgb(132, 197, 171) ;
+  background-color: rgb(132, 197, 171);
 }
-  li {
-    cursor: pointer;
-  }
-  button {
-    cursor: pointer;
-  }
+
+button {
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through black;
+}
+
+li {
+  background-color: rgb(128, 128, 128);
+  cursor: pointer;
+}
