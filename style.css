@@ -4,9 +4,9 @@ body {
 }
 
 header {
-  background-image: linear-gradient(#012626 ,#01403a ,#035951);
-  border: 2px solid #012626;
-  color: #add4d9;
+  background-image: linear-gradient(LightSeaGreen, DarkCyan, Teal);
+  border: 2px solid DarkSlateGray;
+  color: DarkSlateGray;
   font-family: Roboto, sans-serif;
   height: 150px;
   margin: auto;
@@ -15,18 +15,16 @@ header {
 }
 
 .background-model {
-  background-image: linear-gradient(#04d99d ,#03a688 ,#057e72);
-  border: 2px solid #011f1f;
-  height: 40%;
+  background-image: linear-gradient(LightSeaGreen, DarkCyan, Teal);
+  border: 2px solid DarkSlateGray;
   margin: auto;
   width: 600px;
 }
 
 .botao-model {
-  background-color: #024b68;
-  border-color: #01425c;
-  color: white;
-  font-weight: bold;
+  background-color: PowderBlue;
+  border-color: PaleTurquoise;
+  color: DarkSlateGray;
   margin: 2px;
 }
 
@@ -34,7 +32,6 @@ header {
   color: #011d1d;
   font-family: Roboto, sans-serif;
   font-size: 15px;
-  font-weight: bold;
 }
 
 .completed {
