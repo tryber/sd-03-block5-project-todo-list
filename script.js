@@ -12,13 +12,19 @@ function listarTarefas() {
   document.getElementById('texto-tarefa').value = '';
 
   item1.addEventListener('click', function(){
-      item1.classList.add('selected');
+    item1.classList.add('selected');
     }
   );
 
   item1.addEventListener('dblclick', function(){
-    item1.classList.add('completed');
+    if (item1.classList.contains('completed')) {
+    item1.classList.remove('completed')
+    }
+    else {
+      item1.classList.add('completed');
+    }
   });
+
 }
 
 botaoTarefa.addEventListener('click', listarTarefas);
