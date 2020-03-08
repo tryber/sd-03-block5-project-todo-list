@@ -1,3 +1,9 @@
+li{
+    cursor: pointer;
+}
 button{
     cursor: pointer;
+}
+.selected{
+    background-color: rgb rgb(128, 128, 128)
 }
