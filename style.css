@@ -1,11 +1,10 @@
-
 body {
   background-color: black;
   margin: 0;
 }
 
 header {
-  background-image: linear-gradient(#012626, #01403a, #035951);
+  background-image: linear-gradient(#012626 ,#01403a ,#035951);
   border: 2px solid #012626;
   color: #add4d9;
   font-family: Roboto, sans-serif;
@@ -16,7 +15,7 @@ header {
 }
 
 .background-model {
-  background-image: linear-gradient(#04d99d, #03a688, #057e72);
+  background-image: linear-gradient(#04d99d ,#03a688 ,#057e72);
   border: 2px solid #011f1f;
   height: 40%;
   margin: auto;

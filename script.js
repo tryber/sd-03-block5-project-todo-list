@@ -17,8 +17,8 @@ botoes[0].addEventListener('click', function () {
   }
 });
 for (let i = 0; i < botoes.length; i += 1) {
-    botoes[i].addEventListener('mouseover', function () {
-        botoes[i].style.cursor = 'pointer';
+  botoes[i].addEventListener('mouseover', function () {
+    botoes[i].style.cursor = 'pointer';
     });
 }
 botoes[0].addEventListener('click', function () {
