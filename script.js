@@ -103,11 +103,16 @@ botaoMoverCima.addEventListener('click', function(){
 
   selected = document.querySelectorAll('#selected'); 
   console.log(selected.length);
-  if(selected.length == 0){
+  /* if(selected.length == 0){
     listaTarefas.firstElementChild.setAttribute('id','selected');
-    } else if(selected[0].getAttribute('id') == 'selected' ){
+    } else */ if(selected[0].getAttribute('id') == 'selected' ){
     selected[0].previousSibling.setAttribute('id','selected');
     selected[0].setAttribute('id','');
+    let previousText =  selected[0].previousSibling.innerHTML ;
+    let currentText = selected[0].innerHTML;
+    selected[0].previousSibling.innerHTML = currentText;
+    selected[0].innerHTML = previousText ;
+    //selected[0].innerHTML = selected[0].previousSibling.innerHTML
 //  selected[0].previousSibling.setAttribute('id','');
 }
 }
@@ -116,10 +121,13 @@ botaoMoverCima.addEventListener('click', function(){
 
 botaoMoverBaixo.addEventListener('click', function(){
   selected = document.querySelectorAll('#selected');
-  if(selected.length == 0){
+  i/* f(selected.length == 0){
     listaTarefas.lastElementChild.setAttribute('id','selected');
-    } else if(selected[0].getAttribute('id') == 'selected' ){
-     
+    } else */ if(selected[0].getAttribute('id') == 'selected' ){
+      let nextText =  selected[0].nextSibling.innerHTML ;
+      let currentText = selected[0].innerHTML;
+      selected[0].nextSibling.innerHTML = currentText ;
+      selected[0].innerHTML = nextText ;
       selected[0].nextSibling.setAttribute('id','selected');
       selected[0].setAttribute('id','');
       console.log(selected[0].nextSibling.getAttribute('id'));
