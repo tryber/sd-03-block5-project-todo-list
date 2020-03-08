@@ -138,9 +138,14 @@ botaoMoverBaixo.addEventListener('click', function(){
 })
 
 removerSelecionado.addEventListener('click', function(){
-  
- 
-
+  selected = document.querySelectorAll('#selected');
+   if(selected.length == 0){
+    alert('Nenhum item selecionado para exclusão !');
+    
+   }else {
+     console.log(selected[0]);
+     listaTarefas.removeChild(selected[0]);
+   }
 })
 
 function taxarTexto(evento) {
