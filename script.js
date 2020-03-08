@@ -24,8 +24,12 @@ window.onload = function() {
 
   function backgroundGrey(element) {
     element.addEventListener("click", function(){
-      element.style.backgroundColor = "rgb(128,128,128)";
+      if(document.getElementsByClassName("selecionado")[0]){
+        document.getElementsByClassName("selecionado")[0].classList.remove("selecionado");
+        element.classList.add("selecionado");
+      } else {
       element.classList.add("selecionado");
+      }
     });
   }
   function riskingOrNot(element){
@@ -76,16 +80,22 @@ window.onload = function() {
   buttonUp.addEventListener("click", moveUp);
 
   function moveDown() {
-    let selecionado = document.querySelectorAll(".selecionado");
-    for (let i = 0; i < selecionado.length; i++){
-      // console.log(selecionado[i]);
-      // console.log(lista.lastChild);
-      // if (selecionado[i] === lista.lastChild) {
-      //   selecionado[i] = lista.insertBefore(selecionado[i], document.querySelectorAll("li")[0]);
-      // } else {
-        lista.insertBefore(selecionado[i], selecionado[i].nextSibling.nextSibling);
-      // }
+    let selecionado = document.querySelectorAll(".selecionado")[0];
+    //lista.insertBefore(selecionado, selecionado.nextSibling.nextSibling);
+    // for (let i = 0; i < selecionado.length; i++){
+    //   console.log(selecionado[i]);
+    //   console.log(lista.lastChild);
+    if (selecionado === lista.lastChild) {
+     selecionado = lista.insertBefore(selecionado, document.querySelectorAll("li")[0]);
+    } else {
+     lista.insertBefore(selecionado, selecionado.nextSibling.nextSibling);
     }
+    //   if (selecionado[i] === lista.lastChild) {
+    //     selecionado[i] = lista.insertBefore(selecionado[i], document.querySelectorAll("li")[0]);
+    //   } else {
+    //     lista.insertBefore(selecionado[i], selecionado[i].nextSibling.nextSibling);
+    //   }
+    // }
   }
   buttonDown.addEventListener("click", moveDown);
 

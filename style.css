@@ -21,3 +21,7 @@
 .incompleted {
   text-decoration: none;
 }
+
+.selecionado {
+  background-color: rgb(128,128,128);
+}
