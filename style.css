@@ -1,27 +1,24 @@
 
-* {
+body {
+  background-color: black;
   margin: 0;
 }
 
-body {
-  background-color: black;
-}
-
 header {
-  background-image: linear-gradient(#012626,#01403a,#035951);
+  background-image: linear-gradient(#012626, #01403a, #035951);
   border: 2px solid #012626;
-  color: #ADD4D9;
-  font-family: "Roboto", "sans-serif";
-  height: 100px;
+  color: #add4d9;
+  font-family: Roboto, sans-serif;
+  height: 150px;
   margin: auto;
   text-align: center;
   width: 600px;
 }
 
 .background-model {
-  background-image: linear-gradient(#04D99D,#03a688,#057e72);
+  background-image: linear-gradient(#04d99d, #03a688, #057e72);
   border: 2px solid #011f1f;
-  height: 30%;
+  height: 40%;
   margin: auto;
   width: 600px;
 }
@@ -36,7 +33,7 @@ header {
 
 .lista-style {
   color: #011d1d;
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 15px;
   font-weight: bold;
 }

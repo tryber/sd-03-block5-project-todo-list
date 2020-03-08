@@ -19,18 +19,18 @@ botoes[0].addEventListener('click', function () {
 for (let i = 0; i < botoes.length; i += 1) {
     botoes[i].addEventListener('mouseover', function () {
         botoes[i].style.cursor = 'pointer';
-    })
+    });
 }
-botoes[0].addEventListener('click', function (){
+botoes[0].addEventListener('click', function () {
   for (let i = 1; i <= listSize; i += 1) {
     tarefas[i].addEventListener('click', function () {
-      tarefas[i].style.backgroundColor = 'grey'; 
+      tarefas[i].style.backgroundColor = 'grey';
     });
   }
 });
 botoes[1].addEventListener('click', function () {
   for (let i = 0; i < listSize; i += 1) {
-    let lista = document.querySelectorAll('li');
+    const lista = document.querySelectorAll('li');
     lista[0].remove();
   }
   listSize = 0;
