@@ -1,7 +1,7 @@
-const botao = document.querySelector('#criar-tarefa');
+const botaoCriar = document.querySelector('#criar-tarefa');
+const botaoApagar = document.querySelector('#apaga-tudo');
 const input = document.querySelector('#texto-tarefa');
 const lista = document.querySelector('#lista-tarefas');
-let lis = document.querySelectorAll('li');
 
 function funBackground(event) {
   event.target.classList.toggle('selecionada');
@@ -20,4 +20,9 @@ function funAdicionar() {
   input.value = '';
 }
 
-botao.addEventListener('click', funAdicionar);
+function funApagar() {
+  lista.innerHTML = '';
+}
+
+botaoCriar.addEventListener('click', funAdicionar);
+botaoApagar.addEventListener('click', funApagar);
