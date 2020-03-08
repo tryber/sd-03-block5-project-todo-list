@@ -4,11 +4,8 @@ header {
 
 input {
   width: 100%;
-}
-
-input [ type = "text" ] {
-  background-color: rgb(231,231,231);
-  border: 2px solid rgb(129,129,129);
+  background-color: rgb(231 , 231 , 231);
+  border: 2px solid rgb(129 , 129 , 129);
   border-radius: 4px;
   box-sizing: border-box;
   font-family: Courier, monospace;
@@ -18,8 +15,8 @@ input [ type = "text" ] {
 }
 
 button {
-  background-color: rgb(231,231,231);
-  border: 2px solid rgb(129,129,129);
+  background-color: rgb(231 , 231 , 231);
+  border: 2px solid rgb(129 , 129 , 129);
   border-radius: 4px;
   cursor: pointer;
   font-family: Verdana, sans-serif;
@@ -30,7 +27,7 @@ li {
 }
 
 .selecionada {
-  background-color: rgb(128,128,128);
+  background-color: grey;
 }
 
 .completed {
