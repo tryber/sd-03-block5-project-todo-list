@@ -1,63 +1,63 @@
 body {
-    background-color: khaki;
+  background-color: khaki;
 }
 
 header {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    letter-spacing: -1.5pt;
-    line-height: 5px;
-    width: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  letter-spacing: -1.5pt;
+  line-height: 5px;
+  width: 100%;
 }
 
 article {
-    font-family: 'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .barraMenu {
-    border: 3px dashed blue;
-    padding: 5px;
+  border: 3px dashed blue;
+  padding: 5px;
 }
 
 ol {
-    background-color: lavender;
+  background-color: lavender;
 }
 
 button {
-    cursor: pointer;
-    transition-duration: 0.5s;
+  cursor: pointer;
+  transition-duration: 0.5s;
 }
 
 li {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .botAdd {
-    background-color: honeydew;
-    border: 2px solid green;
-    color: green;
+  background-color: honeydew;
+  border: 2px solid green;
+  color: green;
 }
 
 .botMov {
-    background-color: honeydew;
-    border: 2px solid blue;
-    color: mediumblue;
+  background-color: honeydew;
+  border: 2px solid blue;
+  color: mediumblue;
 }
 
 .botApaga {
-    background-color: honeydew;
-    border: 2px solid red;
-    color: red;
+  background-color: honeydew;
+  border: 2px solid red;
+  color: red;
 }
 
 button:hover {
-    background-color: black;
-    color: linen;
+  background-color: black;
+  color: linen;
 }
 
 .cinza {
-    background-color: rgb(128, 128, 128);
+  background-color: gray;
 }
 
 .completed {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
