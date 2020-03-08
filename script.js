@@ -10,22 +10,8 @@ function limpaLista() {
   }
 }
 
-
 function bgGray() {
-  event.target.classList.add ('gray');
-}
-
-function tick() {
-  event.target.classList.add('completed');
-}
-
-function tickOnOff(){
-  const lista = document.createElement('li');
-  if (lista.className === 'completed' ){
-    lista.classList.remove ('completed')
-  } else {
-    tick()
-  }
+  event.target.classList.add('gray');
 }
 
 function addTarefa() {
@@ -44,11 +30,10 @@ function addTarefa() {
       lista.classList.add('completed');
     }
   });
-
 }
 
 finalizador.addEventListener('click', () => {
-  document.querySelectorAll('li').forEach(function (e) {
+  document.querySelectorAll('li').forEach(function(e) {
     if (e.classList.contains('completed')) {
       e.remove();
     }
