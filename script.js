@@ -12,12 +12,21 @@ function limpaLista() {
 
 
 function bgGray() {
-  event.target.className = 'cursor gray';
+  event.target.classList.add ('gray');
 }
 
-// function tick() {
-//   event.target.className = 'cursor completed';
-// }
+function tick() {
+  event.target.classList.add('completed');
+}
+
+function tickOnOff(){
+  const lista = document.createElement('li');
+  if (lista.className === 'completed' ){
+    lista.classList.remove ('completed')
+  } else {
+    tick()
+  }
+}
 
 function addTarefa() {
   const lista = document.createElement('li');
@@ -26,6 +35,15 @@ function addTarefa() {
   lista.innerHTML = tarefa.value;
   tarefa.value = '';
   lista.addEventListener('click', bgGray);
+  lista.addEventListener('dblclick', function line() {
+    if (lista.style.textDecoration === 'line-through') {
+      lista.style.textDecoration = 'none';
+      lista.classList.remove('completed');
+    } else {
+      lista.style.textDecoration = 'line-through';
+      lista.classList.add('completed');
+    }
+  });
 
 }
 
