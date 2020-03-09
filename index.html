@@ -15,19 +15,19 @@
         <p class="instructions" id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p> <!-- Project requirement => p, id funcionamento -->
         </div>
       <span class="sub-div input">
-        <input class="new-task-input" type="text" id="texto-tarefa" placeholder="Nova tarefa" maxlength="55">
-        <button type="button" value="Adicionar" id="criar-tarefa" maxlength="30" class="btn blue">Adicionar</button>
+        <input class="new-task-input" type="text" id="texto-tarefa" placeholder="Nova tarefa" maxlength="55"> <!-- Project requirement => texto-tarefa id -->
+        <button type="button" value="Adicionar" id="criar-tarefa" maxlength="30" class="btn blue">Adicionar</button> <!-- Project requirement => criar-tarefa id -->
       </span>
       <div class="sub-div div-list">
-          <ol id="lista-tarefas"></ol>
+          <ol id="lista-tarefas"></ol> <!-- Project requirement => lista-tarefas id -->
       </div>
       <div class="buttons-bottom sub-div">
-        <button class="btn red btn-main" id="remover-selecionado" type="button"><img src="icons/delete-icon.png" ></button>
-        <button class="btn orange btn-main" id="mover-cima" type="button"><img src="icons/up-arrow.png" ></button>
-        <button class="btn orange btn-main" id="mover-baixo" type="button"><img src="icons/down-arrow.png"></button>
-        <button class="btn blue btn-main" id="remover-finalizados" type="button">Limpar Completos</button>
-        <button class="btn red btn-main" id="apaga-tudo" type="button" >Limpar Lista</button>
-        <button class="btn green btn-main" id="salvar-tarefas" type="button" >Salvar Lista</button></span>
+        <button class="btn red btn-main" id="remover-selecionado" type="button"><img src="icons/delete-icon.png" ></button> <!-- Project requirement => remover-selecionado id -->
+        <button class="btn orange btn-main" id="mover-cima" type="button"><img src="icons/up-arrow.png" ></button> <!-- Project requirement => mover-cima id -->
+        <button class="btn orange btn-main" id="mover-baixo" type="button"><img src="icons/down-arrow.png"></button> <!-- Project requirement => mover-baixo id -->
+        <button class="btn blue btn-main" id="remover-finalizados" type="button">Limpar Completos</button> <!-- Project requirement => remover-finalizados id -->
+        <button class="btn red btn-main" id="apaga-tudo" type="button" >Limpar Lista</button> <!-- Project requirement => apaga-tudo id -->
+        <button class="btn green btn-main" id="salvar-tarefas" type="button" >Salvar Lista</button></span> <!-- Project requirement => salvar-tarefas id -->
       </div>
     </div>
     <div class="feedback" id="feedback">
@@ -39,10 +39,10 @@
           <th>Accomplished</th>
         </thead>
       </table>
-      <div>
+        <div>
           <button class="btn green btn-confirm" id="btn-confirm" type="button" >Confirmar</button>
           <button class="btn red btn-cancel" id="btn-cancel" type="button" >Cancel</button>
-      </div>
+        </div>
     </div>
   </main>
   <script src="script.js"></script>

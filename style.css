@@ -1,10 +1,7 @@
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   background-color: rgb(15, 163, 107);
+  box-sizing: border-box;
   margin: 0;
 }
 
