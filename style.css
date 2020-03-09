@@ -6,6 +6,10 @@ li {
     cursor: pointer;
 }
 
+.completed{
+    cursor: pointer;
+}
+
 #funcionamento{
     margin-left: 0px;
     opacity: 50%;
