@@ -3,17 +3,11 @@ function addOverClass(x) {
 
     x.classList.add('over');
   });
-  /*   x.addEventListener('mouseout', function () {
-
-      x.classList.remove('over');
-    }); */
   x.addEventListener('dblclick', function () {
 
     x.classList.toggle('completed');
   });
-  /*   x.addEventListener('click', function(){
-      x.remove()
-    }) */
+
 
 }
 
@@ -44,15 +38,26 @@ apagarTudo.addEventListener('click', function () {
   document.getElementById('container').appendChild(newOl);
 
 });
-const removerFin = document.getElementById('remover-finalizados');
 
+const removerFin = document.getElementById('remover-finalizados');
 removerFin.addEventListener('click', function () {
   let completed = document.querySelectorAll('.completed');
   for (let i in completed) {
-    function blah() {
-      completed[i].remove();
-    }
-    blah
+    completed[i].remove();
   }
 });
 
+document.getElementById('remover-selecionado').addEventListener('click',function(){
+  let selecionado = document.querySelectorAll('.over');
+    for (let i in selecionado) {
+      selecionado[i].remove();
+    }
+  })
+
+
+/* function remover (alvo){
+  let alvo = document.querySelectorAll('.' + alvo);
+  for (let i in alvo) {
+    alvo[i].remove();
+  }
+} */
