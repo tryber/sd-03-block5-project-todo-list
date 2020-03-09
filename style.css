@@ -1,12 +1,14 @@
 .over {
-  background-color:rgb(128,128,128)
+  background-color: 'gray';
+
 }
 
 li {
-  cursor: pointer
+  cursor: pointer;
 
 }
-.completed{
-  text-decoration: line-through ;
+
+.completed {
+  text-decoration: line-through;
 
 }
