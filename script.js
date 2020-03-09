@@ -3,6 +3,7 @@ let selecionado;
 let tarefa = document.getElementById("texto-tarefa");
 let botaoAdicionar = document.getElementById("criar-tarefa");
 let botaoLimparTudo = document.getElementById("apaga-tudo");
+let botaoLimparSelecionado = document.getElementById("remover-selecionado");
 let botaoLimparFinalizados = document.getElementById("remover-finalizados");
 let lista = document.getElementById("lista-tarefas");
 let completed = document.getElementsByClassName("completed");
@@ -17,7 +18,9 @@ botaoLimparTudo.addEventListener("click",function(s){
 botaoLimparFinalizados.addEventListener("click",function(s){
     limparItensFinalizados(completed);
 });
-
+botaoLimparSelecionado.addEventListener("click",function(s){
+    removerSelecionados(lista);
+});
 
 function pegarValorTarefa(){
     return tarefa.value;
@@ -28,7 +31,6 @@ function criarItemLista(texto){
     item.innerHTML = texto;
     adicionarEvento("click",item,alterarCorFundoItem);
     adicionarEvento("dblclick",item,riscoItem);
-    item.classList.add("mouseCursor");
     return item;
 }
 
@@ -48,11 +50,27 @@ function adicionarEvento(evento,elemento,funcao){
 }
 
 function alterarCorFundoItem(item){
-
-    if(item.style.backgroundColor == "rgb(128, 128, 128)" )
-    item.style.backgroundColor = "";
-    else
-      item.style.backgroundColor = "rgb(128,128,128)";
+    if(item.classList.contains("selected")){
+    item.classList.remove("selected");
+    removeSelected();
+    }
+    else{
+    item.classList.add("selected");
+    addSelected(item);
+    }
+}
+function addSelected(item){
+    if(selecionado){
+          selecionado.classList.remove("selected");
+          selecionado = item;return;
+    }
+      if(item.classList.contains("selected")){
+         
+          selecionado = item;return;
+      }     
+}
+function removeSelected(){
+    selecionado = undefined;
 }
 
 function riscoItem(item){
@@ -63,6 +81,7 @@ function riscoItem(item){
 
 function limparItensFinalizados(completed){
 while(completed[0]){
+    console.log(completed[0]);
     lista.removeChild(completed[0])
       }
 }
@@ -70,4 +89,10 @@ function limparLista(lista){
     while(lista.firstChild){
         lista.removeChild(lista.firstChild)
       }
+}
+function removerSelecionados(lista){
+    if(selecionado){
+        console.log(selecionado);
+        lista.removeChild(selecionado);    
+    }
 }
