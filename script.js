@@ -1,47 +1,52 @@
 
+var textoTarefa = document.getElementById("texto-tarefa")
 
-const criarTarefa = document.getElementById("criar-tarefa");
+var criarTarefa = document.getElementById("criar-tarefa");
 
-let textoTarefa = document.getElementById("texto-tarefa")
+var ol = document.getElementById("lista-tarefas")
 
-let ol = document.getElementById("lista-tarefas")
-
-criarTarefa.addEventListener("click", function(){
-    //textoTarefa = document.getElementById("texto-tarefa").value
-    let li = document.createElement("li")
+criarTarefa.addEventListener("click", function(){ //Primeiro evento é criar a tarefa
+    
+    var li = document.createElement("li")
     li.textContent = textoTarefa.value
-    ol.appendChild(li)
-    //textoTarefa.value = ""  -> assim não deu
+    ol.appendChild(li) //Alocando a lista criada na tag de lista ordenada
+    
     li.addEventListener("click",function(){
-    selected(li)
+    selected(li) //adiciona a classe selected na li
     })
     li.addEventListener('dblclick', function(){
-    completed(li)
+    completed(li) //adiciona a classe completed na li
     })
     document.getElementById("texto-tarefa").value = ""
     
-})
-function selected (x){
-    let remove = document.getElementsByClassName("selected")
-    if ( remove.length > 0 && x.classList.contains("selected")){
-        x.classList.remove("selected")
+}) //Primeira tarefa a ser executada é a de colocar o texto na lista e classificá-lo
+
+function selected (clicar){ //Função para selecionar
+    var remove = document.getElementsByClassName("selected")
+    if ( remove.length > 0 && clicar.classList.contains("selected")){
+        clicar.classList.remove("selected")
     } 
     else if (remove.length > 0){
-        let remove = document.getElementsByClassName("selected")
         remove[0].classList.remove("selected")
-        x.classList.add("selected")
+        clicar.classList.add("selected")
     } 
     else if (remove.length == 0){
-        x.classList.add("selected")
+        clicar.classList.add("selected")
     }
     
 }
-function completed (li){
+function completed (li){ //Função para sublinhar
     if (li.classList.contains("completed")){
         li.classList.remove("completed")
     }
     else {li.classList.add("completed")}
-
 }
 
+let apagaTudo = document.getElementById("apaga-tudo")
+apagaTudo.addEventListener('click',function(){
+document.querySelectorAll('li').forEach(e => e.remove())
+})
 
+let removerFinalizados = document.getElementById("remover-finalizados") 
+removerFinalizados.addEventListener('click',function(){
+document.querySelectorAll('.completed').forEach(e => e.remove());})
