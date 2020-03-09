@@ -8,20 +8,17 @@
 
 }
 #criar-tarefa{
-
+    cursor: pointer;
 }
 
-#lista-tarefas{
-    
+#lista-tarefas li{
+    cursor: pointer;
 }
 #remover-finalizados{
-
+    cursor: pointer;
 }
 #apaga-tudo{
-
-}
-.mouseCursor:hover{
-    cursor:pointer;
+    cursor: pointer;
 }
 .completed{
     text-decoration: line-through;
