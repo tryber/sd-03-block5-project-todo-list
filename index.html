@@ -1,49 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minha Lista de Tarefas</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header><h1 id="titulo">Minha Lista de Tarefas</h1></header>
-
-    <p id="funcionamento">
-      Clique duas vezes em um item para marcá-lo como completo
-    </p>
-
-    <label for="texto-tarefa">
-      Escreva a sua tarefa e clique no botão "Criar Tarefa".
-    </label>
-    <input
-      type="text"
-      placeholder="Digite sua tarefa aqui"
-      class="input-tarefa"
-      id="texto-tarefa"
-      autofocus
-    />
-    <section class="buttons-container">
-      <button id="criar-tarefa" class="criar-tarefa pointer">
-        criar tarefa
-      </button>
-      <button id="salvar-tarefas" class="salvar tarefas pointer">
-        salvar-tarefas
-      </button>
-      <button id="mover-cima" class="mover-cima pointer">mover pra cima</button>
-      <button id="mover-baixo" class="mover-baixo pointer">
-        mover pra baixo
-      </button>
-      <button id="apaga-tudo" class="apaga-tudo pointer">apagar tudo</button>
-      <button id="remover-finalizados" id="remover-selecionado" class="remover-finalizados pointer">
-        remover-finalizados
-      </button>
+    <header>
+      <h1>Minha Lista de Tarefas</h1>
+    </header>
+    <section>
+      <p id="funcionamento">
+        Clique duas vezes em um item da lista para marcá-lo como completo
+      </p>
     </section>
-
-    <section class="list-container">
-      <ol id="lista-tarefas"></ol>
+    <section>
+      <button id="criar-tarefa">Adicionar tarefa</button>
+      <button id="apaga-tudo">Apagar tudo</button>
+      <button id="remover-finalizados">Apagar Finalizados</button>
     </section>
-
+    <section>
+      <input
+        id="texto-tarefa"
+        type="text"
+        name="texto-tarefa"
+        onfocus="this.value=''"
+        placeholder="Digite sua tarefa aqui!"
+      />
+    </section>
+    <ol id="lista-tarefas"></ol>
     <script src="script.js"></script>
   </body>
 </html>

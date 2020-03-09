@@ -1,18 +1,30 @@
-//add tarefa a lista
-let criarTarefa = document.querySelector("#criar-tarefa");
-let textoTarefa = document.querySelector("#texto-tarefa");
-let listaOrdenada = document.querySelector("ol");
-
-criarTarefa.addEventListener("click", function textonaLista() {
-  let itemLista = document.createElement("li");
-  itemLista.className = "cursor completed";
-  itemLista.innerText = textoTarefa.value;
-  listaOrdenada.appendChild(itemLista);
-  textoTarefa.value = "";
+const lista = document.querySelector('#lista-tarefas');
+const input = document.querySelector('#texto-tarefa');
+const criarTarefa = document.querySelector('#criar-tarefa');
+criarTarefa.addEventListener('click', function adicionarTarefa() {
+  const li = document.createElement('li');
+  li.innerHTML = input.value;
+  lista.appendChild(li);
+  li.addEventListener('click', function backgroundColor(event) {
+    event.target.classList.toggle('selected');
+  });
+  li.addEventListener('dblclick', function tarefaRiscada(event) {
+    event.target.classList.toggle('completed');
+  });
+  input.value = '';
 });
-// apagar tarefas
-const botaoApagarTudo = document.querySelector("#apaga-tudo");
 
-botaoApagarTudo.addEventListener("click", function apagarTudo() {
-  listaOrdenada.innerHTML = "";
+const botaoApagar = document.querySelector('#apaga-tudo');
+botaoApagar.addEventListener('click', function apagarTudo() {
+  lista.innerHTML = '';
+});
+
+const botaoApagarRiscado = document.querySelector('#remover-finalizados');
+botaoApagarRiscado.addEventListener('click', function ApagarRiscado() {
+  const lis = document.querySelectorAll('li');
+  for (let i = 0; i < lis.length; i += 1) {
+    if (lis[i].classList.contains('completed') === true) {
+      lis[i].remove();
+    }
+  }
 });
