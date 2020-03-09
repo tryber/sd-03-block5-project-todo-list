@@ -8,19 +8,18 @@ window.onload= function(){
             let li = document.createElement("li");
             let inputValue = texto.value;
             let t = document.createTextNode(inputValue);
-            li.classList.add("incompleted")
             li.addEventListener("click", function () {li.style.backgroundColor = "rgb(128,128,128)"})
             li.addEventListener("dblclick", function () {li.classList.contains("completed")?li.classList.remove("completed"):li.classList.add("completed")})
             li.style.cursor="pointer"
             li.appendChild(t);
-            document.getElementById("lista-tarefas").appendChild(li);
+            document.getElementsByClassName("lista-tarefas")[0].appendChild(li);
         }
         document.getElementById("texto-tarefa").value = ""
     }
     botao.addEventListener("click", addText)
 
     let apaga=document.getElementById("apaga-tudo")
-    let ap= document.getElementById("lista-tarefas")
+    let ap= document.getElementsByClassName("lista-tarefas")[0]
     function apagaTd(){
         ap.parentNode.removeChild(ap)
         let apos = document.createElement("ol");
@@ -31,10 +30,10 @@ window.onload= function(){
 
     let rmFianlizados= document.getElementById("remover-finalizados")
     function finalizados(){
-        let finali=document.querySelectorAll(".completed")
-        if(finali.classList.contains("completed")){
-            finali.remove()
-        }
+        let finali= document.querySelectorAll(".completed")
+        finali.forEach(item => {
+            item.parentNode.removeChild(item)
+        });
     }
     rmFianlizados.addEventListener("click", finalizados)
 }
