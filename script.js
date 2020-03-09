@@ -31,11 +31,11 @@
   });
 
   document.getElementById('apaga-tudo').addEventListener('click', () => {
-    document.querySelectorAll('li').forEach(function (e) { e.remove(); });
+    document.querySelectorAll('li').forEach(function (ra) { ra.remove(); });
   });
 
   document.getElementById('remover-finalizados').addEventListener('click', () => {
-    document.querySelectorAll('li').forEach(function (e) { if (e.classList.contains('completed')) { e.remove(); } });
+    document.querySelectorAll('li').forEach(function (r) { if (r.classList.contains('completed')) { r.remove(); } });
   });
 
   document.getElementById('salvar-tarefas').addEventListener('click', () => {

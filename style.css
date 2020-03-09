@@ -35,6 +35,11 @@ main {
   width: 100vw;
 }
 
+.blue {
+  background: rgb(116 , 200 , 233);
+  border-radius: 30px;
+}
+
 .btn {
   color: aliceblue;
   cursor: pointer;
@@ -44,17 +49,15 @@ main {
   padding: 10px 20px;
 }
 
+.btn-confirm {
+  margin-top: 20px;
+}
+
 .btn img {
   height: 13px;
-}
-
-.blue {
-  background: rgb(116 , 200 , 233);
-  border-radius: 30px;
-}
+}  
 
 .completed {
-  color: gray;
   text-decoration: line-through;
 }
 
@@ -66,52 +69,6 @@ main {
   flex-direction: column;
   font-family: sans-serif, Arial;
   min-width: 900px;
-}
-
-.header {
-  align-items: center;
-  flex-direction: column;
-  font-size: 40px;
-  height: auto;
-  padding: 40px;
-  text-align: center;
-  width: auto;
-}
-
-.red {
-  background: darkred;
-  border-radius: 30px;
-}
-
-.green {
-  background: green;
-  border-radius: 30px;
-}
-
-.orange {
-  background: orange;
-  border-radius: 30px;
-}
-
-.selected {
-  background-color: gray;
-  border-radius: 5px;
-}
-
-.sub-div {
-  padding: 20px;
-}
-
-.input {
-  display: flex;
-  flex-direction: column;
-}
-
-.instructions {
-  font-size: 20px;
-  font-style: italic;
-  opacity: 0.5;
-  text-shadow: 1px 1px;
 }
 
 .feedback {
@@ -129,12 +86,39 @@ main {
   z-index: 2;
 }
 
-.btn-confirm {
-  margin-top: 20px;
-}
-
 .feedback span {
   font-size: 20px;
+}
+
+.green {
+  background: green;
+  border-radius: 30px;
+}
+
+.header {
+  align-items: center;
+  flex-direction: column;
+  font-size: 40px;
+  height: auto;
+  padding: 40px;
+  text-align: center;
+  width: auto;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+.instructions {
+  font-size: 20px;
+  font-style: italic;
+  opacity: 0.5;
+  text-shadow: 1px 1px;
+}
+
+.list-void {
+  margin-left: 10%;
 }
 
 .new-task-input {
@@ -143,6 +127,21 @@ main {
   text-align: center;
 }
 
-.list-void {
-  margin-left: 10%;
+.orange {
+  background: orange;
+  border-radius: 30px;
+}
+
+.red {
+  background: darkred;
+  border-radius: 30px;
+}
+
+.selected {
+  background-color: gray;
+  border-radius: 5px;
+}
+
+.sub-div {
+  padding: 20px;
 }
