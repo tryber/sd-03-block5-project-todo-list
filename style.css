@@ -10,23 +10,18 @@
 #criar-tarefa{
 
 }
-.button:hover{
-    cursor: pointer;
-}
-#lista-tarefas li:hover{
-    cursor: pointer;
+
+#lista-tarefas{
+    
 }
 #remover-finalizados{
 
 }
-#remover-finalizados button:hover{
-    cursor: pointer;
-}
 #apaga-tudo{
 
 }
-#apaga-tudo:hover{
-    cursor: pointer;
+.mouseCursor:hover{
+    cursor:pointer;
 }
 .completed{
     text-decoration: line-through;

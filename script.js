@@ -5,6 +5,7 @@ let botaoAdicionar = document.getElementById("criar-tarefa");
 let botaoLimparTudo = document.getElementById("apaga-tudo");
 let botaoLimparFinalizados = document.getElementById("remover-finalizados");
 let lista = document.getElementById("lista-tarefas");
+let completed = document.getElementsByClassName("completed");
 
 botaoAdicionar.addEventListener("click",function(s){
     adicionarItemLista(criarItemLista(pegarValorTarefa()));
@@ -13,6 +14,10 @@ botaoAdicionar.addEventListener("click",function(s){
 botaoLimparTudo.addEventListener("click",function(s){
     limparLista(lista);
 });
+botaoLimparFinalizados.addEventListener("click",function(s){
+    limparItensFinalizados(completed);
+});
+
 
 function pegarValorTarefa(){
     return tarefa.value;
@@ -23,6 +28,7 @@ function criarItemLista(texto){
     item.innerHTML = texto;
     adicionarEvento("click",item,alterarCorFundoItem);
     adicionarEvento("dblclick",item,riscoItem);
+    item.classList.add("mouseCursor");
     return item;
 }
 
@@ -55,8 +61,10 @@ function riscoItem(item){
    else  item.classList.add("completed");
 }
 
-function limparItensFinalizados(){
-     
+function limparItensFinalizados(completed){
+while(completed[0]){
+    lista.removeChild(completed[0])
+      }
 }
 function limparLista(lista){
     while(lista.firstChild){
