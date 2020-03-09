@@ -7,6 +7,8 @@ let botaoLimparSelecionado = document.getElementById("remover-selecionado");
 let botaoLimparFinalizados = document.getElementById("remover-finalizados");
 let lista = document.getElementById("lista-tarefas");
 let completed = document.getElementsByClassName("completed");
+let acima = document.getElementById("mover-cima");
+let abaixo = document.getElementById("mover-baixo");
 
 botaoAdicionar.addEventListener("click",function(s){
     adicionarItemLista(criarItemLista(pegarValorTarefa()));
@@ -21,11 +23,18 @@ botaoLimparFinalizados.addEventListener("click",function(s){
 botaoLimparSelecionado.addEventListener("click",function(s){
     removerSelecionados(lista);
 });
-
+acima.addEventListener("click",function(s){
+    moverItem("acima",lista);
+});
 function pegarValorTarefa(){
     return tarefa.value;
 }
-
+abaixo.addEventListener("click",function(s){
+    moverItem("abaixo",lista);
+});
+function pegarValorTarefa(){
+    return tarefa.value;
+}
 function criarItemLista(texto){
     let item = document.createElement("li");
     item.innerHTML = texto;
@@ -64,8 +73,7 @@ function addSelected(item){
           selecionado.classList.remove("selected");
           selecionado = item;return;
     }
-      if(item.classList.contains("selected")){
-         
+      if(item.classList.contains("selected")){    
           selecionado = item;return;
       }     
 }
@@ -94,5 +102,15 @@ function removerSelecionados(lista){
     if(selecionado){
         console.log(selecionado);
         lista.removeChild(selecionado);    
+    }
+}
+function moverItem(direcao,lista){
+    if(direcao == "acima"){
+    let acima = selecionado.previousElementSibling;
+    lista.insertBefore(selecionado,acima);
+    }
+    if(direcao == "abaixo"){
+    let abaixo = selecionado.nextElementSibling;
+    lista.insertBefore(abaixo,selecionado);
     }
 }
