@@ -10,7 +10,7 @@ window.onload= function(){
             let t = document.createTextNode(inputValue);
             li.classList.add("incompleted")
             li.addEventListener("click", function () {li.style.backgroundColor = "rgb(128,128,128)"})
-            li.addEventListener("dbclick", function () {li.classList[0]=="completed"?li.classList.remove("completed"):li.classList.add("completed")})
+            li.addEventListener("dblclick", function () {li.classList.contains("completed")?li.classList.remove("completed"):li.classList.add("completed")})
             li.style.cursor="pointer"
             li.appendChild(t);
             document.getElementById("lista-tarefas").appendChild(li);
