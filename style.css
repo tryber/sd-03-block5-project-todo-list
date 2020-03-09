@@ -1,6 +1,5 @@
-
 body {
-  background-color: rgb(15, 163, 107);
+  background-color: rgb(15 , 163 , 107);
   box-sizing: border-box;
   margin: 0;
 }
@@ -50,7 +49,7 @@ main {
 }
 
 .blue {
-  background: rgb(116, 200, 233);
+  background: rgb(116 , 200 , 233);
   border-radius: 30px;
 }
 

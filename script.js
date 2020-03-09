@@ -1,6 +1,4 @@
 
-window.onload = function () {
- 
   const addListeners = (li) => {
     li.addEventListener('dblclick', function () {
       if (li.classList.contains('completed')) {
@@ -25,7 +23,7 @@ window.onload = function () {
       document.getElementById('texto-tarefa').value = '';
     }
   });
-
+/*
   function addTextTask(element, txt) {
     element.innerHTML = txt;
     addClickLiSelect(element);
@@ -45,7 +43,7 @@ window.onload = function () {
       }
     });
   }
-
+*/
   document.getElementById('remover-selecionado').addEventListener('click', () => {
     if (document.querySelector('.selected')) {
       document.querySelector('.selected').remove();
@@ -55,20 +53,20 @@ window.onload = function () {
   document.getElementById('apaga-tudo').addEventListener('click', () => {
     document.querySelectorAll('li').forEach(function (e) { e.remove(); });
   });
-  
+
   document.getElementById('remover-finalizados').addEventListener('click', () => {
     document.querySelectorAll('li').forEach(function (e) { if (e.classList.contains('completed')) { e.remove(); } });
   });
-  
+
   document.getElementById('salvar-tarefas').addEventListener('click', () => {
     localStorage.setItem('Lista de Tarefas', document.getElementById('lista-tarefas').innerHTML);
   });
-  
+
   if (window.localStorage.getItem('Lista de Tarefas')) {
     document.getElementById('lista-tarefas').innerHTML = window.localStorage.getItem('Lista de Tarefas');
     document.querySelectorAll('li').forEach(function (li) { addListeners(li); });
   }
-  
+
   document.getElementById('mover-cima').addEventListener('click', () => {
     const selected = document.querySelector('.selected');
     if (selected) {
@@ -77,7 +75,7 @@ window.onload = function () {
       }
     }
   });
-  
+
   document.getElementById('mover-baixo').addEventListener('click', () => {
     const selected = document.querySelector('.selected');
     if (selected) {
@@ -86,4 +84,3 @@ window.onload = function () {
       }
     }
   });
-}
