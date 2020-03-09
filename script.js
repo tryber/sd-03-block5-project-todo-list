@@ -28,4 +28,13 @@ window.onload= function(){
         document.getElementsByClassName("apos")[0].appendChild(apos)
     }
     apaga.addEventListener("click",apagaTd)
+
+    let rmFianlizados= document.getElementById("remover-finalizados")
+    function finalizados(){
+        let finali=document.querySelectorAll(".completed")
+        if(finali.classList.contains("completed")){
+            finali.remove()
+        }
+    }
+    rmFianlizados.addEventListener("click", finalizados)
 }
