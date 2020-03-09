@@ -23,27 +23,7 @@
       document.getElementById('texto-tarefa').value = '';
     }
   });
-/*
-  function addTextTask(element, txt) {
-    element.innerHTML = txt;
-    addClickLiSelect(element);
-    addClickMarkCompleted(element);
-    return element;
-  }
 
-  function addClickLiSelect(element) {
-    element.addEventListener('click', function () {
-      if (returnById('selected')) {
-        removeIdSelect(returnById('selected'));
-        this.id = 'selected';
-        this.style.background = 'rgb(128,128,128)';
-      } else {
-        this.id = 'selected';
-        this.style.background = 'rgb(128,128,128)';
-      }
-    });
-  }
-*/
   document.getElementById('remover-selecionado').addEventListener('click', () => {
     if (document.querySelector('.selected')) {
       document.querySelector('.selected').remove();
