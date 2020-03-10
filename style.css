@@ -1,4 +1,3 @@
-/* font-family: 'Satisfy', cursive; font-family: 'Sue Ellen Francisco', cursive; font-family: 'Chakra Petch', sans-serif; */
 body {
   background-color: rgb(150 , 187 , 255);
   margin: 0;
@@ -25,27 +24,27 @@ p {
 }
 
 li {
+  cursor: pointer;
   font-family: Sue Ellen Francisco, cursive;
   font-size: 30px;
-  cursor: pointer;
 }
 
 button {
+  cursor: pointer;
   background-color: rgb(33 , 85 , 179);
   color: white;
   font-family: Chakra Petch, sans-serif;
   font-size: 15px;
   font-weight: 500;
   padding: 4px;
-  cursor: pointer;
 }
 
 footer {
   font-family: Roboto mono, monospace;
   font-size: 15px;
   position: relative;
-  top: 100px;
   text-align: center;
+  top: 100px;
 }
 
 .container {
@@ -58,7 +57,7 @@ footer {
   width: 800px;
 }
 
-.align-center{
+.align-center {
   text-align: center;
 }
 
