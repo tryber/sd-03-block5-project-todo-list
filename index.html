@@ -4,38 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lista de tarefas</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="imagem/png" href="./img/icon.png">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="./script.js"></script>
 </head>
 <body>
-    <script type="text/javascript" src="./script.js"></script>
-   <header>
-       <h1> Lista de Tarefas</h1>
-   </header>
-   <article>
-       <div id="container">
-       <section>
-           <div id="title">
-               <h1>Minha lista</h1>
-               <h3>Clique duas vezes em um item para marcá-lo como completo</h3>
-           </div>
-       </section>
-       <section>
-           <div id="textarea">
-                <input type="text" name="" id="">
-                <button id="add">Adicionar</button> <br>
-            </div>
-           <button class="redondos" id="x">x</button>
-           <button class="redondos"id="cima"><strong>↑</strong></button>
-           <button class="redondos" id="baixo">↓</button><br>
-           <button class="horizontal" id="azul">Limpar Completos</button><br>
-           <button class="horizontal" id="verde">Limpar Lista</button><br>
-           <button class="horizontal"id="rosa">Salvar Lista</button>
-       </section>
+    <header>
+        <h1>Minha Lista de Tarefas</h1>
+        <h3 id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</h3>
+    </header>
+    <div class="container">
+        <label for="texto-tarefa">Digite sua tarefa</label> <br>
+        <input type="text" id="texto-tarefa">
+        <input  id="criar-tarefa" type="button" value="Adicionar" onClick="pr()"> <br>
+        <ol id="texto-tarefa">
+            <li id ="elemento" onclick="select()"></li>
+        </ol>
+        <button id="apaga-tudo">Clear</button>
+        <button id="remover-finalizados">Remover finalizados</button>
     </div>
-   </article>
 
-    
 </body>
 </html>
