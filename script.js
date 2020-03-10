@@ -20,33 +20,33 @@ function addTodo() {
   createLi.innerText = grabInput.value;
   grabList.appendChild(createLi);
   grabInput.value = '';
-  createLi.addEventListener('dblclick', function(event) {
+  createLi.addEventListener('dblclick', function (event) {
     if (event.target.classList.contains('completed')) {
       event.target.classList.remove('completed');
     } else {
       event.target.classList.add('completed');
     }
   });
-  createLi.addEventListener('click', function(event) {
-    let previousSelected = document.getElementsByClassName('selected')[0];
+  createLi.addEventListener('click', function (event) {
+    const previousSelected = document.getElementsByClassName('selected')[0];
     if (previousSelected != null) {
-      previousSelected.classList.remove("selected");
+      previousSelected.classList.remove('selected');
     }
-      event.target.classList.add('selected');
+    event.target.classList.add('selected');
   });
   updateLi();
 }
 
 // Delete everything
 function deleteAll() {
-  for (let i = document.querySelectorAll('li').length; i >= 1; i--) {
+  for (let i = document.querySelectorAll('li').length; i >= 1; i -= 1) {
     document.querySelector('li').remove();
   }
 }
 
 // Remove completed items
 function removeComp() {
-  for (let i = document.querySelectorAll('li').length - 1; i >= 0; i--) {
+  for (let i = document.querySelectorAll('li').length - 1; i >= 0; i -= 1) {
     if (document.querySelectorAll('li')[i].classList.contains('completed')) {
       document.querySelectorAll('li')[i].remove();
     }
@@ -56,7 +56,7 @@ function removeComp() {
 
 // Function save to Do List
 function saveTodo() {
-  let pegarInner = document.getElementById('lista-tarefas').innerHTML;
+  const pegarInner = document.getElementById('lista-tarefas').innerHTML;
   localStorage.setItem('todo-list', pegarInner);
 }
 
@@ -71,7 +71,7 @@ function removeSelected() {
 }
 // Move selected item up
 function moveUp() {
-  let mover = document.querySelector('.selected');
+  const mover = document.querySelector('.selected');
   if (mover) {
     if (mover.previousElementSibling) {
       mover.parentNode.insertBefore(mover, mover.previousElementSibling);
@@ -81,7 +81,7 @@ function moveUp() {
 
 // Move selected item down
 function moveDown() {
-  let mover = document.querySelector('.selected');
+  const mover = document.querySelector('.selected');
   if (mover) {
     if (mover.nextElementSibling) {
       mover.parentNode.insertBefore(mover.nextElementSibling, mover);

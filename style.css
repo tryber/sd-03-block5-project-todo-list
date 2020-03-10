@@ -22,7 +22,6 @@ li {
   font-family: 'Courier New', Courier, monospace;
   font-size: 18px;
   margin-top: 5px;
-  
 }
 
 .selected {
@@ -59,9 +58,9 @@ li {
 input {
   padding: 3px 0;
   border-radius: 2%;
-  -moz-box-shadow:    1px 1px 6px 2px #ccc;
+  -moz-box-shadow: 1px 1px 6px 2px #ccc;
   -webkit-box-shadow: 1px 1px 6px 2px #ccc;
-  box-shadow:         1px 1px 6px 2px #ccc;
+  box-shadow: 1px 1px 6px 2px #ccc;
 }
 
 article {
