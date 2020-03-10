@@ -2,6 +2,18 @@ window.onload= function(){
     let botao=document.getElementById("criar-tarefa")
     let texto= document.getElementById("texto-tarefa")
 
+
+    let listaDeTarefa= document.getElementById("lista-tarefas")
+    let salvarFile=document.getElementById("salvar-tarefas")
+    function salvar(){
+        localStorage.setItem("Lista Salva", listaDeTarefa.innerHTML);
+    }
+    salvarFile.addEventListener("click", salvar)
+    if(window.localStorage.getItem("Lista Salva")){
+        listaDeTarefa.innerHTML = window.localStorage.getItem("Lista Salva");
+    }
+
+
     function addText(){  
         if (texto.value === '') {
           window.alert("OPS, adicione uma tarefa");
@@ -57,15 +69,15 @@ window.onload= function(){
     }
     rmFianlizados.addEventListener("click", finalizados)
 
-    let listaDeTarefa= document.getElementById("lista-tarefas")
-    let salvarFile=document.getElementById("salvar-tarefas")
-    function salvar(){
-        localStorage.setItem("Lista Salva", listaDeTarefa.innerHTML);
-    }
-    salvarFile.addEventListener("click", salvar)
-    if(window.localStorage.getItem("Lista Salva")){
-        listaDeTarefa.innerHTML = window.localStorage.getItem("Lista Salva");
-      }
+
+    //let moverCima= document.getElementById("mover-cima")
+    //moverCima.addEventListener("click", function(){
+    //    let list= document.querySelectorAll(".selecionado")
+    //    pList.forEach(i =>{
+    //        list.insertBefore(list, i.previousSibling)
+    //    })
+    //    
+    //})
 
 
     let botaoSelecionado= document.getElementById("remover-selecionado")
