@@ -1,5 +1,14 @@
 .botao{
     cursor: pointer;
+    background: #6B0F1A;
+    border-radius: 20px;
+    border: 0px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.completed{
+    text-decoration-line: line-through;
 }
 
 .cursor{
@@ -10,24 +19,16 @@
     background-color: white;
 }
 
-.completed{
-    text-decoration-line: line-through;
-}
-
-.porFora{
-    background-color: #282828;
-}
-
 .porDentro{
     background-color: #1f1f1f;
     border-radius: 30px;
     padding: 30px;
 }
 
-.botao{
-    background: #6B0F1A;
-    border-radius: 20px;
-    border: 0px;
-    padding: 10px;
-    cursor: pointer;
+.porFora{
+    background-color: #282828;
+}
+
+.selecionado{
+    background-color : rgb(128,128,128);
 }

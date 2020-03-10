@@ -8,7 +8,8 @@ window.onload= function(){
             let li = document.createElement("li");
             let inputValue = texto.value;
             let t = document.createTextNode(inputValue);
-            li.addEventListener("click", function () {li.style.backgroundColor = "rgb(128,128,128)"})
+            //li.addEventListener("click", function () {li.classList.contains("selecionado")?li.classList.remove("selecionado"):li.classList.add("selecionado")})
+            fSelecionado(li)
             li.addEventListener("dblclick", function () {li.classList.contains("completed")?li.classList.remove("completed"):li.classList.add("completed")})
             li.style.cursor="pointer"
             li.appendChild(t);
@@ -17,6 +18,19 @@ window.onload= function(){
         document.getElementById("texto-tarefa").value = ""
     }
     botao.addEventListener("click", addText)
+
+
+    function fSelecionado(i){
+        i.addEventListener("click", function(){
+            if(document.getElementsByClassName("selecionado")[0]){
+                document.getElementsByClassName("selecionado")[0].classList.remove("selecionado");
+                i.classList.add("selecionado");
+              } else {
+              i.classList.add("selecionado");
+              }
+        })
+    }
+
 
     let apaga=document.getElementById("apaga-tudo")
     let ap= document.getElementById("lista-tarefas")
@@ -32,6 +46,7 @@ window.onload= function(){
     }
     apaga.addEventListener("click",apagaTd)
 
+
     let rmFianlizados= document.getElementById("remover-finalizados")
     function finalizados(){
         let finali= document.querySelectorAll(".completed")
@@ -41,9 +56,20 @@ window.onload= function(){
     }
     rmFianlizados.addEventListener("click", finalizados)
 
+
     let salvarFile=document.getElementById("salvar-tarefas")
     function salvar(){
         alert("salvo")
     }
     salvarFile.addEventListener("click", salvar)
+
+
+    let botaoSelecionado= document.getElementById("remover-selecionado")
+    function removeSelecionado(){
+        let rmSelecionado=document.querySelectorAll(".selecionado")
+        rmSelecionado.forEach(item =>{
+            item.remove()
+        })
+    }
+    botaoSelecionado.addEventListener("click", removeSelecionado)
 }
