@@ -1,6 +1,7 @@
 window.onload= function(){
     let botao=document.getElementById("criar-tarefa")
     let texto= document.getElementById("texto-tarefa")
+
     function addText(){  
         if (texto.value === '') {
           window.alert("OPS, adicione uma tarefa");
@@ -25,9 +26,9 @@ window.onload= function(){
             if(document.getElementsByClassName("selecionado")[0]){
                 document.getElementsByClassName("selecionado")[0].classList.remove("selecionado");
                 i.classList.add("selecionado");
-              } else {
-              i.classList.add("selecionado");
-              }
+            } else {
+            i.classList.add("selecionado");
+            }
         })
     }
 
@@ -56,12 +57,15 @@ window.onload= function(){
     }
     rmFianlizados.addEventListener("click", finalizados)
 
-
+    let listaDeTarefa= document.getElementById("lista-tarefas")
     let salvarFile=document.getElementById("salvar-tarefas")
     function salvar(){
-        alert("salvo")
+        localStorage.setItem("Lista Salva", listaDeTarefa.innerHTML);
     }
     salvarFile.addEventListener("click", salvar)
+    if(window.localStorage.getItem("Lista Salva")){
+        listaDeTarefa.innerHTML = window.localStorage.getItem("Lista Salva");
+      }
 
 
     let botaoSelecionado= document.getElementById("remover-selecionado")
