@@ -2,7 +2,7 @@
 const texto = document.getElementById('texto-tarefa');
 const botaoTarefa = document.getElementById('criar-tarefa');
 const lista = document.getElementById('lista-tarefas');
-const botaoApagaTudo = document.getElementById('clear-board');
+const botaoApagaTudo = document.getElementById('apaga-tudo');
 const botaoRemoveFinalizado = document.getElementById('remover-finalizados');
 const botaoRemoveSelecionado = document.getElementById('remover-selecionado');
 
