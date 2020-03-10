@@ -12,11 +12,11 @@ function criaTarefa() {
   criarLista.addEventListener('dblclick', check);
 }
 
-function highTask(event){
+function highTask(event) {
   event.target.classList.toggle('backgroundgcolor');
 }
 
-function check(event){
+function check(event) {
   event.target.classList.toggle('completed');
 }
 
