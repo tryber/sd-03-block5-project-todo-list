@@ -1,7 +1,6 @@
 const botaoCriarTarefa = document.querySelector('#criar-tarefa');
 const caixaTexto = document.querySelector('#texto-tarefa');
 const addLista = document.querySelector('#lista-tarefas');
-const checkLi = document.querySelector('li');
 const checkOl = document.querySelector('ol');
 
 function criaTarefa() {
@@ -13,27 +12,27 @@ function criaTarefa() {
   criarLista.addEventListener('dblclick', check);
 }
 
-function highTask(event) {
+function highTask(event){
   event.target.classList.toggle('backgroundgcolor');
 }
 
-function check(event) {
+function check(event){
   event.target.classList.toggle('completed');
 }
 
 botaoCriarTarefa.addEventListener('click', criaTarefa);
 
-function limpaCaixa() {
+function limpaCaixa(){
   caixaTexto.value = '';
 }
 
 let apagarBtn = document.querySelector('#apaga-tudo');
-apagarBtn.addEventListener('click', function() {
+apagarBtn.addEventListener('click', function(){
   checkOl.innerHTML = '';
 });
 
 let tedBtn = document.querySelector('#remover-finalizados');
-tedBtn.addEventListener('click', function() {
+tedBtn.addEventListener('click', function(){
   const elementsToRemove = document.getElementsByClassName('completed');
   while (elementsToRemove.length > 0) {
     document.querySelector('#lista-tarefas').removeChild(elementsToRemove[0]);
