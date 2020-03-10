@@ -73,8 +73,16 @@ window.onload = function () {
     let moverCima = document.getElementById("mover-cima")
     moverCima.addEventListener("click", function () {
         let list = document.getElementsByClassName("selecionado")[0]
-            list.parentNode.insertBefore(list, list.previousSibling)
+        list.parentNode.insertBefore(list, list.previousSibling)
     })
+
+
+    let moverBaixo = document.getElementById("mover-baixo")
+    moverBaixo.addEventListener("click", function () {
+        let list = document.getElementsByClassName("selecionado")[0]
+        list.parentNode.insertBefore(list.nextElementSibling, list)
+    })
+
 
     let botaoSelecionado = document.getElementById("remover-selecionado")
     function removeSelecionado() {
