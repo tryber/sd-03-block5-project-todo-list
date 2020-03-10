@@ -1,5 +1,3 @@
-document.getElementById("central").innerHTML = localStorage.getItem("dados")
-
 let button = document.getElementById("criar-tarefa")   //adicionar evento de criar lista no botao 
 button.addEventListener("click", addTask)
 
@@ -67,18 +65,7 @@ function addTask() {
             document.getElementById("lista-tarefas").insertBefore(selected, selected.nextElementSibling)
         })
     }
-    let listSaver = document.getElementById("salvar-tarefas")
-
-    listSaver.addEventListener("click", saveList)
-
-    function saveList() {
-        let dados = document.getElementById("central").innerHTML
-        localStorage.setItem("dados", dados)
-    }
 }
-
-
-
 
 
 
