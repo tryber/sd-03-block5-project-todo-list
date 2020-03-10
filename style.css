@@ -1,0 +1,27 @@
+li {
+    cursor: pointer;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  .bgcolor {
+    background-color: rgb(128, 128, 128);
+  }
+  
+  .completed {
+    text-decoration: line-through;
+  }
+  
+  #apaga-tudo {
+    margin: 5px;
+  }
+  
+  #remover-finalizados {
+    margin: 5px;
+  }
+  
+  #criar-tarefa {
+    margin-left: 3px;
+  }
