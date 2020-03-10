@@ -6,6 +6,10 @@ function selecionarItem(e) {
   e.target.style.backgroundColor = 'rgb(128,128,128)';
 }
 
+function riscar(e) {
+  e.target.classList.toggle('completed');
+}
+
 function inserirItem() {
   const item = document.createElement('li');
   item.innerText = text.value;
@@ -13,6 +17,7 @@ function inserirItem() {
   text.value = '';
 
   item.addEventListener('click', selecionarItem);
+  item.addEventListener('dbclick', riscar);
 }
 
 window.onload = function () {
