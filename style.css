@@ -34,43 +34,40 @@ label {
     float: right;
     margin-right: -528px;
     margin-top: 60px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 #apaga-tudo {
-    float: right;
-    margin-right: -300px;
-    margin-top: 420px;
+    position: relative;
+    margin-left: 850px;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
 #listaPai{
     background-color: white;
-    padding: 5px 0 10px 0;
-    color:black;
-    font-size: 18px;
+    color:rgb(0, 0, 0);
     margin:0 auto;
     margin-top: 90px;
     width: 960px;
     min-height:300px;
     border-radius: 10px;
-  }
-  #remover-finalizados {
-      float: left;
-      margin-top: 321px;
-      margin-left: 820px;
-
-  }
-
-  .completed{
-    text-decoration: line-through;
-  }
-
-  .selected{
-    background-color: rgb(128,128,128);
-  }
-
-  li{
-    border-bottom: 1px solid rgb(184, 190, 184);
+}
+  
+#remover-finalizados {
+    position: relative;
     cursor: pointer;
-    font-size: 24px;
-  }
+}
+
+.completed{
+    text-decoration: line-through;
+}
+
+.selected{
+    background-color: rgb(128,128,128);
+}
+
+li{
+    cursor: pointer;
+    font-size: 30px;
+}
