@@ -14,11 +14,11 @@ function criaTarefa() {
 }
 
 function color(event) {
-  e.target.classList.toggle('bgcolor');
+  event.target.classList.toggle('bgcolor');
 }
 
 function check(event) {
-    e.target.classList.toggle('completed');
+    event.target.classList.toggle('completed');
   }
   
   botaoCriarTarefa.addEventListener('click', criaTarefa);
