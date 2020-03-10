@@ -8,14 +8,14 @@ window.onload=function(){
     let moverCima = document.getElementById('mover-cima');
     let moverBaixo = document.getElementById('mover-baixo');
     let removerSelecionado = document.getElementById('remover-selecionado');
-​
+
     criarTarefa.addEventListener('click',function(){
         let addLi = document.createElement('li');
         addLi.innerText = textoTarefa.value;
         addLi.className = `list`;
         document.getElementById('lista-tarefas').appendChild(addLi);
         document.getElementById('texto-tarefa').value= '';
-​
+
         addLi.addEventListener('click', function () {
             let selected = document.getElementsByClassName('selected');
             if(selected.length==1){
@@ -26,7 +26,7 @@ window.onload=function(){
                 addLi.classList.add('selected');
             }
         })
-    
+
         addLi.addEventListener('dblclick', function () {
             if(!addLi.classList.contains('completed')){
                 addLi.classList.add('completed');
@@ -36,29 +36,29 @@ window.onload=function(){
             }
         })
     })
-​
+
     apagaTudo.addEventListener('click',function(){
             document.querySelectorAll('.list').forEach(e => e.remove());
     })
-​
+
     Removerfinalizados.addEventListener('click',function(){
         document.querySelectorAll('.completed').forEach(e => e.remove());
     })
-​
+
     salvarTarefas.addEventListener('click',function(){
         localStorage.setItem('salvar', listaTarefas.innerHTML);
     })
-​
+
     if(localStorage.getItem('salvar')){
         listaTarefas.innerHTML = localStorage.getItem('salvar');  
     }
-​
+
     moverCima.addEventListener('click',function(){
         let children = document.querySelector('#lista-tarefas');
         let up = document.getElementsByClassName('selected')[0];
         children.insertBefore(up,up.previousSibling);
     })
-​
+    
     moverBaixo.addEventListener('click',function(){
         let children = document.querySelector('#lista-tarefas');
         let up = document.getElementsByClassName('selected')[0];
