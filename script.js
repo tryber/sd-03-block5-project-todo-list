@@ -9,8 +9,14 @@ function inserirItem() {
   
   list.appendChild(item);
   text.value = '';
+
+  item.addEventListener('click', selecionarItem);
 }
 
+function selecionarItem(e) {
+  console.log(e);
+  e.target.style.backgroundColor = 'rgb(128,128,128)';
+}
 
 window.onload = function () {
   criar.addEventListener('click', inserirItem);
