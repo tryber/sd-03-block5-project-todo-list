@@ -12,31 +12,28 @@ function listarTarefas() {
   item1.textContent = texto.value;
   document.getElementById('texto-tarefa').value = '';
 
-  item1.addEventListener('click', function(){
+  item1.addEventListener('click', function () {
     if (item1.classList.contains('selected')) {
       item1.classList.remove('selected');
     }
     else {
       item1.classList.add('selected');
     }
-    }
+  }
   );
-
-  item1.addEventListener('dblclick', function(){
+  item1.addEventListener('dblclick', function () {
     if (item1.classList.contains('completed')) {
-    item1.classList.remove('completed')
+      item1.classList.remove('completed');
     }
     else {
       item1.classList.add('completed');
     }
   });
-
   botaoRemoveFinalizado.addEventListener('click', function () {
     if (item1.classList.contains('completed')) {
       lista.removeChild(item1);
     }
   });
-
   botaoRemoveSelecionado.addEventListener('click', function () {
     if (item1.classList.contains('selected')) {
       lista.removeChild(item1);
@@ -45,6 +42,7 @@ function listarTarefas() {
 }
 
 botaoTarefa.addEventListener('click', listarTarefas);
+
 
 function apagarTudo() {
   while (lista.firstChild) {
