@@ -12,7 +12,7 @@ function inserirItem() {
 };
 
 function selecionarItem(e) {
-  e.tar;get.style.backgroundColor = 'rgb(128,128,128)';
+  e.target.style.backgroundColor = 'rgb(128,128,128)';
 };
 
 window.onload = function () {
