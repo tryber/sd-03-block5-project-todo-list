@@ -17,7 +17,7 @@ html, body {
 
 #texto-tarefa {
     float: right;
-    margin-right: 680px;
+    margin-right: 723px;
     margin-top:52px;
     margin-bottom: 30px;
     width: 440px;
@@ -26,6 +26,36 @@ html, body {
 
 label {
     float: left;
-    margin-left: 680px;
+    margin-left: 642px;
     margin-top: 60px;
 }
+
+#criar-tarefa {
+    float: right;
+    margin-right: -528px;
+    margin-top: 60px;
+}
+
+#apaga-tudo {
+    float: right;
+    margin-right: -300px;
+    margin-top: 420px;
+}
+
+#listaPai{
+    background-color: white;
+    padding: 5px 0 10px 0;
+    color:black;
+    font-size: 18px;
+    margin:0 auto;
+    margin-top: 90px;
+    width: 960px;
+    min-height:300px;
+    border-radius: 10px;
+  }
+  #remover-finalizados {
+      float: left;
+      margin-top: 321px;
+      margin-left: 820px;
+
+  }
