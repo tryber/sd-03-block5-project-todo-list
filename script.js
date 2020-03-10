@@ -1,8 +1,8 @@
-const criar_tarefa = document.querySelector('#criar-tarefa');
 const texto_tarefa = document.querySelector('#texto-tarefa');
 const lista_tarefas = document.querySelector('#lista-tarefas');
+const criar_tarefa = document.querySelector('#criar-tarefa');
 const apaga_tudo = document.querySelector('#apaga-tudo');
-const tarefas = document.getElementsByTagName('li');
+const remover_finalizados = document.querySelector("#remover-finalizados");
 
 // ================================ Botão "Criar Tarefa" ================================
 
@@ -17,32 +17,32 @@ function criarTarefa() {
     // Tarefa transforma ponteiro em "mãozinha"
     tarefa.classList.add('cursor');
     // Eventos para selecionar e riscar tarefa
-    tarefa.addEventListener('click', tarefaCinza);
-    tarefa.addEventListener('dblclick', tarefaFeita);
+    tarefa.addEventListener('click', tarefaSelecionada);
+    tarefa.addEventListener('dblclick', tarefaFinalizada);
 
 }
 
-let click_1 = true;
+let clickSelecionar = true;
 // Função: ao clicar na tarefa, deixar cinza.
-function tarefaCinza() {
-    if (click_1 == true) {
+function tarefaSelecionada() {
+    if (clickSelecionar == true) {
         this.classList.add('selected');
-        click_1 = false;
+        clickSelecionar = false;
     } else {
         this.classList.remove('selected');
-        click_1 = true;
+        clickSelecionar = true;
     }
 }
 
-let click_2 = true;
+let clickFinalizar = true;
 // Função: ao clicar 2x na tarefa, riscar.
-function tarefaFeita() {
-    if (click_2 == true) {
+function tarefaFinalizada() {
+    if (clickFinalizar == true) {
         this.classList.add('completed');
-        click_2 = false;
+        clickFinalizar = false;
     } else {
         this.classList.remove('completed');
-        click_2 = true;
+        clickFinalizar = true;
     }
 }
 
@@ -54,6 +54,17 @@ function apagarTudo() {
     // Função: ao clicar no botão "Apagar Tudo", excluir todas as tarefas.
     while (lista_tarefas.firstChild) {
         lista_tarefas.removeChild(lista_tarefas.lastChild);
+    }
+}
 
+// ================================ Botão "Remver Finalizados" ================================
+
+remover_finalizados.addEventListener('click', apagarFinalizadas);
+
+function apagarFinalizadas() {
+    let finalizadas = document.querySelector('.completed');
+    console.log(true);
+    for (let i = 0; i < 10; i++) {
+        lista_tarefas.removeChild(finalizadas);
     }
 }
