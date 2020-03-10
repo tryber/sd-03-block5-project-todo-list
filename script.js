@@ -12,19 +12,23 @@ window.onload= function(){
             li.addEventListener("dblclick", function () {li.classList.contains("completed")?li.classList.remove("completed"):li.classList.add("completed")})
             li.style.cursor="pointer"
             li.appendChild(t);
-            document.getElementsByClassName("lista-tarefas")[0].appendChild(li);
+            document.getElementById("lista-tarefas").appendChild(li);
         }
         document.getElementById("texto-tarefa").value = ""
     }
     botao.addEventListener("click", addText)
 
     let apaga=document.getElementById("apaga-tudo")
-    let ap= document.getElementsByClassName("lista-tarefas")[0]
+    let ap= document.getElementById("lista-tarefas")
     function apagaTd(){
-        ap.parentNode.removeChild(ap)
-        let apos = document.createElement("ol");
-        apos.classList.add("lista-tarefas")
-        document.getElementsByClassName("apos")[0].appendChild(apos)
+        if(ap.innerHTML==""){
+            window.alert("OPS, não tem nada para ser apagado")
+        }else{
+            ap.innerHTML=''
+        }
+        //while (ap.firstChild) {
+        //    ap.removeChild(ap.firstChild)
+        //  }
     }
     apaga.addEventListener("click",apagaTd)
 
@@ -36,4 +40,10 @@ window.onload= function(){
         });
     }
     rmFianlizados.addEventListener("click", finalizados)
+
+    let salvarFile=document.getElementById("salvar-tarefas")
+    function salvar(){
+        alert("salvo")
+    }
+    salvarFile.addEventListener("click", salvar)
 }
