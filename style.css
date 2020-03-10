@@ -1,14 +1,29 @@
 h1 {
-    font: 40px;
+    font-size: 60px;
     text-align: center;
     color: rgb(93, 62, 163)
 }
 
-body {
-    background-color: whitesmoke; 
+html, body {
+    background-color: whitesmoke;
+    margin: 0;
+    padding: 0;
 }
 
 #funcionamento {
     color: black;
     text-align: center;
+}
+
+#texto-tarefa {
+    float: right;
+    margin-right: 680px;
+    margin-bottom: 30px;
+    width: 440px;
+    height: 35px;
+}
+
+label {
+    float: left;
+    margin-left: 680px;
 }
