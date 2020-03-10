@@ -15,17 +15,15 @@ function listarTarefas() {
   item1.addEventListener('click', function () {
     if (item1.classList.contains('selected')) {
       item1.classList.remove('selected');
-    }
-    else {
+    } else {
       item1.classList.add('selected');
     }
-  }
-  );
+  });
+
   item1.addEventListener('dblclick', function () {
     if (item1.classList.contains('completed')) {
       item1.classList.remove('completed');
-    }
-    else {
+    } else {
       item1.classList.add('completed');
     }
   });
