@@ -50,19 +50,42 @@ window.onload=function(){
     })
 
     if(localStorage.getItem('salvar')){
-        listaTarefas.innerHTML = localStorage.getItem('salvar');  
+        listaTarefas.innerHTML = localStorage.getItem('salvar');
+        let li = document.getElementsByTagName('li');
+        console.log(li);
+        for(let i=0; i<li.length-1;i++){
+            li[i].addEventListener('click', function () {
+                let selected = document.getElementsByClassName('selected');
+                if(selected.length==1){
+                    selected[0].classList.remove('selected');
+                    li[i].classList.add('selected');
+                }
+                else{
+                    li[i].classList.add('selected');
+                }
+            })
+    
+            li[i].addEventListener('dblclick', function () {
+                if(!li[i].classList.contains('completed')){
+                    li[i].classList.add('completed');
+                }
+                else{
+                    li[i].classList.remove('completed');
+                }
+            }) 
+        }
     }
 
     moverCima.addEventListener('click',function(){
-        let children = document.querySelector('#lista-tarefas');
+        let father = document.querySelector('#lista-tarefas');
         let up = document.getElementsByClassName('selected')[0];
-        children.insertBefore(up,up.previousSibling);
+        father.insertBefore(up,up.previousSibling);
     })
-    
+
     moverBaixo.addEventListener('click',function(){
-        let children = document.querySelector('#lista-tarefas');
-        let up = document.getElementsByClassName('selected')[0];
-        children.insertBefore(up,up.nextSibling.nextSibling);
+        let father = document.querySelector('#lista-tarefas');
+        let down = document.getElementsByClassName('selected')[0];
+        father.insertBefore(down,down.nextSibling.nextSibling);
     })
     removerSelecionado.addEventListener('click',function(){
         document.querySelectorAll('.selected').forEach(e => e.remove());
