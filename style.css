@@ -1,12 +1,12 @@
 /* font-family: 'Satisfy', cursive; font-family: 'Sue Ellen Francisco', cursive; font-family: 'Chakra Petch', sans-serif; */
 body {
-  padding: 0;
+  background-color: rgb(150 , 187 , 255);
   margin: 0;
-  background-color: rgb(150, 187, 255);
+  padding: 0;
 }
 
 header {
-  background-color: rgb(252, 233, 189);
+  background-color: rgb(252 , 233 , 189);
   height: 80px;
 }
 
@@ -20,40 +20,42 @@ h1 {
 }
 
 p {
-  font-size: 15px;
   font-family: Roboto mono, monospace;
+  font-size: 15px;
 }
 
 li {
   font-family: Sue Ellen Francisco, cursive;
   font-size: 30px;
+  cursor: pointer;
 }
 
 button {
-  background-color: rgb(33, 85, 179);
+  background-color: rgb(33 , 85 , 179);
   color: white;
   font-family: Chakra Petch, sans-serif;
   font-size: 15px;
   font-weight: 500;
   padding: 4px;
+  cursor: pointer;
 }
 
 footer {
+  font-family: Roboto mono, monospace;
+  font-size: 15px;
   position: relative;
   top: 100px;
   text-align: center;
-  font-size: 15px;
-  font-family: Roboto mono, monospace;
 }
 
 .container {
-  background-color: rgb(255, 221, 148);
-  width: 800px;
-  margin: auto;
+  background-color: rgb(255 , 221 , 148);
   height: 600px;
+  margin: auto;
+  padding: 40px;
   position: relative;
   top: 70px;
-  padding: 40px;
+  width: 800px;
 }
 
 .align-center{
@@ -61,15 +63,10 @@ footer {
 }
 
 .wrap {
-  max-width: 500px;
   margin: auto;
+  max-width: 500px;
 }
 
 .topo {
   margin-top: 50px;
-}
-
-
-ol {
-  padding: 30px;
 }
