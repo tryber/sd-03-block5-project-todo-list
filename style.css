@@ -18,6 +18,7 @@ html, body {
 #texto-tarefa {
     float: right;
     margin-right: 680px;
+    margin-top:52px;
     margin-bottom: 30px;
     width: 440px;
     height: 35px;
@@ -26,4 +27,5 @@ html, body {
 label {
     float: left;
     margin-left: 680px;
+    margin-top: 60px;
 }
