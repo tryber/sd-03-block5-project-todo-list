@@ -1,8 +1,8 @@
-let botaoCriarTarefa = document.querySelector('#criar-tarefa');
-let caixaTexto = document.querySelector('#texto-tarefa');
-let addLista = document.querySelector('#lista-tarefas');
-let checkLi = document.querySelector('li');
-let checkOl = document.querySelector('ol');
+const botaoCriarTarefa = document.querySelector('#criar-tarefa');
+const caixaTexto = document.querySelector('#texto-tarefa');
+const addLista = document.querySelector('#lista-tarefas');
+const checkLi = document.querySelector('li');
+const checkOl = document.querySelector('ol');
 
 function criaTarefa() {
   criarLista = document.createElement('li');
