@@ -9,7 +9,7 @@ function criaTarefa() {
   criarLista.innerHTML = caixaTexto.value;
   addLista.appendChild(criarLista);
   limpaCaixa();
-  criarLista.addEventListener('click', highTask);
+  criarLista.addEventListener('click', color);
   criarLista.addEventListener('dblclick', check);
 }
 
