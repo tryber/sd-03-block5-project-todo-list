@@ -30,8 +30,8 @@ li {
 }
 
 button {
-  cursor: pointer;
   background-color: rgb(33 , 85 , 179);
+  cursor: pointer;
   color: white;
   font-family: Chakra Petch, sans-serif;
   font-size: 15px;
