@@ -1,30 +1,30 @@
-window.onload= function(){
-    let botao=document.getElementById("criar-tarefa")
-    let texto= document.getElementById("texto-tarefa")
+window.onload = function () {
+    let botao = document.getElementById("criar-tarefa")
+    let texto = document.getElementById("texto-tarefa")
 
 
-    let listaDeTarefa= document.getElementById("lista-tarefas")
-    let salvarFile=document.getElementById("salvar-tarefas")
-    function salvar(){
+    let listaDeTarefa = document.getElementById("lista-tarefas")
+    let salvarFile = document.getElementById("salvar-tarefas")
+    function salvar() {
         localStorage.setItem("Lista Salva", listaDeTarefa.innerHTML);
     }
     salvarFile.addEventListener("click", salvar)
-    if(window.localStorage.getItem("Lista Salva")){
+    if (window.localStorage.getItem("Lista Salva")) {
         listaDeTarefa.innerHTML = window.localStorage.getItem("Lista Salva");
     }
 
 
-    function addText(){  
+    function addText() {
         if (texto.value === '') {
-          window.alert("OPS, adicione uma tarefa");
-        }else{
+            window.alert("OPS, adicione uma tarefa");
+        } else {
             let li = document.createElement("li");
             let inputValue = texto.value;
             let t = document.createTextNode(inputValue);
             //li.addEventListener("click", function () {li.classList.contains("selecionado")?li.classList.remove("selecionado"):li.classList.add("selecionado")})
             fSelecionado(li)
-            li.addEventListener("dblclick", function () {li.classList.contains("completed")?li.classList.remove("completed"):li.classList.add("completed")})
-            li.style.cursor="pointer"
+            li.addEventListener("dblclick", function () { li.classList.contains("completed") ? li.classList.remove("completed") : li.classList.add("completed") })
+            li.style.cursor = "pointer"
             li.appendChild(t);
             document.getElementById("lista-tarefas").appendChild(li);
         }
@@ -33,36 +33,36 @@ window.onload= function(){
     botao.addEventListener("click", addText)
 
 
-    function fSelecionado(i){
-        i.addEventListener("click", function(){
-            if(document.getElementsByClassName("selecionado")[0]){
+    function fSelecionado(i) {
+        i.addEventListener("click", function () {
+            if (document.getElementsByClassName("selecionado")[0]) {
                 document.getElementsByClassName("selecionado")[0].classList.remove("selecionado");
                 i.classList.add("selecionado");
             } else {
-            i.classList.add("selecionado");
+                i.classList.add("selecionado");
             }
         })
     }
 
 
-    let apaga=document.getElementById("apaga-tudo")
-    let ap= document.getElementById("lista-tarefas")
-    function apagaTd(){
-        if(ap.innerHTML==""){
+    let apaga = document.getElementById("apaga-tudo")
+    let ap = document.getElementById("lista-tarefas")
+    function apagaTd() {
+        if (ap.innerHTML == "") {
             window.alert("OPS, não tem nada para ser apagado")
-        }else{
-            ap.innerHTML=''
+        } else {
+            ap.innerHTML = ''
         }
         //while (ap.firstChild) {
         //    ap.removeChild(ap.firstChild)
         //  }
     }
-    apaga.addEventListener("click",apagaTd)
+    apaga.addEventListener("click", apagaTd)
 
 
-    let rmFianlizados= document.getElementById("remover-finalizados")
-    function finalizados(){
-        let finali= document.querySelectorAll(".completed")
+    let rmFianlizados = document.getElementById("remover-finalizados")
+    function finalizados() {
+        let finali = document.querySelectorAll(".completed")
         finali.forEach(item => {
             item.parentNode.removeChild(item)
         });
@@ -70,22 +70,18 @@ window.onload= function(){
     rmFianlizados.addEventListener("click", finalizados)
 
 
-    //let moverCima= document.getElementById("mover-cima")
-    //moverCima.addEventListener("click", function(){
-    //    let list= document.querySelectorAll(".selecionado")
-    //    pList.forEach(i =>{
-    //        list.insertBefore(list, i.previousSibling)
-    //    })
-    //    
-    //})
+    let moverCima = document.getElementById("mover-cima")
+    moverCima.addEventListener("click", function () {
+        let list = document.getElementsByClassName("selecionado")[0]
+            list.parentNode.insertBefore(list, list.previousSibling)
+    })
 
-
-    let botaoSelecionado= document.getElementById("remover-selecionado")
-    function removeSelecionado(){
-        let rmSelecionado=document.querySelectorAll(".selecionado")
-        rmSelecionado.forEach(item =>{
-            item.remove()
-        })
-    }
+    let botaoSelecionado = document.getElementById("remover-selecionado")
+    function removeSelecionado() {
+            let rmSelecionado = document.querySelectorAll(".selecionado")
+            rmSelecionado.forEach(item => {
+                item.remove()
+            })
+        }
     botaoSelecionado.addEventListener("click", removeSelecionado)
 }
