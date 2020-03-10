@@ -14,10 +14,10 @@ function criaTarefa() {
 }
 
 function highTask(event) {
-    event.target.classList.toggle('bgcolor');
-  }
-  
-  function check(event) {
+  event.target.classList.toggle('bgcolor');
+}
+
+function check(event) {
     event.target.classList.toggle('completed');
   }
   
