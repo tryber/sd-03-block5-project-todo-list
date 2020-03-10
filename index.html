@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Minha List de Tarefas</title>
   </head>
   <body>
@@ -12,12 +13,12 @@
     </p>
     <div>
       <input type="text" id="texto-tarefa" />
-      <button id="criar-tarefa">Escreva sua tarefa aqui!</button>
+      <button class="element" id="criar-tarefa" onclick="addTarefa()">Adicionar Tarefa</button>
     </div>
     <ol id="lista-tarefas"></ol>
     <div class="reset-buttons">
-      <button id="apaga-tudo">Apagar todas as tarefas</button>
-      <button id="remover-finalizados">Apagar finalizados</button>
+      <button type="reset" id="apaga-tudo" onclick="limpar()">Apagar todas as tarefas</button>
+      <button id="remover-finalizados" onclick="limpaFinalizados()">Apagar finalizados</button>
     </div>
     <script src="./script.js"></script>
   </body>

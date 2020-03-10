@@ -13,7 +13,7 @@ function criaTarefa() {
   criarLista.addEventListener('dblclick', check);
 }
 
-function highTask(event) {
+function color(event) {
   e.target.classList.toggle('bgcolor');
 }
 
@@ -27,8 +27,8 @@ function check(event) {
     caixaTexto.value = '';
   }
   
-  let eraseBtn = document.querySelector('#apaga-tudo');
-  eraseBtn.addEventListener('click', function() {
+  let botaoApaga = document.querySelector('#apaga-tudo');
+  botaoApaga.addEventListener('click', function() {
     checkOl.innerHTML = '';
   });
   
