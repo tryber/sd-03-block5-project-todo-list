@@ -9,15 +9,15 @@ function criaTarefa() {
   criarLista.innerHTML = caixaTexto.value;
   addLista.appendChild(criarLista);
   limpaCaixa();
-  criarLista.addEventListener('click', color);
+  criarLista.addEventListener('click', highTask);
   criarLista.addEventListener('dblclick', check);
 }
 
-function color(event) {
-  event.target.classList.toggle('bgcolor');
-}
-
-function check(event) {
+function highTask(event) {
+    event.target.classList.toggle('bgcolor');
+  }
+  
+  function check(event) {
     event.target.classList.toggle('completed');
   }
   
@@ -27,8 +27,8 @@ function check(event) {
     caixaTexto.value = '';
   }
   
-  let botaoApaga = document.querySelector('#apaga-tudo');
-  botaoApaga.addEventListener('click', function() {
+  let eraseBtn = document.querySelector('#apaga-tudo');
+  eraseBtn.addEventListener('click', function() {
     checkOl.innerHTML = '';
   });
   
