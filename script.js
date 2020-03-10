@@ -1,4 +1,4 @@
-window.onload = function(){
+    window.onload = function (){
     function selected (x){
         if (document.getElementsByClassName("selected").length > 0){
         let selected = document.getElementsByClassName("selected")
@@ -56,4 +56,30 @@ window.onload = function(){
 
     let clearSelected = document.getElementById("remover-selecionado")
     clearSelected.addEventListener('click', removeSelected)
+
+
+    let salvarTarefas = document.getElementById('salvar-tarefas');
+    let moverCima = document.getElementById('mover-cima');
+    let moverBaixo = document.getElementById('mover-baixo');
+    let listaTarefas = document.getElementById('lista-tarefas')
+    
+    salvarTarefas.addEventListener('click',function(){
+        localStorage.setItem('salvar', listaTarefas.innerHTML);
+    })
+    
+    if(localStorage.getItem('salvar')){
+        listaTarefas.innerHTML = localStorage.getItem('salvar');
+    }
+    
+    moverCima.addEventListener('click',function(){
+        let children = document.querySelector('#lista-tarefas');
+        let up = document.getElementsByClassName('selected')[0];
+        children.insertBefore(up,up.previousSibling);
+    })
+    
+    moverBaixo.addEventListener('click',function(){
+        let children = document.querySelector('#lista-tarefas');
+        let up = document.getElementsByClassName('selected')[0];
+        children.insertBefore(up,up.nextSibling.nextSibling);
+    })
 }
