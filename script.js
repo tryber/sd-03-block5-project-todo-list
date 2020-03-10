@@ -1,6 +1,6 @@
 function addOverClass(x) {
   x.addEventListener('click', function () {
-    x.classList.add('over');
+    x.classList.toggle('selected');
   });
   x.addEventListener('dblclick', function () {
     x.classList.toggle('completed');
@@ -33,18 +33,25 @@ apagarTudo.addEventListener('click', function () {
 const removerFin = document.getElementById('remover-finalizados');
 removerFin.addEventListener('click', function () {
   const completed = document.querySelectorAll('.completed');
-  for (i in completed) {
+  for (let i in completed) {
     completed[i].remove();
   }
 });
 
 document.getElementById('remover-selecionado').addEventListener('click',function(){
-  const selecionado = document.querySelectorAll('.over');
-  for (i in selecionado) {
+  const selecionado = document.querySelectorAll('.selected');
+  for (let i in selecionado) {
     selecionado[i].remove();
     }
   })
 
+document.querySelector('#salvar-tarefas').addEventListener('click', function(){
+  const selected = document.querySelectorAll('.selected');
+  for(let i =0; i < selected.length; i+=1){
+    localStorage[i]= selected[i].innerHTML;
+  }
+
+})
 
 /* function remover (alvo){
   let alvo = document.querySelectorAll('.' + alvo);
