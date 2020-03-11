@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <title>Lista de Tarefas</title>
+</head>
+<body>
+  <header>
+    <div class="container is-dark hero-body hero">
+    <div class="title">
+      <h1>Minha Lista de Tarefas</h1>
+    </div>
+    <p id="funcionamento" class="subtitle">Clique duas vezes em um item para marcá-lo como completo</p>
+  </div>
+  </header>
+
+  <div class="container">
+
+    
+      <div class="field">
+        <p class="control has-icons-right">
+          <input class="input" type="text" id="texto-tarefa" placeholder="Digite o nome da tarefa">
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </p>
+      </div>
+    <ol id="lista-tarefas"></ol>
+    <div class="notification">
+      <div class="columns">
+        <div class="buttons">
+        <div class="column">
+          <button id="criar-tarefa" class="is-black button">Criar Tarefa</button>
+        </div>
+        <div class="column">
+          <button id="apaga-tudo" class="is-black button">Apagar Tudo</button>
+        </div>
+        <div class="column">
+          <button id="remover-finalizados" class="is-black button">Remover Finalizados</button>
+        </div>
+        <div class="column">
+          <button id="salvar-tarefas" class="is-black button">Salvar Tarefas</button>
+        </div>
+        <div class="column">
+          <button id="remover-selecionado" class="is-black button">Remover Selecionado</button>
+        </div>
+        <div class="column">
+          <button id="mover-baixo" class="is-black button">Mover para baixo</button>
+        </div>
+        <div class="column">
+          <button id="mover-cima" class="is-black button">Mover para cima</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>

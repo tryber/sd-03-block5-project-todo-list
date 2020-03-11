@@ -1,0 +1,16 @@
+button:hover {
+  cursor: pointer;
+}
+
+li {
+  cursor: pointer;
+}
+
+body {
+  background-color: white;
+}
+
+main-header {
+  background: gray;
+  background-color: gray;
+}
