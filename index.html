@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Todo List - O Dev Junior</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/d6ab7a8fae.js" crossorigin="anonymous"></script>
+        <link rel="shortcut icon" href="./imgs/favicon_r.ico" />
+        <link href='https://fonts.googleapis.com/css?family=Alata&display=swap' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+    </head>
+    <body>
+        <header>
+            <a href="#"><img src="./imgs/white_logo.png" alt="Logo Trybe"></a>
+            <nav>
+                <li><a href="">Home</a></li>
+                <li><a href="">Trybe</a></li>
+                <li><a href="">Projetos</a></li>
+            </nav>
+            <h1 style="display: none;">Minha Lista de Tarefas</h1>
+        </header>
+            <main>
+                <section>
+                    <h1>To-do List !</h1>
+                    <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+                    <input id="texto-tarefa" placeholder="Descreva a atividade aqui..." type="text">
+                    <button type="submit" id="criar-tarefa">Adicionar</button>
+
+                    <article id="lista-tarefas-container">
+                    <ol id="lista-tarefas">
+                    </ol>
+                    </article>
+
+                    <button id="apaga-tudo">Apagar Tudo</button>
+                    <button id="remover-finalizados">Apagar Finalizados</button>
+                    <button id="salvar-tarefas">Salvar Lista</button>
+                    <butto  id="mover-cima">Mover para Cima</button>
+                    <button id="mover-baixo">Mover para Baixo</button>
+                    <button id="remover-selecionado">Remover Selecionado</button>
+                </section>
+            </main>
+        <footer>
+            <ul>
+                <p style="padding-right: 15px;">© Roberto Asgon | Contato : </p> 
+                <li><a href=""><i class="fab fa-github-square"></i></a></li>
+                <li><a href=""><i class="fab fa-linkedin"></i></a></li> 
+                <li><a href=""><i class="fab fa-instagram-square"></i></a></li> 🚀
+            </ul>
+        </footer>
+        <script src="./script.js"></script>
+    </body>
+</html>
