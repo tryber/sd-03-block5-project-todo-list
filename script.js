@@ -1,11 +1,5 @@
 const lista = document.getElementById('lista-tarefas');
-
-function armazenaItens() {
-  const tamLista = lista.childElementCount;
-  for (let i = 0; i < tamLista; i += 1) {
-    localStorage.setItem(lista.childNodes[i].textContent,lista.childNodes[i].classList);
-  }
-}
+const elementoSelecionado = document.querySelector('.cinza');
 
 function selecionaItem(item) {
   item.classList.toggle('cinza');
@@ -15,18 +9,13 @@ function marcaCompletado(item) {
   item.classList.toggle('completed');
 }
 
-//  Função que irá carregar os dados do registro (Storage), mas só caso existam...
+//  Função que irá carregar os dados do registro (Storage) e inserir a interação (eventos de clique)
 window.onload = function () {
-  if (localStorage.length > 0) {
-    for (let i = 0; i < localStorage.length; i += 1) {
-      const item = document.createElement('li');
-      item.innerText = localStorage.key(i);
-      item.classList = localStorage.getItem(localStorage.key(i));
-      item.onclick = 'mudaCorFundo()';
+    lista.innerHTML = localStorage.getItem('dadosLista');
+    for (let i = 0; i < lista.childElementCount; i += 1) {
+      const item = lista.childNodes[i];
       item.addEventListener('click', function () { selecionaItem(item); });
       item.addEventListener('dblclick', function () { marcaCompletado(item); });
-      lista.appendChild(item);
-    }
   }
 };
 
@@ -47,6 +36,10 @@ function insereItem() {
   document.getElementById('texto-tarefa').focus();
 }
 
+function armazenaItens() {
+    localStorage.setItem('dadosLista',lista.innerHTML);
+}
+
 function apagaItem() {
   const itenSelecionados = document.getElementsByClassName('cinza');
   while (itenSelecionados.length > 0) {
@@ -56,7 +49,6 @@ function apagaItem() {
 
 function apagaFinalizados() {
   const listaCompleta = document.getElementsByClassName('completed');
-  const elementos = listaCompleta.length;
   while (listaCompleta.length > 0) {
     listaCompleta[0].remove();
   }
