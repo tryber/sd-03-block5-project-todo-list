@@ -13,12 +13,6 @@ function riscar(e) {
   e.target.classList.toggle('completed');
 }
 
-function removerFinalizados() {
-  if (className = 'completed') {
-    list.remove('li')
-  }
-}
-
 function inserirItem() {
   const item = document.createElement('li');
   item.innerText = text.value;
@@ -34,21 +28,21 @@ function remover() {
   location.reload();
 }
 
-function removerFinalizados(className) { 
-  let elements = document.getElementsByClassName('completed'); 
-  let first = elements[0]; 
-  while (first) { 
-      first.remove(); 
-      first = elements[0]; 
-  } 
+function removerFinalizados(className) {
+  let elements = document.getElementsByClassName('completed');
+  let first = elements[0];
+  while (first) {
+    first.remove();
+    first = elements[0];
+  }
 }
 
 function removerSelecionados(className) { 
   let elements = document.getElementsByClassName('cinza'); 
   let first = elements[0]; 
   while (first) { 
-      first.remove(); 
-      first = elements[0]; 
+    first.remove(); 
+    first = elements[0]; 
   } 
 }
 
