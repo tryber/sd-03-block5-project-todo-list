@@ -20,6 +20,7 @@ function desmarcarAnterior() {
   const elementos = document.querySelectorAll('li');
   for (let i = 0; i < elementos.length; i += 1) {
     elementos[i].style.backgroundColor = 'transparent';
+    elementos[i].id = '';
   }
 }
 function removerSelecionado() {
@@ -30,6 +31,38 @@ function removerSelecionado() {
     }
   }
   listSize -= 1;
+}
+function moverParaCima() {
+  selecionado = document.getElementById('selected');
+  anterior = selecionado.previousElementSibling;
+  auxiliar = document.createElement('li');
+  auxiliar.className = `${selecionado.className}`;
+  auxiliar.style.backgroundColor = `${selecionado.style.backgroundColor}`;
+  auxiliar.innerHTML = selecionado.innerHTML;
+  selecionado.className = `${anterior.className}`;
+  selecionado.style.backgroundColor = `${anterior.style.backgroundColor}`;
+  selecionado.innerHTML = anterior.innerHTML;
+  anterior.className = `${auxiliar.className}`;
+  anterior.id = 'selected';
+  anterior.style.backgroundColor = `${auxiliar.style.backgroundColor}`;
+  anterior.innerHTML = auxiliar.innerHTML;
+}
+function moverParaBaixo() {
+  selecionado = document.getElementById('selected');
+  posterior = selecionado.nextElementSibling;
+  auxiliar = document.createElement('li');
+  auxiliar.className = `${selecionado.className}`;
+  auxiliar.style.backgroundColor = `${selecionado.style.backgroundColor}`;
+  auxiliar.innerHTML = selecionado.innerHTML;
+  selecionado.className = `${posterior.className}`;
+  selecionado.style.backgroundColor = `${posterior.style.backgroundColor}`;
+  selecionado.innerHTML = posterior.innerHTML;
+  selecionado.id = '';
+  posterior.className = `${auxiliar.className}`;
+  posterior.id = 'selected';
+  posterior.style.backgroundColor = `${auxiliar.style.backgroundColor}`;
+  posterior.innerHTML = auxiliar.innerHTML;
+  console.log(selecionado, posterior, auxiliar);
 }
 botoes[0].addEventListener('click', function () {
   listSize += 1;
@@ -55,6 +88,7 @@ botoes[0].addEventListener('click', function () {
     elementos[i].addEventListener('click', function () {
       desmarcarAnterior();
       elementos[i].style.backgroundColor = 'grey';
+      elementos[i].id = 'selected';
     });
   }
 });
@@ -67,3 +101,5 @@ botoes[1].addEventListener('click', function () {
 });
 botoes[2].addEventListener('click', removerFinalizados);
 botoes[4].addEventListener('click', removerSelecionado);
+botoes[5].addEventListener('click', moverParaCima);
+botoes[6].addEventListener('click', moverParaBaixo);
