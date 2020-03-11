@@ -1,7 +1,6 @@
 const botoes = document.querySelectorAll('.botao-model');
 const caixaDeTexto = document.querySelector('#texto-tarefa');
 const listaDeTarefas = document.querySelector('#lista-tarefas');
-const botoesPequenos = document.querySelectorAll('.small-button');
 let listSize = 0;
 function finalização() {
   if (this.className === 'item') {
@@ -67,4 +66,4 @@ botoes[1].addEventListener('click', function () {
   listSize = 0;
 });
 botoes[2].addEventListener('click', removerFinalizados);
-botoesPequenos[0].addEventListener('click', removerSelecionado);
+botoes[4].addEventListener('click', removerSelecionado);
