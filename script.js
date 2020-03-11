@@ -13,11 +13,12 @@ function listarTarefas() {
   document.getElementById('texto-tarefa').value = '';
 
   item1.addEventListener('click', function () {
-    if (item1.classList.contains('selected')) {
-      item1.classList.remove('selected');
-    } else {
-      item1.classList.add('selected');
-    }
+    item1.classList.contains('selected') ? item1.classList.remove('selected') : item1.classList.add('selected');
+    // if (item1.classList.contains('selected')) {
+    //   item1.classList.remove('selected');
+    // } else {
+    //   item1.classList.add('selected');
+    // }
   });
 
   item1.addEventListener('dblclick', function () {
