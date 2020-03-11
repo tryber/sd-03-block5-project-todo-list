@@ -62,7 +62,6 @@ function moverParaBaixo() {
   posterior.id = 'selected';
   posterior.style.backgroundColor = `${auxiliar.style.backgroundColor}`;
   posterior.innerHTML = auxiliar.innerHTML;
-  console.log(selecionado, posterior, auxiliar);
 }
 botoes[0].addEventListener('click', function () {
   listSize += 1;
