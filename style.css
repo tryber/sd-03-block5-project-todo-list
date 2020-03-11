@@ -1,9 +1,9 @@
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 .completed {
-    text-decoration: line-through;
+  text-decoration: line-through;
 }
 li {
-    cursor: pointer;
+  cursor: pointer;
 }
