@@ -7,28 +7,24 @@
     <title>Lista de tarefas v0.9</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <header>
         <h1>Minha Lista de Tarefas</h1>
-    </header>
-    <article>
         <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
         <div class="barraMenu">
-            <input id="texto-tarefa" type="text"><button id="criar-tarefa" class="botAdd" type="button"
-                onclick="insereItem()">Adicionar item</button>
+            <input id="texto-tarefa" type="text"><button id="criar-tarefa" class="botAdd" type="button" onclick="insereItem()">Adicionar item</button>
             <button class="botMov" id="mover-cima" type="button" onclick="movUp()">Up</button>
             <button class="botMov" id="mover-baixo" type="button" onclick="movDown()">Down</button>
-            <button class="botApaga" id="remover-selecionado" type="button" onclick="apagaItem()">Apagar
-                selecionado</button>
-            <button class="botApaga" id="remover-finalizados" type="button" onclick="apagaFinalizados()">Apagar
-                finalizados</button>
+            <button class="botApaga" id="remover-selecionado" type="button" onclick="apagaItem()">Apagar selecionado</button>
+            <button class="botApaga" id="remover-finalizados" type="button" onclick="apagaFinalizados()">Apagar finalizados</button>
             <button class="botApaga" id="apaga-tudo" type="button" onclick="apagaTudo()">Limpar lista</button>
             <button class="botAdd" id="salvar-tarefas" type="button" onclick="armazenaItens()">Salvar lista</button>
             <button class="botApaga" id="apagaLocalStorage" type="button" onclick="apagaLS()">Apagar Local Storage</button>
         </div>
+    </header>
+    <section>
         <ol id="lista-tarefas"></ol>
-    </article>
+    </section>
     <script src="script.js"></script>
 </body>
 </html>

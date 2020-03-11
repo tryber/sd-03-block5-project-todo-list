@@ -3,7 +3,7 @@ const lista = document.getElementById('lista-tarefas');
 function armazenaItens() {
   const tamLista = lista.childElementCount;
   for (let i = 0; i < tamLista; i += 1) {
-    localStorage.setItem(`I${i}`, lista.childNodes[i].textContent);
+    localStorage.setItem(lista.childNodes[i].textContent,lista.childNodes[i].classList);
   }
 }
 
@@ -17,10 +17,11 @@ function marcaCompletado(item) {
 
 //  Função que irá carregar os dados do registro (Storage), mas só caso existam...
 window.onload = function () {
-  if (localStorage.getItem('I0')) {
+  if (localStorage.length > 0) {
     for (let i = 0; i < localStorage.length; i += 1) {
       const item = document.createElement('li');
-      item.innerText = localStorage.getItem(`I${i}`);
+      item.innerText = localStorage.key(i);
+      item.classList = localStorage.getItem(localStorage.key(i));
       item.onclick = 'mudaCorFundo()';
       item.addEventListener('click', function () { selecionaItem(item); });
       item.addEventListener('dblclick', function () { marcaCompletado(item); });
@@ -40,8 +41,7 @@ function insereItem() {
     item.addEventListener('dblclick', function () { marcaCompletado(item); });
     lista.appendChild(item);
     document.getElementById('texto-tarefa').value = '';
-  }
-  else {
+  } else {
     alert('Digite algo para adicionar');
   }
   document.getElementById('texto-tarefa').focus();
@@ -81,8 +81,7 @@ function movUp() {
     noSelecionado.classList.remove('cinza');
     irmaoCima.textContent = provisorio;
     irmaoCima.classList = 'cinza';
-  }
-  else {
+  } else {
     alert('Impossível subir mais...');
   }
 }
@@ -96,8 +95,7 @@ function movDown() {
     noSelecionado.classList.remove('cinza');
     irmaoBaixo.textContent = provisorio;
     irmaoBaixo.classList = 'cinza';
-  }
-  else {
+  } else {
     alert('Impossível descer mais...');
   }
 }
