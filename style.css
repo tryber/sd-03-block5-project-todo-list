@@ -6,6 +6,11 @@
     padding: 8px;
     border-radius: 10px;
     color: white;
+    cursor: pointer;
+}
+
+li{
+    cursor: pointer;
 }
 
 .b1 {
