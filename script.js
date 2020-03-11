@@ -1,5 +1,4 @@
 const lista = document.getElementById('lista-tarefas');
-const elementoSelecionado = document.querySelector('.cinza');
 
 function selecionaItem(item) {
   item.classList.toggle('cinza');
@@ -11,12 +10,12 @@ function marcaCompletado(item) {
 
 //  Função que irá carregar os dados do registro (Storage) e inserir a interação (eventos de clique)
 window.onload = function () {
-    lista.innerHTML = localStorage.getItem('dadosLista');
-    for (let i = 0; i < lista.childElementCount; i += 1) {
-      const item = lista.childNodes[i];
-      item.addEventListener('click', function () { selecionaItem(item); });
-      item.addEventListener('dblclick', function () { marcaCompletado(item); });
-  }
+  lista.innerHTML = localStorage.getItem('dadosLista');
+  for (let i = 0; i < lista.childElementCount; i += 1) {
+    const item = lista.childNodes[i];
+    item.addEventListener('click', function () { selecionaItem(item); });
+    item.addEventListener('dblclick', function () { marcaCompletado(item); });
+    }
 };
 
 function insereItem() {
@@ -37,7 +36,7 @@ function insereItem() {
 }
 
 function armazenaItens() {
-    localStorage.setItem('dadosLista',lista.innerHTML);
+  localStorage.setItem('dadosLista', lista.innerHTML);
 }
 
 function apagaItem() {

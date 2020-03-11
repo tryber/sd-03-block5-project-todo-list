@@ -37,10 +37,6 @@ button {
   transition-duration: 0.5s;
 }
 
-.botAdd {
-  margin-right: 5em;
-}
-
 li {
   cursor: pointer;
 }
@@ -49,6 +45,7 @@ li {
   background-color: honeydew;
   border: 2px solid green;
   color: green;
+  margin-right: 5em;
 }
 
 .botMov {
