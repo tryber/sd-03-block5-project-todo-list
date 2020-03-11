@@ -73,3 +73,7 @@ footer {
 .completed {
   text-decoration: line-through;
 }
+
+.cinza {
+  background-color: grey;
+}

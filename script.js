@@ -1,14 +1,15 @@
 const text = document.getElementById('texto-tarefa');
 const criar = document.getElementById('criar-tarefa');
 const list = document.getElementById('lista-tarefas');
-const btnLimparLista = document.getElementById('apaga-tudo')
+const btnLimparLista = document.getElementById('apaga-tudo');
+const btnFinalizados = document.getElementById('remover-finalizados');
 
 function selecionarItem(e) {
-  e.target.style.backgroundColor = 'rgb(128,128,128)';
+  e.target.classList.add('cinza');
 }
 
 function riscar(e) {
-  e.target.classList.toggle('completed');
+  e.target.classList.add('completed');
 }
 
 function inserirItem() {
