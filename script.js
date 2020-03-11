@@ -4,6 +4,7 @@ const list = document.getElementById('lista-tarefas');
 const btnLimparLista = document.getElementById('apaga-tudo');
 const btnFinalizados = document.getElementById('remover-finalizados');
 const btnSelecionados = document.getElementById('remover-selecionado');
+const btnSalvar = document.getElementById('salvar-tarefas');
 
 function selecionarItem(e) {
   e.target.classList.toggle('cinza');
@@ -29,7 +30,7 @@ function remover() {
 }
 
 function removerFinalizados() {
-  let elements = document.getElementsByClassName('completed');
+  const elements = document.getElementsByClassName('completed');
   let first = elements[0];
   while (first) {
     first.remove();
@@ -38,11 +39,24 @@ function removerFinalizados() {
 }
 
 function removerSelecionados() {
-  let elements = document.getElementsByClassName('cinza');
+  const elements = document.getElementsByClassName('cinza');
   let first = elements[0];
   while (first) {
     first.remove();
     first = elements[0];
+  }
+}
+
+function salvar() {
+  localStorage.setItem('lista', list.innerHTML);
+  console.log(list.innerHTML);
+  
+}
+
+function listaSalva() {
+  let listFromStorage = localStorage.getItem('lista')
+    if(listFromStorage){
+    list.innerHTML = listFromStorage
   }
 }
 
@@ -51,4 +65,6 @@ window.onload = function () {
   btnLimparLista.addEventListener('click', remover);
   btnFinalizados.addEventListener('click', removerFinalizados);
   btnSelecionados.addEventListener('click', removerSelecionados);
+  btnSalvar.addEventListener('click', salvar);
+  listaSalva();
 };
