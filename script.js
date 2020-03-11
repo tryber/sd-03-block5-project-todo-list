@@ -1,5 +1,5 @@
 const textoDigitado = document.getElementById('texto-tarefa');
-let clickButtonAdicionar = document.querySelector('#criar-tarefa');
+const clickButtonAdicionar = document.querySelector('#criar-tarefa');
 const incluiItem = document.querySelector('#lista-tarefas');
 
 function coloreItemLista(e) {

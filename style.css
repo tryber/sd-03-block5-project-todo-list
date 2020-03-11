@@ -1,5 +1,18 @@
+header {
+  font-size: x-large;
+}
+
 button {
+  background-color: blue;
+  border-radius: 4px;
+  color: white;
   cursor: pointer;
+  margin: 0 15px;
+  padding: 8px;
+}
+
+form {
+  display: flex;
 }
 
 .cinza {
@@ -8,4 +21,12 @@ button {
 
 .completed {
   text-decoration: line-through;
+}
+
+.remover-finalizados {
+  background-color: green;
+}
+
+.apaga-tudo {
+  background-color: red;
 }
