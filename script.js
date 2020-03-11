@@ -93,7 +93,6 @@ function saveList() {
 }
 
 // Carregar Lista
-
 function loadList() {
     if(localStorage.getItem("toDos") != null){
         var toDos = JSON.parse(localStorage.getItem("toDos"));
