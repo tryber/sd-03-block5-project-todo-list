@@ -5,11 +5,17 @@ const btnLimparLista = document.getElementById('apaga-tudo');
 const btnFinalizados = document.getElementById('remover-finalizados');
 
 function selecionarItem(e) {
-  e.target.classList.add('cinza');
+  e.target.classList.toggle('cinza');
 }
 
 function riscar(e) {
   e.target.classList.toggle('completed');
+}
+
+function removerFinalizados() {
+  if (className = 'completed') {
+    list.remove('li')
+  }
 }
 
 function inserirItem() {
@@ -30,4 +36,5 @@ function remover() {
 window.onload = function () {
   criar.addEventListener('click', inserirItem);
   btnLimparLista.addEventListener('click', remover);
+  btnFinalizados.addEventListener('click', removerFinalizados);
 };
