@@ -1,13 +1,13 @@
-//Váriaveis globais que fundamentam o funcionamento da lista
+// Váriaveis globais que fundamentam o funcionamento da lista
 const createTask = document.getElementById('criar-tarefa');
 const eraseTask = document.getElementById('apaga-tudo');
 const eraseSelectedTask = document.getElementById('remover-finalizados');
 const taskList = document.getElementById('lista-tarefas');
 const text = document.getElementById('texto-tarefa');
 
-//função para transformar o fundo das tarefas já cumpridas
+// função para transformar o fundo das tarefas já cumpridas
 function singleClick() {
-  let tasks = document.querySelectorAll('.completed');
+  const tasks = document.querySelectorAll('.completed');
 
   for (let i = 0; i < tasks.length; i += 1) {
     if (tasks[i].style.backgroundColor === '#808080') {
@@ -21,9 +21,9 @@ function singleClick() {
     }
   }
 }
-//função para riscar tarefas concluidas
+// função para riscar tarefas concluidas
 function doubleClick() {
-  let tasks = document.querySelectorAll('.completed');
+  const tasks = document.querySelectorAll('.completed');
   for (let i = 0; i < tasks.length; i += 1) {
     if (tasks[i].style.textDecoration === 'line-through') {
       tasks[i].style.textDecoration = 'none';
@@ -35,7 +35,7 @@ function doubleClick() {
   }
 }
 
-//Event Listeners
+// Event Listeners
 createTask.addEventListener('click', function() {
   const newTask = document.createElement('li');
   newTask.classList = 'completed';
