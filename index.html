@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Minha Lista de Tarefas</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+    <header>
+        <h1>Minha Lista de Tarefas</h1>
+    </header>
+
+    <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+
+    <section>
+        <form  action="" method="get">
+            <label for="texto-tarefa"></label><br>
+            <input type="text" id="texto-tarefa" name="insereTexto" maxlength="60"><br>
+        </form>
     
+        <button id="criar-tarefa">Adicionar</button>
+    
+        <ol id="lista-tarefas">
+            <li class="completed"></li>
+        </ol>
+
+        <button id="remover-finalizados">Limpar Completos</button>
+        <button id="apaga-tudo">Limpar Lista</button>
+    </section>
+    
+    <script src="script.js"></script>
 </body>
 </html>
