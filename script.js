@@ -1,42 +1,108 @@
-var criartarefa,apagatudo,remfinal,salvtarefa,remselec;
+var criartarefa;
 
 criartarefa = document.getElementById("criar-tarefa");
-apagatudo = document.getElementById("apaga-tudo");
-remfinali = document.getElementById("remover-finalizados");
-salvtarefa = document.getElementById("salvar-tarefas");
-remselec = document.getElementById("remover-selecionado");
 
 criartarefa.addEventListener("click", criarItem);
 
-function criarItem()
-{
-    alert("Item adicionado");
+// input id = "texto-tarefa" lista id="lista-tarefas"
+var entryBox = document.getElementById("texto-tarefa");
+var toDoList = document.getElementById("lista-tarefas");
+
+function criarItem() {
+   var itemText = entryBox.value;
+   NewItem(itemText, false);
 }
 
-apagatudo.addEventListener("click", apagaTudo);
+// função criar tarefa
+function NewItem(itemText, completed) {
+    var toDoItem = document.createElement("li");
+    var toDoText = document.createTextNode(itemText);
+    toDoItem.appendChild(toDoText);
+    
+    if(completed){
+        toDoItem.classList.add("completed");
+    }
 
-function apagaTudo()
-{
-    alert("Apagar Lista");
+    toDoList.appendChild(toDoItem);
+    toDoItem.addEventListener("dblclick", toggleToDoItemState);
 }
 
-remfinali.addEventListener("click", removConcluido);
-
-function removConcluido()
-{
-    alert("Remover Concluido");
+// função concluir item da lista
+function toggleToDoItemState() {
+    if(this.classList.contains("completed")) {
+        this.classList.remove("completed");
+    } else {
+        this.classList.add("completed");
+    }
 }
 
-salvtarefa.addEventListener("click", saveLista);
+var clearFinaly = document.getElementById("remover-finalizados");
+clearFinaly.addEventListener("click", clearCompletedItems);
 
-function saveLista()
-{
-    alert("Salvar Lista");
+// função remover finalizados
+function clearCompletedItems(){
+    var completedItems = toDoList.getElementsByClassName("completed");
+    
+    while (completedItems.length > 0) {
+        completedItems.item(0).remove();
+    }
 }
 
-remselec.addEventListener("click", removSelec);
+var clearAll = document.getElementById("apaga-tudo");
+clearAll.addEventListener("click", emptyList);
 
-function removSelec()
-{
-    alert("Remover Selecionado");
+// função Limpar tudo 
+function emptyList() {
+    var toDoItems = toDoList.children;
+    while (toDoItems.length > 0) {
+        toDoItems.item(0).remove();
+    }
 }
+
+// Matriz
+var myLists = [];
+myLists.push("something to store");
+myLists.push("something else to store");
+alert(myLists[0]);
+
+// Converter todos os itens em Objetos
+var toDoInfo = {
+    "task": "thing I need to do",
+    "completed": false
+};
+
+var bottaosalvar = document.getElementById("salvar-tarefas");
+bottaosalvar.addEventListener("click", saveList);
+
+// função salvar Lista
+function saveList() {
+    var toDos = [];
+
+    for(var i = 0; i < toDoList.children.length; i++ ){
+        var toDo = toDoList.children.item(i);
+        
+        var toDoInfo = {
+            "task": toDo.innerText,
+            "completed": toDo.classList.contains("completed")
+        };
+
+        toDos.push(toDoInfo);
+    }
+
+    localStorage.setItem("toDos", JSON.stringify(toDos));
+}
+
+// Carregar Lista
+
+function loadList() {
+    if(localStorage.getItem("toDos") != null){
+        var toDos = JSON.parse(localStorage.getItem("toDos"));
+
+        for(var i = 0; i< toDos.length; i++){
+            var toDo = toDos[i];
+            NewItem(toDo.task, toDo.completed);
+        }
+    }
+}
+
+loadList();
