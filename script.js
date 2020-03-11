@@ -18,7 +18,7 @@ function destroyer() {
 }
 function completer() {
   const dos = document.getElementById('lista-tarefas');
-  for (let i = dos.children.length - 1; i >= 0; i--) {
+  for (let i = dos.children.length - 1; i >= 0; i-=1) {
     if (dos.children[i].classList.contains('completed')) {
       dos.removeChild(dos.children[i]);
     }
@@ -30,11 +30,11 @@ function procreator() {
   document.querySelector('#lista-tarefas').appendChild(oil);
 }
 window.onload = () => {
-  document.getElementById('texto-tarefa').addEventListener('change', event => {
+  document.getElementById('texto-tarefa').addEventListener('change', function() {
     procreator();
     document.getElementById('lista-tarefas').lastChild.innerText = event.target.value;
     event.target.value = '';
   });
   document.getElementById('apaga-tudo').addEventListener('click', destroyer);
   document.getElementById('remover-finalizados').addEventListener('click', completer);
-}
+};
