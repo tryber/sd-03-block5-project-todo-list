@@ -31,24 +31,22 @@ apagarTudo.addEventListener('click', function () {
   document.getElementById('container').appendChild(newOl);
 });
 
-const removeFin = document.getElementById('remover-finalizados');
-removeFin.addEventListener('click', function () {
+function removeCompleted () {
   const completed = document.querySelectorAll('.completed');
   for (const i in completed) {
     if (completed) {
       completed[i].remove();
     }
-  }
-});
+  }}
+const removeFin = document.getElementById('remover-finalizados');
+removeFin.addEventListener('click',removeCompleted
+);
 
-document.getElementById('remover-selecionado').addEventListener('click', function () {
-  const selecionado = document.querySelectorAll('.selected');
-  for (const i in selecionado) {
-    if (selecionado) {
-      selecionado[i].remove();
-    }
-  }
-});
+function removeSelected(){
+  document.querySelector('.selected').remove()
+}
+
+document.getElementById('remover-selecionado').addEventListener('click', );
 
 const selected = document.querySelectorAll('.selected');
 document.querySelector('#salvar-tarefas').addEventListener('click', function () {
