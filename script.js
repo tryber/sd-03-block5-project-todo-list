@@ -2,6 +2,7 @@ const botoes = document.querySelectorAll('.botao-model');
 const caixaDeTexto = document.querySelector('#texto-tarefa');
 const listaDeTarefas = document.querySelector('#lista-tarefas');
 const tarefas = document.querySelector('ol').childNodes;
+const botoes_pequenos = document.querySelectorAll('.small-button');
 let listSize = 0;
 window.onload = function () {
   function finalização() {
@@ -18,6 +19,21 @@ window.onload = function () {
       finalizados[i].remove();
     }
     listSize = listSize - finalizados.length;
+  }
+  function desmarcarAnterior() {
+    const elementos = document.querySelectorAll('li');
+    for (let i = 0; i < elementos.length; i += 1){
+      elementos[i].style.backgroundColor = 'transparent';
+    }
+  }
+  function removerSelecionado() {
+    const elementos = document.querySelectorAll('.item');
+    for(let i = 0; i < elementos.length; i += 1) {
+      if (elementos[i].style.backgroundColor === 'grey') {
+        elementos[i].remove();
+      }
+    }
+    listSize = listSize - 1;
   }
   botoes[0].addEventListener('click', function () {
     listSize += 1;
@@ -41,6 +57,7 @@ window.onload = function () {
     const elementos = document.querySelectorAll('.item');
     for (let i = 0; i < elementos.length; i += 1) {
       elementos[i].addEventListener('click', function () {
+        desmarcarAnterior();
         elementos[i].style.backgroundColor = 'grey';
       });
     }
@@ -53,4 +70,6 @@ window.onload = function () {
     listSize = 0;
   });
   botoes[2].addEventListener('click', removerFinalizados);
+  botoes_pequenos[0].addEventListener('click', removerSelecionado);
 }
+

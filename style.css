@@ -32,11 +32,11 @@ header {
 }
 
 .small-button {
-  border-radius: 50%;
+  color: red;
   font-size: 10px;
-  height: 40px;
+  height: 25px;
   text-align: center;
-  width: 40px;
+  width: 25px;
 }
 
 .lista-style {
