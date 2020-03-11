@@ -1,6 +1,6 @@
 body {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -9,12 +9,12 @@ h1 {
 }
 
 button {
-  padding: 5px 15px;
-  cursor: pointer;
   border-radius: 15px;
-  outline: none;
   color: white;
+  cursor: pointer;
   font-weight: 700;
+  outline: none;
+  padding: 5px 15px;
 }
 
 li {
@@ -37,10 +37,10 @@ section {
 }
 
 li {
+  overflow-wrap: break-word;
   margin-left: 20%;
   text-align: center;
   width: 50%;
-  overflow-wrap: break-word;
 }
 
 #criar-tarefa {
@@ -56,15 +56,15 @@ li {
 }
 
 input {
-  padding: 3px 0;
   border-radius: 2%;
+  box-shadow: 1px 1px 6px 2px #ccc;
+  padding: 3px 0;
   -moz-box-shadow: 1px 1px 6px 2px #ccc;
   -webkit-box-shadow: 1px 1px 6px 2px #ccc;
-  box-shadow: 1px 1px 6px 2px #ccc;
 }
 
 article {
   border: black 0.5px solid;
-  padding: 2%;
   margin: 1% 10% 0% 10%;
+  padding: 2%;
 }
