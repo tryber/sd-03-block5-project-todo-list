@@ -9,7 +9,7 @@ function selecionarItem(e) {
 }
 
 function riscar(e) {
-  e.target.classList.add('completed');
+  e.target.classList.toggle('completed');
 }
 
 function inserirItem() {
