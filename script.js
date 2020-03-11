@@ -33,9 +33,9 @@ function removerSelecionado() {
   listSize -= 1;
 }
 function moverParaCima() {
-  selecionado = document.getElementById('selected');
-  anterior = selecionado.previousElementSibling;
-  auxiliar = document.createElement('li');
+  const selecionado = document.getElementById('selected');
+  const anterior = selecionado.previousElementSibling;
+  const auxiliar = document.createElement('li');
   auxiliar.className = `${selecionado.className}`;
   auxiliar.style.backgroundColor = `${selecionado.style.backgroundColor}`;
   auxiliar.innerHTML = selecionado.innerHTML;
@@ -48,9 +48,9 @@ function moverParaCima() {
   anterior.innerHTML = auxiliar.innerHTML;
 }
 function moverParaBaixo() {
-  selecionado = document.getElementById('selected');
-  posterior = selecionado.nextElementSibling;
-  auxiliar = document.createElement('li');
+  const selecionado = document.getElementById('selected');
+  const posterior = selecionado.nextElementSibling;
+  const auxiliar = document.createElement('li');
   auxiliar.className = `${selecionado.className}`;
   auxiliar.style.backgroundColor = `${selecionado.style.backgroundColor}`;
   auxiliar.innerHTML = selecionado.innerHTML;
