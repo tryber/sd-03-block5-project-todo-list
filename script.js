@@ -35,9 +35,11 @@ function selecionarItem() {
 function finalizarItem() {
   if(this.style.textDecoration == "line-through") {
     event.target.style.textDecoration = "";
+    event.target.classList.remove("completed");
   }
   else {
     this.style.textDecoration = "line-through";
+    this.classList.add("completed");
   }
 }
 
