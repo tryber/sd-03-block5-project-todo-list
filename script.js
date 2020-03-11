@@ -64,21 +64,12 @@ buttonMoverBaixo.addEventListener('click', function() { const itemOfList = docum
 })
 
 let buttonRemoveSelecionados = document.getElementById("remover-selecionado");
-buttonRemoveSelecionados.addEventListener('click', function() { let selecteds = document.querySelectorAll(".item");
-  for(let i of selecteds) {  
-    if(i.style.backgroundColor == "rgb(128,128,128)") {
-      i.remove();
-    }
+buttonRemoveSelecionados.addEventListener('click', function() {
+const elementsToRemove = document.getElementsByClassName('selecionado');
+while (elementsToRemove.length > 0) {
+  document.querySelector('#lista-tarefas').removeChild(elementsToRemove[0]);
 }})
 
-document.getElementById('salvar-tarefas').addEventListener('click', () => {
-  localStorage.setItem('Lista de Tarefas', document.getElementById('lista-tarefas').innerHTML);
-});
-
-if (window.localStorage.getItem('Lista de Tarefas')) {
-  document.getElementById('lista-tarefas').innerHTML = window.localStorage.getItem('Lista de Tarefas');
-  document.querySelectorAll('li').forEach(function (li) { addListeners(li); });
-}
 
 let buttonRemoveFinalizados = document.getElementById("remover-finalizados");
 buttonRemoveFinalizados.addEventListener('click', function() { let finalizados = document.querySelectorAll(".item");

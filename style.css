@@ -63,3 +63,7 @@ footer ul li a {
     color: #0fa36b;
     font-size: 3rem;
 }
+
+button , li {
+    cursor: pointer;
+}
