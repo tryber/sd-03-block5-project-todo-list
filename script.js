@@ -54,8 +54,8 @@ function salvar() {
 }
 
 function listaSalva() {
-  let listFromStorage = localStorage.getItem('lista')
-    if(listFromStorage){
+  let listaFromStorage = localStorage.getItem('lista');
+  if (listFromStorade) {
     list.innerHTML = listFromStorage
   }
 }
