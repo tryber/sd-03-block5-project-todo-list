@@ -28,7 +28,7 @@ function remover() {
   location.reload();
 }
 
-function removerFinalizados(className) {
+function removerFinalizados() {
   let elements = document.getElementsByClassName('completed');
   let first = elements[0];
   while (first) {
@@ -37,13 +37,13 @@ function removerFinalizados(className) {
   }
 }
 
-function removerSelecionados(className) { 
-  let elements = document.getElementsByClassName('cinza'); 
-  let first = elements[0]; 
-  while (first) { 
-    first.remove(); 
-    first = elements[0]; 
-  } 
+function removerSelecionados() {
+  let elements = document.getElementsByClassName('cinza');
+  let first = elements[0];
+  while (first) {
+    first.remove();
+    first = elements[0];
+  }
 }
 
 window.onload = function () {
