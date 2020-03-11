@@ -1,45 +1,39 @@
-let textoDigitado = document.getElementById("texto-tarefa");
-let clickButtonAdicionar = document.querySelector("#criar-tarefa");
-let incluiItem = document.querySelector("#lista-tarefas");
+const textoDigitado = document.getElementById('texto-tarefa');
+let clickButtonAdicionar = document.querySelector('#criar-tarefa');
+const incluiItem = document.querySelector('#lista-tarefas');
 
 function coloreItemLista(e) {
-    e.target.classList.add('cinza');
+  e.target.classList.add('cinza');
 }
 
 function riscaItemLista(e) {
-    e.target.classList.add('completed');
-}
-
-function reverteRiscaItemLista(e) {
-    e.target.classList.remove('completed');
+  e.target.classList.add('completed');
 }
 
 function adicionaItem() {
-    let criaLista = document.createElement("li");
-    criaLista.innerHTML = textoDigitado.value;
-    incluiItem.appendChild(criaLista);
-    textoDigitado.value = "";
+  const criaLista = document.createElement('li');
+  criaLista.innerHTML = textoDigitado.value;
+  incluiItem.appendChild(criaLista);
+  textoDigitado.value = '';
 
-    criaLista.addEventListener("click", coloreItemLista);
-    criaLista.addEventListener("dblclick", riscaItemLista);
+  criaLista.addEventListener('click', coloreItemLista);
+  criaLista.addEventListener('dblclick', riscaItemLista);
 
-    let clickButtonLimpaConcluidos = document.querySelector("#remover-finalizados");
-let clickButtonLimpaTodos = document.querySelector("#apaga-tudo");
+  const clickButtonLimpaConcluidos = document.querySelector('#remover-finalizados');
+  const clickButtonLimpaTodos = document.querySelector('#apaga-tudo');
 
-function limpaConcluidos() {
-    for (let i = document.querySelectorAll(".completed").length; i>=1; i--) {
-        document.querySelector(".completed").remove();
+  function limpaConcluidos() {
+    for (let i = document.querySelectorAll('.completed').length; i >= 1; i -= 1) {
+      document.querySelector('.completed').remove();
     }
-}
-clickButtonLimpaConcluidos.addEventListener("click", limpaConcluidos);
+  }
+  clickButtonLimpaConcluidos.addEventListener('click', limpaConcluidos);
 
-function limpaTodos() {
-    for (let i = document.querySelectorAll("li").length; i>=1; i--) {
-        document.querySelector("li").remove();
+  function limpaTodos() {
+    for (let i = document.querySelectorAll('li').length; i >= 1; i -= 1) {
+      document.querySelector('li').remove();
     }
+  }
+  clickButtonLimpaTodos.addEventListener('click', limpaTodos);
 }
-clickButtonLimpaTodos.addEventListener("click", limpaTodos);
-    };
-clickButtonAdicionar.addEventListener("click", adicionaItem);
-
-
+clickButtonAdicionar.addEventListener('click', adicionaItem);
