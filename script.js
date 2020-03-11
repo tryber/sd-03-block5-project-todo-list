@@ -19,7 +19,7 @@ function inserirItem() {
   text.value = '';
 
   item.addEventListener('click', selecionarItem);
-  item.addEventListener('dbclick', riscar);
+  item.addEventListener('dblclick', riscar);
 }
 
 function remover() {
