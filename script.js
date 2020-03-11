@@ -1,4 +1,5 @@
-function addOverClass(x) {
+
+function addClass4Task(x) {
   x.addEventListener('click', function () {
     x.classList.toggle('selected');
   });
@@ -12,10 +13,10 @@ function newTask() {
   const inputValue = document.getElementById('texto-tarefa');
   const text = document.createTextNode(inputValue.value);
   const ol = document.getElementById('lista-tarefas');
-  addOverClass(li);
+  addClass4Task(li);
   li.appendChild(text);
   ol.appendChild(li);
-  document.getElementById('texto-tarefa').value = '';
+  inputValue.value = '';
 }
 
 const criarTask = document.getElementById('criar-tarefa');
@@ -25,37 +26,53 @@ const apagarTudo = document.getElementById('apaga-tudo');
 
 apagarTudo.addEventListener('click', function () {
   document.getElementById('lista-tarefas').remove();
-  let newOl = document.createElement('ol');
+  const newOl = document.createElement('ol');
   newOl.id = 'lista-tarefas';
   document.getElementById('container').appendChild(newOl);
 });
 
-const removerFin = document.getElementById('remover-finalizados');
-removerFin.addEventListener('click', function () {
+const removeFin = document.getElementById('remover-finalizados');
+removeFin.addEventListener('click', function () {
   const completed = document.querySelectorAll('.completed');
-  for (let i in completed) {
-    completed[i].remove();
+  for (const i in completed) {
+    if (completed) {
+      completed[i].remove();
+    }
   }
 });
 
-document.getElementById('remover-selecionado').addEventListener('click',function(){
+document.getElementById('remover-selecionado').addEventListener('click', function () {
   const selecionado = document.querySelectorAll('.selected');
-  for (let i in selecionado) {
-    selecionado[i].remove();
+  for (const i in selecionado) {
+    if (selecionado) {
+      selecionado[i].remove();
     }
-  })
-
-document.querySelector('#salvar-tarefas').addEventListener('click', function(){
-  const selected = document.querySelectorAll('.selected');
-  for(let i =0; i < selected.length; i+=1){
-    localStorage[i]= selected[i].innerHTML;
   }
+});
 
-})
+const selected = document.querySelectorAll('.selected');
+document.querySelector('#salvar-tarefas').addEventListener('click', function () {
+  localStorage.setItem('lista', document.getElementById('lista-tarefas').innerHTML)
+});
 
-/* function remover (alvo){
-  let alvo = document.querySelectorAll('.' + alvo);
-  for (let i in alvo) {
-    alvo[i].remove();
+if (window.localStorage.getItem('lista')) {
+  document.getElementById('lista-tarefas').innerHTML = window.localStorage.getItem('lista');
+  document.querySelectorAll('li').forEach(function (li) { addClass4Task(li); });
+}
+
+
+document.querySelector('#mover-cima').addEventListener('click', function () {
+  const selected = document.querySelector('.selected');
+  if (!!selected.previousElementSibling && selected) {
+    selected.parentNode.insertBefore(selected, selected.previousElementSibling);
   }
-} */
+});
+
+document.getElementById('mover-baixo').addEventListener('click', () => {
+  const selected = document.querySelector('.selected');
+  if (selected) {
+    if (selected.nextElementSibling) {
+      selected.parentNode.insertBefore(selected.nextElementSibling, selected);
+    }
+  }
+});
