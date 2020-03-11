@@ -46,7 +46,7 @@ function removeSelected(){
   document.querySelector('.selected').remove()
 }
 
-document.getElementById('remover-selecionado').addEventListener('click', );
+document.getElementById('remover-selecionado').addEventListener('click', removeSelected);
 
 const selected = document.querySelectorAll('.selected');
 document.querySelector('#salvar-tarefas').addEventListener('click', function () {
