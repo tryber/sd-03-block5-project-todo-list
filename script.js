@@ -1,6 +1,8 @@
 let buttonAdicionar = document.getElementById("criar-tarefa");
 let text = document.getElementById("texto-tarefa");
 buttonAdicionar.addEventListener('click', cliqueAdicionar)
+
+
 function cliqueAdicionar() {
   if (text.value == ""){
   alert("É necessário descrever a atividade antes de adiciona-la")
@@ -18,14 +20,14 @@ function cliqueAdicionar() {
 
 let itemSelecionado = document.getElementsByClassName("item");
 function selecionarItem() {
-  if(this.style.backgroundColor == "rgb(0, 145, 212)") {
+  if(this.style.backgroundColor == "rgb(128,128,128)") {
     for(let i of itemSelecionado) {
     i.style.backgroundColor = "transparent";
     i.classList.remove("selecionado");
     }
   }
   else {
-    this.style.backgroundColor = "rgb(0, 145, 212)";
+    this.style.backgroundColor = "rgb(128,128,128)";
     this.classList.add("selecionado");
   }
 }
@@ -40,38 +42,43 @@ function finalizarItem() {
 }
 
 let buttonMoverCima = document.getElementById("mover-cima");
-buttonMoverCima.addEventListener('click', function() { let itemsSelected = document.querySelector('.selecionado');
-const itens = itemsSelected.previousSibling;
-  if (itens.innerHTML === undefined) {} 
-  else {
-    let auxiliar = itens.innerHTML;
-    itens.innerHTML = itemsSelected.innerHTML;
-    itemsSelected.innerHTML = auxiliar;
-    itemsSelected.style.backgroundColor = "transparent";
-    itemsSelected.classList.remove("selecionado");
+buttonMoverCima.addEventListener('click', function() { const itemOfList = document.querySelector('.selecionado');
+  if (itemOfList) {
+  if (itemOfList.previousElementSibling) {
+    itemOfList.parentNode.insertBefore(itemOfList, itemOfList.previousElementSibling);
+  } else {
+    alert('Não é possível mover esta tarefa para cima');
   }
+}
 });
 
 let buttonMoverBaixo = document.getElementById("mover-baixo");
-buttonMoverBaixo.addEventListener('click', function() { let itemsSelected = document.querySelector('.selecionado'); 
-const itens = itemsSelected.nextSibling;
-  if (itens === null) {} 
-  else {
-    let auxiliar = itemsSelected.innerHTML;
-    itemsSelected.innerHTML = itens.innerHTML;
-    itens.innerHTML = auxiliar;
-    itemsSelected.style.backgroundColor = "transparent";
-    itemsSelected.classList.remove("selecionado");
+buttonMoverBaixo.addEventListener('click', function() { const itemOfList = document.querySelector('.selecionado'); 
+  if (itemOfList) {
+    if (itemOfList.nextElementSibling) {
+      itemOfList.parentNode.insertBefore(itemOfList.nextElementSibling, itemOfList);
+    } else {
+      alert('Não é possível mover esta tarefa para baixo');
+    }
   }
 })
 
 let buttonRemoveSelecionados = document.getElementById("remover-selecionado");
 buttonRemoveSelecionados.addEventListener('click', function() { let selecteds = document.querySelectorAll(".item");
   for(let i of selecteds) {  
-    if(i.style.backgroundColor == "rgb(0, 145, 212)") {
+    if(i.style.backgroundColor == "rgb(128,128,128)") {
       i.remove();
     }
 }})
+
+document.getElementById('salvar-tarefas').addEventListener('click', () => {
+  localStorage.setItem('Lista de Tarefas', document.getElementById('lista-tarefas').innerHTML);
+});
+
+if (window.localStorage.getItem('Lista de Tarefas')) {
+  document.getElementById('lista-tarefas').innerHTML = window.localStorage.getItem('Lista de Tarefas');
+  document.querySelectorAll('li').forEach(function (li) { addListeners(li); });
+}
 
 let buttonRemoveFinalizados = document.getElementById("remover-finalizados");
 buttonRemoveFinalizados.addEventListener('click', function() { let finalizados = document.querySelectorAll(".item");
