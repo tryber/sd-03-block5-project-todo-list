@@ -5,17 +5,19 @@ criartarefa = document.getElementById("criar-tarefa");
 criartarefa.addEventListener("click", criarItem);
 
 // input id = "texto-tarefa" lista id="lista-tarefas"
-var entryBox = document.getElementById("texto-tarefa");
+
+var inputText = document.getElementById("texto-tarefa");
 var toDoList = document.getElementById("lista-tarefas");
 
 function criarItem() {
-   var itemText = entryBox.value;
+   var itemText = inputText.value;
+   inputText.value = '';
    NewItem(itemText, false);
 }
 
 // função criar tarefa
 function NewItem(itemText, completed) {
-    var toDoItem = document.createElement("li");
+    var toDoItem = document.createElement('li');
     var toDoText = document.createTextNode(itemText);
     toDoItem.appendChild(toDoText);
     
