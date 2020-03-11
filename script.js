@@ -30,7 +30,7 @@ function removerSelecionado() {
       elementos[i].remove();
     }
   }
-  listSize = listSize - 1;
+  listSize -= 1;
 }
 botoes[0].addEventListener('click', function () {
   listSize += 1;
