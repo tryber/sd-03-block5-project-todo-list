@@ -7,6 +7,10 @@ function bgCinza() {
   event.target.classList.add("bgCinza")
 }
 
+function completo(){
+    event.target.classList.toggle('completo')
+}
+
 function addText() {
   const listaAdd = document.createElement("li");
   listaAdd.className = "ls cursor";
@@ -15,6 +19,8 @@ function addText() {
   inputTexto.value = "";
 
   lista.addEventListener('click', bgCinza);
+
+  lista.addEventListener('dblclick', completo)
 }
 
 function removeList() {
