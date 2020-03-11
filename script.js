@@ -44,24 +44,20 @@ function finalizarItem() {
 }
 
 let buttonMoverCima = document.getElementById("mover-cima");
-buttonMoverCima.addEventListener('click', function() { const itemOfList = document.querySelector('.selecionado');
-  if (itemOfList) {
-  if (itemOfList.previousElementSibling) {
-    itemOfList.parentNode.insertBefore(itemOfList, itemOfList.previousElementSibling);
-  } else {
-    alert('Não é possível mover esta tarefa para cima');
-  }
-}
+buttonMoverCima.addEventListener('click', function() { 
+  const selectedItem = document.getElementsByClassName('selecionado')[0];
+  selectedItem.parentElement.insertBefore(selectedItem, selectedItem.previousElementSibling);
 });
 
 let buttonMoverBaixo = document.getElementById("mover-baixo");
-buttonMoverBaixo.addEventListener('click', function() { const itemOfList = document.querySelector('.selecionado'); 
-  if (itemOfList) {
-    if (itemOfList.nextElementSibling) {
-      itemOfList.parentNode.insertBefore(itemOfList.nextElementSibling, itemOfList);
-    } else {
-      alert('Não é possível mover esta tarefa para baixo');
-    }
+buttonMoverBaixo.addEventListener('click', function() { 
+  const selectedItem = document.getElementsByClassName('selecionado')[0];
+  const nextItem = selectedItem.nextElementSibling;
+
+  if (nextItem !== selectedItem.parentElement.lastChild.nextElementSibling) {
+    selectedItem.parentElement.insertBefore(nextItem, selectedItem);
+  } else {
+    selectedItem.parentElement.insertBefore(selectedItem, selectedItem.parentElement.firstChild);
   }
 })
 
