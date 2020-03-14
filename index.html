@@ -1,32 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel='stylesheet' href='style.css'>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="./script.js"></script>
 </head>
 <body>
     <header>
         <h1>Minha Lista de Tarefas</h1>
-        <p id='funcionamento'>Clique duas vezes em um item para marcá-lo como completo</p>
+        <h3 id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</h3>
     </header>
-    <div<>
-        <input id='texto-tarefa' type='text'>
-        <button id='criar-tarefa'>Adicionar Item</button>
-        <button id='apaga-tudo'>Limpar Tudo</button>
-        <button id='remover-finalizados'>Remover Itens</button>
-        <button id='salvar-tarefas'>Salvar Lista</button>
-        <button id='mover-cima' >Subir Item</button>
-        <button id='mover-baixo' >Descer Item</button>
-        <button id='remover-selecionado' >Remover Item</button>
-    </div>
-    <div>
-        <ol id='lista-tarefas'>
+    <div class="container">
+        <label for="texto-tarefa">Digite sua tarefa</label> <br>
+        <input type="text" id="texto-tarefa">
+        <input  id="criar-tarefa" type="button" value="Adicionar" onClick="pr()"> <br>
+        <ol id="texto-tarefa">
+        <ol id="lista-tarefa">
+            <li id ="elemento" onclick="select()"></li>
         </ol>
-    </div>
-    <div></div>
-​
-    <script src='script.js'></script>
-</body>
-</html>
+        <button id="apaga-tudo">Clear</button>
