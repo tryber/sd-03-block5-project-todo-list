@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lista de Tarefas</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Lista de tarefas</title>
     <script type="text/javascript" src="./script.js"></script>
 </head>
 <body>
     <header>
-        <h1>Minha Lista de Tarefas</h1>
+        <h1>Minha Lista de Tarefas</h1> <br>
         <h3 id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</h3>
     </header>
-    <div class="container">
-        <label for="texto-tarefa">Digite sua tarefa</label> <br>
-        <input type="text" id="texto-tarefa">
-        <input  id="criar-tarefa" type="button" value="Adicionar" onClick="pr()"> <br>
-        <ol id="texto-tarefa">
-        <ol id="lista-tarefa">
-            <li id ="elemento" onclick="select()"></li>
-        </ol>
-        <button id="apaga-tudo">Clear</button>
+    <form action="">
+        <input type="text" name="" id="texto-tarefa">
+        <button id="criar-tarefa"></button>
+    </form>
+    <ol id="lista-tarefas">
+        <li></li>
+    </ol>
+    <button id="apaga-tudo">Limpar</button>
+    <button id="remover-finalizados">Limpar Completos</button>
+    
+</body>
+</html>
