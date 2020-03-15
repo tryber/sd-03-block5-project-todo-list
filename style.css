@@ -1,3 +1,44 @@
+a {
+  color: grey;
+  text-decoration: none;
+}
+
+.actionButtons {
+  display: flex;
+}
+
+article {
+  background-color: honeydew;
+  border-radius: 4px;
+  padding: 20px;
+}
+
 body {
-  background-color: aquamarine;
+  background-color: rosybrown;
+}
+
+button {
+  border-radius: 5px;
+  margin: 0 5px;
+  padding: 5px 10px;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+header {
+  text-align: center;
+}
+
+li {
+  cursor: pointer;
+}
+
+.selected {
+  background-color: thistle;
+}
+
+.tarefa {
+  display: inline-block;
 }

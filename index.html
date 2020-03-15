@@ -3,17 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-do List</title>
+    <link href="./style.css" rel="stylesheet">
+    <title>Lista de Tarefas</title>
 </head>
 <body>
     <header>
         <h1>Minha Lista de Tarefas</h1>
-        <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+        <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo.<br>Clique uma vez em um item para seleciona-lo.</p>
     </header>
-    <form>
-        <input type="text" id="texto-tarefa">
-        <button id="criar-tarefa"></button>
-    </form>
-    <ol id="lista-tarefas"></ol>
+    <article>
+        <form class="tarefa">
+            <label for="texto-tarefa">Insira uma tarefa:</label>
+            <input id="texto-tarefa">
+        </form>
+        <button class="tarefa" id="criar-tarefa">Adicionar tarefa</button>
+        <ol id="lista-tarefas"></ol>
+        <div class="actionButtons">
+            <button id="salvar-tarefas">Salvar lista</button>
+            <button id="apaga-tudo">Pagar lista</button>
+            <button id="remover-finalizados">Remover itens finalizados</button>
+            <button id="remover-selecionado">Remover item selecionado</button>
+            <button id="mover-cima">Mover tarefa para cima</button>
+            <button id="mover-baixo">Mover tarefa para baixo</button>
+        </div>
+    </article>
+    <script src="./script.js"></script>
 </body>
 </html>
