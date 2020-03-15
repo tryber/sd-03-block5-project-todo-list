@@ -8,5 +8,8 @@ button {
 
 .completed {
   text-decoration: line-through;
-  
+}
+
+.checked {
+  color: red;
 }
