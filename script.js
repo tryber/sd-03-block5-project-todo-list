@@ -61,7 +61,7 @@ function listaSalva() {
     list.innerHTML = listFromStorage;
   }
   const listItems = document.querySelectorAll('#lista-tarefas li');
-  for (let i = 0; i < listItems.length; i+=1 ) {
+  for (let i = 0; i < listItems.length; i += 1) {
     listItems[i].addEventListener('click', selecionarItem);
     listItems[i].addEventListener('dblclick', riscar);
   }
