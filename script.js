@@ -5,6 +5,8 @@ const btnLimparLista = document.getElementById('apaga-tudo');
 const btnFinalizados = document.getElementById('remover-finalizados');
 const btnSelecionados = document.getElementById('remover-selecionado');
 const btnSalvar = document.getElementById('salvar-tarefas');
+const btnMoverCima = document.getElementById('mover-cima');
+const btnMoverBaixo = document.getElementById('mover-baixo');
 
 function selecionarItem(e) {
   e.target.classList.toggle('cinza');
@@ -67,11 +69,35 @@ function listaSalva() {
   }
 }
 
+function moverCima() {
+  const selecionado = document.querySelector('.cinza');
+  if (selecionado) {
+    if (selecionado.previousElementSibling) {
+      selecionado.parentNode.insertBefore(selecionado, selecionado.previousElementSibling);
+    } else {
+      alert('Não é possível mover esta tarefa para cima');
+    }
+  }
+}
+
+function moverBaixo() {
+  const selecionado = document.querySelector('.cinza');
+  if (selecionado) {
+    if (selecionado.nextElementSibling) {
+      selecionado.parentNode.insertBefore(selecionado.nextElementSibling, selecionado);
+    } else {
+      alert('Não é possível mover esta tarefa para baixo');
+    }
+  }
+}
+
 window.onload = function () {
   criar.addEventListener('click', inserirItem);
   btnLimparLista.addEventListener('click', remover);
   btnFinalizados.addEventListener('click', removerFinalizados);
   btnSelecionados.addEventListener('click', removerSelecionados);
   btnSalvar.addEventListener('click', salvar);
+  btnMoverCima.addEventListener('click', moverCima);
+  btnMoverBaixo.addEventListener('click', moverBaixo);
   listaSalva();
 };
