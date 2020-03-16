@@ -49,12 +49,10 @@ function removerSelecionados() {
 
 function salvar() {
   localStorage.setItem('lista', list.innerHTML);
-  console.log(list.innerHTML);
-  
 }
 
 function listaSalva() {
-  let listaFromStorage = localStorage.getItem('lista');
+  const listaFromStorage = localStorage.getItem('lista');
   if (listFromStorade) {
     list.innerHTML = listFromStorage
   }
