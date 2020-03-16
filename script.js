@@ -53,7 +53,7 @@ function salvar() {
 
 function listaSalva() {
   const listaFromStorage = localStorage.getItem('lista');
-  if (listFromStorade) {
+  if (listFromStorage) {
     list.innerHTML = listFromStorage
   }
 }
