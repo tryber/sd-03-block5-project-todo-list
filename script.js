@@ -10,7 +10,7 @@ function selecionarItem(e) {
   e.target.classList.toggle('cinza');
 }
 
-function riscar(esection) {
+function riscar(e) {
   e.target.classList.toggle('completed');
 }
 
@@ -25,8 +25,12 @@ function inserirItem() {
 }
 
 function remover() {
-  list.remove(list);
-  location.reload();
+  const elements = list.children;
+  let first = elements[0];
+  while (first) {
+    first.remove();
+    first = elements[0];
+  }
 }
 
 function removerFinalizados() {
@@ -53,8 +57,14 @@ function salvar() {
 
 function listaSalva() {
   const listFromStorage = localStorage.getItem('lista');
+  console.log( listFromStorage )
   if (listFromStorage) {
     list.innerHTML = listFromStorage;
+  }
+  let listItems = document.querySelectorAll('#lista-tarefas li')
+  for(let i = 0; i < listItems.length; i+=1){
+    listItems[i].addEventListener('click', selecionarItem);
+    listItems[i].addEventListener('dblclick', riscar);
   }
 }
 
