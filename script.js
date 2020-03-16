@@ -57,12 +57,11 @@ function salvar() {
 
 function listaSalva() {
   const listFromStorage = localStorage.getItem('lista');
-  console.log( listFromStorage )
   if (listFromStorage) {
     list.innerHTML = listFromStorage;
   }
-  let listItems = document.querySelectorAll('#lista-tarefas li')
-  for(let i = 0; i < listItems.length; i+=1){
+  const listItems = document.querySelectorAll('#lista-tarefas li');
+  for (let i = 0; i < listItems.length; i+=1 ) {
     listItems[i].addEventListener('click', selecionarItem);
     listItems[i].addEventListener('dblclick', riscar);
   }
