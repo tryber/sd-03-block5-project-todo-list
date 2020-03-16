@@ -10,7 +10,7 @@ function selecionarItem(e) {
   e.target.classList.toggle('cinza');
 }
 
-function riscar(e) {
+function riscar(esection) {
   e.target.classList.toggle('completed');
 }
 
@@ -52,9 +52,9 @@ function salvar() {
 }
 
 function listaSalva() {
-  const listaFromStorage = localStorage.getItem('lista');
+  const listFromStorage = localStorage.getItem('lista');
   if (listFromStorage) {
-    list.innerHTML = listFromStorage
+    list.innerHTML = listFromStorage;
   }
 }
 
