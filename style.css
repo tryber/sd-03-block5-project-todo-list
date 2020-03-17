@@ -14,4 +14,8 @@ li {
   background-color: rgb(128,128,128);
 }
 
+.check {
+  text-decoration: line-through;
+}
+
 
