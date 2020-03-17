@@ -9,7 +9,11 @@ const btnMoverCima = document.getElementById('mover-cima');
 const btnMoverBaixo = document.getElementById('mover-baixo');
 
 function selecionarItem(e) {
-  e.target.classList.toggle('cinza');
+  let selecionadoCinza = document.getElementsByClassName('cinza');
+  for (let i = 0; i < selecionadoCinza.length; i += 1) {
+    selecionadoCinza[i].classList.remove('cinza');  
+  }
+  e.target.classList.add('cinza');
 }
 
 function riscar(e) {
