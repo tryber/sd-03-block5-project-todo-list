@@ -6,8 +6,12 @@ button {
   cursor: pointer;
 }
 
+li {
+  cursor: pointer;
+}
+
 .selected {
-  color: red;
+  background-color: rgb(128,128,128);
 }
 
 
