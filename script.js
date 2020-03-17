@@ -19,18 +19,18 @@ function adicionarTarefa () {
         }
     })
   newItem.addEventListener('dblclick', function(){
-        if (newItem.classList.contains("check")) {
-            newItem.classList.remove("check");
+        if (newItem.classList.contains("completed")) {
+            newItem.classList.remove("completed");
         }
         else {
-            newItem.classList.add('check');
+            newItem.classList.add('completed');
         }
   })
   limpar.addEventListener('click',function(){
     document.querySelectorAll('.lista').forEach(e => e.remove());
   })
   remover.addEventListener('click',function(){
-    document.querySelectorAll('.check').forEach(e => e.remove());
+    document.querySelectorAll('.completed').forEach(e => e.remove());
   })
 }
 
