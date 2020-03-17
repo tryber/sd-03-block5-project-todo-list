@@ -6,10 +6,8 @@ button {
   cursor: pointer;
 }
 
-.completed {
-  text-decoration: line-through;
-}
-
-.checked {
+.selected {
   color: red;
 }
+
+
