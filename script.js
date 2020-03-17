@@ -1,10 +1,10 @@
 const lista = document.getElementById('lista-tarefas');
-let apagaTudo = document.getElementById('apaga-tudo');
+let limpar = document.getElementById('apaga-tudo');
+let remover = document.getElementById('remover-finalizados');
 
 function adicionarTarefa () {
   var newItem = document.createElement("li");
-  var text = document.getElementById('texto-tarefa').value; 
-  newItem.innerHTML = text;
+  newItem.innerHTML = document.getElementById('texto-tarefa').value; 
   newItem.className = "lista";
   document.getElementById('lista-tarefas').appendChild(newItem);
   document.getElementById('texto-tarefa').value= '';
@@ -26,8 +26,11 @@ function adicionarTarefa () {
             newItem.classList.add('check');
         }
   })
-  apagaTudo.addEventListener('click' , function(){
-      console.log("olaakska");
- })
+  limpar.addEventListener('click',function(){
+    document.querySelectorAll('.lista').forEach(e => e.remove());
+  })
+  remover.addEventListener('click',function(){
+    document.querySelectorAll('.check').forEach(e => e.remove());
+  })
 }
 
