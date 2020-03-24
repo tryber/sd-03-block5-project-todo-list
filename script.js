@@ -1,7 +1,6 @@
 const lista = document.getElementById('lista-tarefas');
 let limpar = document.getElementById('apaga-tudo');
 let remover = document.getElementById('remover-finalizados');
-let save = document.getElementById('salvar-tarefas');
 let cleanSelect = document.getElementById('remover-selecionado');
 let listaTarefas = document.getElementById('lista-tarefas');
 
@@ -39,9 +38,12 @@ function adicionarTarefa () {
   cleanSelect.addEventListener('click',function(){
     document.querySelectorAll('.selected').forEach(e => e.remove());
   })
+  
 }
-
-
-
-
-
+function save(){
+let salvarTarefas = document.getElementById('salvar-tarefas');
+localStorage.setItem('salvar', listaTarefas.innerHTML);
+if(localStorage.getItem('salvar')){
+  listaTarefas.innerHTML = localStorage.getItem('salvar');  
+}
+}
