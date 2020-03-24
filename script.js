@@ -40,6 +40,12 @@ function adicionarTarefa () {
   })
   
 }
-function save(){
-localStorage.setItem('salvar', listaTarefas.innerHTML);
+
+  let salvarTarefas = document.getElementById('salvar-tarefas');
+  salvarTarefas.addEventListener('click',function(){
+    localStorage.setItem('salvar', listaTarefas.innerHTML);
+})
+if(localStorage.getItem('salvar')){
+    listaTarefas.innerHTML = localStorage.getItem('salvar');  
 }
+
