@@ -36,12 +36,9 @@ function adicionarTarefa () {
   remover.addEventListener('click',function(){
     document.querySelectorAll('.completed').forEach(e => e.remove());
   })
-  save.addEventListener('click',function(){
-    localStorage.setItem('salvar', listaTarefas.innerHTML);
+  cleanSelect.addEventListener('click',function(){
+    document.querySelectorAll('.selected').forEach(e => e.remove());
   })
-  if(localStorage.getItem('salvar')){
-    listaTarefas.innerHTML = localStorage.getItem('salvar');  
-  }
 }
 
 
