@@ -41,9 +41,5 @@ function adicionarTarefa () {
   
 }
 function save(){
-let salvarTarefas = document.getElementById('salvar-tarefas');
 localStorage.setItem('salvar', listaTarefas.innerHTML);
-if(localStorage.getItem('salvar')){
-  listaTarefas.innerHTML = localStorage.getItem('salvar');  
-}
 }
