@@ -6,22 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <title>Lista de tarefas</title>
-    
 </head>
 <body>
+    <div id="container">
     <header>
-        <h1 id="ola">Minha Lista de Tarefas</h1> <br>
+        <h1>Minha Lista de Tarefas</h1> <br>
         <h3 id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</h3>
     </header>
     
-        <input type="text" name="" id="texto-tarefa">
-        <button id="criar-tarefa" onclick="adicionarTarefa()">Adicionar</button>
-    
-    <ol id="lista-tarefas" class="list">
-        
-    </ol>
-    <button id="apaga-tudo">Limpar</button>
-    <button id="remover-finalizados">Limpar Completos</button>
+        <div id="textarea">
+            <input type="text" name="" id="texto-tarefa">
+            <button id="criar-tarefa" onclick="adicionarTarefa()">Adicionar</button>
+            <ol id="lista-tarefas" class="list">
+            </ol>
+        </div>
+        <div class="buttons">
+            <button id="x">x</button>
+            <button id="mover-cima">Up</button>
+            <button id="mover-baixo">Down</button><br>
+            <button id="remover-finalizados" >Limpar Completos</button><br>
+            <button id="apaga-tudo" >Limpar Lista</button><br>
+            <button id="salvar-tarefas" onclick="bonus()">Salvar Lista</button>
+            <button id="remover-selecionado">Remover Seleção</button>
+        </div>
+
+ </div>
     <script type="text/javascript" src="./script.js"></script>
 </body>
 </html>
