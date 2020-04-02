@@ -40,10 +40,15 @@ function blackout() {
 
 function removechecked() {
 	const riscado = document.getElementsByClassName('completed');
-	
-	for (let i = 0; i < riscado.length; i += 1){
-		riscado[i].remove();
+	let valorprimeiro = riscado[0];
+
+	while (valorprimeiro){
+		valorprimeiro.remove();
+		valorprimeiro = riscado[0];
 	}
+	// for (let i = 0; i < riscado.length; i += 1){
+	// 	riscado[i].remove();
+	// }
 }
 
 function removeSelect() {
