@@ -3,6 +3,7 @@ const btnEnviar = document.getElementById('criar-tarefa');
 const addList = document.getElementById('lista-tarefas');
 
 const btnBlackOut = document.getElementById('apaga-tudo');
+const btnFatallyt = document.getElementById('remover-finalizados');
 
 function trocaCorFundo(e) {
 	const addBackground = document.getElementsByClassName('cinza');
@@ -36,7 +37,17 @@ function blackout() {
 	}
 }
 
+function removechecked() {
+	const riscado = document.getElementsByClassName('completed');
+	
+	for (let i = 0; i < riscado.length; i += 1){
+		riscado[i].remove();
+	}
+}
+
+
 window.onload = function () {
 	btnEnviar.addEventListener('click', adicionarlista);
 	btnBlackOut.addEventListener('click', blackout);	
+	btnFatallyt.addEventListener('click', removechecked)
 } 
