@@ -19,6 +19,11 @@ function adicionarlista() {
 	input.value = '';
 
 	criarItemLi.addEventListener('click', trocaCorFundo);
+	criarItemLi.addEventListener('dblclick', riscarItem);
+}
+
+function riscarItem(e) {
+	e.target.classList.toggle('completed');
 }
 
 
