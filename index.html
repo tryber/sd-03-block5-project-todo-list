@@ -7,15 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Minha Lista de Tarefas</h1>
-        <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
-        <input type="text" name="texto-tarefa" id="texto-tarefa">
-        <button id="criar-tarefa"> Adicionar </button>
-        <li id="lista-tarefas"></li>
-
+    <section id="quadro-lista">
+        <header>
+            <h1>Minha Lista de Tarefas</h1>
+            <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+            <input type="text" name="texto-tarefa" id="texto-tarefa">
+            <button id="criar-tarefa"> Adicionar </button>
+        </header>
+        <ol id="lista-tarefas"></ol>
+    
         <button id="apaga-tudo"> Apagar todos </button>
         <button id="remover-finalizados"> Remover finalizados </button>
-    </header>
+    </section> 
+    
+    <script src="script.js"></script>
 </body>
 </html>
