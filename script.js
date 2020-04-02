@@ -34,11 +34,9 @@ function blackout() {
 	for (let i = 0; i < lista.length; i += 1) {
 		lista[i].remove();
 	}
-
 }
 
 window.onload = function () {
 	btnEnviar.addEventListener('click', adicionarlista);
-	btnBlackOut.addEventListener('click', blackout);
-	
+	btnBlackOut.addEventListener('click', blackout);	
 } 
