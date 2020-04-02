@@ -6,6 +6,10 @@ const btnBlackOut = document.getElementById('apaga-tudo');
 const btnFatallyt = document.getElementById('remover-finalizados');
 const btnSelecionado = document.getElementById('remover-selecionado');
 
+//Bonus
+const btnCima = document.getElementById('mover-cima');
+const btnBaixo = document.getElementById('mover-baixo');
+
 function trocaCorFundo(e) {
 	const addBackground = document.getElementsByClassName('cinza');
 	
@@ -46,12 +50,10 @@ function removechecked() {
 		valorprimeiro.remove();
 		valorprimeiro = riscado[0];
 	}
-	// for (let i = 0; i < riscado.length; i += 1){
-	// 	riscado[i].remove();
-	// }
 }
 
 function removeSelect() {
+	console.log('agora 3')
 	const marcado = document.getElementsByClassName('cinza');
 	
 	for (let i = 0; i < marcado.length; i += 1){
@@ -59,9 +61,33 @@ function removeSelect() {
 	}
 }
 
+function moverCima() {
+	const selected = document.getElementsByClassName('cinza')[0];
+	const superior = selected.previousElementSibling;
+
+	const lista = document.getElementById('lista-tarefas');
+
+	if(superior != null){
+		lista.insertBefore(selected, superior);
+	}else alert('Nao é possivel mover para cima')
+}
+
+function moverBaixo() {
+	const selected = document.getElementsByClassName('cinza')[0];
+	const inferior = selected.nextElementSibling;
+
+	const lista = document.getElementById('lista-tarefas');
+
+	if(inferior != null){
+		lista.insertBefore(inferior, selected);
+	}else alert('Nao é possivel mover para baixo')
+}
+
 window.onload = function () {
 	btnEnviar.addEventListener('click', adicionarlista);
 	btnBlackOut.addEventListener('click', blackout);	
 	btnFatallyt.addEventListener('click', removechecked);
 	btnSelecionado.addEventListener('click', removeSelect);
+	btnCima.addEventListener('click', moverCima);
+	btnBaixo.addEventListener('click', moverBaixo);
 } 
