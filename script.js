@@ -4,6 +4,7 @@ const addList = document.getElementById('lista-tarefas');
 
 const btnBlackOut = document.getElementById('apaga-tudo');
 const btnFatallyt = document.getElementById('remover-finalizados');
+const btnSelecionado = document.getElementById('remover-selecionado');
 
 function trocaCorFundo(e) {
 	const addBackground = document.getElementsByClassName('cinza');
@@ -45,9 +46,17 @@ function removechecked() {
 	}
 }
 
+function removeSelect() {
+	const marcado = document.getElementsByClassName('cinza');
+	
+	for (let i = 0; i < marcado.length; i += 1){
+		marcado[i].remove();
+	}
+}
 
 window.onload = function () {
 	btnEnviar.addEventListener('click', adicionarlista);
 	btnBlackOut.addEventListener('click', blackout);	
-	btnFatallyt.addEventListener('click', removechecked)
+	btnFatallyt.addEventListener('click', removechecked);
+	btnSelecionado.addEventListener('click', removeSelect);
 } 
