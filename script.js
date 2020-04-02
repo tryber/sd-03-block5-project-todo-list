@@ -9,6 +9,7 @@ const btnSelecionado = document.getElementById('remover-selecionado');
 //Bonus
 const btnCima = document.getElementById('mover-cima');
 const btnBaixo = document.getElementById('mover-baixo');
+const btnSave = document.getElementById('salvar-tarefas');
 
 function trocaCorFundo(e) {
 	const addBackground = document.getElementsByClassName('cinza');
@@ -53,7 +54,6 @@ function removechecked() {
 }
 
 function removeSelect() {
-	console.log('agora 3')
 	const marcado = document.getElementsByClassName('cinza');
 	
 	for (let i = 0; i < marcado.length; i += 1){
@@ -83,6 +83,38 @@ function moverBaixo() {
 	}else alert('Nao é possivel mover para baixo')
 }
 
+function salvarTarefas() {
+	console.log('salvando');
+	
+	const lista = document.getElementById('lista-tarefas').innerHTML;
+	localStorage.setItem('listaSalva', lista);
+}
+
+function moverCima() {
+	const selected = document.getElementsByClassName('cinza')[0];
+	const superior = selected.previousElementSibling;
+	btnCima.addEventListener('click', moverCima);
+	btnBaixo.addEventListener('click', moverBaixo);
+	btnSave.addEventListener('click', salvarTarefas);
+
+	const lista = document.getElementById('lista-tarefas');
+
+	if(superior != null){
+		lista.insertBefore(selected, superior);
+	}else alert('Nao é possivel mover para cima')
+}
+
+function moverBaixo() {
+	const selected = document.getElementsByClassName('cinza')[0];
+	const inferior = selected.nextElementSibling;
+
+	const lista = document.getElementById('lista-tarefas');
+
+	if(inferior != null){
+		lista.insertBefore(inferior, selected);
+	}else alert('Nao é possivel mover para baixo')
+}
+
 window.onload = function () {
 	btnEnviar.addEventListener('click', adicionarlista);
 	btnBlackOut.addEventListener('click', blackout);	
@@ -90,4 +122,11 @@ window.onload = function () {
 	btnSelecionado.addEventListener('click', removeSelect);
 	btnCima.addEventListener('click', moverCima);
 	btnBaixo.addEventListener('click', moverBaixo);
+	btnSave.addEventListener('click', salvarTarefas);
+
+	if (localStorage.getItem('listaSalva')) {
+		const listaSalva = localStorage.getItem('listaSalva');
+		const lista = document.getElementById('lista-tarefas');
+		lista.innerHTML = listaSalva;
+	}
 } 
