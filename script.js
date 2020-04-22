@@ -51,3 +51,9 @@ apagaselecionados.addEventListener('click', function(){
         list.removeChild(selecionado);
     })
 });
+
+document.getElementById("texto-tarefa").addEventListener('keypress', function(event) { 
+  if (event.keyCode === 13) { 
+      newElement();
+  } 
+}); 
